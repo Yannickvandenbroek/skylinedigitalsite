@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Skyline Digital</title>
+  <meta name="description" content="Neem contact op met Skyline Digital voor een gratis adviesgesprek over je website, video of content." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="Skyline Digital" class="brand-logo" /></a>
+    <nav class="nav-links">
+      <a href="over-ons.html">Over ons</a>
+      <div class="nav-drop">
+        <a href="#" class="nav-drop-trigger">Diensten ▾</a>
+        <div class="nav-drop-menu">
+          <a href="website-seo.html">Website &amp; SEO</a>
+          <a href="drone-video.html">Drone &amp; Video</a>
+          <a href="social-media.html">Social Media</a>
+          <a href="ai-content.html">AI Content</a>
+        </div>
+      </div>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <a href="#form" class="btn btn-gold btn-sm nav-cta">Aanvraag doen</a>
+  </header>
+
+  <section class="page-hero center" style="background:radial-gradient(90% 100% at 50% 0%, #16171f, #07080c)">
+    <div class="orb orb-gold" style="left:50%;top:-160px;transform:translateX(-50%);width:520px;height:520px;opacity:.6"></div>
+    <div class="page-hero-inner">
+      <p class="crumbs"><a href="index.html">Home</a> · Contact</p>
+      <h1>Laten we iets <span class="gold-text">moois bouwen.</span></h1>
+      <p class="lead">Gratis adviesgesprek, geen verplichtingen. We reageren binnen één werkdag.</p>
+    </div>
+  </section>
+
+  <!-- FORM + INFO -->
+  <section class="bg-cream full" id="form">
+    <div class="wrap">
+      <div class="contact-grid">
+        <form class="form-card reveal reveal--left" action="mailto:info@skylinedigital.nl" method="post" enctype="text/plain">
+          <div class="gold-rule"></div>
+          <h2 style="margin-bottom:8px">Doe je aanvraag</h2>
+          <p style="color:var(--ink-dim);margin-bottom:26px">Vertel ons kort over je project.</p>
+          <div class="field"><label for="naam">Naam</label><input id="naam" name="naam" type="text" placeholder="Je naam" required /></div>
+          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" placeholder="jij@bedrijf.nl" required /></div>
+          <div class="field"><label for="dienst">Waar kunnen we mee helpen?</label>
+            <select id="dienst" name="dienst">
+              <option>Website &amp; SEO</option>
+              <option>Drone &amp; Video</option>
+              <option>Social Media</option>
+              <option>AI Content</option>
+              <option>Meerdere diensten</option>
+            </select>
+          </div>
+          <div class="field"><label for="bericht">Bericht</label><textarea id="bericht" name="bericht" placeholder="Vertel ons over je project, doelen en planning..."></textarea></div>
+          <button type="submit" class="btn btn-gold" style="width:100%">Verstuur aanvraag</button>
+        </form>
+
+        <div class="contact-info reveal reveal--right">
+          <div class="cinfo-item"><div class="cinfo-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><h4>E-mail</h4><a href="mailto:info@skylinedigital.nl">info@skylinedigital.nl</a></div></div>
+          <div class="cinfo-item"><div class="cinfo-ico"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></div><div><h4>Telefoon</h4><a href="tel:+31600000000">+31 6 00 00 00 00</a></div></div>
+          <div class="cinfo-item"><div class="cinfo-ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h4>Werkgebied</h4><p>Heel Nederland · op locatie &amp; online</p></div></div>
+          <div class="cinfo-item"><div class="cinfo-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h4>Bereikbaar</h4><p>Ma–vr · 09:00–18:00</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAAROM -->
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule" style="margin-inline:auto"></div>
+        <p class="eyebrow">Waarom Skyline</p>
+        <h2>Wat je van ons <span class="gold-text">mag verwachten</span></h2>
+      </div>
+      <div class="fgrid">
+        <div class="fcard reveal"><div class="fcard-ico"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div><h3>Snelle reactie</h3><p>Je hoort binnen één werkdag van ons — vaak sneller.</p></div>
+        <div class="fcard reveal"><div class="fcard-ico"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><h3>Eerlijk advies</h3><p>Geen verkooppraatjes, wel een helder plan dat bij je past.</p></div>
+        <div class="fcard reveal"><div class="fcard-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div><h3>Eén aanspreekpunt</h3><p>Alles onder één dak, met korte lijnen en duidelijke communicatie.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN QUICK -->
+  <section class="bg-dark full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule" style="margin-inline:auto"></div>
+        <p class="eyebrow">Onze diensten</p>
+        <h2>Waar kunnen we mee <span class="gold-text">helpen?</span></h2>
+      </div>
+      <div class="fgrid cols-4">
+        <a href="website-seo.html" class="fcard reveal"><div class="fcard-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18"/></svg></div><h3>Website &amp; SEO</h3><p>Snel &amp; vindbaar</p></a>
+        <a href="drone-video.html" class="fcard reveal"><div class="fcard-ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3Z"/></svg></div><h3>Drone &amp; Video</h3><p>Cinematische beelden</p></a>
+        <a href="social-media.html" class="fcard reveal"><div class="fcard-ico"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5 8.6 10.5"/></svg></div><h3>Social Media</h3><p>Groei &amp; bereik</p></a>
+        <a href="ai-content.html" class="fcard reveal"><div class="fcard-ico"><svg viewBox="0 0 24 24"><path d="m12 3 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/></svg></div><h3>AI Content</h3><p>Snel &amp; schaalbaar</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-cream full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule" style="margin-inline:auto"></div>
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Voor je <span class="gold-text">contact opneemt</span></h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>Hoe snel krijg ik antwoord?</summary><p>We reageren binnen één werkdag op elke aanvraag, telefonisch of per mail.</p></details>
+        <details><summary>Is het adviesgesprek echt gratis?</summary><p>Ja. We denken vrijblijvend met je mee en geven een helder plan en prijsindicatie.</p></details>
+        <details><summary>Werken jullie door heel Nederland?</summary><p>Zeker. We werken online samen en komen voor opnames en gesprekken graag op locatie.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="inner reveal">
+      <div class="gold-rule" style="margin-inline:auto"></div>
+      <h2>Liever direct contact?</h2>
+      <p class="lead">Bel of mail ons gerust — we helpen je graag verder.</p>
+      <div class="hero-actions hero-actions-center"><a href="mailto:info@skylinedigital.nl" class="btn btn-gold">Mail ons</a><a href="tel:+31600000000" class="btn btn-ghost-light">Bel direct</a></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><img src="assets/logo.png" alt="Skyline Digital" class="footer-logo" /><p>Websites · Drone &amp; Video · Social Media · AI Content</p></div>
+      <nav class="footer-nav">
+        <div class="footer-col"><h4>Pagina's</h4><a href="index.html">Home</a><a href="over-ons.html">Over Ons</a><a href="website-seo.html">Website &amp; SEO</a><a href="drone-video.html">Drone &amp; Video</a></div>
+        <div class="footer-col"><h4>Meer</h4><a href="social-media.html">Social Media</a><a href="ai-content.html">AI Content</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a></div>
+        <div class="footer-col"><h4>Contact</h4><a href="mailto:info@skylinedigital.nl">info@skylinedigital.nl</a><a href="tel:+31600000000">+31 6 00 00 00 00</a></div>
+      </nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Skyline Digital. Alle rechten voorbehouden.</span></div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <script src="scroll-cinematic.js"></script>
+</body>
+</html>

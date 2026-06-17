@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skyline Digital — Websites, AI-content, Video &amp; Drone</title>
+  <meta name="description" content="Skyline Digital bouwt premium websites en maakt cinematische content, video en drone-beelden. Eén bureau voor je complete digitale aanwezigheid." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+<body>
+
+  <!-- ====== NAV ====== -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="brand">
+      <img src="assets/logo.png" alt="Skyline Digital" class="brand-logo" />
+    </a>
+    <nav class="nav-links">
+      <a href="over-ons.html">Over ons</a>
+      <div class="nav-drop">
+        <a href="#diensten" class="nav-drop-trigger">Diensten ▾</a>
+        <div class="nav-drop-menu">
+          <a href="website-seo.html">Website &amp; SEO</a>
+          <a href="drone-video.html">Drone &amp; Video</a>
+          <a href="social-media.html">Social Media</a>
+          <a href="ai-content.html">AI Content</a>
+        </div>
+      </div>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-gold btn-sm nav-cta">Aanvraag doen</a>
+  </header>
+
+  <!-- ====== 1. HERO — cinematic scroll (drone fly-through) ====== -->
+  <section class="cinematic" id="hero">
+    <div class="sticky">
+      <canvas class="frame-canvas"></canvas>
+      <div class="vignette"></div>
+
+      <!-- Static intro: visible immediately -->
+      <div class="hero-intro hero-fade">
+        <p class="eyebrow eyebrow-center">Websites · Video · Drone · AI</p>
+        <h1 class="hero-title">SKYLINE DIGITAL<br/><span class="gold-text">Wij bouwen je<br/>digitale skyline.</span></h1>
+        <p class="hero-sub">Premium websites en scroll-stoppende content — film, drone en AI — uit één creatief bureau.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-gold">Aanvraag doen</a>
+          <a href="#diensten" class="btn btn-ghost-light">Bekijk diensten</a>
+        </div>
+      </div>
+
+      <!-- Scroll-driven statement lines (appear after intro fades) -->
+      <div class="overlay">
+        <h2 class="reveal-line" data-in="0.34" data-out="0.64">Websites die<br/><span class="gold-text">verkopen.</span></h2>
+        <h2 class="reveal-line" data-in="0.70" data-out="1.00">Beelden die<br/><span class="gold-text">blijven hangen.</span></h2>
+      </div>
+
+      <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="scroll-hint hero-fade">SCROLL ▾</div>
+    </div>
+  </section>
+
+  <!-- ====== 2. OVER ONS ====== -->
+  <section class="section over" id="over">
+    <div class="over-grid">
+      <div class="over-copy reveal reveal--left">
+        <p class="eyebrow">Over Skyline Digital</p>
+        <h2>Eén bureau voor je <span class="gold-text">volledige digitale aanwezigheid.</span></h2>
+        <p class="lead">Van een razendsnelle website tot cinematische drone-beelden en slimme AI-content — wij maken het, in één herkenbare, premium stijl. Strak, snel en gebouwd om te converteren.</p>
+        <ul class="ticks">
+          <li>Maatwerk design &amp; development</li>
+          <li>Eigen film-, drone- &amp; AI-productie</li>
+          <li>Eén aanspreekpunt, één consistente stijl</li>
+        </ul>
+        <a href="#contact" class="btn btn-dark">Plan een gesprek</a>
+      </div>
+      <div class="over-media reveal reveal--right">
+        <div class="media-frame">
+          <img src="assets/about-studio.jpg" alt="Skyline Digital studio" loading="lazy" decoding="async" />
+        </div>
+        <div class="orb orb-gold"></div>
+      </div>
+    </div>
+
+    <!-- Stats band -->
+    <div class="stats reveal">
+      <div class="stat">
+        <span class="stat-num gold-text" data-count="80" data-suffix="+">0</span>
+        <span class="stat-label">Websites gelanceerd</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num gold-text" data-count="250" data-suffix="+">0</span>
+        <span class="stat-label">Video's geproduceerd</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num gold-text" data-count="2" data-suffix="M+">0</span>
+        <span class="stat-label">Views gegenereerd</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num gold-text" data-count="40" data-suffix="+">0</span>
+        <span class="stat-label">Tevreden klanten</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 3. DIENSTEN ====== -->
+  <section class="section diensten" id="diensten">
+    <div class="section-head reveal">
+      <p class="eyebrow">Wat we doen</p>
+      <h2>Diensten die je merk <span class="gold-text">vooruit stuwen</span></h2>
+      <p class="lead">Vier specialismen, naadloos op elkaar afgestemd.</p>
+    </div>
+
+    <div class="svc-grid">
+      <a href="website-seo.html" class="svc reveal">
+        <div class="svc-img"><img src="assets/svc-website.jpg" alt="Website & SEO" loading="lazy" decoding="async" /><span class="svc-num">01</span></div>
+        <div class="svc-body">
+          <h3>Website &amp; SEO</h3>
+          <p>Maatwerk websites die snel laden, top scoren in Google en bezoekers omzetten in klanten.</p>
+          <span class="card-link">Ontdek meer →</span>
+        </div>
+      </a>
+      <a href="drone-video.html" class="svc reveal">
+        <div class="svc-img"><img src="assets/svc-drone.jpg" alt="Drone & Video" loading="lazy" decoding="async" /><span class="svc-num">02</span></div>
+        <div class="svc-body">
+          <h3>Drone &amp; Video</h3>
+          <p>Cinematische drone-beelden en bedrijfsfilms die jouw merk groots in beeld brengen.</p>
+          <span class="card-link">Ontdek meer →</span>
+        </div>
+      </a>
+      <a href="social-media.html" class="svc reveal">
+        <div class="svc-img"><img src="assets/svc-social.jpg" alt="Social Media" loading="lazy" decoding="async" /><span class="svc-num">03</span></div>
+        <div class="svc-body">
+          <h3>Social Media</h3>
+          <p>Strategie, beheer en content die je volgers laat groeien en je merk laat leven.</p>
+          <span class="card-link">Ontdek meer →</span>
+        </div>
+      </a>
+      <a href="ai-content.html" class="svc reveal">
+        <div class="svc-img"><img src="assets/svc-ai.jpg" alt="AI Content" loading="lazy" decoding="async" /><span class="svc-num">04</span></div>
+        <div class="svc-body">
+          <h3>AI Content</h3>
+          <p>Beeld, video en tekst met AI — sneller en schaalbaarder, zonder in te leveren op kwaliteit.</p>
+          <span class="card-link">Ontdek meer →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ====== 4. WERKWIJZE (dark) ====== -->
+  <section class="section-dark werkwijze" id="werkwijze">
+    <div class="inner">
+      <div class="section-head reveal">
+        <p class="eyebrow">Hoe we werken</p>
+        <h2>Van idee naar oplevering<br/>in <span class="gold-text">drie heldere stappen</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-num">01</span>
+          <h3>Briefing &amp; strategie</h3>
+          <p>We duiken in je merk, doelen en doelgroep. Samen bepalen we de richting en het plan.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">02</span>
+          <h3>Productie &amp; design</h3>
+          <p>We bouwen, filmen en creëren. Je blijft betrokken met heldere previews en feedbackrondes.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">03</span>
+          <h3>Oplevering &amp; groei</h3>
+          <p>Live én onderhouden. We meten, optimaliseren en blijven doorbouwen aan je resultaat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 5. SHOWCASE — cinematic scroll (option F: floating UI) ====== -->
+  <section class="cinematic cinematic-2" id="showcase">
+    <div class="sticky">
+      <canvas class="frame-canvas"></canvas>
+      <div class="vignette"></div>
+      <div class="overlay overlay-left">
+        <p class="hero-eyebrow reveal-line" data-in="0.00" data-out="0.42">Digitale ervaringen</p>
+        <h2 class="reveal-line showcase-line" data-in="0.00" data-out="0.46">Wij bouwen<br/><span class="gold-text">digitale werelden.</span></h2>
+        <h2 class="reveal-line showcase-line" data-in="0.54" data-out="1.00">Eén consistente<br/><span class="gold-text">merkbeleving.</span></h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 6. PORTFOLIO ====== -->
+  <section class="section portfolio" id="portfolio">
+    <div class="section-head reveal">
+      <p class="eyebrow">Uitgelicht werk</p>
+      <h2>Recente <span class="gold-text">projecten</span></h2>
+    </div>
+    <div class="work-grid">
+      <a href="portfolio.html" class="work reveal">
+        <div class="work-img"><img src="assets/work-hotel.jpg" alt="The Album" loading="lazy" decoding="async" /></div>
+        <div class="work-meta"><span class="work-tag">Website &amp; SEO</span><h3>The Album — Hotel</h3></div>
+      </a>
+      <a href="portfolio.html" class="work reveal">
+        <div class="work-img"><img src="assets/work-realestate.jpg" alt="Aurum Estates" loading="lazy" decoding="async" /></div>
+        <div class="work-meta"><span class="work-tag">Website &amp; Drone</span><h3>Aurum Estates</h3></div>
+      </a>
+      <a href="portfolio.html" class="work reveal">
+        <div class="work-img"><img src="assets/work-coffee.jpg" alt="Ember & Bean" loading="lazy" decoding="async" /></div>
+        <div class="work-meta"><span class="work-tag">Social &amp; AI</span><h3>Ember &amp; Bean</h3></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ====== 7. REVIEWS ====== -->
+  <section class="section reviews" id="reviews">
+    <div class="section-head reveal">
+      <p class="eyebrow">Wat klanten zeggen</p>
+      <h2>Vertrouwd door <span class="gold-text">merken die groeien</span></h2>
+    </div>
+    <div class="quote-grid">
+      <blockquote class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Onze nieuwe website laadt razendsnel en we worden eindelijk goed gevonden. De dronebeelden zijn de kers op de taart."</p>
+        <footer><span class="q-name">Mark de Vries</span><span class="q-role">Eigenaar, Noordzee Vastgoed</span></footer>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Skyline denkt mee als een partner, niet als een leverancier. Content, video én site — alles klopt en oogt strak."</p>
+        <footer><span class="q-name">Sanne Bakker</span><span class="q-role">Marketing, Atlas Coffee</span></footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ====== 8. CTA ====== -->
+  <section class="cta" id="contact">
+    <div class="cta-inner reveal">
+      <p class="eyebrow eyebrow-center">Klaar om te bouwen?</p>
+      <h2>Laten we jouw<br/><span class="gold-text">digitale skyline</span> neerzetten.</h2>
+      <p class="lead">Gratis adviesgesprek, geen verplichtingen. Vertel ons over je project.</p>
+      <div class="hero-actions hero-actions-center">
+        <a href="mailto:info@skylinedigital.nl" class="btn btn-gold">Aanvraag doen</a>
+        <a href="tel:+31600000000" class="btn btn-ghost-light">Bel direct</a>
+      </div>
+    </div>
+    <div class="orb orb-gold cta-orb"></div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Skyline Digital" class="footer-logo" />
+        <p>Websites · Drone &amp; Video · Social Media · AI Content</p>
+      </div>
+      <nav class="footer-nav">
+        <div class="footer-col">
+          <h4>Pagina's</h4>
+          <a href="index.html">Home</a><a href="over-ons.html">Over Ons</a><a href="website-seo.html">Website &amp; SEO</a><a href="drone-video.html">Drone &amp; Video</a>
+        </div>
+        <div class="footer-col">
+          <h4>Meer</h4>
+          <a href="social-media.html">Social Media</a><a href="ai-content.html">AI Content</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:info@skylinedigital.nl">info@skylinedigital.nl</a>
+          <a href="tel:+31600000000">+31 6 00 00 00 00</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Skyline Digital. Alle rechten voorbehouden.</span>
+    </div>
+  </footer>
+
+  <!-- Lenis smooth scroll -->
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <script src="scroll-cinematic.js"></script>
+  <script>
+    window.SCRUB_SECTIONS = [
+      { section:"#hero",     frameCount:179, bg:"#05060a",
+        framePath:(i)=>`frames/skyline/frame_${String(i).padStart(4,"0")}.jpg` },
+      { section:"#showcase", frameCount:180, bg:"#000000",
+        framePath:(i)=>`frames/ui/frame_${String(i).padStart(4,"0")}.jpg` },
+    ];
+  </script>
+</body>
+</html>
