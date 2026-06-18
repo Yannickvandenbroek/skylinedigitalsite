@@ -1,8 +1,8 @@
 /* ============================================================
-   Scroll engine — video scrub + reveals + counters
+   Scroll engine — frame-sequence scrub + reveals + counters
    ============================================================ */
 
-function initVideoScrub(cfg) {
+function initScrub(cfg) {
   const section = document.querySelector(cfg.section);
   const canvas  = section.querySelector("canvas");
   const ctx     = canvas.getContext("2d", { alpha: false });
@@ -13,45 +13,31 @@ function initVideoScrub(cfg) {
   canvas.style.opacity = "0";
   canvas.style.transition = "opacity 0.4s";
 
-  const video = document.createElement("video");
-  video.src = cfg.videoSrc;
-  video.muted = true;
-  video.playsInline = true;
-  video.preload = "auto";
-  video.style.cssText = "position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;";
-  section.appendChild(video);
-
-  let seeking = false;
-  let pendingTime = null;
-
-  function doSeek(t) {
-    seeking = true;
-    // fastSeek gaat naar de dichtstbijzijnde keyframe — veel sneller dan currentTime
-    if (video.fastSeek) video.fastSeek(t);
-    else video.currentTime = t;
+  // Frames vooraf laden — getekend uit het geheugen is direct (= soepel)
+  const images = new Array(cfg.frameCount);
+  let firstDrawn = false;
+  for (let i = 0; i < cfg.frameCount; i++) {
+    const img = new Image();
+    img.src = cfg.framePath(i + 1);
+    img.onload = () => {
+      if (!firstDrawn) { firstDrawn = true; draw(0); canvas.style.opacity = "1"; }
+    };
+    images[i] = img;
   }
 
-  function draw() {
-    // Teken het huidige frame zodra de video data heeft — ook mid-seek
-    if (!video.videoWidth || video.readyState < 2) return;
+  let current = -1;
+
+  function draw(index) {
+    const img = images[index];
+    if (!img || !img.complete || !img.naturalWidth) return;
     const cw = canvas.clientWidth, ch = canvas.clientHeight;
-    const ir = video.videoWidth / video.videoHeight, cr = cw / ch;
+    const ir = img.naturalWidth / img.naturalHeight, cr = cw / ch;
     let dw, dh, dx, dy;
     if (ir > cr) { dh = ch; dw = ch * ir; dx = (cw - dw) / 2; dy = 0; }
     else         { dw = cw; dh = cw / ir; dx = 0; dy = (ch - dh) / 2; }
     ctx.fillStyle = bgFill; ctx.fillRect(0, 0, cw, ch);
-    ctx.drawImage(video, dx, dy, dw, dh);
-    if (canvas.style.opacity !== "1") canvas.style.opacity = "1";
+    ctx.drawImage(img, dx, dy, dw, dh);
   }
-
-  video.addEventListener("loadeddata", () => { doSeek(0); });
-  video.addEventListener("seeked", () => {
-    seeking = false;
-    if (pendingTime !== null) {
-      const t = pendingTime; pendingTime = null;
-      doSeek(t);
-    }
-  });
 
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -60,7 +46,7 @@ function initVideoScrub(cfg) {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = "high";
-    draw();
+    draw(current < 0 ? 0 : current);
   }
 
   function update() {
@@ -68,6 +54,9 @@ function initVideoScrub(cfg) {
     if (rect.bottom < -window.innerHeight || rect.top > window.innerHeight) return;
     const scrollable = rect.height - window.innerHeight;
     const p = Math.min(Math.max(-rect.top / scrollable, 0), 1);
+
+    const idx = Math.min(cfg.frameCount - 1, Math.round(p * (cfg.frameCount - 1)));
+    if (idx !== current) { current = idx; draw(idx); }
 
     for (const el of lines) {
       const a = parseFloat(el.dataset.in), b = parseFloat(el.dataset.out);
@@ -77,14 +66,6 @@ function initVideoScrub(cfg) {
       el.style.opacity = o.toFixed(3);
       el.style.transform = `translateY(${(-raw * 30).toFixed(1)}px)`;
     }
-
-    // Teken elke RAF het beschikbare frame — 60fps canvas ook mid-seek
-    draw();
-
-    if (!video.duration) return;
-    const t = p * video.duration;
-    if (seeking) { pendingTime = t; }
-    else if (Math.abs(t - video.currentTime) > 0.016) { doSeek(t); }
   }
 
   window.addEventListener("resize", resize);
@@ -106,7 +87,7 @@ function animateCount(el) {
 document.addEventListener("DOMContentLoaded", () => {
   const scrubs = (window.SCRUB_SECTIONS || [])
     .filter(c => document.querySelector(c.section))
-    .map(c => initVideoScrub(c));
+    .map(c => initScrub(c));
 
   const lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
   window.__lenis = lenis;

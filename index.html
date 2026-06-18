@@ -345,8 +345,10 @@
   <script src="scroll-cinematic.js"></script>
   <script>
     window.SCRUB_SECTIONS = [
-      { section:"#hero", videoSrc:"assets/clip1_skyline.mp4", bg:"#05060a" },
-      { section:"#showcase", videoSrc:"assets/clip2_ui.mp4", bg:"#000000" },
+      { section:"#hero", frameCount:90, bg:"#05060a",
+        framePath:(i)=>`frames/skyline/frame_${String(i).padStart(4,"0")}.jpg` },
+      { section:"#showcase", frameCount:90, bg:"#000000",
+        framePath:(i)=>`frames/ui/frame_${String(i).padStart(4,"0")}.jpg` },
     ];
   </script>
 </body>
