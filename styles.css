@@ -344,14 +344,6 @@ h2 { font-size: clamp(1.9rem, 4.2vw, 3.3rem); }
   margin-bottom: 18px;
 }
 .gratis-star { font-size: .9rem; }
-.hero-gratis-btn {
-  border-color: rgba(197,156,78,.4) !important;
-  color: #e8c96b !important;
-}
-.hero-gratis-btn:hover {
-  background: rgba(197,156,78,.1) !important;
-  border-color: rgba(197,156,78,.7) !important;
-}
 
 /* ── Gratis testwebsite promo section ── */
 .gratis-promo {
