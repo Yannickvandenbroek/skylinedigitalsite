@@ -5,9 +5,13 @@
 function initVideoScrub(cfg) {
   const section = document.querySelector(cfg.section);
   const canvas  = section.querySelector("canvas");
-  const ctx     = canvas.getContext("2d", { alpha: true });
+  const ctx     = canvas.getContext("2d", { alpha: false });
   const lines   = [...section.querySelectorAll(".reveal-line")];
   const bgFill  = cfg.bg || "#0a0a12";
+
+  // Canvas start onzichtbaar zodat de CSS-posterafbeelding zichtbaar is
+  canvas.style.opacity = "0";
+  canvas.style.transition = "opacity 0.4s";
 
   const video = document.createElement("video");
   video.src = cfg.videoSrc;
@@ -20,8 +24,16 @@ function initVideoScrub(cfg) {
   let seeking = false;
   let pendingTime = null;
 
+  function doSeek(t) {
+    seeking = true;
+    // fastSeek gaat naar de dichtstbijzijnde keyframe — veel sneller dan currentTime
+    if (video.fastSeek) video.fastSeek(t);
+    else video.currentTime = t;
+  }
+
   function draw() {
-    if (!video.videoWidth) return;
+    // Teken het huidige frame zodra de video data heeft — ook mid-seek
+    if (!video.videoWidth || video.readyState < 2) return;
     const cw = canvas.clientWidth, ch = canvas.clientHeight;
     const ir = video.videoWidth / video.videoHeight, cr = cw / ch;
     let dw, dh, dx, dy;
@@ -29,15 +41,15 @@ function initVideoScrub(cfg) {
     else         { dw = cw; dh = cw / ir; dx = 0; dy = (ch - dh) / 2; }
     ctx.fillStyle = bgFill; ctx.fillRect(0, 0, cw, ch);
     ctx.drawImage(video, dx, dy, dw, dh);
+    if (canvas.style.opacity !== "1") canvas.style.opacity = "1";
   }
 
-  video.addEventListener("loadeddata", () => { video.currentTime = 0; });
+  video.addEventListener("loadeddata", () => { doSeek(0); });
   video.addEventListener("seeked", () => {
-    draw();
     seeking = false;
     if (pendingTime !== null) {
       const t = pendingTime; pendingTime = null;
-      seeking = true; video.currentTime = t;
+      doSeek(t);
     }
   });
 
@@ -60,18 +72,19 @@ function initVideoScrub(cfg) {
     for (const el of lines) {
       const a = parseFloat(el.dataset.in), b = parseFloat(el.dataset.out);
       const mid = (a + b) / 2, half = (b - a) / 2;
-      // raw: -1 = voor de tekst, 0 = piek, +1 = na de tekst
       const raw = Math.max(-1, Math.min(1, (p - mid) / half));
       const o = Math.max(0, 1 - Math.abs(raw));
       el.style.opacity = o.toFixed(3);
-      // Inkomend van onder (+30px), uittredend naar boven (-30px)
       el.style.transform = `translateY(${(-raw * 30).toFixed(1)}px)`;
     }
+
+    // Teken elke RAF het beschikbare frame — 60fps canvas ook mid-seek
+    draw();
 
     if (!video.duration) return;
     const t = p * video.duration;
     if (seeking) { pendingTime = t; }
-    else if (Math.abs(t - video.currentTime) > 0.016) { seeking = true; video.currentTime = t; }
+    else if (Math.abs(t - video.currentTime) > 0.016) { doSeek(t); }
   }
 
   window.addEventListener("resize", resize);
