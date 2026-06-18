@@ -312,3 +312,108 @@ h2 { font-size: clamp(1.9rem, 4.2vw, 3.3rem); }
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; }
 }
+
+/* ── Hero gratis pill ── */
+.hero-gratis-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(197,156,78,.12);
+  border: 1px solid rgba(197,156,78,.3);
+  border-radius: 50px;
+  color: #e8c96b;
+  font-family: 'Manrope', sans-serif;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  padding: 6px 14px;
+  margin-bottom: 18px;
+}
+.gratis-star { font-size: .9rem; }
+.hero-gratis-btn {
+  border-color: rgba(197,156,78,.4) !important;
+  color: #e8c96b !important;
+}
+.hero-gratis-btn:hover {
+  background: rgba(197,156,78,.1) !important;
+  border-color: rgba(197,156,78,.7) !important;
+}
+
+/* ── Gratis testwebsite promo section ── */
+.gratis-promo {
+  background: #07080b;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gratis-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+.gratis-orb-l { width: 500px; height: 500px; background: radial-gradient(circle, rgba(197,156,78,.18), transparent 70%); left: -150px; top: 50%; transform: translateY(-50%); }
+.gratis-orb-r { width: 350px; height: 350px; background: radial-gradient(circle, rgba(120,80,220,.1), transparent 70%); right: -80px; bottom: -40px; }
+.gratis-inner {
+  max-width: 700px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.gratis-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(197,156,78,.12);
+  border: 1px solid rgba(197,156,78,.3);
+  border-radius: 50px;
+  color: #e8c96b;
+  font-family: 'Sora', sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  margin-bottom: 24px;
+}
+.gratis-inner h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.gratis-inner p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,.55);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 560px;
+  margin-inline: auto;
+}
+.gratis-checks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 20px;
+  margin-bottom: 32px;
+}
+.gratis-checks span {
+  font-family: 'Manrope', sans-serif;
+  font-size: .85rem;
+  color: rgba(255,255,255,.6);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.gratis-checks span::before { content: none; }
+.gratis-cta { font-size: 1rem; padding: 16px 36px; }
+@media (max-width: 768px) {
+  .gratis-promo { padding: 70px 24px; }
+  .gratis-checks { gap: 8px 14px; }
+}
