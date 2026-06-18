@@ -61,24 +61,86 @@
   <section class="bg-cream full" id="form">
     <div class="wrap">
       <div class="contact-grid">
-        <form class="form-card reveal reveal--left" action="mailto:yannick@skylinedigital.nl" method="post" enctype="text/plain">
-          <div class="gold-rule"></div>
-          <h2 style="margin-bottom:8px">Doe je aanvraag</h2>
-          <p style="color:var(--ink-dim);margin-bottom:26px">Vertel ons kort over je project.</p>
-          <div class="field"><label for="naam">Naam</label><input id="naam" name="naam" type="text" placeholder="Je naam" required /></div>
-          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" placeholder="jij@bedrijf.nl" required /></div>
-          <div class="field"><label for="dienst">Waar kunnen we mee helpen?</label>
-            <select id="dienst" name="dienst">
-              <option>Website &amp; SEO</option>
-              <option>Drone &amp; Video</option>
-              <option>Social Media</option>
-              <option>AI Content</option>
-              <option>Meerdere diensten</option>
-            </select>
+        <!-- Mini contact wizard -->
+        <div class="cw-card reveal reveal--left">
+
+          <!-- Progress dots -->
+          <div class="cw-progress">
+            <div class="cw-dot active" id="cw-dot-1"><span>1</span><small>Dienst</small></div>
+            <div class="cw-track"><div class="cw-fill" id="cw-fill-1"></div></div>
+            <div class="cw-dot" id="cw-dot-2"><span>2</span><small>Project</small></div>
+            <div class="cw-track"><div class="cw-fill" id="cw-fill-2"></div></div>
+            <div class="cw-dot" id="cw-dot-3"><span>3</span><small>Gegevens</small></div>
           </div>
-          <div class="field"><label for="bericht">Bericht</label><textarea id="bericht" name="bericht" placeholder="Vertel ons over je project, doelen en planning..."></textarea></div>
-          <button type="submit" class="btn btn-gold" style="width:100%">Verstuur aanvraag</button>
-        </form>
+
+          <!-- Stap 1: dienst chips -->
+          <div class="cw-panel active" id="cw-1">
+            <h3 class="cw-title">Waarmee kunnen we <span class="gold-text">helpen?</span></h3>
+            <p class="cw-sub">Meerdere keuzes mogelijk.</p>
+            <div class="cw-chips">
+              <label class="cwchip cwchip--star"><input type="checkbox" value="Gratis testwebsite" /><span>★ Gratis testwebsite</span></label>
+              <label class="cwchip"><input type="checkbox" value="Website &amp; SEO" /><span>Website &amp; SEO</span></label>
+              <label class="cwchip"><input type="checkbox" value="3D Cinematic website" /><span>3D Cinematic</span></label>
+              <label class="cwchip"><input type="checkbox" value="Drone &amp; Video" /><span>Drone &amp; Video</span></label>
+              <label class="cwchip"><input type="checkbox" value="Social Media" /><span>Social Media</span></label>
+              <label class="cwchip"><input type="checkbox" value="AI Content" /><span>AI Content</span></label>
+            </div>
+            <p class="cw-err" id="cw-err-1" hidden>Selecteer minimaal één dienst.</p>
+            <div class="cw-actions cw-actions--end">
+              <button class="btn btn-gold cw-next-btn" id="cw-btn-1">Volgende <span class="cw-arrow">→</span></button>
+            </div>
+          </div>
+
+          <!-- Stap 2: project -->
+          <div class="cw-panel" id="cw-2">
+            <h3 class="cw-title">Vertel over je <span class="gold-text">project</span></h3>
+            <div class="cw-fields" id="cw-fields-2"></div>
+            <p class="cw-err" id="cw-err-2" hidden>Vul de projectomschrijving in.</p>
+            <div class="cw-actions">
+              <button class="cw-back-btn" id="cw-back-2">← Terug</button>
+              <button class="btn btn-gold cw-next-btn" id="cw-btn-2">Volgende <span class="cw-arrow">→</span></button>
+            </div>
+          </div>
+
+          <!-- Stap 3: gegevens -->
+          <div class="cw-panel" id="cw-3">
+            <h3 class="cw-title">Jouw <span class="gold-text">gegevens</span></h3>
+            <form id="cw-form" action="https://formspree.io/f/mdavvjrr" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="Nieuwe aanvraag via contactpagina skylinedigital.nl" />
+              <input type="hidden" id="cw-f-dienst" name="Geselecteerde diensten" />
+              <input type="hidden" id="cw-f-details" name="Projectdetails" />
+              <div class="cw-fields">
+                <div class="cw-row">
+                  <div class="field"><label for="cw-voornaam">Voornaam <span class="req">*</span></label><input id="cw-voornaam" name="Voornaam" type="text" placeholder="Jan" required /></div>
+                  <div class="field"><label for="cw-achternaam">Achternaam <span class="req">*</span></label><input id="cw-achternaam" name="Achternaam" type="text" placeholder="Janssen" required /></div>
+                </div>
+                <div class="field"><label for="cw-email">E-mail <span class="req">*</span></label><input id="cw-email" name="E-mail" type="email" placeholder="jij@bedrijf.nl" required /></div>
+                <div class="field"><label for="cw-tel">Telefoon <span class="req">*</span></label><input id="cw-tel" name="Telefoon" type="tel" placeholder="06 12 34 56 78" required /></div>
+                <div class="field"><label for="cw-bedrijf">Bedrijf</label><input id="cw-bedrijf" name="Bedrijf" type="text" placeholder="Jouw bedrijf BV" /></div>
+              </div>
+              <p class="cw-err" id="cw-err-3" hidden>Vul alle verplichte velden in.</p>
+              <div class="cw-actions">
+                <button type="button" class="cw-back-btn" id="cw-back-3">← Terug</button>
+                <button type="submit" class="btn btn-gold" id="cw-submit">
+                  <span id="cw-submit-label">Versturen</span>
+                  <span id="cw-submit-spin" hidden>Even geduld…</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Stap 4: bedankt -->
+          <div class="cw-panel" id="cw-4">
+            <div class="cw-thanks">
+              <div class="cw-check-ring">
+                <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="25" class="cw-circle"/><path d="M14 26l8 8 16-16" class="cw-checkmark"/></svg>
+              </div>
+              <h3 class="gold-text">Aanvraag ontvangen!</h3>
+              <p>Super. We nemen binnen één werkdag persoonlijk contact op.</p>
+            </div>
+          </div>
+
+        </div><!-- /cw-card -->
 
         <div class="contact-info reveal reveal--right">
           <div class="cinfo-item"><div class="cinfo-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><h4>E-mail</h4><a href="mailto:yannick@skylinedigital.nl">yannick@skylinedigital.nl</a></div></div>
@@ -210,5 +272,309 @@
 
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="scroll-cinematic.js"></script>
+
+  <style>
+  /* ── Mini contact wizard ── */
+  .cw-card {
+    background: #0e0f16;
+    border-radius: 20px;
+    padding: 32px 30px 30px;
+    box-shadow: 0 12px 48px rgba(0,0,0,.22);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Progress */
+  .cw-progress {
+    display: flex; align-items: center; gap: 0;
+    margin-bottom: 28px;
+  }
+  .cw-dot {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+  }
+  .cw-dot span {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,.12);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Sora', sans-serif; font-size: .78rem; font-weight: 700;
+    color: rgba(255,255,255,.3);
+    background: rgba(255,255,255,.03);
+    transition: all .35s ease;
+  }
+  .cw-dot small {
+    font-size: .6rem; color: rgba(255,255,255,.25);
+    font-family: 'Manrope', sans-serif; letter-spacing: .05em;
+    text-transform: uppercase; transition: color .35s;
+  }
+  .cw-dot.active span { background: var(--gold-deep,#c59c4e); border-color: var(--gold-deep,#c59c4e); color: #000; box-shadow: 0 0 14px rgba(197,156,78,.35); }
+  .cw-dot.active small { color: var(--gold-deep,#c59c4e); }
+  .cw-dot.done span { background: rgba(197,156,78,.12); border-color: var(--gold-deep,#c59c4e); font-size: 0; }
+  .cw-dot.done span::before { content: '✓'; font-size: .78rem; color: var(--gold-deep,#c59c4e); }
+  .cw-track {
+    flex: 1; height: 1.5px; background: rgba(255,255,255,.07);
+    margin: 0 6px; border-radius: 2px; overflow: hidden; position: relative;
+    min-width: 24px;
+  }
+  .cw-fill {
+    position: absolute; top: 0; left: 0; height: 100%; width: 0%;
+    background: var(--gold-deep,#c59c4e);
+    transition: width .5s ease;
+    border-radius: 2px;
+  }
+
+  /* Panels */
+  .cw-panel { display: none; animation: cwIn .3s ease; }
+  .cw-panel.active { display: block; }
+  @keyframes cwIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .cw-title {
+    font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700;
+    color: #fff; margin: 0 0 4px;
+  }
+  .cw-sub {
+    font-family: 'Manrope', sans-serif; font-size: .82rem;
+    color: rgba(255,255,255,.38); margin: 0 0 18px;
+  }
+
+  /* Service chips */
+  .cw-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .cwchip { cursor: pointer; }
+  .cwchip input { display: none; }
+  .cwchip span {
+    display: block; padding: 7px 14px; border-radius: 50px;
+    border: 1.5px solid rgba(255,255,255,.12);
+    font-family: 'Manrope', sans-serif; font-size: .8rem; font-weight: 600;
+    color: rgba(255,255,255,.5);
+    transition: all .2s;
+    user-select: none;
+  }
+  .cwchip:hover span { border-color: rgba(255,255,255,.3); color: rgba(255,255,255,.8); }
+  .cwchip input:checked + span {
+    border-color: var(--gold-deep,#c59c4e);
+    background: rgba(197,156,78,.1);
+    color: #e8c96b;
+  }
+  .cwchip--star span {
+    border-color: rgba(197,156,78,.28);
+    color: #e8c96b;
+    background: rgba(197,156,78,.06);
+  }
+  .cwchip--star input:checked + span { background: rgba(197,156,78,.18); }
+
+  /* Fields */
+  .cw-fields { margin-bottom: 4px; }
+  .cw-fields .field { margin-bottom: 14px; }
+  .cw-fields label {
+    display: block; font-family: 'Manrope', sans-serif;
+    font-size: .73rem; font-weight: 600; color: rgba(255,255,255,.45);
+    margin-bottom: 5px; letter-spacing: .04em; text-transform: uppercase;
+  }
+  .cw-fields input, .cw-fields select, .cw-fields textarea {
+    width: 100%; background: rgba(255,255,255,.05);
+    border: 1.5px solid rgba(255,255,255,.09); border-radius: 9px;
+    color: #fff; font-family: 'Manrope', sans-serif; font-size: .88rem;
+    padding: 10px 13px; outline: none; box-sizing: border-box;
+    transition: border-color .2s;
+  }
+  .cw-fields input:focus, .cw-fields select:focus, .cw-fields textarea:focus { border-color: var(--gold-deep,#c59c4e); }
+  .cw-fields input::placeholder, .cw-fields textarea::placeholder { color: rgba(255,255,255,.2); }
+  .cw-fields textarea { resize: vertical; min-height: 80px; }
+  .cw-fields select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.35)' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; padding-right: 36px; }
+  .cw-fields select option { background: #12131a; }
+  .cw-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 480px) { .cw-row { grid-template-columns: 1fr; } }
+  .req { color: var(--gold-deep,#c59c4e); }
+
+  /* Actions */
+  .cw-actions { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; }
+  .cw-actions--end { justify-content: flex-end; }
+  .cw-next-btn { font-size: .88rem; padding: 10px 22px; }
+  .cw-arrow { display: inline-block; transition: transform .2s; }
+  .cw-next-btn:hover .cw-arrow { transform: translateX(3px); }
+  .cw-back-btn {
+    background: none; border: 1.5px solid rgba(255,255,255,.12);
+    color: rgba(255,255,255,.45); border-radius: 50px; padding: 9px 18px;
+    font-family: 'Sora', sans-serif; font-size: .82rem; font-weight: 600;
+    cursor: pointer; transition: border-color .2s, color .2s;
+  }
+  .cw-back-btn:hover { border-color: rgba(255,255,255,.3); color: #fff; }
+  #cw-submit { font-size: .88rem; padding: 10px 22px; }
+
+  /* Error */
+  .cw-err {
+    color: #ff6b6b; font-family: 'Manrope', sans-serif; font-size: .8rem;
+    margin: 0 0 10px; padding: 8px 12px;
+    background: rgba(255,107,107,.07); border-radius: 7px;
+    border-left: 2.5px solid #ff6b6b;
+  }
+
+  /* Thank you */
+  .cw-thanks { text-align: center; padding: 20px 0 10px; }
+  .cw-check-ring { width: 60px; height: 60px; margin: 0 auto 18px; }
+  .cw-check-ring svg { width: 60px; height: 60px; }
+  .cw-circle {
+    fill: none; stroke: var(--gold-deep,#c59c4e); stroke-width: 2;
+    stroke-dasharray: 166; stroke-dashoffset: 166;
+    animation: cwCircle .6s ease forwards;
+  }
+  .cw-checkmark {
+    fill: none; stroke: var(--gold-deep,#c59c4e); stroke-width: 2.5;
+    stroke-linecap: round; stroke-dasharray: 48; stroke-dashoffset: 48;
+    animation: cwCheck .4s ease .5s forwards;
+  }
+  @keyframes cwCircle { to { stroke-dashoffset: 0; } }
+  @keyframes cwCheck  { to { stroke-dashoffset: 0; } }
+  .cw-thanks h3 { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 800; margin: 0 0 8px; }
+  .cw-thanks p  { font-family: 'Manrope', sans-serif; font-size: .88rem; color: rgba(255,255,255,.45); margin: 0; }
+  </style>
+
+  <script>
+  (function () {
+    let step = 1;
+    const panels = [null,'#cw-1','#cw-2','#cw-3','#cw-4'].map(s => s ? document.querySelector(s) : null);
+    const dots   = [null, document.getElementById('cw-dot-1'), document.getElementById('cw-dot-2'), document.getElementById('cw-dot-3')];
+    const fills  = [null, document.getElementById('cw-fill-1'), document.getElementById('cw-fill-2')];
+
+    function showStep(n) {
+      panels.forEach((p, i) => { if (p) p.classList.toggle('active', i === n); });
+      dots.forEach((d, i) => {
+        if (!d) return;
+        d.classList.toggle('active', i === n);
+        d.classList.toggle('done', i < n);
+      });
+      if (fills[1]) fills[1].style.width = n > 1 ? '100%' : '0%';
+      if (fills[2]) fills[2].style.width = n > 2 ? '100%' : '0%';
+      step = n;
+    }
+
+    // Stap 1 → 2
+    document.getElementById('cw-btn-1').addEventListener('click', () => {
+      const sel = [...document.querySelectorAll('.cw-chips input:checked')];
+      if (!sel.length) { document.getElementById('cw-err-1').hidden = false; return; }
+      document.getElementById('cw-err-1').hidden = true;
+      buildStep2(sel.map(s => s.value));
+      showStep(2);
+    });
+
+    function buildStep2(services) {
+      const wrap = document.getElementById('cw-fields-2');
+      const hasGratis = services.some(s => s === 'Gratis testwebsite');
+      const hasDrone  = services.some(s => s === 'Drone & Video');
+      let html = '';
+
+      if (hasGratis) {
+        html += `
+          <div class="field">
+            <label>Wat doet je bedrijf? <span class="req">*</span></label>
+            <input type="text" id="cw2-bedrijf" placeholder="Bijv. restaurant, bouwbedrijf…" />
+          </div>
+          <div class="field">
+            <label>Welke stijl spreekt je aan?</label>
+            <select id="cw2-stijl">
+              <option>Strak &amp; minimalistisch</option>
+              <option>Luxe &amp; premium</option>
+              <option>Speels &amp; kleurrijk</option>
+              <option>Zakelijk &amp; professioneel</option>
+              <option>Weet ik nog niet</option>
+            </select>
+          </div>`;
+      }
+
+      if (hasDrone) {
+        html += `
+          <div class="field">
+            <label>Locatie van de opname</label>
+            <input type="text" id="cw2-locatie" placeholder="Bijv. Utrecht — bedrijfspand" />
+          </div>
+          <div class="field">
+            <label>Type opname</label>
+            <select id="cw2-opname">
+              <option>Bedrijfsfilm</option>
+              <option>Dronebeelden</option>
+              <option>Productvideo</option>
+              <option>Event / aftermovie</option>
+              <option>Vastgoed &amp; toerisme</option>
+            </select>
+          </div>`;
+      }
+
+      html += `
+        <div class="field">
+          <label>Beschrijf je project <span class="req">*</span></label>
+          <textarea id="cw2-beschrijving" placeholder="Wat wil je bereiken? Doelgroep, deadline, wensen…"></textarea>
+        </div>
+        <div class="field">
+          <label>Wanneer wil je starten?</label>
+          <select id="cw2-start">
+            <option>Zo snel mogelijk</option>
+            <option>Binnen 1 maand</option>
+            <option>Binnen 3 maanden</option>
+            <option>Oriënterend</option>
+          </select>
+        </div>`;
+
+      wrap.innerHTML = html;
+    }
+
+    // Stap 2 → 3
+    document.getElementById('cw-btn-2').addEventListener('click', () => {
+      const desc = document.getElementById('cw2-beschrijving');
+      if (!desc || !desc.value.trim()) { document.getElementById('cw-err-2').hidden = false; return; }
+      document.getElementById('cw-err-2').hidden = true;
+
+      const services = [...document.querySelectorAll('.cw-chips input:checked')].map(s => s.value).join(', ');
+      document.getElementById('cw-f-dienst').value = services;
+
+      const parts = [];
+      ['cw2-bedrijf','cw2-stijl','cw2-locatie','cw2-opname','cw2-beschrijving','cw2-start'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.value.trim()) parts.push((el.labels?.[0]?.textContent?.replace(' *','').trim() || id) + ': ' + el.value.trim());
+      });
+      document.getElementById('cw-f-details').value = parts.join(' | ');
+
+      showStep(3);
+    });
+
+    // Terug
+    document.getElementById('cw-back-2').addEventListener('click', () => showStep(1));
+    document.getElementById('cw-back-3').addEventListener('click', () => showStep(2));
+
+    // Submit
+    document.getElementById('cw-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fn = document.getElementById('cw-voornaam').value.trim();
+      const an = document.getElementById('cw-achternaam').value.trim();
+      const em = document.getElementById('cw-email').value.trim();
+      const te = document.getElementById('cw-tel').value.trim();
+      const err = document.getElementById('cw-err-3');
+
+      if (!fn || !an || !em || !te || !/\S+@\S+\.\S+/.test(em)) { err.hidden = false; return; }
+      err.hidden = true;
+
+      const lbl = document.getElementById('cw-submit-label');
+      const spn = document.getElementById('cw-submit-spin');
+      const btn = document.getElementById('cw-submit');
+      lbl.hidden = true; spn.hidden = false; btn.disabled = true;
+
+      try {
+        const res = await fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { Accept: 'application/json' } });
+        if (res.ok) {
+          showStep(4);
+          document.querySelector('.cw-progress').style.display = 'none';
+        } else { throw new Error(); }
+      } catch {
+        lbl.hidden = false; spn.hidden = true; btn.disabled = false;
+        err.textContent = 'Er ging iets mis. Probeer opnieuw of mail yannick@skylinedigital.nl';
+        err.hidden = false;
+      }
+    });
+
+    // Chip toggle visual
+    document.querySelectorAll('.cwchip input').forEach(inp => {
+      inp.addEventListener('change', () => inp.closest('.cwchip').classList.toggle('checked', inp.checked));
+    });
+
+  })();
+  </script>
 </body>
 </html>
