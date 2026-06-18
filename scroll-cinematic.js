@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target.classList.contains("stat-num")) animateCount(e.target);
       io.unobserve(e.target);
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0, rootMargin: "0px 0px -8% 0px" });
   document.querySelectorAll(".reveal, .stat-num").forEach((el) => io.observe(el));
 
   const nav = document.getElementById("nav");
@@ -153,5 +153,64 @@ document.addEventListener("DOMContentLoaded", () => {
     track.appendChild(group()); track.appendChild(group());
     m.appendChild(track);
     firstSection.insertAdjacentElement("afterend", m);
+  }
+
+  // Top scroll-progress bar
+  const bar = document.createElement("div"); bar.id = "scroll-bar"; document.body.appendChild(bar);
+  function updBar() {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0).toFixed(2) + "%";
+  }
+  lenis.on("scroll", updBar); updBar();
+
+  const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  // Gold glow that follows the cursor (desktop only)
+  if (fine) {
+    const glow = document.createElement("div"); glow.id = "cursor-glow"; document.body.appendChild(glow);
+    let gx = window.innerWidth / 2, gy = window.innerHeight / 2, tx = gx, ty = gy, started = false;
+    window.addEventListener("mousemove", e => {
+      tx = e.clientX; ty = e.clientY;
+      if (!started) { started = true; glow.classList.add("on"); }
+    });
+    (function follow() {
+      gx += (tx - gx) * 0.12; gy += (ty - gy) * 0.12;
+      glow.style.transform = `translate3d(${gx.toFixed(1)}px, ${gy.toFixed(1)}px, 0)`;
+      requestAnimationFrame(follow);
+    })();
+  }
+
+  // 3D tilt on cards & images (desktop only)
+  if (fine) {
+    document.querySelectorAll(".fcard, .price, .gitem, .quote").forEach(card => {
+      card.addEventListener("mousemove", e => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(900px) rotateY(${(px * 6).toFixed(2)}deg) rotateX(${(-py * 6).toFixed(2)}deg) translateY(-6px)`;
+      });
+      card.addEventListener("mouseleave", () => { card.style.transform = ""; });
+    });
+  }
+
+  // Mobile nav toggle (hamburger)
+  const navToggle = document.getElementById("nav-toggle");
+  const navLinksEl = document.getElementById("nav-links");
+  if (navToggle && navLinksEl && nav) {
+    const closeMenu = () => {
+      navLinksEl.classList.remove("open"); navToggle.classList.remove("open");
+      nav.classList.remove("menu-open"); navToggle.setAttribute("aria-expanded", "false");
+    };
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = navLinksEl.classList.toggle("open");
+      navToggle.classList.toggle("open", open);
+      nav.classList.toggle("menu-open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    navLinksEl.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+    document.addEventListener("click", (e) => {
+      if (navLinksEl.classList.contains("open") && !navLinksEl.contains(e.target) && !navToggle.contains(e.target)) closeMenu();
+    });
   }
 });
