@@ -273,15 +273,29 @@ h2 { font-size: clamp(1.9rem, 4.2vw, 3.3rem); }
 .cta-orb { width: 460px; height: 460px; left: 50%; top: -180px; transform: translateX(-50%); opacity: 0.7; }
 
 /* ---------- FOOTER ---------- */
-.footer { background: var(--dark); color: var(--on-dark); }
-.footer-top { max-width: var(--maxw); margin: 0 auto; padding: 80px 44px 50px; display: grid; grid-template-columns: 1.3fr 2fr; gap: 60px; }
-.footer-logo { height: 42px; width: auto; margin-bottom: 18px; }
-.footer-brand p { color: var(--on-dark-dim); font-size: 0.94rem; }
-.footer-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.footer-col h4 { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-.footer-col a { display: block; color: var(--on-dark-dim); text-decoration: none; font-size: 0.93rem; margin-bottom: 10px; transition: color .25s; }
+.footer { background: #07080b; color: var(--on-dark); border-top: 1px solid rgba(255,255,255,.06); }
+.footer-main { max-width: var(--maxw); margin: 0 auto; padding: 80px 44px 50px; display: grid; grid-template-columns: 280px 1fr; gap: 80px; }
+.footer-brand-col { display: flex; flex-direction: column; gap: 0; }
+.footer-logo { height: 40px; width: auto; margin-bottom: 16px; }
+.footer-tagline { color: rgba(244,241,233,.45); font-size: .88rem; line-height: 1.6; margin-bottom: 22px; }
+.footer-social { display: flex; gap: 10px; margin-bottom: 28px; }
+.fsoc { width: 36px; height: 36px; border-radius: 8px; border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.4); transition: border-color .2s, color .2s, background .2s; }
+.fsoc:hover { border-color: var(--gold); color: var(--gold); background: rgba(197,156,78,.08); }
+.fsoc svg { width: 16px; height: 16px; }
+.footer-info-col { display: flex; flex-direction: column; gap: 6px; }
+.footer-info-col a, .footer-info-col span { font-size: .85rem; color: rgba(244,241,233,.45); text-decoration: none; transition: color .2s; }
+.footer-info-col a:hover { color: var(--gold-hi); }
+.footer-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-content: start; }
+.footer-col h4 { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; font-family: 'Sora', sans-serif; }
+.footer-col a, .footer-col span { display: block; color: rgba(244,241,233,.5); text-decoration: none; font-size: .88rem; margin-bottom: 10px; transition: color .25s; line-height: 1.4; }
 .footer-col a:hover { color: var(--gold-hi); }
-.footer-bottom { max-width: var(--maxw); margin: 0 auto; padding: 26px 44px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(244,241,233,0.45); font-size: 0.85rem; }
+.footer-gratis { color: var(--gold) !important; font-weight: 600; }
+.footer-gratis:hover { color: var(--gold-hi) !important; }
+.footer-bottom { max-width: var(--maxw); margin: 0 auto; padding: 22px 44px; border-top: 1px solid rgba(255,255,255,.07); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.footer-bottom span { color: rgba(244,241,233,.35); font-size: .82rem; }
+.footer-legal-links { display: flex; gap: 20px; }
+.footer-legal-links a { color: rgba(244,241,233,.35); font-size: .82rem; text-decoration: none; transition: color .2s; }
+.footer-legal-links a:hover { color: var(--gold-hi); }
 
 /* ---------- REVEAL ANIMATIONS ---------- */
 .reveal { opacity: 0; transform: translateY(38px); transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1); }
@@ -301,7 +315,7 @@ h2 { font-size: clamp(1.9rem, 4.2vw, 3.3rem); }
   .over-grid { grid-template-columns: 1fr; gap: 44px; }
   .svc-grid, .werkwijze .steps, .work-grid, .quote-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); gap: 34px 24px; }
-  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .footer-main { grid-template-columns: 1fr; gap: 40px; }
   .footer-nav { grid-template-columns: repeat(2, 1fr); }
   .section, .section-dark .inner { padding: 90px 24px; }
   .overlay-left { padding: 0 24px; }
