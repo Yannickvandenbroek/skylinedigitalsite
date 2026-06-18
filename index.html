@@ -212,7 +212,7 @@
 
   <!-- ====== 5. SHOWCASE — cinematic scroll (option F: floating UI) ====== -->
   <section class="cinematic cinematic-2" id="showcase">
-    <div class="sticky">
+    <div class="sticky" style="background-image:url(assets/keyframe_F_ui.jpg);background-size:cover;background-position:center;">
       <canvas class="frame-canvas"></canvas>
       <div class="vignette"></div>
       <div class="overlay overlay-left">
@@ -346,8 +346,7 @@
   <script>
     window.SCRUB_SECTIONS = [
       { section:"#hero", videoSrc:"assets/clip1_skyline.mp4", bg:"#05060a" },
-      { section:"#showcase", frameCount:180, bg:"#000000",
-        framePath:(i)=>`frames/ui/frame_${String(i).padStart(4,"0")}.jpg` },
+      { section:"#showcase", videoSrc:"assets/clip2_ui.mp4", bg:"#000000" },
     ];
   </script>
 </body>
