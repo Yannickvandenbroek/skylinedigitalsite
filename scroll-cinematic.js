@@ -2,6 +2,82 @@
    PRISM — scroll engine
    Multiple canvas frame-sequence scrub sections + scroll reveals + counters
    ============================================================ */
+
+/* Video-based scrub — uses source MP4 directly for full native quality */
+function initVideoScrub(cfg) {
+  const section = document.querySelector(cfg.section);
+  const canvas  = section.querySelector("canvas");
+  const ctx     = canvas.getContext("2d", { alpha: true });
+  const lines   = [...section.querySelectorAll(".reveal-line")];
+  const bgFill  = cfg.bg || "#0a0a12";
+
+  const video = document.createElement("video");
+  video.src = cfg.videoSrc;
+  video.muted = true;
+  video.playsInline = true;
+  video.preload = "auto";
+  video.style.cssText = "position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;";
+  section.appendChild(video);
+
+  let seeking = false;
+  let pendingTime = null;
+
+  function draw() {
+    if (!video.videoWidth) return;
+    const cw = canvas.clientWidth, ch = canvas.clientHeight;
+    const ir = video.videoWidth / video.videoHeight, cr = cw / ch;
+    let dw, dh, dx, dy;
+    if (ir > cr) { dh = ch; dw = ch * ir; dx = (cw - dw) / 2; dy = 0; }
+    else         { dw = cw; dh = cw / ir; dx = 0; dy = (ch - dh) / 2; }
+    ctx.fillStyle = bgFill; ctx.fillRect(0, 0, cw, ch);
+    ctx.drawImage(video, dx, dy, dw, dh);
+  }
+
+  video.addEventListener("loadeddata", () => { video.currentTime = 0; });
+  video.addEventListener("seeked", () => {
+    draw();
+    seeking = false;
+    if (pendingTime !== null) {
+      const t = pendingTime; pendingTime = null;
+      seeking = true; video.currentTime = t;
+    }
+  });
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width  = canvas.clientWidth  * dpr;
+    canvas.height = canvas.clientHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+    draw();
+  }
+
+  function update() {
+    const rect = section.getBoundingClientRect();
+    if (rect.bottom < -window.innerHeight || rect.top > window.innerHeight) return;
+    const scrollable = rect.height - window.innerHeight;
+    const p = Math.min(Math.max(-rect.top / scrollable, 0), 1);
+    for (const el of lines) {
+      const a = parseFloat(el.dataset.in), b = parseFloat(el.dataset.out);
+      const mid = (a + b) / 2, half = (b - a) / 2;
+      let o = 1 - Math.abs(p - mid) / half;
+      o = Math.max(0, Math.min(1, o));
+      el.style.opacity = o.toFixed(3);
+      el.style.transform = `translateY(${(1 - o) * 30}px)`;
+    }
+    if (!video.duration) return;
+    const t = p * video.duration;
+    if (seeking) { pendingTime = t; }
+    else if (Math.abs(t - video.currentTime) > 0.016) { seeking = true; video.currentTime = t; }
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+  return { update, resize };
+}
+
+/* Frame-sequence scrub — JPEG frames for sections without a source video */
 function initScrub(cfg) {
   const section = document.querySelector(cfg.section);
   const canvas  = section.querySelector("canvas");
@@ -33,6 +109,8 @@ function initScrub(cfg) {
     canvas.width  = canvas.clientWidth  * dpr;
     canvas.height = canvas.clientHeight * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
     draw(current < 0 ? 0 : current);
   }
   function update() {
@@ -70,7 +148,7 @@ function animateCount(el) {
 document.addEventListener("DOMContentLoaded", () => {
   const scrubs = (window.SCRUB_SECTIONS || [])
     .filter(c => document.querySelector(c.section))
-    .map(initScrub);
+    .map(c => c.videoSrc ? initVideoScrub(c) : initScrub(c));
 
   const lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
   window.__lenis = lenis;
