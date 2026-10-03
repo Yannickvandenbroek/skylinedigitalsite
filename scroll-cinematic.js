@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Keyword marquee
   const firstSection = document.querySelector("section");
-  if (firstSection && !document.querySelector(".marquee")) {
+  if (firstSection && !document.querySelector(".marquee") && !("noMarquee" in document.body.dataset)) {
     const words = ["Webdesign", "SEO", "Drone", "Video", "Social Media", "AI Content", "Branding", "Strategie", "Fotografie", "Montage"];
     const m = document.createElement("div"); m.className = "marquee";
     const track = document.createElement("div"); track.className = "marquee-track";
