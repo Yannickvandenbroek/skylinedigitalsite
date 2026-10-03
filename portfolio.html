@@ -191,7 +191,7 @@
       transform:translateX(-50%) scale(var(--pk,1));transform-origin:50% 0}
     .pv-ring{position:absolute;inset:0;perspective:1200px;perspective-origin:586px 480px;
       transform-style:preserve-3d;pointer-events:none}
-    .pv-card{position:absolute;left:586px;top:190px;width:300px;height:169px;margin:-84px 0 0 -150px;
+    .pv-card{display:block;text-decoration:none;position:absolute;left:586px;top:190px;width:300px;height:169px;margin:-84px 0 0 -150px;
       border:0;padding:0;border-radius:12px;overflow:hidden;background:#0d1117;color:#fff;font:inherit;
       cursor:pointer;pointer-events:auto;box-shadow:0 24px 46px rgba(0,0,0,.6),0 3px 8px rgba(0,0,0,.5);
       backface-visibility:hidden;will-change:transform}
@@ -212,17 +212,6 @@
     .pv-card.broken video{display:none}
     .pv-card.broken{background:linear-gradient(155deg,#2b2a22,#131a28 60%,#1d1526)}
 
-    .pv-lb{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:24px;
-      background:rgba(4,5,8,.93);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-    .pv-lb.open{display:grid}
-    .pv-lb-inner{width:min(1100px,100%)}
-    .pv-lb video{display:block;width:100%;max-height:78vh;border-radius:14px;background:#000;
-      box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08)}
-    .pv-lb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
-    .pv-lb-title{font-family:"Sora",sans-serif;font-weight:600;font-size:1rem;color:#fff;letter-spacing:.02em}
-    .pv-lb-close{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);
-      background:transparent;color:#fff;font-size:22px;line-height:1;cursor:pointer;flex:0 0 auto}
-    .pv-lb-close:hover,.pv-lb-close:focus-visible{border-color:#e6c463;color:#f7e3a1;outline:none}
     @media (max-width:700px){
       .pv{padding:76px 0 64px}
       .pv-view{margin-top:22px}
@@ -296,15 +285,6 @@
     </div>
   </section>
 
-  <div class="pv-lb" id="pvLb" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="pvLbTitle">
-    <div class="pv-lb-inner">
-      <div class="pv-lb-bar">
-        <span class="pv-lb-title" id="pvLbTitle"></span>
-        <button type="button" class="pv-lb-close" id="pvLbClose" aria-label="Sluiten">&times;</button>
-      </div>
-      <video id="pvLbVideo" controls playsinline loop></video>
-    </div>
-  </div>
 
 
   <!-- RESULTATEN -->
@@ -410,6 +390,7 @@
 
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="scroll-cinematic.js"></script>
+  <script src="films.js"></script>
   <script>
   (function(){
     const stage  = document.getElementById('hero');
@@ -473,7 +454,7 @@
           el.style.filter = 'brightness(' + (0.84 + 0.5 * (1 / c - 1)).toFixed(3) + ')';
         }
       };
-      st.step = dt => { if (!reduce.matches && !st.hover && !st.paused) st.phase += o.speed * dt; };   // continu, nooit resetten
+      st.step = dt => { if (!reduce.matches && !st.hover) st.phase += o.speed * dt; };   // continu, nooit resetten
       st.cards = cards; st.onScreen = true;
       // buiten beeld: video's pauzeren en de ring niet verder draaien
       new IntersectionObserver(es => {
@@ -512,52 +493,20 @@
     });
 
     /* Video-ring: liggende kaarten met gedempte loops; draait de andere kant op.
-       Een klik opent de film groot in de lightbox. */
-    const lb = document.getElementById('pvLb'), lbVideo = document.getElementById('pvLbVideo'), lbTitle = document.getElementById('pvLbTitle');
-    let lbOpener = null;
-    function openLb(d, opener){
-      lbOpener = opener; lbTitle.textContent = d.t;
-      lbVideo.poster = d.poster; lbVideo.src = d.src;
-      lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
-      if (window.__lenis) window.__lenis.stop();
-      videoRing.paused = true;
-      lbVideo.play().catch(() => {});
-      document.getElementById('pvLbClose').focus();
-    }
-    function closeLb(){
-      if (!lb.classList.contains('open')) return;
-      lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
-      lbVideo.pause(); lbVideo.removeAttribute('src'); lbVideo.load();
-      if (window.__lenis) window.__lenis.start();
-      videoRing.paused = false;
-      if (lbOpener) lbOpener.focus();
-    }
-    lb.addEventListener('click', e => { if (e.target === lb || e.target.closest('#pvLbClose')) closeLb(); });
-    addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
-
+       Een klik opent de losse videopagina van die film. */
     const V = 'assets/video/';
-    const videoRing = makeRing(document.getElementById('pvRing'), {
+    makeRing(document.getElementById('pvRing'), {
       n: 24, R: 1200, speed: 1.6,
-      shots: [
-        { f: 'modern-villa-moraira',  t: 'Modern Villa Moraira' },
-        { f: 'casa-pilar-javea',      t: 'Casa Pilar · Jávea' },
-        { f: 'villa-in-moraira',      t: 'Villa in Moraira' },
-        { f: 'villa-maillard',        t: 'Villa Maillard' },
-        { f: 'luxe-villa-moraira',    t: 'Luxe villa · Moraira' },
-        { f: 'vakantiewoning-javea',  t: 'Vakantiewoning Jávea' },
-        { f: 'villa-zwembad-moraira', t: 'Villa met zwembad · Moraira' },
-        { f: 'woning-rosmalen',       t: 'Woning · Rosmalen' },
-      ].map(d => ({ t: d.t, src: V + d.f + '.mp4', poster: V + d.f + '.jpg' })),
+      shots: (window.SKYLINE_FILMS || []).map(d => ({ t: d.t, href: 'video?v=' + d.slug, src: V + d.slug + '.mp4', poster: V + d.slug + '.jpg' })),
       build(d){
-        const el = document.createElement('button');
-        el.type = 'button'; el.className = 'pv-card'; el.setAttribute('aria-label', 'Speel video af: ' + d.t);
+        const el = document.createElement('a');
+        el.href = d.href; el.className = 'pv-card'; el.setAttribute('aria-label', 'Bekijk video: ' + d.t);
         const v = document.createElement('video');
         v.src = d.src; v.poster = d.poster; v.muted = true; v.loop = true; v.playsInline = true;
         v.preload = 'none'; v.setAttribute('aria-hidden', 'true'); v.tabIndex = -1;
         el._video = v;
         cardParts(el, v, d.t);
         const play = document.createElement('span'); play.className = 'play'; el.appendChild(play);
-        el.addEventListener('click', () => openLb(d, el));
         return el;
       }
     });
