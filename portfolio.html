@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Portfolio — Skyline Digital</title>
   <meta name="description" content="Een greep uit ons werk: websites, video, drone en content voor merken die groeien." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,11 +19,194 @@
   <meta property="og:title" content="Portfolio — Skyline Digital" />
   <meta property="og:description" content="Een greep uit ons werk: websites, video, drone en content voor merken die groeien." />
   <meta property="og:url" content="https://skylinedigital.nl/portfolio.html" />
-  <meta property="og:image" content="https://skylinedigital.nl/assets/keyframe1_drone.jpg" />
+  <meta property="og:image" content="https://skylinedigital.nl/assets/work-dekgro.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Portfolio — Skyline Digital" />
   <meta name="twitter:description" content="Een greep uit ons werk: websites, video, drone en content voor merken die groeien." />
-  <meta name="twitter:image" content="https://skylinedigital.nl/assets/keyframe1_drone.jpg" />
+  <meta name="twitter:image" content="https://skylinedigital.nl/assets/work-dekgro.jpg" />
+
+  <style>
+    /* ============================================================
+       PORTFOLIO HERO — vast ontwerp-canvas van 1172x657 dat met één
+       transform geschaald wordt (k = min(vw/1172, vh/560)). Alle
+       elementen staan in ontwerp-pixels; het optisch midden is x=586.
+       ============================================================ */
+    .pf-stage{position:relative;height:100vh;min-height:620px;overflow:hidden;
+      background:#07080b;isolation:isolate;color:#fff}
+    .pf-bg{position:absolute;inset:0;
+      background:
+        linear-gradient(180deg,rgba(217,178,90,0) 38%,rgba(217,178,90,.045) 54%,
+          rgba(217,178,90,.06) 68%,rgba(217,178,90,.035) 100%),
+        #07080b}
+    .pf-stars{position:absolute;left:0;top:0;width:1px;height:1px;border-radius:50%;background:#fff}
+
+    .pf-canvas{position:absolute;left:50%;top:0;width:1172px;height:657px;
+      transform:translateX(-50%) scale(var(--k,1));transform-origin:50% 0}
+    .pf-canvas>*{position:absolute}
+
+    /* ---- Badge: vaste 250x39 doos, tegel links, label ernaast ---- */
+    .pf-badge{left:461px;top:95px;width:250px;height:39px;border-radius:12px;z-index:300;
+      border:1px solid rgba(255,255,255,.115);
+      background:linear-gradient(to top,
+        rgba(231,197,109,.175) 0px,rgba(231,197,109,.128) 2px,rgba(231,197,109,.075) 4px,
+        rgba(231,197,109,.026) 6px,rgba(255,255,255,.012) 9px,rgba(255,255,255,.012) 100%);
+      -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.035)}
+    .pf-badge i{position:absolute;left:4px;top:4px;width:29px;height:29px;border-radius:8px;
+      display:grid;place-items:center;
+      background:linear-gradient(to top,
+        #f3d680 0px,#e6c463 2px,#c9962f 4px,#9f7120 6px,#6e4d15 8px,
+        #4e3710 10px,#33240c 12px,#231a0c 14px,#17130c 16px,#12100c 19px,
+        #0f0e0b 23px,#0d0c0a 29px);
+      box-shadow:inset 1px 0 0 rgba(247,227,161,.40),inset -1px 0 0 rgba(247,227,161,.52),
+        0 0 6px rgba(217,178,90,.20),0 3px 8px -5px rgba(247,227,161,.6)}
+    .pf-badge i svg{width:14px;height:14px;position:relative;top:-.5px}
+    .pf-badge b{position:absolute;left:45px;top:0;height:39px;display:flex;align-items:center;
+      font-family:"Manrope",sans-serif;font-size:12.5px;font-weight:500;letter-spacing:.01em;
+      color:rgba(255,255,255,.94);white-space:nowrap;padding-top:1.5px}
+
+    /* ---- Hero-typografie ---- */
+    .pf-h1{inset:0;margin:0;pointer-events:none;font-size:0;line-height:1}
+    .pf-h1 span{position:absolute;left:586px;transform:translateX(-50%);white-space:nowrap;
+      line-height:1;font-family:"Sora",sans-serif;font-weight:800;font-size:54px;
+      letter-spacing:-.012em;word-spacing:.1em;text-transform:uppercase;color:#fff;
+      text-shadow:0 0 34px rgba(217,178,90,.22);pointer-events:auto}
+    .pf-h1 .l1{top:152px}
+    .pf-h1 .l2{top:208px;text-shadow:none}
+    .pf-sub{left:586px;transform:translateX(-50%);white-space:nowrap;line-height:1;
+      font-family:"Manrope",sans-serif;font-size:13.5px;color:#a9aeb5;z-index:300;margin:0}
+    .pf-sub b{font-weight:600;color:#fff}
+    .pf-sub.s1{top:290px}
+    .pf-sub.s2{top:308px}
+
+    /* ---- Glow-knop: bank van goud licht aan de VOET, geclipt door de
+           afgeronde rechthoek van de knop zelf (overflow:hidden). ---- */
+    .pf-glow{display:grid;place-items:center;color:#fff;position:relative;overflow:hidden;
+      text-decoration:none;
+      background:linear-gradient(to top,
+        #f7e3a1 1px,#f3d680 2px,#edcb6c 3px,#e3b950 4px,#d6a53f 5px,
+        #c3912f 6px,#ab7d25 7px,#956a1e 8px,#7d5818 9px,#664713 10px,
+        #50370f 12px,#402c0d 14px,#2e2110 16px,#231a12 18px,
+        #1a1511 20px,#14120f 24px,#0f0e0c 30px,#0e0d0b 34px,#0e0d0b 100%);
+      box-shadow:
+        inset 0 3px 3px -2px rgba(247,227,161,.10),
+        inset 1px 0 0 rgba(255,255,255,.09),
+        inset -1px 0 0 rgba(255,255,255,.09),
+        1px 0 0 rgba(231,197,109,.17),-1px 0 0 rgba(231,197,109,.17),
+        0 0 8px rgba(217,178,90,.10),
+        0 2px 5px -3px rgba(247,227,161,.45);
+      transition:transform .25s,box-shadow .25s,filter .25s}
+    /* zijlicht dat naar boven uitdooft — zonder dit masker overspoelt het de hele knop */
+    .pf-glow::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:1;
+      background:linear-gradient(90deg,rgba(247,227,161,.70),rgba(247,227,161,0) 13px),
+                 linear-gradient(270deg,rgba(247,227,161,.70),rgba(247,227,161,0) 13px);
+      -webkit-mask:linear-gradient(to top,#000 0,#000 6px,rgba(0,0,0,.40) 12px,
+        rgba(0,0,0,.15) 18px,rgba(0,0,0,.09) 24px,rgba(0,0,0,.02) 30px,rgba(0,0,0,.02) 100%);
+              mask:linear-gradient(to top,#000 0,#000 6px,rgba(0,0,0,.40) 12px,
+        rgba(0,0,0,.15) 18px,rgba(0,0,0,.09) 24px,rgba(0,0,0,.02) 30px,rgba(0,0,0,.02) 100%)}
+    .pf-glow span{position:relative;z-index:2;display:block;line-height:1;
+      text-shadow:0 1px 2px rgba(20,14,0,.5)}
+    .pf-cta{left:586px;top:349px;transform:translateX(-50%);width:max-content;height:54.5px;padding:0 28px;
+      border-radius:13px;font-family:"Sora",sans-serif;font-size:16px;font-weight:600;
+      letter-spacing:-.005em;z-index:300;white-space:nowrap}
+    .pf-cta:hover{transform:translate(-50%,-1px);filter:brightness(1.12);
+      box-shadow:inset 0 1px 0 rgba(247,227,161,.6),inset 1px 0 0 rgba(231,197,109,.35),
+        inset -1px 0 0 rgba(231,197,109,.35),0 6px 22px rgba(217,178,90,.45)}
+
+    /* ---- 3D-carousel: cilinder met de camera in het midden (R=891,
+           perspective 891). De kaarten raken de cilinder en kijken
+           elk exact naar de camera; de achterkant wordt geculld (42°). ---- */
+    .pf-showcase{left:0;top:0;width:1172px;height:0}
+    .pf-ring{position:absolute;left:0;top:0;width:1172px;height:657px;z-index:5;
+      perspective:891px;perspective-origin:586px 918px;transform-style:preserve-3d;
+      pointer-events:none}
+    .pf-card{position:absolute;left:586px;top:530px;width:172px;height:110px;
+      margin:-55px 0 0 -86px;border-radius:10px;overflow:hidden;background:#0d1117;
+      box-shadow:0 24px 46px rgba(0,0,0,.6),0 3px 8px rgba(0,0,0,.5);
+      backface-visibility:hidden;will-change:transform}
+    .pf-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
+    .pf-card .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 9px 7px;
+      font-family:"Sora",sans-serif;font-size:7.5px;font-weight:600;line-height:1;
+      letter-spacing:.14em;text-transform:uppercase;color:#fff;white-space:nowrap;overflow:hidden;
+      text-overflow:ellipsis;
+      background:linear-gradient(180deg,rgba(4,8,16,0),rgba(4,8,16,.88))}
+    .pf-card .edge{position:absolute;inset:0;border-radius:10px;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.15),inset 0 16px 30px rgba(255,255,255,.05)}
+    .pf-card.broken img{display:none}
+    .pf-card.broken{background:linear-gradient(155deg,#2b2a22,#131a28 60%,#1d1526)}
+
+    /* ---- Browser-mock: VOOR de ring, loopt van de onderrand af ---- */
+    .pf-browser{left:165px;top:558px;width:842px;height:calc(99px + var(--fill,0px));
+      border-radius:28px 28px 0 0;overflow:hidden;z-index:100;background:#141419;
+      box-shadow:0 -14px 44px rgba(0,0,0,.55)}
+    .pf-bar{position:absolute;left:0;top:0;width:100%;height:42px;
+      background:linear-gradient(180deg,rgba(34,30,20,.6),rgba(22,20,14,.7));
+      -webkit-backdrop-filter:blur(6px) saturate(112%);backdrop-filter:blur(6px) saturate(112%)}
+    .pf-dots{position:absolute;left:27px;top:16px;display:flex;gap:2.6px}
+    .pf-dots i{width:7.6px;height:7.6px;border-radius:50%}
+    .pf-dots i:nth-child(1){background:#ee5c62}
+    .pf-dots i:nth-child(2){background:#f6b719}
+    .pf-dots i:nth-child(3){background:#12c02f}
+    .pf-omni{position:absolute;left:50%;transform:translateX(-50%);top:8px;width:336px;height:26px;
+      border-radius:5px;background:rgba(9,9,14,.93);box-shadow:inset 0 0 0 1px rgba(255,255,255,.045);
+      display:flex;align-items:center;justify-content:center;gap:6px}
+    .pf-omni svg{width:9px;height:9px;opacity:.72}
+    .pf-omni span{font-family:"Manrope",sans-serif;font-size:9.5px;color:rgba(255,255,255,.72);letter-spacing:.005em}
+    .pf-page{position:absolute;left:7px;right:6px;top:42px;bottom:0;background:#fff;
+      overflow:hidden;border-radius:10px 10px 0 0}
+    .pf-page img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
+
+    /* ---- Entree-timeline: rusttoestanden via de losse translate/scale/
+           clip-path-eigenschappen, NIET via transform — die wordt al
+           gebruikt voor centreren en door de ring-loop. ---- */
+    html.intro .pf-badge{opacity:0;translate:0 11px;scale:.985}
+    html.intro .pf-h1 span{opacity:0;translate:0 15px;clip-path:inset(100% 0 -30% 0)}
+    html.intro .pf-sub{opacity:0;translate:0 10px}
+    html.intro .pf-cta{opacity:0;translate:0 13px;scale:.985}
+    html.intro .pf-ring{opacity:0;translate:0 18px;scale:.99}
+    html.intro .pf-browser{opacity:0;translate:0 26px}
+    @media (prefers-reduced-motion:reduce){
+      html.intro .pf-badge,html.intro .pf-h1 span,html.intro .pf-sub,html.intro .pf-cta,
+      html.intro .pf-ring,html.intro .pf-browser{opacity:1;translate:none;scale:none;clip-path:none}
+    }
+
+    /* ---- Telefoon: een echte flow-kolom (geschaald canvas wordt te klein) ---- */
+    @media (max-width:700px){
+      .pf-stage{height:auto;min-height:0;padding:104px 20px 0}
+      .pf-canvas{position:relative;left:auto;top:auto;width:100%;height:auto;transform:none;
+        display:flex;flex-direction:column;align-items:center}
+      .pf-canvas>*{position:static}
+      .pf-badge,.pf-sub,.pf-cta{left:auto;top:auto}
+      .pf-sub.s1,.pf-sub.s2{top:auto}
+      .pf-badge{position:relative;width:auto;max-width:100%;height:36px;border-radius:18px}
+      .pf-badge i{top:3.5px;left:4px;width:28px;height:28px}
+      .pf-badge b{position:relative;left:auto;height:36px;padding:0 15px 0 42px}
+      .pf-h1{position:relative;inset:auto;margin-top:20px;text-align:center;width:100%}
+      .pf-h1 span{position:static;transform:none;white-space:normal;display:block;
+        font-size:clamp(30px,9vw,40px);line-height:1.06;letter-spacing:-.01em}
+      .pf-sub{position:relative;transform:none;white-space:normal;text-align:center;
+        font-size:15px;line-height:1.5;max-width:340px}
+      .pf-sub.s1{margin-top:14px}
+      .pf-sub.s2{margin-top:2px}
+      .pf-cta{position:relative;transform:none;width:auto;margin-top:22px;height:52px;min-width:180px;font-size:16px}
+      .pf-cta:hover{transform:translateY(-1px)}
+      .pf-showcase{position:relative;width:100%;height:230px;margin-top:10px}
+      .pf-ring{position:absolute;left:50%;top:-395px;margin-left:-586px;width:1172px;height:657px;
+        transform:scale(.62);transform-origin:586px 530px}
+      .pf-browser{position:relative;left:auto;top:auto;width:calc(100% + 40px);margin:-70px -20px 0;
+        height:270px;border-radius:22px 22px 0 0}
+      .pf-bar{height:36px}
+      .pf-omni{width:58%;height:24px;top:6px}
+      .pf-dots{top:14px}
+      .pf-page{top:36px}
+    }
+  </style>
+  <script>
+    /* Entree-klasse vóór de eerste paint; de failsafe-timer garandeert dat
+       content nooit onzichtbaar blijft hangen. */
+    document.documentElement.classList.add('intro');
+    setTimeout(function(){document.documentElement.classList.remove('intro');},4000);
+  </script>
 </head>
 <body>
 
@@ -45,40 +228,47 @@
     <a href="aanvraag.html" class="btn btn-gold btn-sm nav-cta">Aanvraag doen</a>
   </header>
 
-  <section class="page-hero center" style="background:radial-gradient(90% 100% at 50% 0%, #16171f, #07080c)">
-    <div class="orb orb-gold" style="left:50%;top:-160px;transform:translateX(-50%);width:520px;height:520px;opacity:.6"></div>
-    <div class="page-hero-inner">
-      <p class="crumbs"><a href="index.html">Home</a> · Portfolio</p>
-      <h1>Werk waar we <span class="gold-text">trots op zijn.</span></h1>
-      <p class="lead">Een greep uit de websites, films en content die we maakten voor merken die groeien.</p>
-    </div>
-  </section>
+  <!-- ====== HERO: 3D-carousel van echt klantwerk + browser-mock ====== -->
+  <section class="pf-stage" id="hero">
+    <div class="pf-bg"></div>
+    <div class="pf-stars" id="stA"></div>
+    <div class="pf-stars" id="stB"></div>
 
-  <!-- FEATURED -->
-  <section class="bg-cream full">
-    <div class="wrap">
-      <div class="frow">
-        <div class="frow-media reveal reveal--left">
-          <div class="media-frame"><img src="assets/work-dekgro.jpg" alt="Tegeltechniek Dekgro" loading="lazy" /></div>
-          <span class="badge-float">Uitgelicht</span>
-        </div>
-        <div class="frow-copy reveal reveal--right">
-          <div class="gold-rule"></div>
-          <p class="eyebrow">Tegeltechniek Dekgro · Tegels &amp; Renovatie</p>
-          <h2>Van lokaal vakbedrijf naar <span class="gold-text">professionele online aanwezigheid.</span></h2>
-          <p class="lead">Een complete website voor een specialist in professioneel tegelwerk — van nieuwbouw tot renovatie tot 5.000 m².</p>
-          <ul class="checks">
-            <li>Maatwerk website met projectgalerij</li>
-            <li>Professionele uitstraling passend bij het vakmanschap</li>
-            <li>Optimalisatie voor lokale vindbaarheid</li>
-          </ul>
-        </div>
+    <div class="pf-canvas" id="pfCanvas">
+
+      <div class="pf-badge">
+        <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 14.2 9.8 22 12 14.2 14.2 12 22 9.8 14.2 2 12 9.8 9.8Z" fill="#f7e3a1"/></svg></i>
+        <b>Live voor echte klanten</b>
       </div>
+
+      <h1 class="pf-h1">
+        <span class="l1" id="h1a">Werk waar we</span>
+        <span class="l2 gold-text" id="h1b">trots op zijn.</span>
+      </h1>
+
+      <p class="pf-sub s1" id="sub1">Een greep uit de <b>websites, films en content</b></p>
+      <p class="pf-sub s2" id="sub2">die we maakten voor merken die groeien.</p>
+
+      <a class="pf-glow pf-cta" href="#projecten"><span>Bekijk de projecten</span></a>
+
+      <div class="pf-showcase"><div class="pf-ring" id="pfRing"></div></div>
+
+      <div class="pf-browser">
+        <div class="pf-bar">
+          <div class="pf-dots"><i></i><i></i><i></i></div>
+          <div class="pf-omni">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.8-3.8"/></svg>
+            <span>dekgro.nl</span>
+          </div>
+        </div>
+        <div class="pf-page"><img src="assets/work-dekgro.jpg" alt="Website van Tegeltechniek Dekgro" /></div>
+      </div>
+
     </div>
   </section>
 
   <!-- GALLERY -->
-  <section class="bg-white full">
+  <section class="bg-white full" id="projecten">
     <div class="wrap">
       <div class="section-head reveal">
         <div class="gold-rule" style="margin-inline:auto"></div>
@@ -135,7 +325,7 @@
     </div>
   </section>
 
-    <footer class="footer">
+  <footer class="footer">
     <div class="footer-main">
       <div class="footer-brand-col">
         <a href="index.html"><img src="assets/logo.png" alt="Skyline Digital" class="footer-logo" /></a>
@@ -197,5 +387,128 @@
 
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="scroll-cinematic.js"></script>
+  <script>
+  (function(){
+    const stage  = document.getElementById('hero');
+    const canvas = document.getElementById('pfCanvas');
+    const ring   = document.getElementById('pfRing');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+    /* ---- Sterrenveld: één gigantische box-shadow-lijst per laag ---- */
+    function stars(el, count, blur, aMin, aMax){
+      const parts = [];
+      for (let i = 0; i < count; i++) {
+        const a = (aMin + Math.random() * (aMax - aMin)).toFixed(2);
+        parts.push((Math.random()*100).toFixed(1)+'vw '+(Math.random()*100).toFixed(1)+'vh '+blur+'px 0 rgba(255,255,255,'+a+')');
+      }
+      el.style.boxShadow = parts.join(',');
+    }
+    stars(document.getElementById('stA'), 150, 0,   .05, .30);
+    stars(document.getElementById('stB'),  18, 1.2, .35, .70);
+
+    /* ---- Schaalwet: k = min(vw/1172, vh/560). 560 i.p.v. 657 is bewust:
+            de breedte wordt gevuld en de browser-mock loopt van de onderrand
+            af in plaats van een letterbox. --fill rekt de mock tot de voet. ---- */
+    const W = 1172;
+    function resize(){
+      const vw = stage.clientWidth, vh = stage.clientHeight;
+      if (vw <= 700) { canvas.style.removeProperty('--k'); canvas.style.removeProperty('--fill'); return; }
+      const k = Math.min(vw / W, vh / 560);
+      canvas.style.setProperty('--k', k);
+      canvas.style.setProperty('--fill', Math.max(0, vh / k - 657) + 'px');
+    }
+    addEventListener('resize', resize);
+    if (window.visualViewport) visualViewport.addEventListener('resize', resize);
+    resize();
+
+    /* ---- 3D-ring: 30 kaarten op een cilinder, camera in het centrum.
+            R=891, stap 12°, cull 42° — de voorste ±42° is zichtbaar. ---- */
+    const SHOTS = [
+      { src: 'assets/work-dekgro.jpg',     t: 'Tegeltechniek Dekgro' },
+      { src: 'assets/work-lillis.jpg',     t: "Lilli's Schilderwerken" },
+      { src: 'assets/work-bodyscan.jpg',   t: 'BodyScan Waalre' },
+      { src: 'assets/work-echtgrieks.jpg', t: 'Echt Grieks' },
+    ];
+    const R = 891, N = 30, STEP = 360 / N, CULL = 42, SPEED = 1.9;
+    const cards = [];
+    for (let i = 0; i < N; i++) {
+      const d  = SHOTS[i % SHOTS.length];
+      const el = document.createElement('div');
+      el.className = 'pf-card';
+      const img = document.createElement('img');
+      img.alt = ''; img.src = d.src; img.loading = 'eager'; img.decoding = 'async';
+      img.addEventListener('error', () => el.classList.add('broken'));
+      const cap = document.createElement('div'); cap.className = 'cap'; cap.textContent = d.t;
+      const edge = document.createElement('div'); edge.className = 'edge';
+      el.append(img, cap, edge);
+      ring.appendChild(el);
+      cards.push(el);
+    }
+
+    let phase = -2, last = null;
+    function place(){
+      for (let i = 0; i < N; i++) {
+        const el = cards[i];
+        const a = ((i * STEP + phase) % 360 + 540) % 360 - 180;   // -180..180
+        if (Math.abs(a) > CULL) { el.style.visibility = 'hidden'; continue; }
+        el.style.visibility = 'visible';
+        const r = a * Math.PI / 180, c = Math.cos(r);
+        el.style.transform = 'translate3d(' + (R * Math.sin(r)).toFixed(2) + 'px,0,' + (R * (1 - c)).toFixed(2) + 'px) rotateY(' + (-a).toFixed(3) + 'deg)';
+        el.style.filter = 'brightness(' + (0.84 + 0.5 * (1 / c - 1)).toFixed(3) + ')';
+      }
+    }
+    function tick(t){
+      if (last === null) last = t;
+      const dt = Math.min((t - last) / 1000, .1); last = t;
+      if (!reduce.matches) phase -= SPEED * dt;                   // continu, nooit resetten
+      place();
+      requestAnimationFrame(tick);
+    }
+    document.addEventListener('visibilitychange', () => { last = null; }); // geen sprong na tabwissel
+    place();
+    requestAnimationFrame(tick);
+
+    /* ---- CTA scrollt soepel naar de projecten via Lenis ---- */
+    document.querySelector('.pf-cta').addEventListener('click', (e) => {
+      const target = document.getElementById('projecten');
+      if (target && window.__lenis) { e.preventDefault(); window.__lenis.scrollTo(target, { offset: -10 }); }
+    });
+
+    /* ---- Entree-timeline: draait precies één keer, daarna staat de pagina stil.
+            Gebruikt translate/scale (losse eigenschappen) zodat het niet botst
+            met de transform die centreert en de ring-loop. ---- */
+    const html = document.documentElement;
+    function settle(){
+      document.getAnimations().forEach(a => { if (String(a.id).indexOf('intro:') === 0) a.cancel(); });
+      html.classList.remove('intro');
+    }
+    if (!html.classList.contains('intro') || reduce.matches || !Element.prototype.animate) { settle(); return; }
+
+    const D = innerWidth <= 700 ? .66 : 1;
+    const EXPO = 'cubic-bezier(.16,1,.3,1)';
+    const Y = px => '0 ' + (px * D) + 'px';
+    const anims = []; let n = 0;
+    function play(el, from, dur, delay){
+      if (!el) return;
+      const to = { opacity: 1 };
+      if ('translate' in from) to.translate = '0 0';
+      if ('scale'     in from) to.scale     = '1';
+      if ('clipPath'  in from) to.clipPath  = 'inset(-30% 0 -30% 0)';
+      const a = el.animate([from, to], { duration: dur, delay, easing: EXPO, fill: 'both' });
+      a.id = 'intro:' + (n++);
+      anims.push(a);
+    }
+    const q = s => document.querySelector(s);
+    play(q('.pf-badge'),   { opacity: 0, translate: Y(11), scale: '.985' }, 560, 270);
+    play(q('#h1a'),        { opacity: 0, translate: Y(15), clipPath: 'inset(100% 0 -30% 0)' }, 900, 380);
+    play(q('#h1b'),        { opacity: 0, translate: Y(15), clipPath: 'inset(100% 0 -30% 0)' }, 900, 470);
+    play(q('#sub1'),       { opacity: 0, translate: Y(10) }, 620, 690);
+    play(q('#sub2'),       { opacity: 0, translate: Y(10) }, 620, 745);
+    play(q('.pf-cta'),     { opacity: 0, translate: Y(13), scale: '.985' }, 620, 830);
+    play(q('.pf-ring'),    { opacity: 0, translate: Y(18), scale: '.99' },  950, 700);
+    play(q('.pf-browser'), { opacity: 0, translate: Y(26) },                900, 900);
+    Promise.all(anims.map(a => a.finished)).then(settle, settle);
+  })();
+  </script>
 </body>
 </html>
