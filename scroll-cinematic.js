@@ -119,8 +119,8 @@ function initScrub(cfg) {
     canvas.width  = canvas.clientWidth  * dpr;
     canvas.height = canvas.clientHeight * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = "high";
+    // Bewust geen imageSmoothingQuality "high": op retina-schermen kost dat per
+    // getekend frame zoveel rekentijd dat het scrollen terugvalt naar ~12 fps.
     paint(true);
   }
 
