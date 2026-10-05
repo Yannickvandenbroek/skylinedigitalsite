@@ -423,3 +423,16 @@ h2 { font-size: clamp(1.9rem, 4.2vw, 3.3rem); }
   .gratis-promo { padding: 70px 24px; }
   .gratis-checks { gap: 8px 14px; }
 }
+
+/* ---------- LAADSCHERM (home) ---------- */
+.loader {
+  position: fixed; inset: 0; z-index: 500; background: #07080b;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px;
+  transition: opacity .6s ease, visibility .6s;
+}
+.loader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-logo { width: min(220px, 56vw); height: auto; }
+.loader-bar { width: min(240px, 60vw); height: 2px; background: rgba(255,255,255,.12); border-radius: 2px; overflow: hidden; }
+.loader-fill { width: 0; height: 100%; background: var(--gold-grad); transition: width .2s ease; }
+.loader-pct { font-family: "Sora", sans-serif; font-size: .74rem; font-weight: 600; letter-spacing: .3em; color: var(--gold); }
+html.is-loading, html.is-loading body { overflow: hidden; }

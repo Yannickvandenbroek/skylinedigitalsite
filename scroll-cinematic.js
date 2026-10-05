@@ -57,7 +57,7 @@ function initScrub(cfg) {
 
   const images = new Array(n);
   const ready  = new Array(n).fill(false);
-  let pos = 0, drawn = "", near = false;   // pos = fractionele framepositie
+  let pos = 0, drawn = "", near = false, settled = 0;   // pos = fractionele framepositie
 
   // 2 = in of vlak bij beeld, 1 = eerste sectie van de pagina, 0 = later
   const prio = () => (near ? 2 : cfg.first ? 1 : 0);
@@ -68,6 +68,8 @@ function initScrub(cfg) {
     frameLoader.add({
       img, src: cfg.framePath(i + 1), prio,
       done(ok) {
+        settled++;
+        if (cfg.onProgress) cfg.onProgress(settled, n);
         if (!ok) return;
         ready[i] = true;
         if (!drawn) canvas.style.opacity = "1";
@@ -161,14 +163,38 @@ function animateCount(el) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  /* Laadscherm (alleen als de pagina er een heeft): blijft staan tot alle frames
+     van de eerste animatie binnen zijn, zodat scrollen direct soepel is. */
+  const loader = document.getElementById("loader");
+  const loaderFill = document.getElementById("loader-fill");
+  const loaderPct  = document.getElementById("loader-pct");
+  let loaderDone = !loader;
+  function hideLoader() {
+    if (loaderDone) return;
+    loaderDone = true;
+    loader.classList.add("done");
+    document.documentElement.classList.remove("is-loading");
+    if (window.__lenis) window.__lenis.start();
+    setTimeout(() => loader.remove(), 700);
+  }
+  function heroProgress(done, total) {
+    if (loaderDone) return;
+    const pct = Math.round((done / total) * 100);
+    if (loaderFill) loaderFill.style.width = pct + "%";
+    if (loaderPct)  loaderPct.textContent = pct + "%";
+    if (done >= total) hideLoader();
+  }
+  if (loader) setTimeout(hideLoader, 12000);   // failsafe: nooit blijven hangen
+
   const scrubs = (window.SCRUB_SECTIONS || [])
     .filter(c => document.querySelector(c.section))
-    .map((c, i) => initScrub({ ...c, first: i === 0 }));
+    .map((c, i) => initScrub({ ...c, first: i === 0, onProgress: i === 0 ? heroProgress : null }));
   scrubs.forEach(s => s.update());   // bepaalt welke sectie in beeld is vóór het laden start
   frameLoader.start();
 
   const lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
   window.__lenis = lenis;
+  if (!loaderDone) lenis.stop();
   function raf(t) { lenis.raf(t); scrubs.forEach(s => s.update()); requestAnimationFrame(raf); }
   requestAnimationFrame(raf);
 
