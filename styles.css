@@ -66,7 +66,7 @@ h2 { font-size: clamp(1.9rem, 4.2vw, 3.3rem); }
 .btn-sm { padding: 11px 22px; font-size: 0.9rem; }
 .btn-gold {
   color: #2a2008; background: var(--gold-grad); background-size: 200% auto;
-  box-shadow: 0 10px 30px var(--gold-soft-glow); animation: shimmer 7s linear infinite;
+  box-shadow: 0 10px 30px var(--gold-soft-glow);
 }
 .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 16px 40px var(--gold-soft-glow); }
 .btn-dark { color: var(--on-dark); background: var(--ink); }
@@ -298,10 +298,8 @@ h2 { font-size: clamp(1.9rem, 4.2vw, 3.3rem); }
 .footer-legal-links a:hover { color: var(--gold-hi); }
 
 /* ---------- REVEAL ANIMATIONS ---------- */
-.reveal { opacity: 0; transform: translateY(38px); transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1); }
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .45s ease, transform .45s ease; }
 .reveal.in { opacity: 1; transform: none; }
-.reveal--left { transform: translateX(-44px); }
-.reveal--right { transform: translateX(44px); }
 .svc-grid .svc.reveal:nth-child(2) { transition-delay: .08s; }
 .svc-grid .svc.reveal:nth-child(3) { transition-delay: .16s; }
 .svc-grid .svc.reveal:nth-child(4) { transition-delay: .24s; }

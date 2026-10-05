@@ -225,21 +225,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroSection = document.querySelector("#hero");
   const progressFill = document.getElementById("progress-fill");
   const heroFades = [...document.querySelectorAll(".hero-fade")];
-  const parallaxEls = [...document.querySelectorAll("[data-parallax], .frow-media .media-frame")];
-  const vh = () => window.innerHeight;
-
-  function applyParallax() {
-    for (const el of parallaxEls) {
-      const r = el.getBoundingClientRect();
-      if (r.bottom < 0 || r.top > vh()) continue;
-      const off = ((r.top + r.height / 2) - vh() / 2) / vh();
-      el.style.transform = `translate3d(0, ${(off * -26).toFixed(1)}px, 0)`;
-    }
-  }
-
   onScroll(() => {
     setNavState();
-    applyParallax();
     if (heroSection) {
       const rect = heroSection.getBoundingClientRect();
       const p = Math.min(Math.max(-rect.top / (rect.height - window.innerHeight), 0), 1);
@@ -253,20 +240,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  applyParallax();
   setNavState();
   window.addEventListener("resize", setNavState);
-
-  // Magnetic buttons
-  document.querySelectorAll(".btn-gold, .btn-dark").forEach(btn => {
-    btn.addEventListener("mousemove", e => {
-      const r = btn.getBoundingClientRect();
-      const x = e.clientX - r.left - r.width / 2;
-      const y = e.clientY - r.top - r.height / 2;
-      btn.style.transform = `translate(${(x * 0.25).toFixed(1)}px, ${(y * 0.4).toFixed(1)}px)`;
-    });
-    btn.addEventListener("mouseleave", () => { btn.style.transform = ""; });
-  });
 
   // Keyword marquee
   const firstSection = document.querySelector("section");
@@ -291,36 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
     bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0).toFixed(2) + "%";
   }
   onScroll(updBar); updBar();
-
-  const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-
-  // Gold cursor glow (desktop only)
-  if (fine) {
-    const glow = document.createElement("div"); glow.id = "cursor-glow"; document.body.appendChild(glow);
-    let gx = window.innerWidth / 2, gy = window.innerHeight / 2, tx = gx, ty = gy, started = false;
-    window.addEventListener("mousemove", e => {
-      tx = e.clientX; ty = e.clientY;
-      if (!started) { started = true; glow.classList.add("on"); }
-    });
-    (function follow() {
-      gx += (tx - gx) * 0.12; gy += (ty - gy) * 0.12;
-      glow.style.transform = `translate3d(${gx.toFixed(1)}px, ${gy.toFixed(1)}px, 0)`;
-      requestAnimationFrame(follow);
-    })();
-  }
-
-  // 3D tilt on cards (desktop only)
-  if (fine) {
-    document.querySelectorAll(".fcard, .price, .gitem, .quote").forEach(card => {
-      card.addEventListener("mousemove", e => {
-        const r = card.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width - 0.5;
-        const py = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `perspective(900px) rotateY(${(px * 6).toFixed(2)}deg) rotateX(${(-py * 6).toFixed(2)}deg) translateY(-6px)`;
-      });
-      card.addEventListener("mouseleave", () => { card.style.transform = ""; });
-    });
-  }
 
   // Mobile nav toggle
   const navToggle = document.getElementById("nav-toggle");
