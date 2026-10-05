@@ -57,7 +57,7 @@ function initScrub(cfg) {
 
   const images = new Array(n);
   const ready  = new Array(n).fill(false);
-  let current = 0, drawn = -1, near = false;
+  let pos = 0, drawn = "", near = false;   // pos = fractionele framepositie
 
   // 2 = in of vlak bij beeld, 1 = eerste sectie van de pagina, 0 = later
   const prio = () => (near ? 2 : cfg.first ? 1 : 0);
@@ -70,7 +70,7 @@ function initScrub(cfg) {
       done(ok) {
         if (!ok) return;
         ready[i] = true;
-        if (drawn < 0) canvas.style.opacity = "1";
+        if (!drawn) canvas.style.opacity = "1";
         paint();                      // verfijnt het beeld zodra een beter frame binnen is
       }
     });
@@ -86,18 +86,30 @@ function initScrub(cfg) {
     return -1;
   }
 
-  function paint(force) {
-    const idx = nearestReady(current);
-    if (idx < 0 || (idx === drawn && !force)) return;
-    const img = images[idx];
+  function blit(img, alpha) {
     const cw = canvas.clientWidth, ch = canvas.clientHeight;
     const ir = img.naturalWidth / img.naturalHeight, cr = cw / ch;
     let dw, dh, dx, dy;
     if (ir > cr) { dh = ch; dw = ch * ir; dx = (cw - dw) / 2; dy = 0; }
     else         { dw = cw; dh = cw / ir; dx = 0; dy = (ch - dh) / 2; }
-    ctx.fillStyle = bgFill; ctx.fillRect(0, 0, cw, ch);
+    ctx.globalAlpha = alpha;
     ctx.drawImage(img, dx, dy, dw, dh);
-    drawn = idx;
+    ctx.globalAlpha = 1;
+  }
+
+  /* Tekent de positie tussen twee frames in: het volgende frame vloeit over het
+     huidige heen, zodat de beweging doorloopt in plaats van per frame te verspringen. */
+  function paint(force) {
+    const base = Math.min(n - 1, Math.floor(pos));
+    let a = base, mix = 0;
+    if (ready[base] && base + 1 < n && ready[base + 1]) mix = Math.round((pos - base) * 16) / 16;
+    else { a = nearestReady(Math.round(pos)); if (a < 0) return; }
+    const key = a + ":" + mix;
+    if (key === drawn && !force) return;
+    ctx.fillStyle = bgFill; ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    blit(images[a], 1);
+    if (mix > 0) blit(images[a + 1], mix);
+    drawn = key;
   }
 
   function resize() {
@@ -119,7 +131,7 @@ function initScrub(cfg) {
     const scrollable = rect.height - vh;
     const p = Math.min(Math.max(-rect.top / scrollable, 0), 1);
 
-    current = Math.min(n - 1, Math.round(p * (n - 1)));
+    pos = p * (n - 1);
     paint();
 
     for (const el of lines) {
