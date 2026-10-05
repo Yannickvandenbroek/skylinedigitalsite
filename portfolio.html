@@ -50,7 +50,6 @@
       background:linear-gradient(to top,
         rgba(231,197,109,.175) 0px,rgba(231,197,109,.128) 2px,rgba(231,197,109,.075) 4px,
         rgba(231,197,109,.026) 6px,rgba(255,255,255,.012) 9px,rgba(255,255,255,.012) 100%);
-      -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
       box-shadow:inset 0 1px 0 rgba(255,255,255,.035)}
     .pf-badge i{position:absolute;left:4px;top:4px;width:29px;height:29px;border-radius:8px;
       display:grid;place-items:center;
@@ -122,7 +121,7 @@
       pointer-events:none}
     .pf-card{position:absolute;left:586px;top:628px;width:180px;height:390px;display:block;
       margin:-195px 0 0 -90px;border-radius:14px;pointer-events:auto;cursor:pointer;color:#fff;text-decoration:none;overflow:hidden;background:#0d1117;
-      box-shadow:0 24px 46px rgba(0,0,0,.6),0 3px 8px rgba(0,0,0,.5);
+      box-shadow:0 14px 26px rgba(0,0,0,.55);
       backface-visibility:hidden;will-change:transform}
     .pf-card img,.pf-card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
     .pf-card video{object-position:center}
@@ -193,7 +192,7 @@
       transform-style:preserve-3d;pointer-events:none}
     .pv-card{display:block;text-decoration:none;position:absolute;left:586px;top:190px;width:300px;height:169px;margin:-84px 0 0 -150px;
       border:0;padding:0;border-radius:12px;overflow:hidden;background:#0d1117;color:#fff;font:inherit;
-      cursor:pointer;pointer-events:auto;box-shadow:0 24px 46px rgba(0,0,0,.6),0 3px 8px rgba(0,0,0,.5);
+      cursor:pointer;pointer-events:auto;box-shadow:0 14px 26px rgba(0,0,0,.55);
       backface-visibility:hidden;will-change:transform}
     .pv-card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     .pv-card .cap{position:absolute;left:0;right:0;bottom:0;padding:36px 12px 11px;text-align:left;
@@ -206,7 +205,7 @@
     .pv-card:focus-visible{outline:none}
     .pv-card .play{position:absolute;right:10px;top:10px;width:28px;height:28px;border-radius:50%;
       background:rgba(7,8,11,.62);box-shadow:inset 0 0 0 1px rgba(247,227,161,.55);
-      -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+      }
     .pv-card .play::after{content:"";position:absolute;left:11px;top:8px;border-style:solid;
       border-width:6px 0 6px 9px;border-color:transparent transparent transparent #f7e3a1}
     .pv-card.broken video{display:none}
@@ -426,7 +425,7 @@
     /* ---- 3D-ringen: kaarten op een cilinder met de camera in het centrum.
             Elke kaart raakt de cilinder en kijkt naar de camera; alles buiten
             ±42° wordt geculld. Eén functie bouwt zowel de website- als de video-ring. ---- */
-    const CULL = 42;
+    const CULL = 42, PLAY_ARC = 16;
     const rings = [];
     function makeRing(ringEl, o){
       const STEP = 360 / o.n, cards = [];
@@ -448,10 +447,16 @@
             continue;
           }
           el.style.visibility = 'visible'; el.tabIndex = 0;
-          if (el._video && el._video.paused && !reduce.matches && st.onScreen) el._video.play().catch(() => {});
+          // alleen de middelste kaarten spelen; meer films tegelijk decoderen laat het scrollen haperen
+          if (el._video) {
+            const front = Math.abs(a) < PLAY_ARC && !reduce.matches && st.onScreen;
+            if (front && el._video.paused) el._video.play().catch(() => {});
+            else if (!front && !el._video.paused) el._video.pause();
+          }
           const r = a * Math.PI / 180, c = Math.cos(r);
           el.style.transform = 'translate3d(' + (o.R * Math.sin(r)).toFixed(2) + 'px,0,' + (o.R * (1 - c)).toFixed(2) + 'px) rotateY(' + (-a).toFixed(3) + 'deg)';
-          el.style.filter = 'brightness(' + (0.84 + 0.5 * (1 / c - 1)).toFixed(3) + ')';
+          const br = (0.84 + 0.5 * (1 / c - 1)).toFixed(2);
+          if (el._br !== br) { el._br = br; el.style.filter = 'brightness(' + br + ')'; }
         }
       };
       st.step = dt => { if (!reduce.matches && !st.hover) st.phase += o.speed * dt; };   // continu, nooit resetten

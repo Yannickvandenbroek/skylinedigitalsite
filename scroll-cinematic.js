@@ -2,34 +2,94 @@
    Scroll engine — frame-sequence scrub + reveals + counters
    ============================================================ */
 
+/* Gedeelde frame-lader. Alle frames tegelijk opvragen laat ze om bandbreedte
+   vechten, waardoor de hero lang op zijn beelden wacht. Daarom één wachtrij met
+   een beperkt aantal gelijktijdige downloads: eerst de sectie die in beeld is,
+   en per sectie van grof naar fijn (elke 8e, 4e, 2e, dan de rest), zodat de hele
+   scrub al vroeg bruikbaar is. Elk frame wordt na het laden vooraf gedecodeerd,
+   zodat het tekenen tijdens het scrollen geen haperingen geeft. */
+const frameLoader = (() => {
+  const MAX = 6;
+  const jobs = [];            // { img, src, done, prio() }
+  let active = 0;
+  function next() {
+    while (active < MAX && jobs.length) {
+      // hoogste prioriteit eerst; binnen dezelfde prioriteit de volgorde van aanmelden
+      let best = 0, bestP = jobs[0].prio();
+      for (let i = 1; i < jobs.length && bestP < 2; i++) {
+        const pr = jobs[i].prio();
+        if (pr > bestP) { best = i; bestP = pr; }
+      }
+      const job = jobs.splice(best, 1)[0];
+      active++;
+      const finish = ok => { active--; job.done(ok); next(); };
+      job.img.onload = () => {
+        const d = job.img.decode ? job.img.decode() : Promise.resolve();
+        d.then(() => finish(true), () => finish(true));
+      };
+      job.img.onerror = () => finish(false);
+      job.img.src = job.src;
+    }
+  }
+  return { add(job) { jobs.push(job); }, start: next };
+})();
+
+/* Volgorde van grof naar fijn: 0, laatste, dan stappen van 8, 4, 2, 1 */
+function coarseToFine(n) {
+  const seen = new Set(), order = [];
+  const push = i => { if (i >= 0 && i < n && !seen.has(i)) { seen.add(i); order.push(i); } };
+  push(0); push(n - 1);
+  for (const step of [8, 4, 2, 1]) for (let i = 0; i < n; i += step) push(i);
+  return order;
+}
+
 function initScrub(cfg) {
   const section = document.querySelector(cfg.section);
   const canvas  = section.querySelector("canvas");
   const ctx     = canvas.getContext("2d", { alpha: false });
   const lines   = [...section.querySelectorAll(".reveal-line")];
   const bgFill  = cfg.bg || "#0a0a12";
+  const n       = cfg.frameCount;
 
   // Canvas start onzichtbaar zodat de CSS-posterafbeelding zichtbaar is
   canvas.style.opacity = "0";
   canvas.style.transition = "opacity 0.4s";
 
-  // Frames vooraf laden — getekend uit het geheugen is direct (= soepel)
-  const images = new Array(cfg.frameCount);
-  let firstDrawn = false;
-  for (let i = 0; i < cfg.frameCount; i++) {
+  const images = new Array(n);
+  const ready  = new Array(n).fill(false);
+  let current = 0, drawn = -1, near = false;
+
+  // 2 = in of vlak bij beeld, 1 = eerste sectie van de pagina, 0 = later
+  const prio = () => (near ? 2 : cfg.first ? 1 : 0);
+  for (const i of coarseToFine(n)) {
     const img = new Image();
-    img.src = cfg.framePath(i + 1);
-    img.onload = () => {
-      if (!firstDrawn) { firstDrawn = true; draw(0); canvas.style.opacity = "1"; }
-    };
+    img.decoding = "async";
     images[i] = img;
+    frameLoader.add({
+      img, src: cfg.framePath(i + 1), prio,
+      done(ok) {
+        if (!ok) return;
+        ready[i] = true;
+        if (drawn < 0) canvas.style.opacity = "1";
+        paint();                      // verfijnt het beeld zodra een beter frame binnen is
+      }
+    });
   }
 
-  let current = -1;
+  // Dichtstbijzijnde frame dat al geladen is, zodat het beeld nooit blijft hangen
+  function nearestReady(idx) {
+    if (ready[idx]) return idx;
+    for (let d = 1; d < n; d++) {
+      if (idx - d >= 0 && ready[idx - d]) return idx - d;
+      if (idx + d < n  && ready[idx + d]) return idx + d;
+    }
+    return -1;
+  }
 
-  function draw(index) {
-    const img = images[index];
-    if (!img || !img.complete || !img.naturalWidth) return;
+  function paint(force) {
+    const idx = nearestReady(current);
+    if (idx < 0 || (idx === drawn && !force)) return;
+    const img = images[idx];
     const cw = canvas.clientWidth, ch = canvas.clientHeight;
     const ir = img.naturalWidth / img.naturalHeight, cr = cw / ch;
     let dw, dh, dx, dy;
@@ -37,6 +97,7 @@ function initScrub(cfg) {
     else         { dw = cw; dh = cw / ir; dx = 0; dy = (ch - dh) / 2; }
     ctx.fillStyle = bgFill; ctx.fillRect(0, 0, cw, ch);
     ctx.drawImage(img, dx, dy, dw, dh);
+    drawn = idx;
   }
 
   function resize() {
@@ -46,17 +107,20 @@ function initScrub(cfg) {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = "high";
-    draw(current < 0 ? 0 : current);
+    paint(true);
   }
 
   function update() {
     const rect = section.getBoundingClientRect();
-    if (rect.bottom < -window.innerHeight || rect.top > window.innerHeight) return;
-    const scrollable = rect.height - window.innerHeight;
+    const vh = window.innerHeight;
+    // binnen anderhalf scherm afstand: deze sectie krijgt voorrang in de wachtrij
+    near = rect.top < vh * 2.5 && rect.bottom > -vh * 1.5;
+    if (rect.bottom < -vh || rect.top > vh) return;
+    const scrollable = rect.height - vh;
     const p = Math.min(Math.max(-rect.top / scrollable, 0), 1);
 
-    const idx = Math.min(cfg.frameCount - 1, Math.round(p * (cfg.frameCount - 1)));
-    if (idx !== current) { current = idx; draw(idx); }
+    current = Math.min(n - 1, Math.round(p * (n - 1)));
+    paint();
 
     for (const el of lines) {
       const a = parseFloat(el.dataset.in), b = parseFloat(el.dataset.out);
@@ -87,7 +151,9 @@ function animateCount(el) {
 document.addEventListener("DOMContentLoaded", () => {
   const scrubs = (window.SCRUB_SECTIONS || [])
     .filter(c => document.querySelector(c.section))
-    .map(c => initScrub(c));
+    .map((c, i) => initScrub({ ...c, first: i === 0 }));
+  scrubs.forEach(s => s.update());   // bepaalt welke sectie in beeld is vóór het laden start
+  frameLoader.start();
 
   const lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
   window.__lenis = lenis;
