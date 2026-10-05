@@ -192,11 +192,17 @@ document.addEventListener("DOMContentLoaded", () => {
   scrubs.forEach(s => s.update());   // bepaalt welke sectie in beeld is vóór het laden start
   frameLoader.start();
 
-  const lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
-  window.__lenis = lenis;
-  if (!loaderDone) lenis.stop();
-  function raf(t) { lenis.raf(t); scrubs.forEach(s => s.update()); requestAnimationFrame(raf); }
-  requestAnimationFrame(raf);
+  /* Smooth scroll (Lenis) alleen op een pagina met een scroll-animatie; alle
+     gewone pagina's scrollen met de standaard browserscroll. */
+  let lenis = null;
+  if (scrubs.length && window.Lenis) {
+    lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
+    window.__lenis = lenis;
+    if (!loaderDone) lenis.stop();
+    const raf = t => { lenis.raf(t); scrubs.forEach(s => s.update()); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+  }
+  const onScroll = fn => lenis ? lenis.on("scroll", fn) : window.addEventListener("scroll", fn, { passive: true });
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
@@ -231,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  lenis.on("scroll", () => {
+  onScroll(() => {
     setNavState();
     applyParallax();
     if (heroSection) {
@@ -284,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const h = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0).toFixed(2) + "%";
   }
-  lenis.on("scroll", updBar); updBar();
+  onScroll(updBar); updBar();
 
   const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
