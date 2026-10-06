@@ -396,6 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const ghost = document.querySelector(".page-hero .ghost");
     const heroH1 = document.querySelector(".page-hero h1");
     const frames = [...document.querySelectorAll(".frow-media .media-frame, .over-media .media-frame")];
+    const stages = matchMedia("(min-width: 941px)").matches ? [...document.querySelectorAll(".stack-stage")] : [];
     let ticking = false;
     function parallax() {
       ticking = false;
@@ -408,6 +409,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (r.bottom < 0 || r.top > vh) continue;
         const off = ((r.top + r.height / 2) - vh / 2) / vh;
         el.style.transform = `translate3d(0, ${(off * -40).toFixed(1)}px, 0)`;
+      }
+      // Stapelkaarten: een kaart die al vastgeplakt zit krimpt en dimt iets terwijl de volgende eroverheen schuift
+      for (let i = 0; i < stages.length - 1; i++) {
+        const card = stages[i].firstElementChild, next = stages[i + 1];
+        if (!card || !next) continue;
+        // t loopt van 0 (volgende kaart komt onderin beeld) naar 1 (volgende kaart zit op zijn plakpositie)
+        const nTop = next.getBoundingClientRect().top, stick = parseFloat(getComputedStyle(next).top) || 0;
+        const t = nTop >= vh ? 0 : Math.min(1, Math.max(0, (vh - nTop) / (vh - stick)));
+        card.style.transform = `scale(${(1 - t * .06).toFixed(3)})`;
+        card.style.filter = `brightness(${(1 - t * .45).toFixed(3)})`;
       }
     }
     window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(parallax); } }, { passive: true });
