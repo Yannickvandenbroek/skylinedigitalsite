@@ -415,3 +415,10 @@ div.row .row-arrow { opacity: .55; }
 .article-more h2 { font-size: 1.6rem; margin-bottom: 10px; }
 .page-hero h1 { max-width: 16ch; }
 .page-hero.center h1 { margin-inline: auto; }
+
+/* Prijsblokken met twee kaarten (content & marketing): eigen tweekoloms raster, niet in het driekoloms raster geperst */
+.price-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1000px; margin-inline: auto; }
+.price-amt small { white-space: nowrap; }
+@media (max-width: 940px) { .price-grid.cols-2 { grid-template-columns: 1fr; } }
+/* Projectpagina's: telefoonscreenshots in de "Meer werk"-kaarten, bovenkant van de site in beeld */
+.gallery-shots .gitem img { object-position: 50% 0; }

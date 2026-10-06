@@ -487,15 +487,15 @@
     makeRing(ring, {
       n: 27, R: 891, speed: -1.9,
       shots: [
-        { src: '/assets/work-dekgro-m.jpg',     t: 'Tegeltechniek Dekgro',   href: '/werk-dekgro' },
-        { src: '/assets/work-lillis-m.jpg',     t: "Lilli's Schilderwerken", href: '/werk-lillis' },
-        { src: '/assets/work-bodyscan-m.jpg',   t: 'BodyScan Waalre',        href: '/werk-bodyscan' },
-        { src: '/assets/work-echtgrieks-m.jpg', t: 'Echt Grieks',            href: '/werk-echtgrieks' },
-        { src: '/assets/work-carslease-m.jpg',  t: 'CarsLease',              href: 'https://carslease.nl', ext: true },
-        { src: '/assets/work-lassie-m.jpg',     t: 'Keukenmontage Lassie',   href: 'https://keukenmontage-lassie.vercel.app', ext: true },
-        { src: '/assets/work-dejonge-m.jpg',    t: 'De Jonge Elektrotechniek', href: 'https://dejonge-elektrotechniek.nl', ext: true },
-        { src: '/assets/work-elektropost-m.jpg', t: 'Elektropost',             href: 'https://elektropost.dedemoversie.nl', ext: true },
-        { src: '/assets/work-palmyra-m.jpg',    t: 'Palmyra Coaching',        href: 'https://palmyra-coaching.dedemoversie.nl', ext: true },
+        { src: '/assets/work-dekgro-m.jpg',     t: 'Tegeltechniek Dekgro',   href: '/es/werk-dekgro' },
+        { src: '/assets/work-lillis-m.jpg',     t: "Lilli's Schilderwerken", href: '/es/werk-lillis' },
+        { src: '/assets/work-bodyscan-m.jpg',   t: 'BodyScan Waalre',        href: '/es/werk-bodyscan' },
+        { src: '/assets/work-echtgrieks-m.jpg', t: 'Echt Grieks',            href: '/es/werk-echtgrieks' },
+        { src: '/assets/work-carslease-m.jpg',  t: 'CarsLease',              href: '/es/werk-carslease' },
+        { src: '/assets/work-lassie-m.jpg',     t: 'Keukenmontage Lassie',   href: '/es/werk-lassie' },
+        { src: '/assets/work-dejonge-m.jpg',    t: 'De Jonge Elektrotechniek', href: '/es/werk-dejonge' },
+        { src: '/assets/work-elektropost-m.jpg', t: 'Elektropost',             href: '/es/werk-elektropost' },
+        { src: '/assets/work-palmyra-m.jpg',    t: 'Palmyra Coaching',        href: '/es/werk-palmyra' },
       ],
       build(d){
         const el = document.createElement('a');
@@ -515,7 +515,7 @@
       shots: (window.SKYLINE_FILMS || []).map(d => ({ t: d.t, href: 'video?v=' + d.slug, src: V + d.slug + '.mp4', poster: V + d.slug + '.jpg' })),
       build(d){
         const el = document.createElement('a');
-        el.href = d.href; el.className = 'pv-card'; el.setAttribute('aria-label', 'Bekijk video: ' + d.t);
+        el.href = d.href; el.className = 'pv-card'; el.setAttribute('aria-label', 'Ver vídeo: ' + d.t);
         const v = document.createElement('video');
         v.src = d.src; v.poster = d.poster; v.muted = true; v.loop = true; v.playsInline = true;
         v.preload = 'none'; v.setAttribute('aria-hidden', 'true'); v.tabIndex = -1;

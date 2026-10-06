@@ -126,7 +126,7 @@
 <p class="eyebrow">Content &amp; marketing</p>
 <h2>Visuals, film &amp; <span class="gold-text">reach</span></h2>
 </div>
-<div class="price-grid" style="max-width:760px;margin-inline:auto">
+<div class="price-grid cols-2">
 <div class="price reveal">
 <span class="price-name">Real content</span>
 <div class="price-amt">€250<small> per shoot</small></div>
@@ -140,7 +140,7 @@
 </div>
 <div class="price reveal">
 <span class="price-name">Social media</span>
-<div class="price-amt">from €79<small> / month</small></div>
+<div class="price-amt"><small>from </small>€79<small> / month</small></div>
 <p class="price-desc">Ongoing management and content that helps you grow.</p>
 <ul>
 <li>Content calendar &amp; publishing</li>
@@ -164,7 +164,7 @@
 <div class="calc reveal">
 <div class="calc-rows">
 <div class="calc-row">
-<div class="calc-item"><h3>Videos</h3><p>€15 per video</p></div>
+<div class="calc-item"><h3>Videos</h3><p>€50 per video</p></div>
 <div class="stepper">
 <button aria-label="fewer videos" class="step-btn" data-calc="video" data-dir="-1" type="button">−</button>
 <span class="step-val" id="calc-videos">0</span>
@@ -172,7 +172,7 @@
 </div>
 </div>
 <div class="calc-row">
-<div class="calc-item"><h3>Photos</h3><p>€3 per photo</p></div>
+<div class="calc-item"><h3>Photos</h3><p>€5 per photo</p></div>
 <div class="stepper">
 <button aria-label="fewer photos" class="step-btn" data-calc="photo" data-dir="-1" type="button">−</button>
 <span class="step-val" id="calc-photos">0</span>
@@ -309,7 +309,7 @@
       const $ = id => document.getElementById(id);
       const euro = n => "€" + (Number.isInteger(n) ? n : (Math.round(n * 100) / 100));
       function update() {
-        const sub = videos * 15 + photos * 3;
+        const sub = videos * 50 + photos * 5;
         let rate = 0;
         if (sub >= 200) rate = 0.2; else if (sub >= 100) rate = 0.1;
         const disc = Math.round(sub * rate * 100) / 100;

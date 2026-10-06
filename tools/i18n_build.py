@@ -2,7 +2,7 @@ import re, json, os, hashlib, sys
 from bs4 import BeautifulSoup, NavigableString, Comment
 os.chdir("/Users/yannickvandenbroek/Documents/Skylinedigital/own site/skyline-digital")
 BASE = "https://www.skylinedigital.nl"
-PAGES = ["index","over-ons","website-seo","drone-video","social-media","ai-content","portfolio","pricing","contact","aanvraag","video"]
+PAGES = ["index","over-ons","website-seo","drone-video","social-media","ai-content","portfolio","pricing","contact","aanvraag","video","werk-dekgro","werk-lillis","werk-bodyscan","werk-echtgrieks","werk-carslease","werk-lassie","werk-dejonge","werk-elektropost","werk-palmyra"]
 LANGS = [l for l in sys.argv[1:]] or ["en","it","es"]
 LOCALE = {"en":"en-GB","it":"it-IT","es":"es-ES","nl":"nl-NL","xx":"xx-XX"}
 INLINE = {"span","a","strong","em","b","i","br","small","svg","img","sup","sub","code","u","mark","abbr","time"}
@@ -10,6 +10,7 @@ SKIP = {"script","style","noscript","svg","head","title"}
 ATTRS = ["alt","placeholder","aria-label","title","data-label"]
 JS_STRINGS = {"pricing": ['Korting (', "Kies je aantal video's en foto's.", 'Minimumbesteding €20 — voeg meer toe.', 'Klaar om aan te vragen.']}
 src = json.load(open("i18n/source.json"))["segments"]
+JS_TR = json.load(open("i18n/js.json")) if os.path.exists("i18n/js.json") else {}
 def sid(s): return hashlib.md5(s.encode()).hexdigest()[:10]
 def path_of(lang, slug):
     p = "/" if slug == "index" else f"/{slug}"
@@ -77,6 +78,9 @@ def fix_ld(s, lang, slug, soup):
                 g["inLanguage"] = LOCALE[lang]; g["name"] = title; g["description"] = desc; g["url"] = url
                 g["@id"] = url + "#webpage"
             if t == "FAQPage" and faqs: g["mainEntity"] = faqs
+            if t == "CreativeWork":
+                lead = soup.select_one(".case-info .lead")
+                if lead: g["about"] = lead.get_text(" ", strip=True)
             if t == "BreadcrumbList":
                 for it in g.get("itemListElement", []):
                     if it.get("position") == 1: it["item"] = BASE + path_of(lang, "index"); it["name"] = {"en":"Home","it":"Home","es":"Inicio"}.get(lang,"Home")
@@ -120,5 +124,8 @@ for lang in LANGS:
         out = absolutize(out)
         for js in JS_STRINGS.get(slug, []):
             if sid(js) in tr: out = out.replace(js, BeautifulSoup(tr[sid(js)], "html.parser").get_text())
+        for nl_js, tr_js in JS_TR.get(lang, {}).items(): out = out.replace(nl_js, tr_js)
+        # projectlinks in de carrousel-scripts naar de vertaalde projectpagina's
+        out = re.sub(r"href: '/(werk-[a-z]+)'", lambda m: f"href: '/{lang}/{m.group(1)}'", out)
         open(f"{lang}/{slug}.html", "w").write(out)
     print(lang, "ok")

@@ -1,6 +1,6 @@
 import re, glob, html, json, os
 os.chdir("/Users/yannickvandenbroek/Documents/Skylinedigital/own site/skyline-digital")
-BASE = "https://skylinedigital.nl"
+BASE = "https://www.skylinedigital.nl"
 
 META = {
  "index": ("Website laten maken in Den Bosch | Skyline Digital",
@@ -19,7 +19,7 @@ META = {
            "Social media beheer, contentcreatie en reels vanaf €79 per maand. Strategie, productie en publicatie in jouw huisstijl. Skyline Digital, Den Bosch.",
            "/assets/photo-flatlay-phone.jpg"),
  "ai-content": ("AI content laten maken: video's & foto's | Skyline Digital",
-           "AI-video's vanaf €15 en AI-foto's vanaf €3 per stuk, altijd met menselijke eindcontrole. Meer content in minder tijd, in jouw stijl. Skyline Digital, Den Bosch.",
+           "AI-video's vanaf €50 en AI-foto's vanaf €5 per stuk, altijd met menselijke eindcontrole. Meer content in minder tijd, in jouw stijl. Skyline Digital, Den Bosch.",
            "/assets/photo-edit-suite.jpg"),
  "pricing": ("Prijzen: website vanaf €499, video, social & AI | Skyline Digital",
            "Transparante prijzen: multipage website €499, 3D cinematic website €749, SEO €39 p/m, video-shoot €250, social media vanaf €79 p/m. Geen verborgen kosten.",

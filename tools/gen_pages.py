@@ -1,6 +1,6 @@
 import re, json, html, os, glob
 os.chdir("/Users/yannickvandenbroek/Documents/Skylinedigital/own site/skyline-digital")
-BASE = "https://skylinedigital.nl"
+BASE = "https://www.skylinedigital.nl"
 TODAY = "2026-10-06"
 src = open("website-seo.html").read()
 HEADER = re.search(r'  <header class="nav".*?</header>\n', src, re.S).group(0)
@@ -494,7 +494,12 @@ urls = [("/",1.0,"weekly"),("/website-seo",0.9,"monthly"),("/drone-video",0.9,"m
         ("/regio",0.7,"monthly"),("/kennisbank",0.7,"weekly")]
 urls += [(f"/website-laten-maken-{c['slug']}",0.8,"monthly") for c in CITIES]
 urls += [(f"/kennisbank/{a['slug']}",0.7,"monthly") for a in ARTICLES]
-urls += [(f"/werk-{w}",0.5,"yearly") for w in ["dekgro","lillis","bodyscan","echtgrieks"]]
+W = ["dekgro","lillis","bodyscan","echtgrieks","carslease","lassie","dejonge","elektropost","palmyra"]
+urls += [(f"/werk-{w}",0.5,"yearly") for w in W]
+MAIN = ["","/over-ons","/website-seo","/drone-video","/social-media","/ai-content","/portfolio","/pricing","/contact","/aanvraag"]
+for l in ["en","it","es"]:
+    urls += [(f"/{l}{m}", 0.8 if m == "" else 0.6, "monthly") for m in MAIN]
+    urls += [(f"/{l}/werk-{w}", 0.4, "yearly") for w in W]
 urls += [("/privacybeleid",0.2,"yearly"),("/algemene-voorwaarden",0.2,"yearly"),("/cookiebeleid",0.2,"yearly")]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for u,p,f in urls:

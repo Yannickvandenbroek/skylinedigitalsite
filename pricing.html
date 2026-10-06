@@ -35,7 +35,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/favicon.svg" />
   <meta name="theme-color" content="#07080b" />
-          <script>window.SKY_ALT={"nl": "/pricing", "en": "/en/pricing", "it": "/it/pricing", "es": "/es/pricing"}</script>
+            <script>window.SKY_ALT={"nl": "/pricing", "en": "/en/pricing", "it": "/it/pricing", "es": "/es/pricing"}</script>
 </head>
 <body>
 
@@ -123,7 +123,7 @@
         <p class="eyebrow">Content &amp; marketing</p>
         <h2>Beeld, film &amp; <span class="gold-text">bereik</span></h2>
       </div>
-      <div class="price-grid" style="max-width:760px;margin-inline:auto">
+      <div class="price-grid cols-2">
         <div class="price reveal">
           <span class="price-name">Echte content</span>
           <div class="price-amt">€250<small> per shoot</small></div>
@@ -137,7 +137,7 @@
         </div>
         <div class="price reveal">
           <span class="price-name">Social media</span>
-          <div class="price-amt">vanaf €79<small> / maand</small></div>
+          <div class="price-amt"><small>vanaf </small>€79<small> / maand</small></div>
           <p class="price-desc">Doorlopend beheer en content die je laat groeien.</p>
           <ul>
             <li>Contentkalender &amp; publicatie</li>
@@ -162,7 +162,7 @@
       <div class="calc reveal">
         <div class="calc-rows">
           <div class="calc-row">
-            <div class="calc-item"><h3>Video's</h3><p>€15 per video</p></div>
+            <div class="calc-item"><h3>Video's</h3><p>€50 per video</p></div>
             <div class="stepper">
               <button type="button" class="step-btn" data-calc="video" data-dir="-1" aria-label="minder video's">−</button>
               <span class="step-val" id="calc-videos">0</span>
@@ -170,7 +170,7 @@
             </div>
           </div>
           <div class="calc-row">
-            <div class="calc-item"><h3>Foto's</h3><p>€3 per foto</p></div>
+            <div class="calc-item"><h3>Foto's</h3><p>€5 per foto</p></div>
             <div class="stepper">
               <button type="button" class="step-btn" data-calc="photo" data-dir="-1" aria-label="minder foto's">−</button>
               <span class="step-val" id="calc-photos">0</span>
@@ -312,7 +312,7 @@
       const $ = id => document.getElementById(id);
       const euro = n => "€" + (Number.isInteger(n) ? n : (Math.round(n * 100) / 100));
       function update() {
-        const sub = videos * 15 + photos * 3;
+        const sub = videos * 50 + photos * 5;
         let rate = 0;
         if (sub >= 200) rate = 0.2; else if (sub >= 100) rate = 0.1;
         const disc = Math.round(sub * rate * 100) / 100;
