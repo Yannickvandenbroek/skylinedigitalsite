@@ -47,15 +47,17 @@
       display: flex; flex-direction: column; justify-content: center;
       padding: 0 max(44px, calc((100% - var(--maxw)) / 2 + 44px)); will-change: opacity, transform;
     }
-    .moment > * { max-width: 760px; }
+    .moment > * { max-width: 860px; }
     .moment .eyebrow { margin-bottom: 18px; color: var(--gold-hi); }
+    /* Zelfde typografie als de paginahero's elders op de site */
     .moment h1, .moment h2 {
-      color: var(--on-dark); font-weight: 800; line-height: 1.04; letter-spacing: -0.02em;
+      font-family: "Inter Tight", sans-serif; color: var(--on-dark); font-weight: 800; line-height: .96; letter-spacing: -0.05em;
       text-shadow: 0 10px 50px rgba(0,0,0,.6);
     }
-    .moment h1 { font-size: clamp(2.4rem, 6.4vw, 5.2rem); }
-    .moment h2 { font-size: clamp(2rem, 5vw, 4rem); }
-    .moment p { color: rgba(244,241,233,.86); font-size: clamp(1rem, 1.8vw, 1.2rem); margin-top: 18px; max-width: 52ch; text-shadow: 0 2px 16px rgba(0,0,0,.6); }
+    .moment h1 { font-size: clamp(3rem, 7.6vw, 7rem); }
+    .moment h2 { font-size: clamp(2.4rem, 5.6vw, 5rem); }
+    .moment p { font-family: "Inter", sans-serif; color: rgba(244,241,233,.86); font-size: clamp(1.1rem, 1.7vw, 1.4rem); line-height: 1.55; margin-top: 24px; max-width: 54ch; text-shadow: 0 2px 16px rgba(0,0,0,.6); }
+    .moment .eyebrow { font-family: "Inter Tight", sans-serif; font-size: .74rem; letter-spacing: .3em; }
     .moment .hero-actions { margin-top: 30px; }
     .moment ul { list-style: none; margin-top: 22px; display: grid; gap: 10px; }
     .moment li { color: rgba(244,241,233,.9); font-size: clamp(.98rem, 1.6vw, 1.12rem); display: flex; gap: 12px; align-items: center; text-shadow: 0 2px 12px rgba(0,0,0,.6); }
