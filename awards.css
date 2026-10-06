@@ -335,3 +335,22 @@ div.row .row-arrow { opacity: .55; }
   .price.featured, .price.featured:hover { transform: none; }
   .tl-item { grid-template-columns: 80px 1fr; }
 }
+
+/* ============================================================
+   Foto naast de rijenlijsten (blijft plakken tijdens scrollen)
+   ============================================================ */
+.rows-split { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.25fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.rows-img { position: sticky; top: 120px; aspect-ratio: 4 / 5; border-radius: 28px; overflow: hidden; box-shadow: 0 50px 110px rgba(20,20,30,.22); }
+.rows-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s cubic-bezier(.16,1,.3,1); }
+.rows-img:hover img { transform: scale(1.04); }
+.rows-img.reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.2s cubic-bezier(.16,1,.3,1), opacity .4s; }
+.rows-img.reveal.in { clip-path: inset(0); }
+.rows-split .rows { margin-top: 0; }
+.gallery:has(> :nth-child(3)) { grid-template-columns: repeat(3, 1fr); }
+.gallery:has(> :nth-child(3)) .gitem { aspect-ratio: 4 / 5; }
+@media (max-width: 940px) {
+  .rows-split { grid-template-columns: 1fr; gap: 28px; }
+  .rows-img { position: relative; top: auto; aspect-ratio: 16 / 10; }
+  .gallery:has(> :nth-child(3)) { grid-template-columns: 1fr; }
+  .gallery:has(> :nth-child(3)) .gitem { aspect-ratio: 4 / 3; }
+}
