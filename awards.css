@@ -49,6 +49,7 @@ body { counter-reset: sec; }
 section.full { position: relative; counter-increment: sec; overflow: hidden; }
 section.full::before {
   content: "0" counter(sec); position: absolute; right: 24px; top: 28px; z-index: 0; pointer-events: none; user-select: none;
+  background: none; width: auto; height: auto; border-radius: 0; left: auto; bottom: auto;
   font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: clamp(6rem, 17vw, 16rem); line-height: 1; letter-spacing: -0.06em;
   color: transparent; -webkit-text-stroke: 1px rgba(20,20,26,.09); text-stroke: 1px rgba(20,20,26,.09);
 }
@@ -170,3 +171,80 @@ html.is-entering .nav { opacity: 0; transform: translateY(-10px); }
 .page-hero .orb { animation: drift 14s ease-in-out infinite alternate; }
 .page-hero .orb-gold ~ .orb-gold { animation-duration: 19s; animation-direction: alternate-reverse; }
 @keyframes drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(6vw,-5vh,0) scale(1.18); } }
+
+/* ============================================================
+   Achtergronden: overal strak wit (geen crème, stippen of vlekken)
+   ============================================================ */
+body { background: #fff; }
+.bg-cream, .bg-white, section.over, section.diensten, section.portfolio, section.reviews { background: #fff; background-image: none; }
+.bg-white::after, .bg-cream::after, section.over::after, section.diensten::after, section.reviews::after { display: none; }
+.bg-white .fcard, .bg-cream .fcard, .quote, .price, .faq details { background: #fff; }
+.case-hero.bg-cream { background: #fff; }
+
+/* ============================================================
+   Genummerde rijen (vervangt de kaartgrids)
+   ============================================================ */
+.rows { border-top: 1px solid var(--line); margin-top: 8px; }
+.row {
+  display: grid; grid-template-columns: 130px 1fr 64px; gap: 36px; align-items: center;
+  padding: 40px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: inherit;
+  position: relative; isolation: isolate; transition: padding .45s cubic-bezier(.16,1,.3,1);
+}
+.row::before { content: ""; position: absolute; inset: 0 -44px; z-index: -1; background: linear-gradient(90deg, rgba(217,178,90,.14), rgba(217,178,90,0) 70%); transform: translateX(-100%); transition: transform .55s cubic-bezier(.16,1,.3,1); }
+.row:hover::before { transform: none; }
+.row:hover { padding-left: 22px; }
+.row-num { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: clamp(2.8rem, 5.5vw, 5rem); line-height: 1; letter-spacing: -0.05em; color: transparent; -webkit-text-stroke: 1.5px var(--gold); text-stroke: 1.5px var(--gold); transition: color .4s; }
+.row:hover .row-num { color: var(--gold); }
+.row-body h3 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); letter-spacing: -0.035em; margin-bottom: 8px; line-height: 1.05; }
+.row-body p { color: var(--ink-dim); font-size: clamp(1rem, 1.3vw, 1.12rem); max-width: 62ch; }
+.row-arrow { width: 64px; height: 64px; border-radius: 50%; border: 1.5px solid var(--line-gold); display: grid; place-items: center; color: var(--gold-deep); transition: transform .45s cubic-bezier(.16,1,.3,1), background-color .3s, color .3s, border-color .3s; }
+.row-arrow svg { width: 22px; height: 22px; }
+.row:hover .row-arrow { transform: rotate(-45deg); background: var(--gold); border-color: var(--gold); color: #1a1407; }
+div.row .row-arrow { opacity: .55; }
+.bg-dark .rows { border-color: rgba(255,255,255,.1); }
+.bg-dark .row { border-color: rgba(255,255,255,.1); }
+.bg-dark .row-body p { color: var(--on-dark-dim); }
+
+/* ============================================================
+   Stapelkaarten: elke kaart blijft plakken en de volgende schuift eroverheen
+   ============================================================ */
+.stack { margin-top: 20px; padding-bottom: 8vh; }
+.stack-stage { position: sticky; top: 100px; height: 76vh; min-height: 600px; margin-bottom: 6vh; }
+.stack-stage:nth-child(2) { top: 116px; } .stack-stage:nth-child(3) { top: 132px; } .stack-stage:nth-child(4) { top: 148px; } .stack-stage:nth-child(5) { top: 164px; }
+.stack-stage:last-child { margin-bottom: 0; }
+.stack-card {
+  display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; height: 100%; padding: 48px; border-radius: 34px;
+  background: #0d0e14; color: var(--on-dark); border: 1px solid rgba(255,255,255,.1); text-decoration: none; overflow: hidden;
+  box-shadow: 0 -30px 80px rgba(0,0,0,.35), 0 30px 60px rgba(0,0,0,.25);
+}
+.stack-text { display: flex; flex-direction: column; justify-content: center; }
+.stack-num { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: clamp(4rem, 8vw, 7.5rem); line-height: .9; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 1.5px var(--gold); text-stroke: 1.5px var(--gold); margin-bottom: 22px; }
+.stack-card h3 { color: #fff; font-size: clamp(2rem, 3.8vw, 3.6rem); letter-spacing: -0.045em; line-height: .98; margin-bottom: 18px; }
+.stack-card p { color: rgba(244,241,233,.72); font-size: clamp(1.05rem, 1.4vw, 1.25rem); max-width: 40ch; }
+.stack-more { display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; color: var(--gold-hi); font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; }
+.stack-more svg { width: 18px; height: 18px; transition: transform .35s; }
+.stack-card:hover .stack-more svg { transform: translateX(6px); }
+.stack-img { border-radius: 22px; overflow: hidden; height: 100%; min-height: 0; }
+.stack-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.16,1,.3,1); }
+.stack-card:hover .stack-img img { transform: scale(1.05); }
+
+/* ============================================================
+   Tekst + beeld: groter, met verschoven gouden kader
+   ============================================================ */
+.frow, .over-grid { gap: clamp(48px, 7vw, 110px); }
+.frow-media .media-frame, .over-media .media-frame { border-radius: 28px; box-shadow: 0 50px 110px rgba(20,20,30,.22); }
+.frow-media::after, .over-media::after { content: ""; position: absolute; inset: 24px -24px -24px 24px; border: 1.5px solid var(--line-gold); border-radius: 28px; z-index: 0; pointer-events: none; }
+.frow.flip .frow-media::after { inset: 24px 24px -24px -24px; }
+.frow-copy h2, .over-copy h2 { margin-bottom: 24px; }
+.checks, .ticks { gap: 18px; margin: 34px 0; }
+.checks li, .ticks li { font-size: 1.08rem; }
+
+@media (max-width: 940px) {
+  .row { grid-template-columns: 70px 1fr; gap: 18px; padding: 30px 0; }
+  .row-arrow { display: none; }
+  .row:hover { padding-left: 0; }
+  .stack-stage { top: 90px; height: auto; min-height: 0; margin-bottom: 18px; position: relative; }
+  .stack-card { grid-template-columns: 1fr; padding: 28px; gap: 22px; border-radius: 24px; }
+  .stack-img { height: 220px; }
+  .frow-media::after, .over-media::after { inset: 14px -12px -12px 14px; }
+}
