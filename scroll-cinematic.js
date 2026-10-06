@@ -447,7 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function setLang(code) {
     const alt = window.SKY_ALT || {};
     try { localStorage.setItem("sky_lang", code); } catch (e) {}
-    location.href = alt[code] || (code === "nl" ? "/" : "/" + code + "/");
+    location.href = alt[code] || (code === "nl" ? "/" : "/" + code);
   }
   if (nav) {
     const lang = document.createElement("div"); lang.className = "lang";
