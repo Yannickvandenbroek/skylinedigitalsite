@@ -248,3 +248,90 @@ div.row .row-arrow { opacity: .55; }
   .stack-img { height: 220px; }
   .frow-media::after, .over-media::after { inset: 14px -12px -12px 14px; }
 }
+
+/* ============================================================
+   TWEEDE RONDE: elke sectie dezelfde ruime, strakke opbouw
+   ============================================================ */
+/* Sectiekop als editorial-grid: kop links, inleiding rechtsonder */
+.section-head { max-width: none; margin: 0 0 clamp(56px, 7vw, 96px); text-align: left; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .9fr); gap: 28px 64px; align-items: end; }
+.section-head .gold-rule { grid-column: 1; margin: 0 0 18px !important; }
+.section-head.center .gold-rule, .cta-band .gold-rule { margin: 0 auto 18px !important; }
+.section-head .eyebrow { grid-column: 1; justify-content: flex-start; }
+.section-head h2 { grid-column: 1; max-width: 12ch; }
+.section-head .lead { grid-column: 2; grid-row: 1 / span 3; align-self: end; margin: 0; max-width: 44ch; }
+.section-head .lead::before { content: ""; display: block; width: 48px; height: 1px; background: var(--gold); margin-bottom: 18px; }
+.cta-band .section-head, .section-head.center { display: block; text-align: center; }
+.section-head.center h2 { max-width: none; }
+
+/* FAQ: grote vragen, dunne lijnen, draaiend plusje */
+.faq { max-width: 960px; margin: 0; gap: 0; border-top: 1px solid var(--line); }
+.faq details { background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0; box-shadow: none; }
+.faq details[open] { box-shadow: none; border-color: var(--line); }
+.faq summary { padding: 30px 0; font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: clamp(1.2rem, 1.9vw, 1.6rem); letter-spacing: -0.02em; display: flex; justify-content: space-between; align-items: center; gap: 28px; cursor: pointer; list-style: none; }
+.faq summary::after { content: ""; width: 44px; height: 44px; flex: 0 0 auto; border-radius: 50%; border: 1.5px solid var(--line-gold); background: linear-gradient(var(--gold-deep), var(--gold-deep)) center/14px 1.5px no-repeat, linear-gradient(var(--gold-deep), var(--gold-deep)) center/1.5px 14px no-repeat; transition: transform .4s cubic-bezier(.16,1,.3,1), background-color .3s; }
+.faq details[open] summary::after { transform: rotate(135deg); background-color: rgba(217,178,90,.12); }
+.faq details p { font-size: 1.08rem; max-width: 66ch; padding: 0 0 32px; margin-top: 0; }
+.bg-dark .faq, .bg-dark .faq details { border-color: rgba(255,255,255,.1); }
+
+/* Prijskaarten: groter, uitgelichte kaart donker met goud */
+.price-grid { gap: 28px; }
+.price { padding: 44px 40px 40px; border-radius: 26px; border: 1px solid var(--line); }
+.price-name { font-size: .82rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-dim); }
+.price-amt { margin: 22px 0 8px; }
+.price-amt small { font-size: 1rem; letter-spacing: 0; text-transform: none; }
+.price-desc { font-size: 1.05rem; margin-bottom: 30px; }
+.price li { font-size: 1.02rem; padding-left: 32px; }
+.price.featured { background: #0d0e14; color: #fff; border-color: #0d0e14; box-shadow: 0 50px 100px rgba(7,8,11,.35); transform: translateY(-14px); }
+.price.featured:hover { transform: translateY(-22px); }
+.price.featured .price-name, .price.featured .price-desc, .price.featured .price-amt small { color: rgba(244,241,233,.65); }
+.price.featured .price-amt { color: #fff; }
+.price.featured li { color: rgba(244,241,233,.85); }
+.price.featured::before { display: none; }
+.price.featured::after { content: "Populair"; position: absolute; top: 22px; right: 22px; font-family: "Inter Tight", sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #1a1407; background: var(--gold); padding: 6px 12px; border-radius: 6px; }
+
+/* Galerij: twee grote beelden met bijschrift */
+.gallery { gap: 28px; }
+.gallery:not(.cols-3) { grid-template-columns: repeat(2, 1fr); }
+.gallery > *:nth-child(2) { margin-top: 0 !important; }
+.gitem { border-radius: 26px; aspect-ratio: 4 / 3; border: 0; box-shadow: 0 40px 90px rgba(20,20,30,.16); }
+.gitem .gcap { padding: 48px 30px 26px; font-size: 1.25rem; }
+.gitem .gcap span { font-size: .72rem; letter-spacing: .2em; }
+
+/* Cijfers: enorme nummers met dunne scheidingslijnen */
+.statband { gap: 0; }
+.statband .stat { text-align: left; padding: 10px 36px; border-left: 1px solid rgba(255,255,255,.12); }
+.statband .stat:first-child { border-left: 0; padding-left: 0; }
+.bg-white .statband .stat, .bg-cream .statband .stat { border-color: var(--line); }
+.stat-label { color: inherit; opacity: .6; font-size: .9rem; letter-spacing: .08em; text-transform: uppercase; font-family: "Inter Tight", sans-serif; font-weight: 600; }
+
+/* Tijdlijn en stappen in dezelfde taal als de rijen */
+.tl-item { grid-template-columns: 150px 1fr; padding: 44px 0; }
+.tl-num { font-size: clamp(2.8rem, 5vw, 4.8rem); letter-spacing: -0.05em; -webkit-text-stroke: 1.5px var(--gold); }
+.tl-body h3 { font-size: clamp(1.4rem, 2.2vw, 2rem); letter-spacing: -0.03em; margin-bottom: 8px; }
+.tl-body p { font-size: 1.05rem; color: var(--ink-dim); max-width: 60ch; }
+.steps { gap: 28px; }
+.step { padding: 44px 36px; border-radius: 26px; }
+.step-num { font-size: 4rem; letter-spacing: -0.05em; }
+.step h3 { font-size: 1.5rem; }
+
+/* Tekst-plus-beeld: zwevend label groter */
+.badge-float { font-family: "Inter Tight", sans-serif; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .74rem; padding: 12px 18px; border-radius: 10px; }
+
+/* Quotes: groot en luchtig */
+.quote-grid { gap: 32px; }
+.quote { padding: 52px 48px; border-radius: 26px; }
+
+/* CTA-band: compact maar enorm van letter */
+.cta-band .lead { font-size: clamp(1.1rem, 1.6vw, 1.35rem); }
+
+@media (max-width: 940px) {
+  .section-head { grid-template-columns: 1fr; gap: 18px; }
+  .section-head .lead { grid-column: 1; grid-row: auto; }
+  .section-head h2 { max-width: none; }
+  .gallery:not(.cols-3) { grid-template-columns: 1fr; }
+  .statband { grid-template-columns: 1fr 1fr; gap: 24px 0; }
+  .statband .stat { padding: 0 18px; }
+  .statband .stat:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .price.featured, .price.featured:hover { transform: none; }
+  .tl-item { grid-template-columns: 80px 1fr; }
+}
