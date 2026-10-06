@@ -433,8 +433,8 @@ document.addEventListener("DOMContentLoaded", () => {
     (function spin(){ vel *= .92; track.style.animationDuration = (36 / (1 + vel * 2)).toFixed(1) + "s"; requestAnimationFrame(spin); })();
   }
 
-  // Taalkeuze in de header: Nederlands is de brontaal; andere talen via Google Translate.
-  // De keuze staat in de cookie "googtrans" (/nl/<taal>), die Google zelf ook leest.
+  // Taalkeuze in de header: elke taal heeft eigen vertaalde pagina's (/en/, /it/, /es/).
+  // window.SKY_ALT (per pagina in de head) geeft het pad van dezelfde pagina in elke taal.
   const FLAGS = {
     nl: '<svg viewBox="0 0 24 16"><rect width="24" height="16" fill="#21468B"/><rect width="24" height="10.7" fill="#fff"/><rect width="24" height="5.3" fill="#AE1C28"/></svg>',
     en: '<svg viewBox="0 0 24 16"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3.2"/><path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="2.6"/></svg>',
@@ -442,21 +442,17 @@ document.addEventListener("DOMContentLoaded", () => {
     es: '<svg viewBox="0 0 24 16"><rect width="24" height="16" fill="#AA151B"/><rect y="4" width="24" height="8" fill="#F1BF00"/></svg>',
   };
   const LANGS = [["nl", "Nederlands"], ["en", "English"], ["it", "Italiano"], ["es", "Español"]];
-  const curLang = (document.cookie.match(/(?:^|; )googtrans=\/nl\/([a-z]{2})/) || [])[1] || "nl";
+  const LANG_LABEL = { nl: "Taal kiezen", en: "Choose language", it: "Scegli la lingua", es: "Elegir idioma" };
+  const curLang = (document.documentElement.lang || "nl").slice(0, 2);
   function setLang(code) {
-    const host = location.hostname.replace(/^www\./, "");
-    const kill = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-    document.cookie = kill; document.cookie = kill + "; domain=" + host; document.cookie = kill + "; domain=." + host;
-    if (code !== "nl") {
-      const val = "googtrans=/nl/" + code + "; path=/; max-age=31536000";
-      document.cookie = val; document.cookie = val + "; domain=." + host;
-    }
-    location.reload();
+    const alt = window.SKY_ALT || {};
+    try { localStorage.setItem("sky_lang", code); } catch (e) {}
+    location.href = alt[code] || (code === "nl" ? "/" : "/" + code + "/");
   }
   if (nav) {
-    const lang = document.createElement("div"); lang.className = "lang notranslate";
-    lang.innerHTML = '<button type="button" class="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Taal kiezen">' +
-      '<span class="flag">' + FLAGS[curLang] + '</span><span class="lang-code">' + curLang.toUpperCase() + '</span></button>' +
+    const lang = document.createElement("div"); lang.className = "lang";
+    lang.innerHTML = '<button type="button" class="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="' + (LANG_LABEL[curLang] || LANG_LABEL.nl) + '">' +
+      '<span class="flag">' + (FLAGS[curLang] || FLAGS.nl) + '</span><span class="lang-code">' + curLang.toUpperCase() + '</span></button>' +
       '<ul class="lang-menu" role="listbox">' + LANGS.map(([c, n]) =>
         '<li><button type="button" role="option" data-lang="' + c + '" aria-selected="' + (c === curLang) + '"><span class="flag">' + FLAGS[c] + '</span>' + n + '</button></li>').join("") + '</ul>';
     const cta = nav.querySelector(".nav-cta");
@@ -465,13 +461,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", (e) => { e.stopPropagation(); const open = lang.classList.toggle("open"); btn.setAttribute("aria-expanded", open); });
     lang.querySelectorAll("[data-lang]").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
     document.addEventListener("click", (e) => { if (!lang.contains(e.target)) lang.classList.remove("open"); });
-  }
-  if (curLang !== "nl") {
-    const holder = document.createElement("div"); holder.id = "google_translate_element"; holder.hidden = true; document.body.appendChild(holder);
-    window.googleTranslateElementInit = function () {
-      new google.translate.TranslateElement({ pageLanguage: "nl", includedLanguages: "nl,en,it,es", autoDisplay: false }, "google_translate_element");
-    };
-    const gt = document.createElement("script"); gt.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"; document.head.appendChild(gt);
   }
 
   // Mobile nav toggle
