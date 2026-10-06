@@ -48,8 +48,32 @@ function initScrub(cfg) {
   const canvas  = section.querySelector("canvas");
   const ctx     = canvas.getContext("2d", { alpha: false });
   const lines   = [...section.querySelectorAll(".reveal-line")];
+  const moments = [...section.querySelectorAll(".moment")];
   const bgFill  = cfg.bg || "#0a0a12";
   const n       = cfg.frameCount;
+
+  /* Niet-lineaire scroll→frame-koppeling (optioneel): cfg.segments = [[van, tot, gewicht], …]
+     in frames. Een hoger gewicht geeft dat stuk meer scrollafstand, zodat de film daar
+     vertraagt en de tekst leesbaar blijft; een laag gewicht laat een overgang vlot lopen. */
+  const segs = cfg.segments || [[0, n - 1, 1]];
+  const cum = [0]; let totalW = 0;
+  for (const [a, b, w] of segs) { totalW += (b - a) * w; cum.push(totalW); }
+  function progressToFrame(p) {
+    const target = p * totalW;
+    for (let k = 0; k < segs.length; k++) {
+      if (target <= cum[k + 1] || k === segs.length - 1) {
+        const [a, , w] = segs[k];
+        return Math.min(n - 1, a + (target - cum[k]) / w);
+      }
+    }
+    return n - 1;
+  }
+  // Zichtbaarheid van een tekstmoment in frame-ruimte: in- en uitfaden over 12% van het venster
+  function momentOpacity(f, from, to) {
+    const fade = Math.max(3, (to - from) * 0.12);
+    if (f <= from || f >= to) return 0;
+    return Math.max(0, Math.min(1, Math.min((f - from) / fade, (to - f) / fade)));
+  }
 
   // Canvas start onzichtbaar zodat de CSS-posterafbeelding zichtbaar is
   canvas.style.opacity = "0";
@@ -133,8 +157,18 @@ function initScrub(cfg) {
     const scrollable = rect.height - vh;
     const p = Math.min(Math.max(-rect.top / scrollable, 0), 1);
 
-    pos = p * (n - 1);
+    pos = progressToFrame(p);
     paint();
+
+    for (const el of moments) {
+      const from = parseFloat(el.dataset.from), to = parseFloat(el.dataset.to);
+      const hold = el.classList.contains("final") && pos >= to;   // slotmoment blijft staan
+      const o = hold ? 1 : momentOpacity(pos, from, to);
+      el.style.opacity = o.toFixed(3);
+      el.style.transform = `translateY(${((1 - o) * 24).toFixed(1)}px)`;
+      el.style.pointerEvents = o > 0.5 ? "auto" : "none";
+    }
+    if (cfg.onScrub) cfg.onScrub(p, pos);
 
     for (const el of lines) {
       const a = parseFloat(el.dataset.in), b = parseFloat(el.dataset.out);
