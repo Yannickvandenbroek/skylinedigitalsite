@@ -301,6 +301,127 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   onScroll(updBar); updBar();
 
+  /* ============================================================
+     Awards-laag: woordonthulling, spookwoorden, spotlight, cursor,
+     parallax, kanteling, kinetische kop
+     ============================================================ */
+  const fineInput = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Koppen opsplitsen in woorden die één voor één omhoog schuiven
+  document.querySelectorAll(".page-hero h1, .section-head h2, .frow-copy h2, .cta-band h2, .over-copy h2, .fgrid-head h2").forEach(h => {
+    if (h.closest(".pf-h1, .moment")) return;
+    let i = 0;
+    const wrap = node => {
+      if (node.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach(part => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(" ")); return; }
+          const w = document.createElement("span"); w.className = "w";
+          const inner = document.createElement("span"); inner.textContent = part; inner.style.setProperty("--i", i++);
+          // goudkleur zit als achtergrond-clip op de ouder; losse woorden moeten hem zelf dragen
+          if (node.parentElement && node.parentElement !== h && node.parentElement.classList.contains("gold-text")) inner.classList.add("gold-text");
+          w.appendChild(inner); frag.appendChild(w);
+        });
+        node.replaceWith(frag);
+      } else if (node.nodeType === 1 && node.tagName !== "BR") {
+        [...node.childNodes].forEach(wrap);
+      }
+    };
+    [...h.childNodes].forEach(wrap);
+    h.querySelectorAll(".gold-text").forEach(el => { if (el.querySelector(".w")) el.classList.replace("gold-text", "gold-wrap"); });
+    h.classList.add("split");
+    const hero = h.closest(".page-hero");
+    if (hero) { requestAnimationFrame(() => requestAnimationFrame(() => { h.classList.add("in-now"); hero.classList.add("in-now"); })); }
+    else io.observe(h);
+  });
+
+  // Spookwoord achter de paginahero: het eerste woord van de kop, enorm en omlijnd
+  const pageHero = document.querySelector(".page-hero");
+  if (pageHero) {
+    const h1 = pageHero.querySelector("h1");
+    const word = (h1 ? h1.textContent.trim().split(/\s+/).find(w => w.length > 3) : "") || "Skyline";
+    const g = document.createElement("div"); g.className = "ghost notranslate"; g.setAttribute("aria-hidden", "true");
+    g.textContent = word.replace(/[^\p{L}\p{N}]/gu, "").toUpperCase();
+    pageHero.appendChild(g);
+  }
+
+  // Groot omlijnd woordmerk boven de footer
+  const footer = document.querySelector(".footer");
+  if (footer) {
+    const big = document.createElement("div"); big.className = "footer-big notranslate"; big.setAttribute("aria-hidden", "true"); big.textContent = "SKYLINE DIGITAL";
+    footer.insertBefore(big, footer.firstChild);
+  }
+
+  // Spotlight + 3D-kanteling op kaarten
+  if (fineInput && !reduceMotion) {
+    document.querySelectorAll(".fcard, .price, .quote, .gitem").forEach(card => {
+      card.addEventListener("pointermove", e => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+        card.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
+        card.style.setProperty("--my", (py * 100).toFixed(1) + "%");
+        card.style.transform = `perspective(900px) rotateY(${((px - .5) * 9).toFixed(2)}deg) rotateX(${((.5 - py) * 9).toFixed(2)}deg) translateY(-10px)`;
+      });
+      card.addEventListener("pointerleave", () => { card.style.transform = ""; });
+    });
+  }
+
+  // Eigen cursor
+  if (fineInput && !reduceMotion) {
+    const dot = document.createElement("div"); dot.id = "cursor";
+    const ring = document.createElement("div"); ring.id = "cursor-ring";
+    document.body.append(dot, ring);
+    let tx = innerWidth / 2, ty = innerHeight / 2, rx = tx, ry = ty, shown = false;
+    window.addEventListener("pointermove", e => {
+      tx = e.clientX; ty = e.clientY;
+      if (!shown) { shown = true; document.documentElement.classList.add("has-cursor"); }
+      const t = e.target;
+      document.documentElement.classList.toggle("cur-media", !!t.closest(".media-frame, .gitem, .pf-card, .pv-card, .hero-card"));
+      document.documentElement.classList.toggle("cur-link", !t.closest(".media-frame, .gitem, .pf-card, .pv-card, .hero-card") && !!t.closest("a, button, .fcard, .price"));
+    });
+    document.addEventListener("mouseleave", () => document.documentElement.classList.remove("has-cursor"));
+    (function follow(){
+      rx += (tx - rx) * .16; ry += (ty - ry) * .16;
+      dot.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+      ring.style.transform = `translate3d(${rx.toFixed(1)}px, ${ry.toFixed(1)}px, 0)`;
+      requestAnimationFrame(follow);
+    })();
+  }
+
+  // Parallax op hero-achtergrond, spookwoorden en sectienummers + kinetische kop
+  if (!reduceMotion) {
+    const heroBg = document.querySelector(".page-hero-bg img");
+    const ghost = document.querySelector(".page-hero .ghost");
+    const heroH1 = document.querySelector(".page-hero h1");
+    const frames = [...document.querySelectorAll(".frow-media .media-frame, .over-media .media-frame")];
+    let ticking = false;
+    function parallax() {
+      ticking = false;
+      const y = window.scrollY, vh = innerHeight;
+      if (heroBg) heroBg.style.transform = `scale(1.08) translate3d(0, ${(y * .22).toFixed(1)}px, 0)`;
+      if (ghost) ghost.style.transform = `translate3d(${(-y * .12).toFixed(1)}px, ${(-y * .18).toFixed(1)}px, 0)`;
+      if (heroH1) heroH1.style.setProperty("--wght", Math.round(Math.max(500, 900 - y * .55)));
+      for (const el of frames) {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > vh) continue;
+        const off = ((r.top + r.height / 2) - vh / 2) / vh;
+        el.style.transform = `translate3d(0, ${(off * -40).toFixed(1)}px, 0)`;
+      }
+    }
+    window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(parallax); } }, { passive: true });
+    parallax();
+  }
+
+  // Marquee versnelt mee met de scrollsnelheid
+  const track = document.querySelector(".marquee-track");
+  if (track && !reduceMotion) {
+    let lastY = scrollY, vel = 0;
+    window.addEventListener("scroll", () => { vel = Math.min(4, Math.abs(scrollY - lastY) / 40); lastY = scrollY; }, { passive: true });
+    (function spin(){ vel *= .92; track.style.animationDuration = (36 / (1 + vel * 2)).toFixed(1) + "s"; requestAnimationFrame(spin); })();
+  }
+
   // Taalkeuze in de header: Nederlands is de brontaal; andere talen via Google Translate.
   // De keuze staat in de cookie "googtrans" (/nl/<taal>), die Google zelf ook leest.
   const FLAGS = {
