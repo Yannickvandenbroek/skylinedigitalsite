@@ -355,3 +355,44 @@ div.row .row-arrow { opacity: .55; }
   .gallery:has(> :nth-child(3)) { grid-template-columns: 1fr; }
   .gallery:has(> :nth-child(3)) .gitem { aspect-ratio: 4 / 3; }
 }
+
+/* ============================================================
+   Home — dienstensectie als stapelkaarten (opbouw gelijk aan Palmyra "In balans")
+   ============================================================ */
+.home-services { position: relative; background: #07080b; color: var(--on-dark); padding: clamp(100px, 11vw, 150px) 44px 0; }
+.hs-wrap { max-width: var(--maxw); margin: 0 auto; }
+.home-services .section-head { margin-bottom: 0; }
+.home-services .section-head h2 { color: #fff; }
+.home-services .section-head .lead { color: rgba(244,241,233,.7); max-width: 600px; margin-top: 22px; }
+.hs-stack { margin-top: clamp(60px, 7vw, 100px); }
+.hs-stage { position: sticky; top: 100px; min-height: 780px; }
+.hs-card {
+  display: block; position: relative; padding: 32px; border-radius: 60px; text-decoration: none; color: var(--on-dark);
+  background: #07080b; border: 2px solid rgba(244,241,233,.92); transform-origin: 50% 0;
+}
+.hs-top { display: flex; align-items: center; gap: 32px; margin-bottom: 20px; }
+.hs-num { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: 110px; line-height: 1; letter-spacing: -0.04em; color: var(--gold); }
+.hs-top .eyebrow { display: block; margin: 0 0 6px; }
+.hs-top .eyebrow::before { display: none; }
+.hs-top .eyebrow { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(244,241,233,.8); }
+.hs-top h3 { color: #fff; font-size: 34px; line-height: 1.1; letter-spacing: -0.03em; text-transform: uppercase; margin: 0; }
+.hs-desc { max-width: 760px; font-size: 18px; line-height: 1.6; color: rgba(244,241,233,.85); margin: 0 0 28px; }
+.hs-images { display: grid; grid-template-columns: 2fr 3fr; gap: 20px; height: 440px; }
+.hs-images > div { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; min-height: 0; }
+.hs-images img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 40px; transition: transform 1.2s cubic-bezier(.16,1,.3,1); }
+.hs-card:hover .hs-images img { transform: scale(1.03); }
+.hs-cta { display: flex; justify-content: center; padding: 90px 0; }
+@media (max-width: 940px) {
+  .home-services { padding-left: 22px; padding-right: 22px; }
+  .hs-stage { position: relative; top: auto; min-height: 0; margin-bottom: 20px; }
+  .hs-card { padding: 22px; border-radius: 32px; }
+  .hs-top { gap: 18px; }
+  .hs-num { font-size: 64px; }
+  .hs-top h3 { font-size: 24px; }
+  .hs-desc { font-size: 16px; }
+  .hs-images { grid-template-columns: 1fr; height: auto; }
+  .hs-images > div { grid-template-rows: none; grid-template-columns: 1fr 1fr; }
+  .hs-images img { border-radius: 20px; aspect-ratio: 4 / 3; height: auto; }
+  .hs-images > img { aspect-ratio: 16 / 10; }
+  .hs-cta { padding: 50px 0 70px; }
+}
