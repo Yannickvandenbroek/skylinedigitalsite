@@ -396,3 +396,20 @@ div.row .row-arrow { opacity: .55; }
   .hs-images > img { aspect-ratio: 16 / 10; }
   .hs-cta { padding: 50px 0 70px; }
 }
+
+/* ============================================================
+   Kennisbank-artikelen
+   ============================================================ */
+.article { font-size: 1.12rem; line-height: 1.75; color: var(--ink-soft); }
+.article .lead { font-size: 1.3rem; line-height: 1.55; color: var(--ink); margin-bottom: 40px; }
+.article h2 { font-size: clamp(1.7rem, 2.8vw, 2.4rem); letter-spacing: -0.035em; line-height: 1.08; margin: 56px 0 18px; color: var(--ink); }
+.article h3 { font-size: 1.25rem; margin: 30px 0 10px; color: var(--ink); }
+.article p { margin: 0 0 20px; }
+.article ul, .article ol { margin: 0 0 24px; padding-left: 26px; display: grid; gap: 10px; }
+.article li::marker { color: var(--gold-deep); font-weight: 700; }
+.article a { color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px; }
+.article strong { color: var(--ink); }
+.article-more { margin-top: 90px; padding-top: 50px; border-top: 1px solid var(--line); }
+.article-more h2 { font-size: 1.6rem; margin-bottom: 10px; }
+.page-hero h1 { max-width: 16ch; }
+.page-hero.center h1 { margin-inline: auto; }
