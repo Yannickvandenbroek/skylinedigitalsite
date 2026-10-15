@@ -55,11 +55,12 @@ BREAD = {
 }
 ORG = {
  "@type": ["ProfessionalService","LocalBusiness"], "@id": BASE + "/#organization", "name": "Skyline Digital",
- "alternateName": "Skyline Digital Den Bosch", "url": BASE + "/", "logo": BASE + "/assets/logo.png", "image": BASE + "/assets/og-home.jpg",
+ "alternateName": ["Skylinedigital", "Skyline Digital Den Bosch"], "url": BASE + "/", "logo": BASE + "/assets/logo.png", "image": BASE + "/assets/og-home.jpg",
  "description": "Creatief digitaal bureau in 's-Hertogenbosch voor maatwerk websites, SEO, cinematische video, drone-opnames, social media en AI-content.",
  "telephone": "+31686850289", "email": "yannick@skylinedigital.nl", "priceRange": "€€",
  "address": {"@type": "PostalAddress", "streetAddress": "Bruistensingel 500", "postalCode": "5232 AH", "addressLocality": "'s-Hertogenbosch", "addressRegion": "Noord-Brabant", "addressCountry": "NL"},
- "geo": {"@type": "GeoCoordinates", "latitude": 51.7044, "longitude": 5.3324},
+ "geo": {"@type": "GeoCoordinates", "latitude": 51.7166725, "longitude": 5.3342155},
+ "hasMap": "https://maps.google.com/?cid=12160387447195939511", "sameAs": ["https://maps.google.com/?cid=12160387447195939511"],
  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"}],
  "areaServed": [{"@type": "Country", "name": "Nederland"}, {"@type": "City", "name": "'s-Hertogenbosch"}, {"@type": "City", "name": "Eindhoven"}, {"@type": "City", "name": "Tilburg"}, {"@type": "City", "name": "Breda"}, {"@type": "City", "name": "Oss"}, {"@type": "City", "name": "Nijmegen"}],
  "founder": {"@type": "Person", "name": "Yannick van den Broek"},
