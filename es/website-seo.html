@@ -3,7 +3,19 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    var skyConsentChoice = null; try { skyConsentChoice = localStorage.getItem('sky_consent'); } catch (e) {}
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: skyConsentChoice === 'granted' ? 'granted' : 'denied' });
+    gtag('js', new Date());
+    gtag('config', 'G-39LM88JLSL', { cookie_expires: 34128000 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-39LM88JLSL"></script>
+  <script src="/consent.js" defer></script>
+  <!-- /Google tag -->
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Diseño web &amp; SEO — desde €499 | Skyline Digital</title>
 <meta content="Diseño web a medida desde €499, ultrarrápido y optimizado para SEO. Plan SEO desde €39 al mes. Agencia en Den Bosch, activa en todos los Países Bajos." name="description"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>

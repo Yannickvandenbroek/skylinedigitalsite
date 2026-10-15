@@ -129,3 +129,7 @@ for lang in LANGS:
         out = re.sub(r"href: '/(werk-[a-z]+)'", lambda m: f"href: '/{lang}/{m.group(1)}'", out)
         open(f"{lang}/{slug}.html", "w").write(out)
     print(lang, "ok")
+
+# Google-tag (GA4 + toestemmingsmodus) op alle pagina's, ook de zojuist gegenereerde
+import subprocess, sys
+subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "add_ga.py")], check=True)

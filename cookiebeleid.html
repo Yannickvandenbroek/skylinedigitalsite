@@ -2,6 +2,18 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    var skyConsentChoice = null; try { skyConsentChoice = localStorage.getItem('sky_consent'); } catch (e) {}
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: skyConsentChoice === 'granted' ? 'granted' : 'denied' });
+    gtag('js', new Date());
+    gtag('config', 'G-39LM88JLSL', { cookie_expires: 34128000 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-39LM88JLSL"></script>
+  <script src="/consent.js" defer></script>
+  <!-- /Google tag -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cookiebeleid | Skyline Digital</title>
   <meta name="description" content="Welke cookies Skyline Digital gebruikt, waarvoor en hoe je ze beheert." />
@@ -72,17 +84,19 @@
           <thead><tr><th>Cookie</th><th>Doel</th><th>Bewaartermijn</th></tr></thead>
           <tbody>
             <tr><td>Functioneel</td><td>Formuliergegevens tijdelijk opslaan</td><td>Sessie</td></tr>
-            <tr><td>Analytisch (optioneel)</td><td>Bezoekersstatistieken (geanonimiseerd)</td><td>Maximaal 13 maanden</td></tr>
+            <tr><td>Functioneel (sky_consent, sky_lang)</td><td>Jouw cookiekeuze en taalkeuze onthouden (opgeslagen in je browser)</td><td>Tot je het wijzigt</td></tr>
+            <tr><td>Analytisch: Google Analytics (_ga, _ga_*) — alleen na jouw toestemming</td><td>Bezoekersstatistieken: welke pagina's bezocht worden en hoe bezoekers de site vinden</td><td>Maximaal 13 maanden</td></tr>
           </tbody>
         </table>
 
         <h2 style="margin-top:40px">Cookies weigeren of verwijderen</h2>
-        <p>Je kunt cookies uitschakelen via de instellingen van jouw browser. Houd er rekening mee dat sommige functies van de website dan mogelijk niet correct werken.</p>
+        <p>Bij je eerste bezoek vragen we of je analytische cookies accepteert. Zonder jouw toestemming plaatst Google Analytics geen cookies; Google ontvangt dan alleen cookieloze signalen zonder identificatie (bijvoorbeeld dat er een pagina is bekeken). Je keuze kun je altijd wijzigen: <a href="#" data-cookie-settings>cookie-instellingen openen</a>.</p>
+        <p>Je kunt cookies ook uitschakelen of verwijderen via de instellingen van jouw browser. Houd er rekening mee dat sommige functies van de website dan mogelijk niet correct werken.</p>
 
         <h2 style="margin-top:40px">Vragen?</h2>
         <p>Heb je vragen over ons cookiebeleid? Neem contact op via <a href="mailto:yannick@skylinedigital.nl">yannick@skylinedigital.nl</a>.</p>
 
-        <p style="margin-top:40px;color:var(--ink-dim)">Laatste update: juni 2026</p>
+        <p style="margin-top:40px;color:var(--ink-dim)">Laatste update: oktober 2026</p>
       </div>
     </div>
   </section>

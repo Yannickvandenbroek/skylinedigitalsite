@@ -506,3 +506,7 @@ for u,p,f in urls:
     sm += f'  <url><loc>{BASE}{u}</loc><lastmod>{TODAY}</lastmod><changefreq>{f}</changefreq><priority>{p}</priority></url>\n'
 open("sitemap.xml","w").write(sm + "</urlset>\n")
 print("pages:", len(CITIES)+len(ARTICLES)+2, "sitemap urls:", len(urls))
+
+# Google-tag (GA4 + toestemmingsmodus) op alle pagina's, ook de zojuist gegenereerde
+import subprocess, sys
+subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "add_ga.py")], check=True)

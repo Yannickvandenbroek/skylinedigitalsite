@@ -207,3 +207,7 @@ for p in ("index.html", "portfolio.html"):
     for c in CASES:
         s = re.sub(r"(t: '" + re.escape(c["name"]).replace("'", "\\\\'") + r"',\s*href: )'[^']*'(, ext: true)?", lambda m: m.group(1) + f"'/werk-{c['slug']}'", s)
     open(p, "w").write(s)
+
+# Google-tag (GA4 + toestemmingsmodus) op alle pagina's, ook de zojuist gegenereerde
+import subprocess, sys
+subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "add_ga.py")], check=True)

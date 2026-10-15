@@ -1,0 +1,35 @@
+"""Zet de Google-tag (GA4) met toestemmingsmodus v2 in de <head> van elke pagina.
+Idempotent: een bestaand blok wordt vervangen. Wordt ook gebruikt door gen_pages.py en gen_cases.py,
+en de vertaalde pagina's erven het blok via i18n_build.py.
+Gebruik: python3 tools/add_ga.py"""
+import re, glob, os
+
+GA_ID = "G-39LM88JLSL"
+START, END = "<!-- Google tag (gtag.js) -->", "<!-- /Google tag -->"
+SNIPPET = f'''{START}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    var skyConsentChoice = null; try {{ skyConsentChoice = localStorage.getItem('sky_consent'); }} catch (e) {{}}
+    gtag('consent', 'default', {{ ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: skyConsentChoice === 'granted' ? 'granted' : 'denied' }});
+    gtag('js', new Date());
+    gtag('config', '{GA_ID}', {{ cookie_expires: 34128000 }});
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+  <script src="/consent.js" defer></script>
+  {END}'''
+
+def inject(html):
+    html = re.sub(r"\s*" + re.escape(START) + r".*?" + re.escape(END), "", html, flags=re.S)
+    return re.sub(r'(<meta charset="utf-8"\s*/?>)', lambda m: m.group(1) + "\n  " + SNIPPET, html, count=1, flags=re.I)
+
+if __name__ == "__main__":
+    os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+    files = [f for f in glob.glob("*.html") + glob.glob("kennisbank/*.html") + glob.glob("en/*.html") + glob.glob("it/*.html") + glob.glob("es/*.html")
+             if not os.path.basename(f).startswith("google")]
+    n = 0
+    for f in files:
+        s = open(f).read(); t = inject(s)
+        if GA_ID not in t: print("GEEN charset-meta in", f); continue
+        if t != s: open(f, "w").write(t); n += 1
+    print(f"Google-tag in {n} van {len(files)} pagina's gezet")

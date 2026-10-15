@@ -3,7 +3,19 @@
 <html lang="it">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    var skyConsentChoice = null; try { skyConsentChoice = localStorage.getItem('sky_consent'); } catch (e) {}
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: skyConsentChoice === 'granted' ? 'granted' : 'denied' });
+    gtag('js', new Date());
+    gtag('config', 'G-39LM88JLSL', { cookie_expires: 34128000 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-39LM88JLSL"></script>
+  <script src="/consent.js" defer></script>
+  <!-- /Google tag -->
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Richiedi un sito web di prova gratuito | Skyline Digital</title>
 <meta content="Richiedi un sito web di prova gratuito: prima vedi il risultato, poi decidi. Oppure avvia subito il tuo progetto per sito web, video, social media o contenuti AI." name="description"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
