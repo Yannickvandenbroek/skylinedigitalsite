@@ -15,7 +15,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-39LM88JLSL"></script>
   <script src="/consent.js" defer></script>
   <!-- /Google tag -->
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contatti — consulenza gratuita | Skyline Digital Den Bosch</title>
 <meta content="Contatta Skyline Digital a 's-Hertogenbosch per una consulenza gratuita sul tuo sito web, video o contenuti. Chiama il 06 86 85 02 89 o scrivici." name="description"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
@@ -483,17 +483,17 @@
       if (hasGratis) {
         html += `
           <div class="field">
-            <label>Wat doet je bedrijf? <span class="req">*</span></label>
-            <input type="text" id="cw2-bedrijf" placeholder="Bijv. restaurant, bouwbedrijf…" />
+            <label>Di cosa si occupa la tua azienda? <span class="req">*</span></label>
+            <input type="text" id="cw2-bedrijf" placeholder="Es. ristorante, impresa edile…" />
           </div>
           <div class="field">
-            <label>Welke stijl spreekt je aan?</label>
+            <label>Quale stile ti piace?</label>
             <select id="cw2-stijl">
-              <option>Strak &amp; minimalistisch</option>
-              <option>Luxe &amp; premium</option>
-              <option>Speels &amp; kleurrijk</option>
-              <option>Zakelijk &amp; professioneel</option>
-              <option>Weet ik nog niet</option>
+              <option>Pulito &amp; minimalista</option>
+              <option>Lusso &amp; premium</option>
+              <option>Giocoso &amp; colorato</option>
+              <option>Aziendale &amp; professionale</option>
+              <option>Non lo so ancora</option>
             </select>
           </div>`;
       }
@@ -501,33 +501,33 @@
       if (hasDrone) {
         html += `
           <div class="field">
-            <label>Locatie van de opname</label>
-            <input type="text" id="cw2-locatie" placeholder="Bijv. Utrecht — bedrijfspand" />
+            <label>Luogo delle riprese</label>
+            <input type="text" id="cw2-locatie" placeholder="Es. Utrecht — sede aziendale" />
           </div>
           <div class="field">
-            <label>Type opname</label>
+            <label>Tipo di ripresa</label>
             <select id="cw2-opname">
-              <option>Bedrijfsfilm</option>
-              <option>Dronebeelden</option>
-              <option>Productvideo</option>
-              <option>Event / aftermovie</option>
-              <option>Vastgoed &amp; toerisme</option>
+              <option>Video aziendale</option>
+              <option>Riprese con drone</option>
+              <option>Video prodotto</option>
+              <option>Evento / aftermovie</option>
+              <option>Immobiliare &amp; turismo</option>
             </select>
           </div>`;
       }
 
       html += `
         <div class="field">
-          <label>Beschrijf je project <span class="req">*</span></label>
-          <textarea id="cw2-beschrijving" placeholder="Wat wil je bereiken? Doelgroep, deadline, wensen…"></textarea>
+          <label>Descrivi il tuo progetto <span class="req">*</span></label>
+          <textarea id="cw2-beschrijving" placeholder="Cosa vuoi ottenere? Target, scadenza, desideri…"></textarea>
         </div>
         <div class="field">
-          <label>Wanneer wil je starten?</label>
+          <label>Quando vorresti iniziare?</label>
           <select id="cw2-start">
-            <option>Zo snel mogelijk</option>
-            <option>Binnen 1 maand</option>
-            <option>Binnen 3 maanden</option>
-            <option>Oriënterend</option>
+            <option>Il prima possibile</option>
+            <option>Entro 1 mese</option>
+            <option>Entro 3 mesi</option>
+            <option>Mi sto solo informando</option>
           </select>
         </div>`;
 
@@ -582,7 +582,7 @@
         } else { throw new Error(); }
       } catch {
         lbl.hidden = false; spn.hidden = true; btn.disabled = false;
-        err.textContent = 'Er ging iets mis. Probeer opnieuw of mail yannick@skylinedigital.nl';
+        err.textContent = 'Qualcosa è andato storto. Riprova o scrivi a yannick@skylinedigital.nl';
         err.hidden = false;
       }
     });

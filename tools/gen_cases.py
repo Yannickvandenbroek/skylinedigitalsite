@@ -190,9 +190,11 @@ for i, c in enumerate(CASES):
   <script>
     document.getElementById('case-form').addEventListener('submit', async function (e) {{
       e.preventDefault();
-      await fetch(this.action, {{ method: 'POST', body: new FormData(this), headers: {{ 'Accept': 'application/json' }} }});
-      this.reset();
-      document.getElementById('case-sent').style.display = 'block';
+      const sent = document.getElementById('case-sent');
+      const res = await fetch(this.action, {{ method: 'POST', body: new FormData(this), headers: {{ 'Accept': 'application/json' }} }}).catch(() => null);
+      if (res && res.ok) {{ this.reset(); }}
+      else {{ sent.textContent = 'Er ging iets mis. Probeer het opnieuw of mail ons op yannick@skylinedigital.nl'; sent.style.color = '#c0392b'; }}
+      sent.style.display = 'block';
     }});
   </script>
 </body>

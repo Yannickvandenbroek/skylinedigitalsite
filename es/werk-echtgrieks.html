@@ -15,7 +15,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-39LM88JLSL"></script>
   <script src="/consent.js" defer></script>
   <!-- /Google tag -->
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Web para Echt Grieks — caso de éxito | Skyline Digital</title>
 <meta content="Una web llena de encanto que hace que los viajeros se enamoren al instante del lugar. Descubre cómo Skyline Digital creó esta web." name="description"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
@@ -211,9 +211,11 @@
 <script>
     document.getElementById('case-form').addEventListener('submit', async function (e) {
       e.preventDefault();
-      await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
-      this.reset();
-      document.getElementById('case-sent').style.display = 'block';
+      const sent = document.getElementById('case-sent');
+      const res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } }).catch(() => null);
+      if (res && res.ok) { this.reset(); }
+      else { sent.textContent = 'Algo salió mal. Inténtalo de nuevo o escríbenos a yannick@skylinedigital.nl'; sent.style.color = '#c0392b'; }
+      sent.style.display = 'block';
     });
   </script>
 </body>

@@ -15,7 +15,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-39LM88JLSL"></script>
   <script src="/consent.js" defer></script>
   <!-- /Google tag -->
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contact — Free Consultation | Skyline Digital Den Bosch</title>
 <meta content="Get in touch with Skyline Digital in 's-Hertogenbosch for a free consultation about your website, video or content. Call 06 86 85 02 89 or email us." name="description"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
@@ -483,17 +483,17 @@
       if (hasGratis) {
         html += `
           <div class="field">
-            <label>Wat doet je bedrijf? <span class="req">*</span></label>
-            <input type="text" id="cw2-bedrijf" placeholder="Bijv. restaurant, bouwbedrijf…" />
+            <label>What does your business do? <span class="req">*</span></label>
+            <input type="text" id="cw2-bedrijf" placeholder="E.g. restaurant, construction company…" />
           </div>
           <div class="field">
-            <label>Welke stijl spreekt je aan?</label>
+            <label>Which style appeals to you?</label>
             <select id="cw2-stijl">
-              <option>Strak &amp; minimalistisch</option>
-              <option>Luxe &amp; premium</option>
-              <option>Speels &amp; kleurrijk</option>
-              <option>Zakelijk &amp; professioneel</option>
-              <option>Weet ik nog niet</option>
+              <option>Clean &amp; minimal</option>
+              <option>Luxury &amp; premium</option>
+              <option>Playful &amp; colourful</option>
+              <option>Corporate &amp; professional</option>
+              <option>Not sure yet</option>
             </select>
           </div>`;
       }
@@ -501,33 +501,33 @@
       if (hasDrone) {
         html += `
           <div class="field">
-            <label>Locatie van de opname</label>
-            <input type="text" id="cw2-locatie" placeholder="Bijv. Utrecht — bedrijfspand" />
+            <label>Filming location</label>
+            <input type="text" id="cw2-locatie" placeholder="E.g. Utrecht — company premises" />
           </div>
           <div class="field">
-            <label>Type opname</label>
+            <label>Type of shoot</label>
             <select id="cw2-opname">
-              <option>Bedrijfsfilm</option>
-              <option>Dronebeelden</option>
-              <option>Productvideo</option>
+              <option>Company film</option>
+              <option>Drone footage</option>
+              <option>Product video</option>
               <option>Event / aftermovie</option>
-              <option>Vastgoed &amp; toerisme</option>
+              <option>Real estate &amp; tourism</option>
             </select>
           </div>`;
       }
 
       html += `
         <div class="field">
-          <label>Beschrijf je project <span class="req">*</span></label>
-          <textarea id="cw2-beschrijving" placeholder="Wat wil je bereiken? Doelgroep, deadline, wensen…"></textarea>
+          <label>Describe your project <span class="req">*</span></label>
+          <textarea id="cw2-beschrijving" placeholder="What do you want to achieve? Audience, deadline, wishes…"></textarea>
         </div>
         <div class="field">
-          <label>Wanneer wil je starten?</label>
+          <label>When would you like to start?</label>
           <select id="cw2-start">
-            <option>Zo snel mogelijk</option>
-            <option>Binnen 1 maand</option>
-            <option>Binnen 3 maanden</option>
-            <option>Oriënterend</option>
+            <option>As soon as possible</option>
+            <option>Within 1 month</option>
+            <option>Within 3 months</option>
+            <option>Just exploring</option>
           </select>
         </div>`;
 
@@ -582,7 +582,7 @@
         } else { throw new Error(); }
       } catch {
         lbl.hidden = false; spn.hidden = true; btn.disabled = false;
-        err.textContent = 'Er ging iets mis. Probeer opnieuw of mail yannick@skylinedigital.nl';
+        err.textContent = 'Something went wrong. Please try again or email yannick@skylinedigital.nl';
         err.hidden = false;
       }
     });

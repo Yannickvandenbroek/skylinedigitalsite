@@ -15,7 +15,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-39LM88JLSL"></script>
   <script src="/consent.js" defer></script>
   <!-- /Google tag -->
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Request a Free Test Website | Skyline Digital</title>
 <meta content="Request a free test website: see the result first, then decide. Or start your project right away for website, video, social media or AI content." name="description"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
@@ -375,29 +375,29 @@
       if (hasGratis) {
         html += `
           <div class="field">
-            <label>Wat doet je bedrijf? <span class="req">*</span></label>
-            <input type="text" id="s2-bedrijf" placeholder="Bijv. restaurant, bouwbedrijf, webshop…" />
+            <label>What does your business do? <span class="req">*</span></label>
+            <input type="text" id="s2-bedrijf" placeholder="E.g. restaurant, construction company, online shop…" />
           </div>
           <div class="field">
-            <label>Heb je al een website?</label>
+            <label>Do you already have a website?</label>
             <select id="s2-bestaand">
-              <option value="Nee">Nee, ik begin from scratch</option>
-              <option value="Ja, omleiden">Ja, maar ik wil een nieuwe</option>
-              <option value="Redesign">Ja, alleen een redesign</option>
+              <option value="Nee">No, I'm starting from scratch</option>
+              <option value="Ja, omleiden">Yes, but I want a new one</option>
+              <option value="Redesign">Yes, just a redesign</option>
             </select>
           </div>
           <div class="field" id="s2-url-wrap" style="display:none">
-            <label>Huidige website URL</label>
-            <input type="url" id="s2-url" placeholder="https://jouwsite.nl" />
+            <label>Current website URL</label>
+            <input type="url" id="s2-url" placeholder="https://yoursite.com" />
           </div>
           <div class="field">
-            <label>Welke stijl spreekt je aan?</label>
+            <label>Which style appeals to you?</label>
             <select id="s2-stijl">
-              <option>Strak &amp; minimalistisch</option>
-              <option>Luxe &amp; premium</option>
-              <option>Speels &amp; kleurrijk</option>
-              <option>Zakelijk &amp; professioneel</option>
-              <option>Weet ik nog niet</option>
+              <option>Clean &amp; minimal</option>
+              <option>Luxury &amp; premium</option>
+              <option>Playful &amp; colourful</option>
+              <option>Corporate &amp; professional</option>
+              <option>Not sure yet</option>
             </select>
           </div>`;
 
@@ -413,35 +413,35 @@
       if (hasDrone) {
         html += `
           <div class="field">
-            <label>Locatie van de opname</label>
-            <input type="text" id="s2-locatie" placeholder="Bijv. Utrecht — bedrijfspand" />
+            <label>Filming location</label>
+            <input type="text" id="s2-locatie" placeholder="E.g. Utrecht — company premises" />
           </div>
           <div class="field">
-            <label>Type opname</label>
+            <label>Type of shoot</label>
             <select id="s2-opname">
-              <option>Bedrijfsfilm</option>
-              <option>Dronebeelden (buitenlocatie)</option>
-              <option>Productvideo</option>
+              <option>Company film</option>
+              <option>Drone footage (outdoor location)</option>
+              <option>Product video</option>
               <option>Event / aftermovie</option>
-              <option>Vastgoed &amp; toerisme</option>
+              <option>Real estate &amp; tourism</option>
               <option>Social clips (Reels / TikTok)</option>
-              <option>Combinatie</option>
+              <option>Combination</option>
             </select>
           </div>`;
       }
 
       html += `
         <div class="field">
-          <label>Beschrijf je project <span class="req">*</span></label>
-          <textarea id="s2-beschrijving" rows="4" placeholder="Wat wil je bereiken? Doelgroep, deadline, specifieke wensen…"></textarea>
+          <label>Describe your project <span class="req">*</span></label>
+          <textarea id="s2-beschrijving" rows="4" placeholder="What do you want to achieve? Audience, deadline, specific wishes…"></textarea>
         </div>
         <div class="field">
-          <label>Wanneer wil je starten?</label>
+          <label>When would you like to start?</label>
           <select id="s2-start">
-            <option>Zo snel mogelijk</option>
-            <option>Binnen 1 maand</option>
-            <option>Binnen 3 maanden</option>
-            <option>Geen haast, oriënterend</option>
+            <option>As soon as possible</option>
+            <option>Within 1 month</option>
+            <option>Within 3 months</option>
+            <option>No rush, just exploring</option>
           </select>
         </div>`;
 
@@ -518,7 +518,7 @@
         document.getElementById('btn-submit-label').hidden = false;
         document.getElementById('btn-submit-spin').hidden  = true;
         document.getElementById('btn-submit').disabled = false;
-        err.textContent = 'Er ging iets mis. Probeer het opnieuw of mail ons op yannick@skylinedigital.nl';
+        err.textContent = 'Something went wrong. Please try again or email us at yannick@skylinedigital.nl';
         err.hidden = false;
       }
     });
@@ -532,8 +532,8 @@
 
     // ── File upload feedback ──
     [
-      { id: 'f-logo',  nameId: 'logo-name',  zoneId: 'logo-zone',  empty: 'Geen bestand gekozen' },
-      { id: 'f-fotos', nameId: 'fotos-name', zoneId: 'fotos-zone', empty: 'Geen bestanden gekozen' }
+      { id: 'f-logo',  nameId: 'logo-name',  zoneId: 'logo-zone',  empty: 'No file chosen' },
+      { id: 'f-fotos', nameId: 'fotos-name', zoneId: 'fotos-zone', empty: 'No files chosen' }
     ].forEach(({ id, nameId, zoneId, empty }) => {
       const inp  = document.getElementById(id);
       const nameEl = document.getElementById(nameId);
@@ -544,7 +544,7 @@
         if (inp.files.length) {
           const label = inp.files.length === 1
             ? inp.files[0].name
-            : `${inp.files.length} bestanden geselecteerd`;
+            : `${inp.files.length} files selected`;
           nameEl.textContent = label.length > 48 ? label.slice(0, 48) + '…' : label;
           zone.classList.add('has-file');
         } else {
