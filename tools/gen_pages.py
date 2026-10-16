@@ -62,145 +62,56 @@ CITIES = [
 ]
 CITY_BY = {c["slug"]: c for c in CITIES}
 
-ARTICLES = [
- dict(slug="wat-kost-een-website-laten-maken", title="Wat kost een website laten maken in 2026?", eyebrow="Prijzen", read="6 min", img="photo-laptop-desk.jpg",
-      desc="Wat kost een website laten maken in 2026? Een eerlijk overzicht van prijzen: van €499 voor een maatwerk multipage website tot de kosten van hosting, SEO en onderhoud.",
-      body="""
-<p class="lead">De vraag die elke ondernemer stelt vóór het eerste gesprek: wat kost een website laten maken? Het eerlijke antwoord is "dat hangt ervan af" — maar daar heb je niets aan. Daarom hieronder concrete bedragen, wat je ervoor krijgt en waar de verschillen vandaan komen.</p>
-<h2>De korte versie</h2>
-<ul>
-<li><strong>Doe-het-zelf (Wix, Squarespace, WordPress-template):</strong> €10 tot €40 per maand, plus heel veel eigen uren.</li>
-<li><strong>Freelancer of klein bureau, maatwerk:</strong> €500 tot €3.000 eenmalig.</li>
-<li><strong>Groot bureau, uitgebreid maatwerk of webshop:</strong> €5.000 tot €25.000+.</li>
-</ul>
-<p>Bij Skyline Digital bouwen we een <a href="/website-seo">maatwerk multipage website voor €499</a> en een <a href="/pricing">3D cinematic website voor €749</a>. Dat kan omdat we met een klein team, een vaste werkwijze en eigen tooling werken — niet omdat we templates van de plank halen.</p>
-<h2>Waar betaal je eigenlijk voor?</h2>
-<p>Een websiteprijs bestaat uit vier blokken. Als je die uit elkaar trekt, begrijp je meteen waarom de ene offerte €600 is en de andere €6.000.</p>
-<h3>1. Ontwerp</h3>
-<p>Een template kost nul ontwerpuren. Maatwerk kost er tien tot veertig. Het verschil zie je direct terug in herkenbaarheid: een maatwerkontwerp past bij jouw merk, een template lijkt op duizend andere sites.</p>
-<h3>2. Bouw en techniek</h3>
-<p>Hoe de site gebouwd is, bepaalt de laadsnelheid, de veiligheid en hoe goed Google de site kan lezen. Een snelle, schone bouw zonder overbodige plug-ins is goedkoper in onderhoud én scoort beter in de zoekresultaten.</p>
-<h3>3. Content</h3>
-<p>Teksten, foto's en video. Dit wordt vaak vergeten in de offerte, terwijl het de grootste invloed heeft op of een bezoeker klant wordt. Wij combineren websites daarom met <a href="/drone-video">eigen foto- en videoproductie</a> en <a href="/ai-content">AI-content</a>, zodat je niet met lege pagina's blijft zitten.</p>
-<h3>4. Doorlopende kosten</h3>
-<p>Reken op €5 tot €25 per maand voor hosting en domein. SEO is optioneel: bij ons <a href="/pricing">€39 per maand</a>, inclusief technische optimalisatie, zoekwoorden en een maandelijkse rapportage.</p>
-<h2>Wat kost een website laten maken in Den Bosch of omgeving?</h2>
-<p>Regionaal verschillen de prijzen weinig; de bureaukeuze maakt het verschil. In Noord-Brabant zie je voor maatwerk websites meestal €1.000 tot €4.000. Omdat wij in <a href="/website-laten-maken-den-bosch">Den Bosch</a> zitten en vanuit daar werken voor <a href="/website-laten-maken-eindhoven">Eindhoven</a>, <a href="/website-laten-maken-tilburg">Tilburg</a>, <a href="/website-laten-maken-oss">Oss</a> en de rest van Nederland, kunnen we een vaste, lage instapprijs hanteren.</p>
-<h2>Vijf vragen die je moet stellen voordat je tekent</h2>
-<ol>
-<li>Is het ontwerp maatwerk of een aangepaste template?</li>
-<li>Wie is eigenaar van de site en het domein — jij of het bureau?</li>
-<li>Wat is de verwachte laadtijd en PageSpeed-score bij oplevering?</li>
-<li>Zit SEO-basis (titels, meta-omschrijvingen, sitemap, structured data) in de prijs?</li>
-<li>Wat kost een extra pagina of aanpassing na oplevering?</li>
-</ol>
-<h2>Eerst zien, dan beslissen</h2>
-<p>Twijfel je of een maatwerk website het waard is? Wij bouwen eerst een <a href="/aanvraag">gratis testwebsite</a>. Je ziet het ontwerp en de snelheid voordat je iets betaalt — dat is de eerlijkste manier om de prijs te beoordelen.</p>
-"""),
- dict(slug="website-laten-maken-waar-op-letten", title="Website laten maken: 10 dingen waar je op moet letten", eyebrow="Checklist", read="7 min", img="photo-wireframes.jpg",
-      desc="Een website laten maken? Deze checklist van 10 punten voorkomt dure fouten: eigendom, snelheid, SEO, mobiel, content, onderhoud en de vragen die je het bureau moet stellen.",
-      body="""
-<p class="lead">Een website laat je niet elk jaar maken. Daarom loont het om de keuze één keer goed te doen. Deze checklist komt uit de praktijk van tientallen projecten — inclusief de fouten die we ondernemers zagen maken bij hun vorige bureau.</p>
-<h2>1. Jij bent eigenaar — van alles</h2>
-<p>Domeinnaam, hosting, broncode en content moeten op jouw naam staan. Een bureau dat de site "in beheer houdt" en je bij vertrek laat betalen voor je eigen website, is een rode vlag.</p>
-<h2>2. Snelheid is geen luxe</h2>
-<p>Elke seconde laadtijd kost bezoekers, en Google gebruikt snelheid als rankingfactor. Vraag om een PageSpeed-score bij oplevering en laat die vastleggen. Onze sites halen op mobiel standaard groene scores.</p>
-<h2>3. Mobiel is het uitgangspunt, niet een afterthought</h2>
-<p>Meer dan 70% van het lokale zoekverkeer komt van een telefoon. Beoordeel het ontwerp dus eerst op mobiel: knoppen groot genoeg, telefoonnummer klikbaar, formulieren kort.</p>
-<h2>4. SEO-basis hoort erbij</h2>
-<p>Unieke paginatitels, meta-omschrijvingen, een sitemap, schone URL's, structured data en snelle afbeeldingen: dat is geen "SEO-pakket", dat is gewoon een goed gebouwde website. Lees ook onze <a href="/kennisbank/lokale-seo-tips">tips voor lokale SEO</a>.</p>
-<h2>5. Content op tijd regelen</h2>
-<p>De meeste vertraging in websiteprojecten komt door ontbrekende teksten en foto's. Spreek af wie wat levert en wanneer — of laat het bureau de <a href="/drone-video">foto's en video</a> en de teksten verzorgen.</p>
-<h2>6. Eén duidelijke actie per pagina</h2>
-<p>Bellen, offerte aanvragen, afspraak maken: kies per pagina één doel en maak dat overal zichtbaar. Een site met tien knoppen die allemaal iets anders willen, converteert slechter dan een site met één duidelijke vraag.</p>
-<h2>7. Zelf kunnen aanpassen</h2>
-<p>Je moet een tekst of foto zelf kunnen wijzigen zonder factuur. Vraag of er een CMS in zit en of je uitleg krijgt.</p>
-<h2>8. Beveiliging en back-ups</h2>
-<p>SSL (het slotje) is vanzelfsprekend. Vraag ook naar updates, back-ups en wat er gebeurt als de site gehackt wordt. Een <a href="/pricing">onderhoudsabonnement</a> is vaak goedkoper dan één keer herstel.</p>
-<h2>9. Bekijk echt werk, geen mockups</h2>
-<p>Klik door het <a href="/portfolio">portfolio</a> op je telefoon. Laden de sites snel? Werken de formulieren? Staan de klanten nog online met die site?</p>
-<h2>10. Weet wat het daarna kost</h2>
-<p>Hosting, domein, onderhoud, extra pagina's: laat het op papier zetten. Bij ons staan de bedragen gewoon op de <a href="/pricing">pricingpagina</a>.</p>
-<h2>Bonus: vraag een gratis testwebsite</h2>
-<p>De beste check is het resultaat zelf zien. Daarom bouwen we eerst een <a href="/aanvraag">gratis testwebsite</a>, en beslis je daarna.</p>
-"""),
- dict(slug="drone-video-laten-maken-kosten-en-regels", title="Drone video laten maken: kosten, regels en wat je mag verwachten", eyebrow="Drone & video", read="6 min", img="photo-drone-villa.jpg",
-      desc="Een drone video laten maken? Lees wat het kost (vanaf €250 per shoot), welke regels gelden in Nederland, waar je wel en niet mag vliegen en hoe een shoot verloopt.",
-      body="""
-<p class="lead">Dronebeelden geven een bedrijf, villa of evenement in een paar seconden grootsheid. Maar wat kost een drone video laten maken, wat mag wel en niet, en wat krijg je uiteindelijk geleverd? Hieronder het complete overzicht.</p>
-<h2>Wat kost een drone video?</h2>
-<p>Bij Skyline Digital kost een <a href="/drone-video">video-shoot op locatie €250</a>; met drone-opnames erbij €300. Daar zit de opname met professionele apparatuur, de montage en de kleurcorrectie in. Een complete cinematische bedrijfsfilm of villa-film offreren we op maat, afhankelijk van de lengte, het aantal locaties en of er voice-over of muziek met licentie bij moet.</p>
-<p>Ter vergelijking: in de markt zie je voor losse drone-opnames €150 tot €500 per dagdeel, en voor volledige bedrijfsfilms €1.500 tot €10.000. De grote verschillen zitten in montage, aantal draaidagen en of er een crew meekomt.</p>
-<h2>Welke regels gelden in Nederland?</h2>
-<p>Sinds 2021 gelden de Europese droneregels. Voor commerciële opnames met een drone onder de 25 kg vlieg je meestal in de "open categorie" (A1, A2 of A3). De piloot heeft een registratie en een vliegbewijs, en de drone is voorzien van een operatornummer.</p>
-<ul>
-<li><strong>No-fly zones:</strong> rond vliegvelden en militaire terreinen mag je niet vliegen. In Brabant geldt dat bijvoorbeeld rond Eindhoven Airport, Volkel en Gilze-Rijen. We checken vooraf altijd de officiële kaart.</li>
-<li><strong>Maximale hoogte:</strong> 120 meter boven de grond.</li>
-<li><strong>Mensen:</strong> niet boven mensenmassa's en afhankelijk van de drone op afstand van omstanders.</li>
-<li><strong>Privacy:</strong> buren en voorbijgangers niet herkenbaar in beeld zonder toestemming — belangrijk bij villa-films in woonwijken.</li>
-</ul>
-<p>Het belangrijkste voor jou als opdrachtgever: werk met een piloot die deze regels kent en vooraf de locatie beoordeelt. Dan weet je zeker dat de beelden ook gebruikt mogen worden.</p>
-<h2>Hoe verloopt een shoot?</h2>
-<ol>
-<li><strong>Intake:</strong> doel van de film, locatie, wensen en voorbeelden. We adviseren over het beste tijdstip (vaak het "gouden uur" vlak na zonsopgang of voor zonsondergang).</li>
-<li><strong>Locatiecheck:</strong> luchtruim, vergunningen, weersverwachting.</li>
-<li><strong>Opnamedag:</strong> drone- en grondopnames in één dagdeel. Voor villa's filmen we ook de binnenruimtes met gestabiliseerde camera.</li>
-<li><strong>Montage:</strong> selectie, kleurcorrectie, muziek, eventueel logo en tekst. Binnen één tot twee weken klaar.</li>
-<li><strong>Levering:</strong> horizontale versie voor website en YouTube, verticale versie voor Instagram en TikTok.</li>
-</ol>
-<h2>Waarvoor gebruik je dronebeelden?</h2>
-<p>Vastgoed en villa's (bekijk onze <a href="/portfolio#videos">villa-films in Moraira en Jávea</a>), bedrijfspanden en terreinen, bouwvoortgang, evenementen, horeca met buitenlocatie en recreatie. Combineer de drone-opnames met een <a href="/website-seo">snelle website</a> en je hebt een homepage die bezoekers direct vasthoudt.</p>
-<h2>Eerst een voorbeeld zien?</h2>
-<p>Voor villa-eigenaren en makelaars maken we eerst een <a href="/video?v=modern-villa-moraira">gratis voorbeeld gericht op jouw woning</a>. Zo zie je de stijl voordat je beslist.</p>
-"""),
- dict(slug="lokale-seo-tips", title="Lokale SEO: zo word je gevonden in Den Bosch en omgeving", eyebrow="SEO", read="8 min", img="photo-phone-city.jpg",
-      desc="Lokale SEO voor ondernemers in Den Bosch en Brabant: Google Bedrijfsprofiel, reviews, locatiepagina's, NAP-gegevens, structured data en snelheid. Praktische tips die direct werken.",
-      body="""
-<p class="lead">De meeste klanten van een lokaal bedrijf zoeken op "dienst + plaats": <em>fysiotherapeut Rosmalen</em>, <em>schilder Den Bosch</em>, <em>restaurant Vught</em>. Lokale SEO is alles wat je doet om bij die zoekopdrachten bovenaan te staan — in de kaartresultaten én in de normale resultaten. Dit zijn de stappen die het meeste opleveren.</p>
-<h2>1. Claim en vul je Google Bedrijfsprofiel volledig in</h2>
-<p>Het gratis Google Bedrijfsprofiel (voorheen Google Mijn Bedrijf) bepaalt of je in de kaart met drie resultaten verschijnt. Vul álles in: categorie, openingstijden, diensten, foto's, een beschrijving met je belangrijkste zoekwoorden en een link naar je website. Plaats regelmatig updates en beantwoord vragen.</p>
-<h2>2. Verzamel reviews — en reageer erop</h2>
-<p>Aantal, gemiddelde en recentheid van reviews wegen zwaar mee. Vraag elke tevreden klant actief om een review (stuur een directe link), en reageer op elke review, ook de kritische. Dat laat Google én nieuwe klanten zien dat je actief bent.</p>
-<h2>3. Zorg voor consistente NAP-gegevens</h2>
-<p>NAP staat voor Name, Address, Phone. Zorg dat je bedrijfsnaam, adres en telefoonnummer overal exact hetzelfde zijn: website, Google, Facebook, KVK-vermeldingen, branchegidsen. Kleine verschillen ("straat" versus "str.") verwarren zoekmachines.</p>
-<h2>4. Maak locatiepagina's met echte inhoud</h2>
-<p>Werk je in meerdere plaatsen? Maak per plaats een pagina met unieke tekst: welke wijken, welke klanten, hoe je bereikbaar bent, lokale voorbeelden. Kopieer niet dezelfde tekst met alleen de plaatsnaam vervangen — dat herkent Google en het levert niets op. Bekijk ter voorbeeld onze pagina's voor <a href="/website-laten-maken-den-bosch">Den Bosch</a>, <a href="/website-laten-maken-rosmalen">Rosmalen</a> en <a href="/website-laten-maken-oss">Oss</a>.</p>
-<h2>5. Gebruik structured data (schema.org)</h2>
-<p>Met LocalBusiness-structured data vertel je Google in code wie je bent, waar je zit, wanneer je open bent en welke diensten je levert. Het kost niets en maakt je zichtbaar voor uitgebreide zoekresultaten. Ook FAQ-structured data op pagina's met veelgestelde vragen werkt goed.</p>
-<h2>6. Maak je website snel en mobiel</h2>
-<p>Lokale zoekers zitten bijna altijd op een telefoon. Een trage site verliest ze vóór ze je telefoonnummer zien. Comprimeer afbeeldingen, beperk scripts en zorg dat de belangrijkste informatie bovenaan staat. Onze <a href="/website-seo">websites worden gebouwd op snelheid</a>, precies hierom.</p>
-<h2>7. Lokale links en vermeldingen</h2>
-<p>Vermeldingen op de site van de ondernemersvereniging, de gemeente, lokale media, leveranciers en sponsoren tellen mee. Ze bevestigen dat je echt in die plaats actief bent.</p>
-<h2>8. Content over je regio</h2>
-<p>Schrijf over projecten in de buurt, lokale evenementen waar je bij was, of veelgestelde vragen van klanten uit jouw stad. Het is de meest natuurlijke manier om plaatsnamen en diensten te combineren.</p>
-<h2>9. Meet wat werkt</h2>
-<p>Google Search Console laat gratis zien op welke zoekwoorden je gevonden wordt en op welke positie. Het Bedrijfsprofiel toont hoeveel mensen bellen of de route opvragen. Kijk er maandelijks naar en stuur bij.</p>
-<h2>Hulp nodig?</h2>
-<p>Met ons <a href="/pricing">SEO-abonnement van €39 per maand</a> nemen we dit uit handen: technische optimalisatie, zoekwoorden, content en maandelijks een rapportage. Of begin met een <a href="/contact">gratis adviesgesprek</a>.</p>
-"""),
- dict(slug="wat-is-een-cinematic-scroll-website", title="Wat is een cinematic scroll website — en wanneer is het slim?", eyebrow="Webdesign", read="5 min", img="photo-studio-monitor.jpg",
-      desc="Een cinematic scroll website speelt een film af terwijl de bezoeker scrolt. Lees hoe het werkt, wat het kost (vanaf €749), wat het doet voor je merk en wanneer je er beter niet voor kiest.",
-      body="""
-<p class="lead">Je hebt ze vast gezien bij Apple of bij premium automerken: je scrolt, en een product draait, opent of vliegt door beeld alsof je een film bestuurt. Dat heet een cinematic scroll website (ook wel scroll-driven video of scrollytelling). Onze eigen <a href="/">homepage</a> werkt zo. Hieronder leggen we uit hoe het werkt en voor wie het de investering waard is.</p>
-<h2>Hoe werkt het technisch?</h2>
-<p>Een korte film wordt opgeknipt in losse beelden (frames). Terwijl je scrolt, bepaalt je scrollpositie welk frame er getoond wordt. Scrol je terug, dan speelt de film achteruit. Omdat het geen video-element is maar losse beelden op een canvas, voelt het direct en soepel — ook op mobiel, mits het goed gebouwd is.</p>
-<p>Tekst en knoppen worden op vaste momenten in de film getoond. Daar vertragen we het scrollen iets, zodat je de boodschap rustig leest voordat de film verder gaat.</p>
-<h2>Wat doet het voor je merk?</h2>
-<ul>
-<li><strong>Aandacht:</strong> bezoekers blijven langer en scrollen verder, omdat ze willen zien wat er gebeurt.</li>
-<li><strong>Positionering:</strong> het straalt premium uit. Voor villa's, exclusieve producten, architectuur, auto's en bureaus die kwaliteit verkopen, is dat precies het punt.</li>
-<li><strong>Verhaal:</strong> je leidt de bezoeker in een vaste volgorde door je boodschap, in plaats van dat hij willekeurig klikt.</li>
-</ul>
-<h2>Wanneer kies je er beter niet voor?</h2>
-<p>Als bezoekers vooral snel iets moeten regelen — een afspraak boeken, een prijs vinden, bellen — zet je het effect alleen op de homepage of helemaal niet. Een huisartsenpraktijk heeft er weinig aan; een villa-makelaar of designstudio juist veel. Ook bij een heel beperkt budget voor beeld is een strakke <a href="/website-seo">multipage website</a> de betere keuze.</p>
-<h2>Wat kost een cinematic scroll website?</h2>
-<p>Bij ons kost een <a href="/pricing">3D cinematic website €749</a>, inclusief beeldmateriaal: we genereren of filmen de film, bouwen het scroll-effect en zetten de rest van de site erachter. Elders zie je voor dit soort sites vaak bedragen van €5.000 of meer, omdat het handmatig animatiewerk is. Wij hebben er een vaste werkwijze voor ontwikkeld.</p>
-<h2>Heeft het invloed op SEO en snelheid?</h2>
-<p>Alleen als het slecht gebouwd is. Wij laden de beelden slim (eerst de frames die je direct ziet, daarna de rest), houden de bestandsgrootte laag en zorgen dat alle tekst gewoon in de HTML staat. Daardoor kan Google de pagina normaal lezen en blijft de site snel.</p>
-<h2>Zelf ervaren?</h2>
-<p>Scrol door onze <a href="/">homepage</a> of bekijk de <a href="/portfolio">voorbeelden in het portfolio</a>. En wil je weten hoe het er voor jouw bedrijf uitziet: vraag een <a href="/aanvraag">gratis testwebsite</a> aan.</p>
-"""),
-]
+# Kennisbankartikelen staan als losse bestanden in content/kennisbank/<datum>-<slug>.html:
+# een commentaarblok met velden (title, slug, date, eyebrow, read, img, desc) en daaronder de HTML van het artikel.
+# Nieuw artikel = nieuw bestand; zie content/kennisbank/SCHRIJFGIDS.md.
+STRICT_FROM = "2026-10-17"  # artikelen vanaf deze datum volgen de volledige SCHRIJFGIDS
+def load_articles():
+    arts, errors = [], []
+    for path in sorted(glob.glob("content/kennisbank/*.html")):
+        raw = open(path).read()
+        m = re.match(r"\s*<!--(.*?)-->\s*(.*)", raw, re.S)
+        if not m: errors.append(f"{path}: geen <!-- ... --> blok met velden bovenaan"); continue
+        meta = {}
+        for line in m.group(1).strip().splitlines():
+            if ":" in line:
+                k, v = line.split(":", 1); meta[k.strip()] = v.strip()
+        meta["body"] = m.group(2).strip()
+        missing = [k for k in ("title", "slug", "date", "eyebrow", "read", "img", "desc") if not meta.get(k)]
+        if missing: errors.append(f"{path}: veld(en) ontbreken: {', '.join(missing)}"); continue
+        if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", meta["slug"]): errors.append(f"{path}: slug '{meta['slug']}' mag alleen kleine letters, cijfers en streepjes bevatten")
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", meta["date"]): errors.append(f"{path}: date moet JJJJ-MM-DD zijn")
+        if len(meta["title"]) > 70: errors.append(f"{path}: title is {len(meta['title'])} tekens (max 70)")
+        if not 70 <= len(meta["desc"]) <= 160: errors.append(f"{path}: desc is {len(meta['desc'])} tekens (70–160)")
+        if not os.path.exists("assets/" + meta["img"]): errors.append(f"{path}: afbeelding assets/{meta['img']} bestaat niet")
+        body = meta["body"]
+        if body.count("<h2>") < 3: errors.append(f"{path}: minimaal 3 <h2>-tussenkoppen nodig")
+        words = len(re.sub(r"<[^>]+>", " ", body).split())
+        if words < 350: errors.append(f"{path}: artikel is {words} woorden (minimaal 350)")
+        if meta["date"] >= STRICT_FROM:
+            if 'class="tldr"' not in body: errors.append(f"{path}: blok <div class=\"tldr\"> (Kort antwoord) ontbreekt")
+            if body.count("<details>") < 3: errors.append(f"{path}: minimaal 3 FAQ-vragen (<details>) nodig")
+            if not re.search(r'href="https?://(?!www\.skylinedigital\.nl)', body): errors.append(f"{path}: minimaal 1 externe bron (link) nodig")
+            if len(meta["title"]) > 60: errors.append(f"{path}: title is {len(meta['title'])} tekens (max 60 voor nieuwe artikelen)")
+        links = re.findall(r'href="(/[^"#?]*)', body)
+        if len(links) < 3: errors.append(f"{path}: minimaal 3 interne links nodig")
+        for l in links:
+            target = "index.html" if l == "/" else l.strip("/") + ".html"
+            if not os.path.exists(target) and not os.path.exists(l.strip("/") + "/index.html") and not any(l == "/kennisbank/" + a2 for a2 in [os.path.basename(x)[11:-5] for x in glob.glob("content/kennisbank/*.html")]):
+                errors.append(f"{path}: interne link {l} bestaat niet")
+        arts.append(meta)
+    slugs = [a["slug"] for a in arts]
+    for s_ in set(slugs):
+        if slugs.count(s_) > 1: errors.append(f"slug '{s_}' komt dubbel voor")
+    if errors:
+        raise SystemExit("Kennisbank-controle mislukt:\n  - " + "\n  - ".join(errors))
+    return sorted(arts, key=lambda a: (a["date"], a["slug"]), reverse=True)
+
+ARTICLES = load_articles()
+AUTHOR = {"@type":"Person","@id":BASE+"/over-ons#yannick","name":"Yannick van den Broek","jobTitle":"Oprichter Skyline Digital",
+          "worksFor":{"@id":BASE+"/#organization"},"url":BASE+"/over-ons"}
+MONTHS = ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"]
+def nl_date(d): y, m, dd = d.split("-"); return f"{int(dd)} {MONTHS[int(m)-1]} {y}"
 
 def head(title, desc, url, og, ld, extra=""):
     t = html.escape(title, quote=True); d = html.escape(desc, quote=True)
@@ -400,9 +311,12 @@ for a in ARTICLES:
     url = f"{BASE}/kennisbank/{a['slug']}"; og = f"/assets/{a['img']}"
     ld = {"@context":"https://schema.org","@graph":[
         crumbs_ld(url, [("Kennisbank", BASE+"/kennisbank"), (a["title"], url)]),
-        {"@type":"Article","@id":url+"#article","headline":a["title"],"description":a["desc"],"image":BASE+og,"datePublished":TODAY,"dateModified":TODAY,
-         "author":{"@type":"Person","name":"Yannick van den Broek","url":BASE+"/over-ons"},"publisher":ORG_REF,"mainEntityOfPage":url,"inLanguage":"nl-NL"},
+        {"@type":"Article","@id":url+"#article","headline":a["title"],"description":a["desc"],"image":BASE+og,"datePublished":a["date"],"dateModified":a.get("updated") or a["date"],
+         "author":AUTHOR,"publisher":ORG_REF,"mainEntityOfPage":url,"inLanguage":"nl-NL"},
         {"@type":"WebPage","@id":url+"#webpage","url":url,"name":a["title"],"description":a["desc"],"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"breadcrumb":{"@id":url+"#breadcrumb"}}]}
+    faqs = [(html.unescape(re.sub(r"<[^>]+>", "", q)).strip(), html.unescape(re.sub(r"<[^>]+>", "", an)).strip())
+            for q, an in re.findall(r"<details>\s*<summary>(.*?)</summary>(.*?)</details>", a["body"], re.S)]
+    if faqs: ld["@graph"].insert(-1, {"@type":"FAQPage","@id":url+"#faq","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":an}} for q, an in faqs]})
     others = [o for o in ARTICLES if o is not a][:3]
     body = HEADER + f'''
   <section class="page-hero has-image">
@@ -410,7 +324,7 @@ for a in ARTICLES:
     <div class="page-hero-inner">
       <p class="crumbs"><a href="/">Home</a> · <a href="/kennisbank">Kennisbank</a> · {a['eyebrow']}</p>
       <h1>{a['title']}</h1>
-      <p class="lead">{a['eyebrow']} · {a['read']} leestijd · door Yannick van den Broek</p>
+      <p class="lead">{a['eyebrow']} · {nl_date(a['date'])} · {a['read']} leestijd · door Yannick van den Broek</p>
     </div>
   </section>
   <section class="bg-white full">
@@ -418,6 +332,14 @@ for a in ARTICLES:
       <article class="article">
 {a['body']}
       </article>
+      <aside class="author-box">
+        <img src="/assets/logo.png" alt="Skyline Digital" />
+        <div>
+          <p class="author-name">Yannick van den Broek <span>· oprichter Skyline Digital</span></p>
+          <p>Bouwt maatwerk websites en maakt bedrijfs-, villa- en dronefilms vanuit 's-Hertogenbosch. Gepubliceerd {nl_date(a['date'])}{(' · bijgewerkt ' + nl_date(a['updated'])) if a.get('updated') else ''}.</p>
+          <p class="author-note">Dit artikel is geschreven met hulp van AI, op basis van onze eigen werkwijze, prijzen en projecten. Cijfers en regels zijn gecontroleerd aan de hand van de genoemde bronnen.</p>
+        </div>
+      </aside>
       <div class="article-more">
         <h2>Verder lezen</h2>
         {rows([(f'<a href="/kennisbank/{o["slug"]}" style="color:inherit;text-decoration:none">{o["title"]}</a>', o["desc"]) for o in others])}
@@ -434,7 +356,9 @@ for a in ARTICLES:
   </section>
 
 '''
-    open(f"kennisbank/{a['slug']}.html","w").write(head(a["title"] + " | Skyline Digital", a["desc"], url, og, ld) + body + tail())
+    page = head(a["title"] + " | Skyline Digital", a["desc"], url, og, ld) + body + tail()
+    page = page.replace('src="assets/', 'src="/assets/').replace('href="assets/', 'href="/assets/')
+    open(f"kennisbank/{a['slug']}.html","w").write(page)
 
 url = BASE + "/kennisbank"; title = "Kennisbank: websites, SEO, video & content | Skyline Digital"
 desc = "Praktische artikelen over website laten maken, kosten, lokale SEO, drone video en cinematic webdesign — geschreven door Skyline Digital uit Den Bosch."
@@ -456,7 +380,7 @@ body = HEADER + f'''
         <p class="eyebrow">Artikelen</p>
         <h2>Lees <span class="gold-text">verder</span></h2>
       </div>
-      {rows([(f'<a href="/kennisbank/{a["slug"]}" style="color:inherit;text-decoration:none">{a["title"]}</a>', a["desc"]) for a in ARTICLES])}
+      {rows([(f'<a href="/kennisbank/{a["slug"]}" style="color:inherit;text-decoration:none">{a["title"]}</a>', nl_date(a["date"]) + " · " + a["desc"]) for a in ARTICLES])}
     </div>
   </section>
   <section class="cta-band">
@@ -493,7 +417,7 @@ urls = [("/",1.0,"weekly"),("/website-seo",0.9,"monthly"),("/drone-video",0.9,"m
         ("/pricing",0.8,"monthly"),("/portfolio",0.8,"monthly"),("/over-ons",0.7,"monthly"),("/contact",0.7,"yearly"),("/aanvraag",0.8,"yearly"),
         ("/regio",0.7,"monthly"),("/kennisbank",0.7,"weekly")]
 urls += [(f"/website-laten-maken-{c['slug']}",0.8,"monthly") for c in CITIES]
-urls += [(f"/kennisbank/{a['slug']}",0.7,"monthly") for a in ARTICLES]
+urls += [(f"/kennisbank/{a['slug']}",0.7,"monthly",a["date"]) for a in ARTICLES]
 W = ["dekgro","lillis","bodyscan","echtgrieks","carslease","lassie","dejonge","elektropost","palmyra"]
 urls += [(f"/werk-{w}",0.5,"yearly") for w in W]
 MAIN = ["","/over-ons","/website-seo","/drone-video","/social-media","/ai-content","/portfolio","/pricing","/contact","/aanvraag"]
@@ -502,8 +426,9 @@ for l in ["en","it","es"]:
     urls += [(f"/{l}/werk-{w}", 0.4, "yearly") for w in W]
 urls += [("/privacybeleid",0.2,"yearly"),("/algemene-voorwaarden",0.2,"yearly"),("/cookiebeleid",0.2,"yearly")]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-for u,p,f in urls:
-    sm += f'  <url><loc>{BASE}{u}</loc><lastmod>{TODAY}</lastmod><changefreq>{f}</changefreq><priority>{p}</priority></url>\n'
+for entry in urls:
+    u, p, f = entry[:3]; lm = entry[3] if len(entry) > 3 else (max(a["date"] for a in ARTICLES) if u == "/kennisbank" else TODAY)
+    sm += f'  <url><loc>{BASE}{u}</loc><lastmod>{lm}</lastmod><changefreq>{f}</changefreq><priority>{p}</priority></url>\n'
 open("sitemap.xml","w").write(sm + "</urlset>\n")
 print("pages:", len(CITIES)+len(ARTICLES)+2, "sitemap urls:", len(urls))
 
