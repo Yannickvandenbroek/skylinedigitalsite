@@ -441,21 +441,51 @@ div.row .row-arrow { opacity: .55; }
 .author-box .author-note { font-size: .86rem; color: var(--ink-dim); margin: 0; }
 @media (max-width: 600px) { .author-box { flex-direction: column; } .article table { display: block; overflow-x: auto; } }
 
-/* Google-reviews */
-.g-reviews { border: 1px solid var(--line); border-radius: 28px; padding: clamp(24px, 4vw, 44px); background: #fff; box-shadow: 0 30px 80px rgba(20,20,30,.08); }
-.g-summary { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
-.g-score { font-family: "Inter Tight", sans-serif; font-weight: 900; font-size: clamp(3rem, 6vw, 4.6rem); line-height: 1; letter-spacing: -0.04em; color: var(--ink); }
-.g-stars { color: #f5b400; letter-spacing: 2px; font-size: 1.15rem; }
-.g-count { color: var(--ink-dim); font-size: 1rem; }
-.g-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-.g-card { border: 1px solid var(--line); border-radius: 20px; padding: 22px; background: #fbfaf7; }
-.g-head { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
-.g-avatar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; background: #e8e2d2; color: var(--ink); font-family: "Inter Tight", sans-serif; font-weight: 800; object-fit: cover; }
-.g-name { margin: 0; font-family: "Inter Tight", sans-serif; font-weight: 700; color: var(--ink); }
-.g-name a { color: inherit; text-decoration: none; }
-.g-head .g-stars { margin: 2px 0 0; font-size: .9rem; }
-.g-text { margin: 0; color: var(--ink-soft); line-height: 1.6; }
-.g-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-.g-attr { margin: 18px 0 0; font-size: .82rem; color: var(--ink-dim); }
-.g-actions .btn-ghost { color: var(--ink); background: transparent; border: 1px solid rgba(20,20,26,.28); }
-.g-actions .btn-ghost:hover { color: var(--gold-deep); border-color: var(--gold); }
+/* Google-reviews: Google-stijl kaarten in twee schuivende rijen (award-patroon), samenvatting als Google-paneel */
+.g-section { overflow: clip; }
+.g-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); gap: clamp(32px, 6vw, 90px); align-items: end; }
+.g-top .section-head { margin-bottom: 0; }
+.g-summary { background: #fff; border: 1px solid #dadce0; border-radius: 24px; padding: 28px 30px; box-shadow: 0 1px 2px rgba(60,64,67,.15), 0 12px 40px rgba(60,64,67,.12); font-family: Inter, system-ui, sans-serif; }
+.g-brand { display: flex; align-items: center; gap: 10px; color: #3c4043; font-weight: 600; font-size: .98rem; margin-bottom: 14px; }
+.g-brand .g-logo { width: 22px; height: 22px; }
+.g-scoreline { display: flex; align-items: center; gap: 14px; }
+.g-score { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: clamp(3.2rem, 5vw, 4.4rem); line-height: 1; letter-spacing: -0.04em; color: #202124; }
+.g-stars { color: #fbbc04; letter-spacing: 1px; margin: 0; line-height: 1; }
+.g-stars-lg { font-size: 1.6rem; letter-spacing: 3px; }
+.g-count { margin: 10px 0 22px; color: #5f6368; font-size: .98rem; }
+.g-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.g-btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 20px; border-radius: 999px; font: 600 .92rem/1 Inter, system-ui, sans-serif; text-decoration: none; color: #1a73e8; border: 1px solid #dadce0; background: #fff; transition: background .2s, box-shadow .2s, border-color .2s; }
+.g-btn:hover { background: #f6f9fe; border-color: #c6dafc; }
+.g-btn-primary { background: #1a73e8; border-color: #1a73e8; color: #fff; }
+.g-btn-primary:hover { background: #1765cc; border-color: #1765cc; box-shadow: 0 1px 3px rgba(60,64,67,.3); }
+
+.g-marquee { margin-top: clamp(48px, 6vw, 80px); display: grid; gap: 18px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.g-row { overflow: hidden; }
+.g-track { display: flex; gap: 18px; width: max-content; animation: g-scroll 60s linear infinite; }
+.g-row-rev .g-track { animation-direction: reverse; animation-duration: 70s; }
+.g-marquee:hover .g-track { animation-play-state: paused; }
+@keyframes g-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.g-card { flex: 0 0 auto; width: clamp(280px, 30vw, 380px); background: #fff; border: 1px solid #dadce0; border-radius: 16px; padding: 20px 22px; box-shadow: 0 1px 2px rgba(60,64,67,.12); font-family: Inter, system-ui, sans-serif; transition: box-shadow .25s, transform .25s; }
+.g-card:hover { box-shadow: 0 1px 3px rgba(60,64,67,.2), 0 10px 30px rgba(60,64,67,.15); transform: translateY(-2px); }
+.g-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.g-avatar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; color: #fff; font: 600 1.05rem/1 Inter, system-ui, sans-serif; }
+.g-who { flex: 1; min-width: 0; }
+.g-name { margin: 0 0 3px; font-weight: 600; font-size: .98rem; color: #202124; }
+.g-head .g-stars { font-size: .95rem; }
+.g-head .g-logo { width: 20px; height: 20px; flex: 0 0 auto; align-self: flex-start; }
+.g-text { margin: 0; color: #3c4043; font-size: .98rem; line-height: 1.6; }
+.g-foot .g-attr { margin: 22px 0 0; font-size: .82rem; color: #5f6368; text-align: right; }
+@media (prefers-reduced-motion: reduce) {
+  .g-track { animation: none; }
+  .g-row { overflow-x: auto; }
+  .g-track > [aria-hidden="true"] { display: none; }
+}
+@media (max-width: 940px) {
+  .g-top { grid-template-columns: 1fr; align-items: start; }
+  .g-card { width: 280px; }
+  .g-track { animation-duration: 40s; }
+  .g-row-rev .g-track { animation-duration: 48s; }
+}
+.g-section > .wrap:first-child { padding-bottom: 0; }
+.g-section > .g-foot { padding-top: 0; }
