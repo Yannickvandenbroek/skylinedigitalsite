@@ -96,7 +96,7 @@ def absolutize(s):
 for slug in PAGES:
     p = slug + ".html"; s = open(p).read()
     s = re.sub(r'\n  <link rel="alternate" hreflang="[^"]*" href="[^"]*" />', '', s)
-    s = re.sub(r'<script>window\.SKY_ALT=.*?</script>\n?', '', s)
+    s = re.sub(r'[ \t]*<script>window\.SKY_ALT=.*?</script>\n?', '', s)
     s = s.replace('<link rel="canonical" href="' + BASE + path_of("nl", slug) + '" />', '<link rel="canonical" href="' + BASE + path_of("nl", slug) + '" />' + hreflangs(slug), 1)
     s = s.replace('</head>', '  ' + alt_script(slug) + '\n</head>', 1)
     open(p, "w").write(s)
