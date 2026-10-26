@@ -19,7 +19,7 @@ SNIPPET = f'''{START}
   <script src="/consent.js" defer></script>
   {END}'''
 
-ASSETS = ["styles.css", "pages.css", "awards.css", "scroll-cinematic.js", "consent.js", "films.js"]
+ASSETS = ["styles.css", "pages.css", "awards.css", "scroll-cinematic.js", "consent.js", "films.js", "instagram.js"]
 def bust(html):
     # Zet ?v=<hash van de inhoud> achter gedeelde css/js, zodat browsers na een wijziging direct de nieuwe versie laden.
     for a in ASSETS:

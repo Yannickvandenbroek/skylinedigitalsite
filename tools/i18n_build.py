@@ -88,7 +88,7 @@ def fix_ld(s, lang, slug, soup):
     return re.sub(r'<script type="application/ld\+json">(.*?)</script>', repl, s, count=1, flags=re.S)
 
 def absolutize(s):
-    s = re.sub(r'(src|href)="(assets/|frames/|styles\.css|pages\.css|awards\.css|scroll-cinematic\.js|films\.js)', r'\1="/\2', s)
+    s = re.sub(r'(src|href)="(assets/|frames/|styles\.css|pages\.css|awards\.css|scroll-cinematic\.js|films\.js|instagram\.js)', r'\1="/\2', s)
     s = s.replace("'assets/", "'/assets/").replace('"assets/', '"/assets/').replace("`frames/", "`/frames/").replace("'frames/", "'/frames/")
     return s
 
