@@ -172,7 +172,7 @@ for c in CITIES:
     desc = f"Website laten maken {c['in_']}? Skyline Digital bouwt snelle maatwerk websites vanaf €499 voor ondernemers in {c['full']} en omgeving. SEO inbegrepen. Vraag gratis een testwebsite aan."
     near = [CITY_BY[n] for n in c["near"]]
     faqs = [
-      (f"Wat kost een website laten maken {c['in_']}?", f"Een maatwerk multipage website kost bij ons €499 eenmalig, een 3D cinematic website €749. SEO is optioneel voor €39 per maand. Die prijzen gelden voor ondernemers {c['in_']} net zo goed als in de rest van Nederland — bekijk de <a href=\"/pricing\" style=\"color:var(--gold-deep)\">pricing</a>."),
+      (f"Wat kost een website laten maken {c['in_']}?", f"Een maatwerk multipage website kost bij ons €499 eenmalig, een 3D cinematic website €749. SEO is optioneel voor €39 per maand. Die prijzen gelden voor ondernemers {c['in_']} net zo goed als in de rest van Nederland — bekijk de <a href=\"/pricing\" style=\"color:var(--gold-deep)\">prijzen</a>."),
       (f"Komen jullie langs {c['in_']}?", f"Ja. {c['travel']} De kennismaking doen we op jouw locatie, bij ons in Den Bosch of via een videogesprek — wat jij prettig vindt."),
       (f"Hoe word ik beter gevonden in Google {c['in_']}?", f"Door een snelle site met goede teksten, een volledig Google Bedrijfsprofiel, reviews en een pagina die specifiek over {c['full']} gaat. Dat zetten we bij de bouw meteen goed; met het SEO-abonnement houden we het daarna bij."),
       ("Hoe lang duurt het?", "Een multipage website staat meestal binnen twee tot vier weken online, afhankelijk van hoe snel we teksten en beeld ontvangen. Een gratis testwebsite laten we je vaak al binnen een paar dagen zien."),
@@ -298,7 +298,7 @@ body = HEADER + f'''
       <div class="gold-rule" style="margin-inline:auto"></div>
       <h2>Zien hoe jouw bedrijf eruit kan zien?</h2>
       <p class="lead">Vraag een gratis testwebsite aan — je ziet eerst het resultaat, dan beslis je.</p>
-      <div class="hero-actions hero-actions-center"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite</a><a href="/pricing" class="btn btn-ghost-light">Bekijk pricing</a></div>
+      <div class="hero-actions hero-actions-center"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite</a><a href="/pricing" class="btn btn-ghost-light">Bekijk prijzen</a></div>
     </div>
   </section>
 
@@ -388,7 +388,7 @@ body = HEADER + f'''
       <div class="gold-rule" style="margin-inline:auto"></div>
       <h2>Vragen over jouw situatie?</h2>
       <p class="lead">Plan een gratis adviesgesprek — we denken graag mee.</p>
-      <div class="hero-actions hero-actions-center"><a href="/contact" class="btn btn-gold">Plan een gesprek</a><a href="/pricing" class="btn btn-ghost-light">Bekijk pricing</a></div>
+      <div class="hero-actions hero-actions-center"><a href="/contact" class="btn btn-gold">Plan een gesprek</a><a href="/pricing" class="btn btn-ghost-light">Bekijk prijzen</a></div>
     </div>
   </section>
 
