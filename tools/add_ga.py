@@ -1,8 +1,8 @@
-"""Zet de Google-tag (GA4) met toestemmingsmodus v2 in de <head> van elke pagina.
+"""Zet de Google-tag (GA4) met toestemmingsmodus v2 in de <head> van elke pagina en geeft gedeelde css/js een versie (?v=hash) tegen verouderde browsercache.
 Idempotent: een bestaand blok wordt vervangen. Wordt ook gebruikt door gen_pages.py en gen_cases.py,
 en de vertaalde pagina's erven het blok via i18n_build.py.
 Gebruik: python3 tools/add_ga.py"""
-import re, glob, os
+import re, glob, os, hashlib
 
 GA_ID = "G-39LM88JLSL"
 START, END = "<!-- Google tag (gtag.js) -->", "<!-- /Google tag -->"
@@ -19,6 +19,15 @@ SNIPPET = f'''{START}
   <script src="/consent.js" defer></script>
   {END}'''
 
+ASSETS = ["styles.css", "pages.css", "awards.css", "scroll-cinematic.js", "consent.js", "films.js"]
+def bust(html):
+    # Zet ?v=<hash van de inhoud> achter gedeelde css/js, zodat browsers na een wijziging direct de nieuwe versie laden.
+    for a in ASSETS:
+        if not os.path.exists(a): continue
+        v = hashlib.md5(open(a, "rb").read()).hexdigest()[:8]
+        html = re.sub(r'((?:src|href)="/?)' + re.escape(a) + r'(?:\?v=[0-9a-f]+)?"', lambda m: f'{m.group(1)}{a}?v={v}"', html)
+    return html
+
 def inject(html):
     html = re.sub(r"\s*" + re.escape(START) + r".*?" + re.escape(END), "", html, flags=re.S)
     return re.sub(r'(<meta charset="utf-8"\s*/?>)', lambda m: m.group(1) + "\n  " + SNIPPET, html, count=1, flags=re.I)
@@ -29,7 +38,7 @@ if __name__ == "__main__":
              if not os.path.basename(f).startswith("google")]
     n = 0
     for f in files:
-        s = open(f).read(); t = inject(s)
+        s = open(f).read(); t = bust(inject(s))
         if GA_ID not in t: print("GEEN charset-meta in", f); continue
         if t != s: open(f, "w").write(t); n += 1
     print(f"Google-tag in {n} van {len(files)} pagina's gezet")
