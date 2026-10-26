@@ -4,23 +4,19 @@ Elke week wordt het **bovenste open onderwerp** (`- [ ]`) geschreven. Daarna wor
 `- [x] 2026-10-20 → /kennisbank/<slug> — ...`
 
 Zoekwoorden komen uit Google-zoeksuggesties (oktober 2026). De volgorde gaat van veel koopintentie en sterke eigen ervaring naar breder informatief.
-Niet dubbel schrijven wat al bestaat: de 5 artikelen van 6 oktober 2026, de dienstpagina's en de locatiepagina's (`/website-laten-maken-<plaats>`).
+Niet dubbel schrijven wat al bestaat: de 5 artikelen van 6 oktober 2026, de 4 artikelen van 26 oktober 2026, de dienstpagina's en de locatiepagina's (`/website-laten-maken-<plaats>`).
 Beschikbare projectpagina's voor eigen ervaring: `/werk-dekgro` (tegelwerk), `/werk-lillis` (schilder), `/werk-bodyscan` (wellness), `/werk-echtgrieks` (vakantiehuis Griekenland), `/werk-carslease` (lease-platform, calculator), `/werk-lassie` (keukenmontage, scroll-animatie), `/werk-dejonge` (elektricien Nijkerk), `/werk-elektropost` (installateur Woudenberg), `/werk-palmyra` (coaching Oss). Villa-films: `/portfolio#videos`.
 
 ## Open
 
 - [ ] **Zichtbaar worden in ChatGPT en Google AI: wat werkt echt?** — zoekwoord: "zichtbaar worden in chatgpt" — invalshoek: wat Google zelf zegt over AI Overviews, wat ChatGPT-search nodig heeft (crawlbaar, OAI-SearchBot), merkvermeldingen en reviews; eerlijk over wat niet bewezen is — links: /website-seo, /kennisbank/lokale-seo-tips, /pricing
 - [ ] **Website laten maken voor coaches en therapeuten** — zoekwoord: "website laten maken voor coaches" — invalshoek: rust en vertrouwen uitstralen, afspraak plannen, werkwijze in stappen; case Palmyra Coaching — links: /werk-palmyra, /website-seo, /pricing
-- [ ] **Wat kost een website per jaar? Hosting, domein en onderhoud op een rij** — zoekwoord: "wat kost een website per jaar" — invalshoek: doorlopende kosten (niet de bouw, daarvoor link naar bestaand artikel) — links: /kennisbank/wat-kost-een-website-laten-maken, /pricing, /website-seo
 - [ ] **Google Bedrijfsprofiel aanmaken en optimaliseren: stappenplan** — zoekwoord: "google bedrijfsprofiel aanmaken" — invalshoek: aanmaken, verifiëren, categorieën, openingstijden gelijk aan website, foto's, posts, reviews vragen — links: /kennisbank/lokale-seo-tips, /website-seo, /contact
-- [ ] **Bedrijfsvideo laten maken: kosten en wat je krijgt** — zoekwoord: "bedrijfsvideo laten maken kosten" — invalshoek: shoot vanaf €250 (met drone €300), van intake tot montage, horizontaal + verticaal leveren — links: /drone-video, /pricing, /portfolio#videos
 - [ ] **Website voor aannemers en bouwbedrijven: wat moet erop?** — zoekwoord: "website voor aannemers" — invalshoek: projectgalerij, werkgebied, offerteaanvraag, vertrouwen; case Dekgro — links: /werk-dekgro, /website-seo, /website-laten-maken-den-bosch
 - [ ] **Website laten maken met AI of door een bureau?** — zoekwoord: "website laten maken door ai" — invalshoek: wat AI-websitebouwers wel en niet kunnen, eigendom, snelheid, maatwerk; eerlijk vergelijken — links: /website-seo, /ai-content, /pricing
 - [ ] **Website voor elektriciens en installateurs** — zoekwoord: "website installateur" — invalshoek: specialismen per pagina, werkgebied, storingsnummer zichtbaar; cases De Jonge en Elektropost — links: /werk-dejonge, /werk-elektropost, /website-seo
 - [ ] **SEO uitbesteden: kosten en wat je mag verwachten** — zoekwoord: "seo uitbesteden kosten" — invalshoek: wat er maandelijks gebeurt, realistische termijnen, rode vlaggen; SEO €39 p/m — links: /website-seo, /pricing, /kennisbank/lokale-seo-tips
-- [ ] **Drone-video voor villa's en vastgoed: zo verkoop of verhuur je sneller** — zoekwoord: "drone video vastgoed" — invalshoek: villa-films in Moraira en Jávea, wat een film toevoegt aan een advertentie; regels via bestaand drone-artikel — links: /portfolio#videos, /drone-video, /kennisbank/drone-video-laten-maken-kosten-en-regels
 - [ ] **Social media uitbesteden: prijzen en pakketten vergeleken** — zoekwoord: "social media uitbesteden prijzen" — invalshoek: wat je krijgt voor welk budget; vanaf €79 p/m — links: /social-media, /pricing
-- [ ] **Website laten maken als zzp'er: wat heb je echt nodig?** — zoekwoord: "website laten maken zzp" — invalshoek: minimale pagina's, budget, zelf beheren — links: /website-seo, /pricing, /aanvraag
 - [ ] **Website voor schilders en afbouwbedrijven** — zoekwoord: "website schildersbedrijf" — invalshoek: binnen/buiten/behang als aparte diensten, voor-en-na-foto's; case Lilli's — links: /werk-lillis, /website-seo
 - [ ] **Google reviews krijgen als lokaal bedrijf (en wat niet mag)** — zoekwoord: "google reviews" — invalshoek: reviewlink delen, reageren, waarom reviews kopen tegen de regels is (bron: Google-richtlijnen) — links: /kennisbank/lokale-seo-tips, /website-seo
 - [ ] **Website sneller maken: de 10 grootste oorzaken van een trage site** — zoekwoord: "website sneller maken" — invalshoek: afbeeldingen, scripts, hosting, Core Web Vitals; hoe wij snel bouwen — links: /website-seo, /kennisbank/website-laten-maken-waar-op-letten
@@ -57,3 +53,7 @@ Beschikbare projectpagina's voor eigen ervaring: `/werk-dekgro` (tegelwerk), `/w
 - [ ] **AI-content op social media: wat kan wel en niet?** — zoekwoord: "ai content instagram" — links: /ai-content, /social-media
 
 ## Gedaan
+- [x] 2026-10-26 → /kennisbank/wat-kost-een-website-per-maand — Wat kost een website per maand of per jaar?
+- [x] 2026-10-26 → /kennisbank/bedrijfsvideo-laten-maken-kosten — Bedrijfsvideo laten maken: wat kost het in 2026?
+- [x] 2026-10-26 → /kennisbank/drone-video-huis-vastgoed — Drone video voor je huis of vastgoed: zo werkt het
+- [x] 2026-10-26 → /kennisbank/website-laten-maken-zzp — Website laten maken als zzp'er: wat heb je nodig?

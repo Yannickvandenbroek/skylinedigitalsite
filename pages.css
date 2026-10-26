@@ -427,10 +427,11 @@ section.over, section.diensten, section.portfolio, section.reviews {
 .nav-toggle { display: none; }
 .nav-cta-mobile { display: none; }
 
-@media (max-width: 1120px) {
+@media (max-width: 1400px) {
+  .nav-links { gap: 15px; }
   .nav-links a { font-size: 0.7rem; }            /* a touch tighter just above breakpoint */
 }
-@media (max-width: 1120px) {
+@media (max-width: 1320px) {
   .nav-toggle {
     display: inline-flex; flex-direction: column; gap: 5px; align-items: center; justify-content: center;
     width: 46px; height: 46px; padding: 0; border-radius: 11px; cursor: pointer;

@@ -5,6 +5,7 @@ TODAY = "2026-10-06"
 src = open("website-seo.html").read()
 HEADER = re.search(r'  <header class="nav".*?</header>\n', src, re.S).group(0)
 HEADER = re.sub(r' aria-current="page"', '', HEADER)
+BLOG_HEADER = HEADER.replace('<a href="/kennisbank">Blog</a>', '<a href="/kennisbank" aria-current="page">Blog</a>', 1)
 FOOTER = re.search(r'    <footer class="footer">.*?</footer>\n', src, re.S).group(0)
 ARROW = '<span class="row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>'
 
@@ -310,7 +311,7 @@ os.makedirs("kennisbank", exist_ok=True)
 for a in ARTICLES:
     url = f"{BASE}/kennisbank/{a['slug']}"; og = f"/assets/{a['img']}"
     ld = {"@context":"https://schema.org","@graph":[
-        crumbs_ld(url, [("Kennisbank", BASE+"/kennisbank"), (a["title"], url)]),
+        crumbs_ld(url, [("Blog", BASE+"/kennisbank"), (a["title"], url)]),
         {"@type":"Article","@id":url+"#article","headline":a["title"],"description":a["desc"],"image":BASE+og,"datePublished":a["date"],"dateModified":a.get("updated") or a["date"],
          "author":AUTHOR,"publisher":ORG_REF,"mainEntityOfPage":url,"inLanguage":"nl-NL"},
         {"@type":"WebPage","@id":url+"#webpage","url":url,"name":a["title"],"description":a["desc"],"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"breadcrumb":{"@id":url+"#breadcrumb"}}]}
@@ -318,11 +319,11 @@ for a in ARTICLES:
             for q, an in re.findall(r"<details>\s*<summary>(.*?)</summary>(.*?)</details>", a["body"], re.S)]
     if faqs: ld["@graph"].insert(-1, {"@type":"FAQPage","@id":url+"#faq","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":an}} for q, an in faqs]})
     others = [o for o in ARTICLES if o is not a][:3]
-    body = HEADER + f'''
+    body = BLOG_HEADER + f'''
   <section class="page-hero has-image">
     <div class="page-hero-bg"><img src="{og}" alt="{html.escape(a['title'])}" /></div>
     <div class="page-hero-inner">
-      <p class="crumbs"><a href="/">Home</a> · <a href="/kennisbank">Kennisbank</a> · {a['eyebrow']}</p>
+      <p class="crumbs"><a href="/">Home</a> · <a href="/kennisbank">Blog</a> · {a['eyebrow']}</p>
       <h1>{a['title']}</h1>
       <p class="lead">{a['eyebrow']} · {nl_date(a['date'])} · {a['read']} leestijd · door Yannick van den Broek</p>
     </div>
@@ -360,34 +361,40 @@ for a in ARTICLES:
     page = page.replace('src="assets/', 'src="/assets/').replace('href="assets/', 'href="/assets/')
     open(f"kennisbank/{a['slug']}.html","w").write(page)
 
-url = BASE + "/kennisbank"; title = "Kennisbank: websites, SEO, video & content | Skyline Digital"
-desc = "Praktische artikelen over website laten maken, kosten, lokale SEO, drone video en cinematic webdesign — geschreven door Skyline Digital uit Den Bosch."
-ld = {"@context":"https://schema.org","@graph":[crumbs_ld(url,[("Kennisbank",url)]),
-      {"@type":"CollectionPage","@id":url+"#webpage","url":url,"name":title,"description":desc,"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"breadcrumb":{"@id":url+"#breadcrumb"},
-       "hasPart":[{"@type":"Article","headline":a["title"],"url":f"{BASE}/kennisbank/{a['slug']}"} for a in ARTICLES]}]}
-body = HEADER + f'''
+url = BASE + "/kennisbank"; title = "Blog: websites, SEO, video & content | Skyline Digital"
+desc = "Blog van Skyline Digital: eerlijke artikelen over website laten maken, kosten, SEO, bedrijfsvideo en drone video, met echte prijzen en bronnen."
+ld = {"@context":"https://schema.org","@graph":[crumbs_ld(url,[("Blog",url)]),
+      {"@type":"Blog","@id":url+"#blog","url":url,"name":"Blog Skyline Digital","description":desc,"inLanguage":"nl-NL","publisher":ORG_REF,
+       "blogPost":[{"@type":"BlogPosting","headline":a["title"],"url":f"{BASE}/kennisbank/{a['slug']}","datePublished":a["date"],"image":f"{BASE}/assets/{a['img']}"} for a in ARTICLES]},
+      {"@type":"CollectionPage","@id":url+"#webpage","url":url,"name":title,"description":desc,"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"breadcrumb":{"@id":url+"#breadcrumb"},"mainEntity":{"@id":url+"#blog"}}]}
+def blog_card(a, big=False):
+    # kaarten gebruiken de kleine variant (<naam>-m.jpg) als die bestaat; de grote bovenste kaart de volledige foto
+    small = a["img"].replace(".jpg", "-m.jpg")
+    img = a["img"] if big or not os.path.exists("assets/" + small) else small
+    return (f'<a class="blog-card{" blog-card-big" if big else ""} reveal" href="/kennisbank/{a["slug"]}">'
+            f'<span class="blog-card-img"><img src="/assets/{img}" alt="{html.escape(a["title"])}" loading="{"eager" if big else "lazy"}" /></span>'
+            f'<span class="blog-card-body"><span class="blog-meta">{a["eyebrow"]} · {nl_date(a["date"])} · {a["read"]}</span>'
+            f'<span class="blog-card-title">{a["title"]}</span><span class="blog-card-desc">{a["desc"]}</span>'
+            f'<span class="blog-more">Lees artikel {ARROW}</span></span></a>')
+body = BLOG_HEADER + f'''
   <section class="page-hero center" style="background:radial-gradient(90% 100% at 50% 0%, #16171f, #07080c)">
     <div class="page-hero-inner">
-      <p class="crumbs"><a href="/">Home</a> · Kennisbank</p>
-      <h1>Kennis die je <span class="gold-text">verder helpt.</span></h1>
-      <p class="lead">Eerlijke artikelen over websites, prijzen, SEO en video — zonder verkooppraat, met de cijfers erbij.</p>
+      <p class="crumbs"><a href="/">Home</a> · Blog</p>
+      <h1>Blog over websites, SEO <span class="gold-text">&amp; video.</span></h1>
+      <p class="lead">Eerlijke artikelen over websites, prijzen, vindbaarheid en video. Zonder verkooppraat, met echte cijfers en bronnen.</p>
     </div>
   </section>
   <section class="bg-white full">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="gold-rule"></div>
-        <p class="eyebrow">Artikelen</p>
-        <h2>Lees <span class="gold-text">verder</span></h2>
-      </div>
-      {rows([(f'<a href="/kennisbank/{a["slug"]}" style="color:inherit;text-decoration:none">{a["title"]}</a>', nl_date(a["date"]) + " · " + a["desc"]) for a in ARTICLES])}
+      {blog_card(ARTICLES[0], big=True)}
+      <div class="blog-grid">{"".join(blog_card(a) for a in ARTICLES[1:])}</div>
     </div>
   </section>
   <section class="cta-band">
     <div class="inner reveal">
       <div class="gold-rule" style="margin-inline:auto"></div>
       <h2>Vragen over jouw situatie?</h2>
-      <p class="lead">Plan een gratis adviesgesprek — we denken graag mee.</p>
+      <p class="lead">Plan een gratis adviesgesprek, we denken graag mee.</p>
       <div class="hero-actions hero-actions-center"><a href="/contact" class="btn btn-gold">Plan een gesprek</a><a href="/pricing" class="btn btn-ghost-light">Bekijk prijzen</a></div>
     </div>
   </section>
@@ -395,7 +402,7 @@ body = HEADER + f'''
 '''
 open("kennisbank.html","w").write(head(title, desc, url, "/assets/og-home.jpg", ld) + body + tail())
 
-# ---------- Footer op alle pagina's: Regio's + Kennisbank ----------
+# ---------- Footer op alle pagina's: Regio's + Blog ----------
 NEW_COL = '''        <div class="footer-col">
           <h4>Regio's</h4>
 ''' + "".join(f'          <a href="/website-laten-maken-{c["slug"]}">Website laten maken {c["name"]}</a>\n' for c in CITIES[:8]) + '''          <a href="/regio">Alle regio's</a>
@@ -406,7 +413,7 @@ for path in glob.glob("*.html") + glob.glob("kennisbank/*.html"):
     s = open(path).read()
     if "Website laten maken Den Bosch</a>" in s: continue
     s = re.sub(r'        <div class="footer-col">\n          <h4>Over ons</h4>.*?</div>\n', NEW_COL, s, count=1, flags=re.S)
-    s = s.replace('          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', '          <a href="/kennisbank">Kennisbank</a>\n          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', 1)
+    s = s.replace('          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', '          <a href="/kennisbank">Blog</a>\n          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', 1)
     # relatieve assets in footer/nav werken niet vanuit /kennisbank/ — maak ze absoluut
     if path.startswith("kennisbank/"):
         s = s.replace('src="assets/', 'src="/assets/')
