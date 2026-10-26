@@ -5,7 +5,7 @@ TODAY = "2026-10-06"
 src = open("website-seo.html").read()
 HEADER = re.search(r'  <header class="nav".*?</header>\n', src, re.S).group(0)
 HEADER = re.sub(r' aria-current="page"', '', HEADER)
-BLOG_HEADER = HEADER.replace('<a href="/kennisbank">Blog</a>', '<a href="/kennisbank" aria-current="page">Blog</a>', 1)
+BLOG_HEADER = HEADER.replace('<a href="/blog">Blog</a>', '<a href="/blog" aria-current="page">Blog</a>', 1)
 FOOTER = re.search(r'    <footer class="footer">.*?</footer>\n', src, re.S).group(0)
 ARROW = '<span class="row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>'
 
@@ -63,13 +63,13 @@ CITIES = [
 ]
 CITY_BY = {c["slug"]: c for c in CITIES}
 
-# Kennisbankartikelen staan als losse bestanden in content/kennisbank/<datum>-<slug>.html:
+# Blogartikelen staan als losse bestanden in content/blog/<datum>-<slug>.html:
 # een commentaarblok met velden (title, slug, date, eyebrow, read, img, desc) en daaronder de HTML van het artikel.
-# Nieuw artikel = nieuw bestand; zie content/kennisbank/SCHRIJFGIDS.md.
+# Nieuw artikel = nieuw bestand; zie content/blog/SCHRIJFGIDS.md.
 STRICT_FROM = "2026-10-17"  # artikelen vanaf deze datum volgen de volledige SCHRIJFGIDS
 def load_articles():
     arts, errors = [], []
-    for path in sorted(glob.glob("content/kennisbank/*.html")):
+    for path in sorted(glob.glob("content/blog/*.html")):
         raw = open(path).read()
         m = re.match(r"\s*<!--(.*?)-->\s*(.*)", raw, re.S)
         if not m: errors.append(f"{path}: geen <!-- ... --> blok met velden bovenaan"); continue
@@ -98,14 +98,14 @@ def load_articles():
         if len(links) < 3: errors.append(f"{path}: minimaal 3 interne links nodig")
         for l in links:
             target = "index.html" if l == "/" else l.strip("/") + ".html"
-            if not os.path.exists(target) and not os.path.exists(l.strip("/") + "/index.html") and not any(l == "/kennisbank/" + a2 for a2 in [os.path.basename(x)[11:-5] for x in glob.glob("content/kennisbank/*.html")]):
+            if not os.path.exists(target) and not os.path.exists(l.strip("/") + "/index.html") and not any(l == "/blog/" + a2 for a2 in [os.path.basename(x)[11:-5] for x in glob.glob("content/blog/*.html")]):
                 errors.append(f"{path}: interne link {l} bestaat niet")
         arts.append(meta)
     slugs = [a["slug"] for a in arts]
     for s_ in set(slugs):
         if slugs.count(s_) > 1: errors.append(f"slug '{s_}' komt dubbel voor")
     if errors:
-        raise SystemExit("Kennisbank-controle mislukt:\n  - " + "\n  - ".join(errors))
+        raise SystemExit("Blog-controle mislukt:\n  - " + "\n  - ".join(errors))
     return sorted(arts, key=lambda a: (a["date"], a["slug"]), reverse=True)
 
 ARTICLES = load_articles()
@@ -125,7 +125,7 @@ def head(title, desc, url, og, ld, extra=""):
   <meta name="description" content="{d}" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <link rel="canonical" href="{url}" />
-  <meta property="og:type" content="{'article' if '/kennisbank/' in url else 'website'}" />
+  <meta property="og:type" content="{'article' if '/blog/' in url else 'website'}" />
   <meta property="og:locale" content="nl_NL" />
   <meta property="og:site_name" content="Skyline Digital" />
   <meta property="og:title" content="{t}" />
@@ -307,11 +307,11 @@ body = HEADER + f'''
 open("regio.html","w").write(head(title, desc, url, "/assets/og-home.jpg", ld) + body + tail())
 
 # ---------- Kennisbank ----------
-os.makedirs("kennisbank", exist_ok=True)
+os.makedirs("blog", exist_ok=True)
 for a in ARTICLES:
-    url = f"{BASE}/kennisbank/{a['slug']}"; og = f"/assets/{a['img']}"
+    url = f"{BASE}/blog/{a['slug']}"; og = f"/assets/{a['img']}"
     ld = {"@context":"https://schema.org","@graph":[
-        crumbs_ld(url, [("Blog", BASE+"/kennisbank"), (a["title"], url)]),
+        crumbs_ld(url, [("Blog", BASE+"/blog"), (a["title"], url)]),
         {"@type":"Article","@id":url+"#article","headline":a["title"],"description":a["desc"],"image":BASE+og,"datePublished":a["date"],"dateModified":a.get("updated") or a["date"],
          "author":AUTHOR,"publisher":ORG_REF,"mainEntityOfPage":url,"inLanguage":"nl-NL"},
         {"@type":"WebPage","@id":url+"#webpage","url":url,"name":a["title"],"description":a["desc"],"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"breadcrumb":{"@id":url+"#breadcrumb"}}]}
@@ -323,7 +323,7 @@ for a in ARTICLES:
   <section class="page-hero has-image">
     <div class="page-hero-bg"><img src="{og}" alt="{html.escape(a['title'])}" /></div>
     <div class="page-hero-inner">
-      <p class="crumbs"><a href="/">Home</a> · <a href="/kennisbank">Blog</a> · {a['eyebrow']}</p>
+      <p class="crumbs"><a href="/">Home</a> · <a href="/blog">Blog</a> · {a['eyebrow']}</p>
       <h1>{a['title']}</h1>
       <p class="lead">{a['eyebrow']} · {nl_date(a['date'])} · {a['read']} leestijd · door Yannick van den Broek</p>
     </div>
@@ -343,7 +343,7 @@ for a in ARTICLES:
       </aside>
       <div class="article-more">
         <h2>Verder lezen</h2>
-        {rows([(f'<a href="/kennisbank/{o["slug"]}" style="color:inherit;text-decoration:none">{o["title"]}</a>', o["desc"]) for o in others])}
+        {rows([(f'<a href="/blog/{o["slug"]}" style="color:inherit;text-decoration:none">{o["title"]}</a>', o["desc"]) for o in others])}
       </div>
     </div>
   </section>
@@ -359,19 +359,19 @@ for a in ARTICLES:
 '''
     page = head(a["title"] + " | Skyline Digital", a["desc"], url, og, ld) + body + tail()
     page = page.replace('src="assets/', 'src="/assets/').replace('href="assets/', 'href="/assets/')
-    open(f"kennisbank/{a['slug']}.html","w").write(page)
+    open(f"blog/{a['slug']}.html","w").write(page)
 
-url = BASE + "/kennisbank"; title = "Blog: websites, SEO, video & content | Skyline Digital"
+url = BASE + "/blog"; title = "Blog: websites, SEO, video & content | Skyline Digital"
 desc = "Blog van Skyline Digital: eerlijke artikelen over website laten maken, kosten, SEO, bedrijfsvideo en drone video, met echte prijzen en bronnen."
 ld = {"@context":"https://schema.org","@graph":[crumbs_ld(url,[("Blog",url)]),
       {"@type":"Blog","@id":url+"#blog","url":url,"name":"Blog Skyline Digital","description":desc,"inLanguage":"nl-NL","publisher":ORG_REF,
-       "blogPost":[{"@type":"BlogPosting","headline":a["title"],"url":f"{BASE}/kennisbank/{a['slug']}","datePublished":a["date"],"image":f"{BASE}/assets/{a['img']}"} for a in ARTICLES]},
+       "blogPost":[{"@type":"BlogPosting","headline":a["title"],"url":f"{BASE}/blog/{a['slug']}","datePublished":a["date"],"image":f"{BASE}/assets/{a['img']}"} for a in ARTICLES]},
       {"@type":"CollectionPage","@id":url+"#webpage","url":url,"name":title,"description":desc,"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"breadcrumb":{"@id":url+"#breadcrumb"},"mainEntity":{"@id":url+"#blog"}}]}
 def blog_card(a, big=False):
     # kaarten gebruiken de kleine variant (<naam>-m.jpg) als die bestaat; de grote bovenste kaart de volledige foto
     small = a["img"].replace(".jpg", "-m.jpg")
     img = a["img"] if big or not os.path.exists("assets/" + small) else small
-    return (f'<a class="blog-card{" blog-card-big" if big else ""} reveal" href="/kennisbank/{a["slug"]}">'
+    return (f'<a class="blog-card{" blog-card-big" if big else ""} reveal" href="/blog/{a["slug"]}">'
             f'<span class="blog-card-img"><img src="/assets/{img}" alt="{html.escape(a["title"])}" loading="{"eager" if big else "lazy"}" /></span>'
             f'<span class="blog-card-body"><span class="blog-meta">{a["eyebrow"]} · {nl_date(a["date"])} · {a["read"]}</span>'
             f'<span class="blog-card-title">{a["title"]}</span><span class="blog-card-desc">{a["desc"]}</span>'
@@ -400,7 +400,7 @@ body = BLOG_HEADER + f'''
   </section>
 
 '''
-open("kennisbank.html","w").write(head(title, desc, url, "/assets/og-home.jpg", ld) + body + tail())
+open("blog.html","w").write(head(title, desc, url, "/assets/og-home.jpg", ld) + body + tail())
 
 # ---------- Footer op alle pagina's: Regio's + Blog ----------
 NEW_COL = '''        <div class="footer-col">
@@ -408,23 +408,23 @@ NEW_COL = '''        <div class="footer-col">
 ''' + "".join(f'          <a href="/website-laten-maken-{c["slug"]}">Website laten maken {c["name"]}</a>\n' for c in CITIES[:8]) + '''          <a href="/regio">Alle regio's</a>
         </div>
 '''
-for path in glob.glob("*.html") + glob.glob("kennisbank/*.html"):
+for path in glob.glob("*.html") + glob.glob("blog/*.html"):
     if path.startswith("google"): continue
     s = open(path).read()
     if "Website laten maken Den Bosch</a>" in s: continue
     s = re.sub(r'        <div class="footer-col">\n          <h4>Over ons</h4>.*?</div>\n', NEW_COL, s, count=1, flags=re.S)
-    s = s.replace('          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', '          <a href="/kennisbank">Blog</a>\n          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', 1)
-    # relatieve assets in footer/nav werken niet vanuit /kennisbank/ — maak ze absoluut
-    if path.startswith("kennisbank/"):
+    s = s.replace('          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', '          <a href="/blog">Blog</a>\n          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', 1)
+    # relatieve assets in footer/nav werken niet vanuit /blog/ — maak ze absoluut
+    if path.startswith("blog/"):
         s = s.replace('src="assets/', 'src="/assets/')
     open(path, "w").write(s)
 
 # ---------- Sitemap ----------
 urls = [("/",1.0,"weekly"),("/website-seo",0.9,"monthly"),("/drone-video",0.9,"monthly"),("/social-media",0.9,"monthly"),("/ai-content",0.9,"monthly"),
         ("/pricing",0.8,"monthly"),("/portfolio",0.8,"monthly"),("/over-ons",0.7,"monthly"),("/contact",0.7,"yearly"),("/aanvraag",0.8,"yearly"),
-        ("/regio",0.7,"monthly"),("/kennisbank",0.7,"weekly")]
+        ("/regio",0.7,"monthly"),("/blog",0.7,"weekly")]
 urls += [(f"/website-laten-maken-{c['slug']}",0.8,"monthly") for c in CITIES]
-urls += [(f"/kennisbank/{a['slug']}",0.7,"monthly",a["date"]) for a in ARTICLES]
+urls += [(f"/blog/{a['slug']}",0.7,"monthly",a["date"]) for a in ARTICLES]
 W = ["dekgro","lillis","bodyscan","echtgrieks","carslease","lassie","dejonge","elektropost","palmyra"]
 urls += [(f"/werk-{w}",0.5,"yearly") for w in W]
 MAIN = ["","/over-ons","/website-seo","/drone-video","/social-media","/ai-content","/portfolio","/pricing","/contact","/aanvraag"]
@@ -434,7 +434,7 @@ for l in ["en","it","es"]:
 urls += [("/privacybeleid",0.2,"yearly"),("/algemene-voorwaarden",0.2,"yearly"),("/cookiebeleid",0.2,"yearly")]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for entry in urls:
-    u, p, f = entry[:3]; lm = entry[3] if len(entry) > 3 else (max(a["date"] for a in ARTICLES) if u == "/kennisbank" else TODAY)
+    u, p, f = entry[:3]; lm = entry[3] if len(entry) > 3 else (max(a["date"] for a in ARTICLES) if u == "/blog" else TODAY)
     sm += f'  <url><loc>{BASE}{u}</loc><lastmod>{lm}</lastmod><changefreq>{f}</changefreq><priority>{p}</priority></url>\n'
 open("sitemap.xml","w").write(sm + "</urlset>\n")
 print("pages:", len(CITIES)+len(ARTICLES)+2, "sitemap urls:", len(urls))

@@ -1,4 +1,4 @@
-# Schrijfgids kennisbank Skyline Digital
+# Schrijfgids blog Skyline Digital
 
 Doel: artikelen die Nederlandse ondernemers echt helpen. Dan scoren ze in Google en worden ze geciteerd door AI-zoekmachines (Google AI Overviews/AI Mode, ChatGPT-search, Copilot, Perplexity).
 De regels hieronder volgen uit Google's eigen richtlijnen (helpful content, E-E-A-T, AI-features, spambeleid) en uit onderzoek naar generative engine optimization (GEO).
@@ -34,7 +34,7 @@ De regels hieronder volgen uit Google's eigen richtlijnen (helpful content, E-E-
 - Juridische of fiscale onderwerpen: alleen uitleg met bron, geen advies; verwijs naar de officiële bron.
 
 ## Bestand en opbouw
-Bestand: `content/kennisbank/<JJJJ-MM-DD>-<slug>.html` (datum = publicatiedag, slug = kleine letters met streepjes, zoekwoord erin).
+Bestand: `content/blog/<JJJJ-MM-DD>-<slug>.html` (datum = publicatiedag, slug = kleine letters met streepjes, zoekwoord erin).
 
 ```html
 <!--
@@ -64,19 +64,19 @@ desc: <120–155 tekens: belofte + zoekwoord, eindigt met punt>
 <ul><li><a href="https://…" rel="noopener">Naam bron — titel pagina</a></li></ul>
 ```
 - Afbeeldingen: kies een passende `assets/photo-*.jpg`. Varieer: niet dezelfde als de twee vorige artikelen.
-- Interne links: 3–6 stuks naar dienstpagina's, `/pricing`, relevante `/werk-…`, een locatiepagina of een ander kennisbankartikel. Gebruik alleen paden die bestaan, zonder `.html`.
+- Interne links: 3–6 stuks naar dienstpagina's, `/pricing`, relevante `/werk-…`, een locatiepagina of een ander blogartikel. Gebruik alleen paden die bestaan, zonder `.html`.
 - Externe links: `rel="noopener"`, alleen naar betrouwbare bronnen.
 
 ## Werkwijze per week
-1. `git pull`. Pak in `content/kennisbank/ONDERWERPEN.md` het bovenste open onderwerp.
+1. `git pull`. Pak in `content/blog/ONDERWERPEN.md` het bovenste open onderwerp.
 2. Haal de echte vragen op voor tussenkoppen en FAQ:
    `curl -s "https://suggestqueries.google.com/complete/search?client=firefox&hl=nl&gl=nl&q=<zoekwoord>"` (ook met "wat", "hoe", "kosten", "waarom" ervoor of erachter).
 3. Controleer dat geen bestaand artikel, geen dienstpagina en geen locatiepagina dezelfde vraag al beantwoordt. Zo ja: kies een andere invalshoek of het volgende onderwerp.
 4. Zoek en open 1–3 betrouwbare bronnen voor cijfers en regels.
 5. Schrijf het bestand volgens de opbouw hierboven.
 6. `python3 tools/gen_pages.py`. Die controleert het artikel en stopt met een duidelijke melding als er iets mist. Los de melding op en draai opnieuw.
-7. Lees het resultaat in `kennisbank/<slug>.html` nog één keer na op feiten, prijzen en links.
-8. Vink het onderwerp af in ONDERWERPEN.md: `- [x] <datum> → /kennisbank/<slug> — <titel>`. Verplaats de regel naar `## Gedaan`.
-9. Commit (`Kennisbank: <titel>`) en push naar `main`; Vercel zet het live.
-10. Na ±2 minuten: `python3 tools/indexnow.py https://www.skylinedigital.nl/kennisbank/<slug> https://www.skylinedigital.nl/kennisbank https://www.skylinedigital.nl/sitemap.xml`.
+7. Lees het resultaat in `blog/<slug>.html` nog één keer na op feiten, prijzen en links.
+8. Vink het onderwerp af in ONDERWERPEN.md: `- [x] <datum> → /blog/<slug> — <titel>`. Verplaats de regel naar `## Gedaan`.
+9. Commit (`Blog: <titel>`) en push naar `main`; Vercel zet het live.
+10. Na ±2 minuten: `python3 tools/indexnow.py https://www.skylinedigital.nl/blog/<slug> https://www.skylinedigital.nl/blog https://www.skylinedigital.nl/sitemap.xml`.
 11. Is de lijst bijna leeg (minder dan 5 open)? Voeg dan nieuwe onderwerpen toe op basis van zoeksuggesties rond de diensten, zonder overlap met wat er al is.

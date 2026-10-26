@@ -34,7 +34,7 @@ def inject(html):
 
 if __name__ == "__main__":
     os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-    files = [f for f in glob.glob("*.html") + glob.glob("kennisbank/*.html") + glob.glob("en/*.html") + glob.glob("it/*.html") + glob.glob("es/*.html")
+    files = [f for f in glob.glob("*.html") + glob.glob("blog/*.html") + glob.glob("en/*.html") + glob.glob("it/*.html") + glob.glob("es/*.html")
              if not os.path.basename(f).startswith("google")]
     n = 0
     for f in files:

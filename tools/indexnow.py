@@ -1,5 +1,5 @@
 """Meldt URL's direct aan bij Bing (en daarmee Copilot) en de andere IndexNow-zoekmachines.
-Gebruik:  python3 tools/indexnow.py https://www.skylinedigital.nl/kennisbank/<slug> [meer URL's]
+Gebruik:  python3 tools/indexnow.py https://www.skylinedigital.nl/blog/<slug> [meer URL's]
           python3 tools/indexnow.py --all     (alle URL's uit sitemap.xml)
 De sleutel staat in /c2f7663f6653db1a6ea0e5012eaa9095.txt in de root van de site."""
 import json, re, sys, os, urllib.request

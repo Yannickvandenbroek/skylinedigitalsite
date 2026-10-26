@@ -110,7 +110,7 @@ for lang in LANGS:
         translate_soup(soup, tr)
         localize_links(soup, lang)
         # de blog is alleen Nederlandstalig: niet in het hoofdmenu van vertaalde pagina's (wel in de footer)
-        for a in soup.select('#nav-links a[href="/kennisbank"]'): a.decompose()
+        for a in soup.select('#nav-links a[href="/blog"]'): a.decompose()
         soup.html["lang"] = lang
         can = soup.find("link", rel="canonical")
         if can: can["href"] = BASE + path_of(lang, slug)
