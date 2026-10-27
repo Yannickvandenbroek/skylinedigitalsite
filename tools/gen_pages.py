@@ -253,7 +253,86 @@ LOCAL = {
    faq=[("Kunnen jullie een Engelse versie van mijn website maken?", "Ja. We bouwen meertalige websites met echte vertalingen en de juiste taalkoppelingen voor Google, zoals onze eigen site in vier talen."),
         ("Werken jullie ook voor bedrijven op De Run?", "Ja. We komen langs op De Run en in de rest van Veldhoven; vanuit Den Bosch is het ruim een half uur via de A2.")]),
 }
-for c in CITIES: c.update(LOCAL[c["slug"]])
+# "Ondernemen in <plaats>": lokale economie en wat dat betekent voor je website (twee alinea's), plus twee extra eigen vragen.
+BIZ = {
+ "den-bosch": ("'s-Hertogenbosch is de provinciehoofdstad van Noord-Brabant en heeft een opvallend gemengde economie: overheid en zakelijke dienstverlening in het Paleiskwartier, winkels en horeca in de historische binnenstad rond de Sint-Jan, en bouw, logistiek en techniek op De Rietvelden, De Herven en De Brand. Daarnaast trekt de stad veel bezoekers, wat horeca en retail een groot publiek van buiten geeft.",
+               "Voor je website betekent dat: wie in de binnenstad zit, concurreert om bezoekers die vooraf online zoeken waar ze gaan eten of winkelen. Wie op een bedrijventerrein zit, wordt vooral gevonden door andere bedrijven die zoeken op een specialisme. We stemmen je pagina's af op het publiek dat voor jou telt."),
+ "rosmalen": ("Rosmalen hoort bij de gemeente 's-Hertogenbosch, maar voelt voor veel inwoners als een eigen dorp met een eigen centrum. Met de groei van De Groote Wielen zijn er veel jonge gezinnen bijgekomen, en op bedrijventerrein Kruisstraat en rond Hintham zitten bouw-, auto- en installatiebedrijven. Evenementenlocatie Autotron brengt daarnaast bezoekers van buiten.",
+              "Een website in Rosmalen bedient daarom vaak twee soorten klanten: inwoners die lokaal een vakman, praktijk of kapper zoeken, en bedrijven uit de hele regio. We maken duidelijk voor wie je er bent en zorgen dat je zowel op 'Rosmalen' als op 'Den Bosch' gevonden wordt."),
+ "vught": ("Vught is een groene gemeente met villawijken, landgoederen en een centrum rond de Taalstraat met veel zelfstandige winkels, interieurzaken en horeca. Sinds 2021 hoort ook Helvoirt bij de gemeente, en recreatie rond De IJzeren Man en de nabije Loonse en Drunense Duinen trekt bezoekers uit de regio.",
+           "In Vught telt de eerste indruk zwaar: klanten zijn kritisch en vergelijken. Rustige vormgeving, goede foto's en duidelijke informatie over je aanbod werken hier beter dan opvallende kleuren of acties."),
+ "oss": ("Oss heeft een lange geschiedenis als industriestad, van vleeswaren en margarine tot farmacie. Die traditie zie je nog op bedrijventerreinen als Elzenburg, Moleneind en Vorstengrafdonk, waar productiebedrijven, toeleveranciers en logistieke bedrijven zitten. Tegelijk is Oss het centrum voor dorpen als Berghem, Lith en Ravenstein.",
+         "Voor B2B-bedrijven in Oss is de website vaak het eerste wat een inkoper of nieuwe medewerker ziet. Dat vraagt om duidelijke specialismen, echte foto's van de productie en een makkelijke manier om contact op te nemen. Voor winkels en praktijken in het centrum draait het juist om lokale vindbaarheid en actuele openingstijden."),
+ "eindhoven": ("Eindhoven is de vijfde stad van Nederland en het centrum van de Brainport-regio, met de TU/e, de High Tech Campus en een sterk netwerk van technologiebedrijven en toeleveranciers. Daarnaast kent de stad een grote creatieve sector rond Strijp-S en de Dutch Design Week, en een levendige binnenstad met horeca en retail.",
+               "Bezoekers in Eindhoven zijn gewend aan goed ontworpen, snelle websites; een trage of verouderde site valt hier eerder op dan elders. Voor tech- en B2B-bedrijven komt daar vaak een internationaal publiek bij, waardoor een Engelse versie al snel nodig is."),
+ "tilburg": ("Tilburg is de tweede stad van Brabant, met een sterke mix van onderwijs (Tilburg University en Fontys), logistiek langs de A58 en een groeiende creatieve sector in de Spoorzone en rond de Piushaven. Het textielverleden zie je nog terug in de stad, en evenementen als de Tilburgse kermis trekken jaarlijks veel bezoekers.",
+             "Dat geeft ondernemers in Tilburg een gevarieerd publiek: studenten en jonge gezinnen die vooral mobiel zoeken, en bedrijven in logistiek en dienstverlening die zakelijk inkopen. We kiezen per site welk publiek voorop staat en richten tekst, vormgeving en vindbaarheid daarop in."),
+ "breda": ("Breda heeft een sterke binnenstad rond de Grote Markt met veel horeca, retail en evenementen. Daarnaast zitten er veel zakelijke dienstverleners, bouwbedrijven en logistieke bedrijven aan de A16 richting België. Rond de stad liggen kernen als Prinsenbeek, Teteringen, Bavel en Ulvenhout, elk met hun eigen ondernemers.",
+           "Omdat Breda veel bezoekers trekt, zoeken mensen hier vaak vooraf online naar een restaurant, winkel of dienst. Je website moet dan in één oogopslag laten zien wat je biedt en hoe ze je bereiken. Voor zakelijke klanten telt juist betrouwbaarheid: duidelijke diensten, referenties en een snelle offerte-aanvraag."),
+ "nijmegen": ("Nijmegen is een studenten- en zorgstad: de Radboud Universiteit, de HAN en het Radboudumc trekken veel jonge mensen en zorgprofessionals. Daarnaast heeft de stad een sterke horeca- en evenementencultuur, met de Waalkade en jaarlijks de Vierdaagse. Aan de noordkant van de Waal groeit Nijmegen-Noord met Lent.",
+              "Veel Nijmegenaren zoeken diensten via hun telefoon en social media. Een website die snel laadt, goed werkt op mobiel en gekoppeld is aan Instagram of een afsprakensysteem past daar het best bij. Voor zorgpraktijken hoort er heldere informatie bij over wat je doet en hoe iemand bij je terechtkan."),
+ "waalwijk": ("Waalwijk was lange tijd het centrum van de Nederlandse schoen- en lederindustrie; het Nederlands Leder- en Schoenenmuseum herinnert daar nog aan. Tegenwoordig is het vooral een logistieke regio, met grote distributiecentra en transportbedrijven langs de A59. In het centrum en in Sprang-Capelle en Waspik zitten winkels, horeca en dienstverleners, en met de Efteling vlakbij komen er veel bezoekers door de regio.",
+              "Voor logistieke bedrijven is de website het visitekaartje richting opdrachtgevers én sollicitanten. Voor winkels en horeca draait het om lokale vindbaarheid in De Langstraat. Wie in Waalwijk zoekt, gebruikt net zo vaak 'webdesign' of 'internetbureau' als 'website laten maken'; we zorgen dat je site op al die vragen een duidelijk antwoord geeft."),
+ "uden": ("Uden is het grootste winkelcentrum van de gemeente Maashorst en heeft met ziekenhuis Bernhoven een belangrijke zorgfunctie. Op de bedrijventerreinen zitten bouw-, installatie- en productiebedrijven, en het buitengebied kent veel agrarische ondernemers. Natuurgebied De Maashorst trekt daarnaast recreanten uit de hele regio.",
+          "Voor winkels en horeca in Uden draait het om lokale vindbaarheid en een goed bijgehouden Google Bedrijfsprofiel. Bouw- en technische bedrijven willen vooral hun werkgebied en vakmanschap laten zien. Omdat klanten ook uit Veghel, Oss en Boekel komen, richten we je site op de hele regio en niet alleen op Uden."),
+ "veghel": ("Veghel ligt aan de Zuid-Willemsvaart en de A50 en is uitgegroeid tot een van de belangrijkste werkgeverscentra van Noordoost-Brabant. Naast grote bedrijven zit er een dicht netwerk van toeleveranciers, transporteurs en technische dienstverleners. Sinds 2017 hoort Veghel bij de gemeente Meierijstad, samen met Schijndel en Sint-Oedenrode.",
+            "Voor het MKB in Veghel is de concurrentie om personeel groot. Een website die laat zien hoe het is om bij jou te werken, met echte foto's of een korte video, helpt daarbij net zo veel als je dienstenpagina. Zakelijke klanten letten vooral op heldere specialismen en een snelle manier om contact op te nemen."),
+ "schijndel": ("Schijndel is na Veghel de grootste kern van Meierijstad, met een compact centrum en veel lokale winkels. Het dorp heeft een sterk verenigingsleven en veel familiebedrijven in bouw, techniek en de agrarische sector. Wijbosch ligt er direct tegenaan, en in het buitengebied richting Sint-Oedenrode en Boxtel zitten veel kleinere ondernemers.",
+               "Klanten in Schijndel kiezen vaak voor een bedrijf dat ze kennen of dat iemand aanraadt. Je website moet dat vertrouwen bevestigen: wie je bent, wat je hebt gemaakt en wat klanten zeggen. Grote beloftes werken hier minder goed dan echte foto's, reviews en een persoonlijke toon."),
+ "boxtel": ("Boxtel is een knooppunt midden in Brabant: het station ligt op de lijnen richting Eindhoven, Tilburg en Den Bosch, en de A2 loopt vlak langs de gemeente. Het centrum rond kasteel Stapelen en de Dommel, en natuurgebieden als Kampina, trekken wandelaars en fietsers. Bedrijven vind je zowel in het centrum als op de bedrijventerreinen langs de A2.",
+            "Voor horeca, recreatie en winkels in Boxtel is een groot deel van de klanten bezoeker. Die zoeken op hun telefoon naar openingstijden, route en sfeer, vaak vlak voordat ze komen. Voor zakelijke dienstverleners is de centrale ligging juist een argument: vanuit Boxtel ben je snel in Den Bosch, Eindhoven en Tilburg."),
+ "sint-michielsgestel": ("De gemeente Sint-Michielsgestel bestaat uit kernen met elk een eigen karakter: Sint-Michielsgestel aan de Dommel, Berlicum, Den Dungen, Gemonde en Middelrode. Er wonen veel gezinnen en werken veel zelfstandigen, en de nabijheid van Den Bosch maakt het een fijne plek voor dienstverleners die rustiger willen zitten. In het buitengebied liggen landgoederen en agrarische bedrijven.",
+                         "Omdat de kernen klein zijn, is een goede reputatie hier alles. Een verzorgde website die duidelijk laat zien wie je bent, helpt om die reputatie online vast te houden. We zorgen dat je in alle kernen gevonden wordt, en niet alleen op de naam van de gemeente."),
+ "zaltbommel": ("Zaltbommel is de hoofdplaats van de Bommelerwaard, het gebied tussen Maas en Waal. De historische binnenstad binnen de vestingwallen trekt bezoekers, terwijl de ligging aan de A2 en het spoor de stad aantrekkelijk maakt voor transport, groothandel en bouw. In de dorpen eromheen zitten veel tuinders, agrarische bedrijven en vakmensen.",
+                "Voor ondernemers in de Bommelerwaard is de regio het werkgebied, niet alleen de eigen plaats. We noemen daarom de dorpen waar je klanten vandaan komen, en zorgen dat je ook gevonden wordt door klanten aan de Brabantse kant van de Waal."),
+ "drunen": ("Drunen is de grootste kern van de gemeente Heusden, waartoe ook Vlijmen, Nieuwkuijk, Elshout, Haarsteeg, Oudheusden en de vestingstad Heusden horen. Aan de zuidkant ligt Nationaal Park De Loonse en Drunense Duinen, en Drunen heeft een sterk MKB in bouw, techniek en dienstverlening.",
+            "Omdat de gemeente uit veel kernen bestaat, zoeken klanten vaak op de naam van hun eigen dorp of op 'Heusden'. Een website die die namen natuurlijk noemt, wordt vaker gevonden. Voor recreatie en horeca rond de Duinen komen er bezoekers uit de hele regio bij, die vooral letten op sfeer en bereikbaarheid."),
+ "helmond": ("Helmond heeft een rijke industriële geschiedenis in textiel en metaal en is nu een van de centra van de Nederlandse automotive-sector, met de Automotive Campus en veel technische toeleveranciers. Kasteel Helmond staat midden in het centrum, en de stad groeit met wijken als Brandevoort.",
+             "Voor technische bedrijven in Helmond is de website vaak de plek waar opdrachtgevers en monteurs je als eerste tegenkomen. Duidelijke specialismen, certificeringen en echte projectfoto's maken het verschil. Voor winkels, horeca en zorg in de wijken telt vooral lokale vindbaarheid: wie in Brandevoort of Mierlo-Hout zoekt, wil een bedrijf in de buurt."),
+ "veldhoven": ("Veldhoven ontstond uit een aantal dorpen en is uitgegroeid tot een belangrijke technologiegemeente. ASML heeft hier zijn hoofdkantoor, Máxima MC is een van de grote ziekenhuizen in de regio, en op De Run zitten veel high-tech toeleveranciers. De oude kernen Zeelst, Meerveldhoven, Oerle en Veldhoven-Dorp hebben nog steeds hun eigen karakter.",
+               "Voor bedrijven in de high-tech keten is de website vooral een visitekaartje voor internationale opdrachtgevers en specialisten die een baan zoeken: Engels, duidelijke technische informatie en een professionele uitstraling zijn dan belangrijk. Voor zorgpraktijken, winkels en horeca telt juist lokale vindbaarheid in Veldhoven en de buurgemeenten."),
+}
+L = 'style="color:var(--gold-deep)"'
+FAQ2 = {
+ "den-bosch": [("Kunnen jullie ook een webshop bouwen voor mijn winkel in de binnenstad?", "Ja. We bouwen ook webshops en koppelen die waar nodig aan je betaalsysteem. Je krijgt vooraf een offerte op maat."),
+               ("Doen jullie ook SEO voor bedrijven in Den Bosch?", f"Ja. Bij elke site zetten we de basis-SEO goed; daarna kan SEO voor €39 per maand, met maandelijkse rapportage. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>.")],
+ "rosmalen": [("Moet ik op 'Rosmalen' of op 'Den Bosch' gevonden worden?", "Allebei. Klanten zoeken op beide namen; we nemen ze natuurlijk mee in je teksten en in je Google Bedrijfsprofiel."),
+              ("Kunnen jullie mijn bestaande website verbeteren?", "Ja. In een gratis adviesgesprek kijken we naar je huidige site en adviseren we of verbeteren of opnieuw bouwen slimmer is.")],
+ "vught": [("Kunnen jullie ook professionele foto's maken voor mijn winkel in Vught?", "Ja. Een foto- of videoshoot op locatie kost €250, met dronebeelden €300, inclusief montage en kleurcorrectie."),
+           ("Is een webshop voor een kleine winkel de moeite waard?", "Dat hangt af van je producten en klanten. In een gratis gesprek kijken we of een webshop loont, of dat een site met je assortiment en een duidelijke contactknop genoeg is.")],
+ "oss": [("Werken jullie ook in Ravenstein en Lith?", "Ja. We bouwen voor ondernemers in de hele gemeente Oss, inclusief Berghem, Lith en Ravenstein."),
+         ("Kunnen jullie dronebeelden maken van ons bedrijfspand in Oss?", "Ja. Een shoot met drone kost €300. We checken vooraf of er op die plek gevlogen mag worden.")],
+ "eindhoven": [("Bouwen jullie ook websites voor startups in Eindhoven?", "Ja. Een startup heeft vaak genoeg aan een compacte, snelle site die later meegroeit; maatwerk begint bij €499."),
+               ("Kunnen jullie een cinematische scroll-website maken?", f"Ja. Een 3D Cinematic website kost €749 eenmalig. Lees meer in ons artikel over <a href=\"/blog/wat-is-een-cinematic-scroll-website\" {L}>cinematic scroll-websites</a>.")],
+ "tilburg": [("Bouwen jullie ook webshops in Tilburg?", "Ja. De prijs hangt af van het aantal producten en koppelingen; je krijgt vooraf een offerte op maat."),
+             ("Werken jullie ook voor startende ondernemers in Tilburg?", "Ja. Voor een startende onderneming is een compacte site vaak genoeg; maatwerk begint bij €499 en is later uit te breiden.")],
+ "breda": [("Werken jullie ook in Prinsenbeek en Teteringen?", "Ja. We bouwen voor ondernemers in de hele gemeente Breda, ook in Prinsenbeek, Teteringen, Bavel en Ulvenhout."),
+           ("Kunnen jullie mijn restaurant of winkel in Breda filmen?", "Ja. Een video- of fotoshoot op locatie kost €250, met drone €300, inclusief montage.")],
+ "nijmegen": [("Kunnen jullie een online agenda of afsprakensysteem koppelen?", "Ja. We koppelen je website aan je agenda- of afsprakensysteem, zodat klanten direct een afspraak kunnen maken."),
+              ("Werken jullie ook in Lent en Nijmegen-Noord?", "Ja. We bouwen voor ondernemers aan beide kanten van de Waal.")],
+ "waalwijk": [("Kunnen jullie een vacaturepagina maken voor ons logistieke bedrijf?", "Ja. We maken vacaturepagina's met beelden van de werkvloer en een eenvoudig sollicitatieformulier; een video-opname op locatie kost €250."),
+              ("Doen jullie ook online marketing in Waalwijk?", "We doen SEO (€39 per maand) en social media beheer (vanaf €79 per maand). Daarmee werk je naast je website aan vindbaarheid en zichtbaarheid.")],
+ "uden": [("Bouwen jullie ook webshops in Uden?", "Ja. Je krijgt vooraf een offerte op maat, afhankelijk van het aantal producten en koppelingen."),
+          ("Kunnen jullie ook social media voor mijn bedrijf in Uden beheren?", "Ja. Social media beheer kost vanaf €79 per maand, met content in jouw huisstijl en een maandelijkse rapportage.")],
+ "veghel": [("Werken jullie in heel Meierijstad?", "Ja. We bouwen voor ondernemers in Veghel, Schijndel, Sint-Oedenrode en de kerkdorpen; voor Schijndel hebben we ook een eigen pagina."),
+            ("Kunnen jullie onze website ook in het Engels maken?", "Ja. Voor bedrijven met internationale klanten of medewerkers bouwen we meertalige websites met echte vertalingen.")],
+ "schijndel": [("Kunnen jullie een korte bedrijfsvideo maken voor ons familiebedrijf?", "Ja. Een video-opname op locatie kost €250, inclusief montage en kleurcorrectie; met drone €300."),
+               ("Heeft een kleine ondernemer echt een website nodig?", "Verplicht is het niet, maar wie je via via aangeraden krijgt, zoekt je bijna altijd even op. Een compacte site met je werk, reviews en contactgegevens is dan genoeg om vertrouwen te geven.")],
+ "boxtel": [("Kunnen jullie een website maken voor een B&B of recreatiebedrijf in Boxtel?", "Ja. Voor recreatie maken we sites met sfeerbeelden, informatie over de omgeving en een duidelijke knop om te reserveren of contact op te nemen."),
+            ("Hebben jullie ervaring met vakantieverhuur?", "Ja. Voor vakantiehuis Echt Grieks bouwden we een site die sfeer en boekingen combineert, en we maken villa-films in Spanje.")],
+ "sint-michielsgestel": [("Kunnen jullie een website maken voor mijn praktijk aan huis?", "Ja. Voor praktijken aan huis bouwen we rustige, persoonlijke sites met uitleg over je werkwijze en een duidelijke manier om een afspraak te maken."),
+                         ("Hoe word ik in mijn eigen dorp gevonden?", f"Door de naam van je kern op je site te noemen, een volledig Google Bedrijfsprofiel en reviews van klanten. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>.")],
+ "zaltbommel": [("Werken jullie ook voor tuinbouwbedrijven in de Bommelerwaard?", "Ja. We bouwen ook voor agrarische en tuinbouwbedrijven, met duidelijke informatie over je producten en eventueel dronebeelden van je bedrijf."),
+                ("Ligt Zaltbommel niet al in Gelderland?", "Klopt, Zaltbommel ligt in Gelderland, net over de Waal vanaf Den Bosch. Voor ons maakt dat niets uit: we zijn er in twintig minuten.")],
+ "drunen": [("Werken jullie ook in vestingstad Heusden?", "Ja. Heusden hoort bij dezelfde gemeente als Drunen, en voor horeca en winkels in de vestingstad maken we ook graag foto's en video."),
+            ("Hoe laat ik mijn projecten goed zien op mijn website?", "Met een projectpagina per klus: een paar sterke foto's, een korte omschrijving en de plaats. Dat werkt voor klanten én voor Google.")],
+ "helmond": [("Kunnen jullie een configurator of calculator bouwen?", "Ja. Net als de leasecalculator voor CarsLease bouwen we rekenhulpen en configurators; je krijgt vooraf een offerte op maat."),
+             ("Werken jullie ook in de rest van de regio Eindhoven?", "Ja. Voor Eindhoven en Veldhoven hebben we eigen pagina's, en we bouwen voor ondernemers in de hele regio.")],
+ "veldhoven": [("Kunnen jullie een werken-bij-pagina maken?", "Ja. We maken werken-bij-pagina's met beelden van je team en werkplek; een video-opname op locatie kost €250."),
+               ("Werken jullie ook voor zorgpraktijken in Veldhoven?", "Ja. Voor praktijken bouwen we rustige, duidelijke sites met uitleg over behandelingen en een eenvoudige manier om een afspraak te maken.")],
+}
+for c in CITIES:
+    c.update(LOCAL[c["slug"]]); c["biz"] = BIZ[c["slug"]]; c["faq"] = c["faq"] + FAQ2[c["slug"]]
 
 # Blogartikelen staan als losse bestanden in content/blog/<datum>-<slug>.html:
 # een commentaarblok met velden (title, slug, date, eyebrow, read, img, desc) en daaronder de HTML van het artikel.
@@ -359,15 +438,34 @@ def rows(items):
     return out + '</div>'
 
 # ---------- Locatiepagina's ----------
-for c in CITIES:
+V_INTRO = [lambda c: f"Een website die past bij <span class=\"gold-text\">{c['full']}.</span>",
+           lambda c: f"Gebouwd voor ondernemers <span class=\"gold-text\">{c['in_']}.</span>",
+           lambda c: f"Jouw bedrijf, <span class=\"gold-text\">goed online.</span>",
+           lambda c: f"Van eerste schets <span class=\"gold-text\">tot livegang.</span>"]
+V_PRICE = ["Vaste prijzen: multipage website €499, 3D Cinematic website €749, SEO €39 per maand",
+           "Een multipage website kost €499, een 3D Cinematic website €749",
+           "Websites vanaf €499; SEO kan erbij voor €39 per maand",
+           "Geen uurtje-factuurtje: je weet vooraf wat je betaalt, vanaf €499",
+           "Maatwerk vanaf €499, cinematic vanaf €749, zonder verborgen kosten"]
+V_SECT = ["Voor wie we hier vooral bouwen:", "Sectoren waar we hier vaak voor werken:", "Typische opdrachtgevers in deze omgeving:"]
+V_PLACES = [lambda c: f"We werken ook voor klanten in {c['places']}.",
+            lambda c: f"Ook vanuit {c['places']} komen aanvragen binnen.",
+            lambda c: f"Ons werkgebied rond {c['name']}: {c['places']}.",
+            lambda c: f"Klanten uit {c['places']} vinden je via Google, op een site die op elke telefoon snel laadt."]
+V_FAQH = [lambda c: f"Website laten maken {c['in_']}: <span class=\"gold-text\">goed om te weten</span>",
+          lambda c: f"Vragen uit <span class=\"gold-text\">{c['name']}</span>",
+          lambda c: f"Wat ondernemers {c['in_']} <span class=\"gold-text\">ons vragen</span>"]
+V_CTA = [lambda c: ("Eerst zien, dan beslissen.", f"We bouwen gratis een testwebsite voor jouw bedrijf {c['in_']}. Bevalt het? Dan gaan we door. Zo niet, dan kost het je niets."),
+         lambda c: ("Benieuwd hoe jouw site eruit kan zien?", "Vraag een gratis testwebsite aan. Je ziet het ontwerp voordat je iets betaalt."),
+         lambda c: (f"Klaar voor een nieuwe website {c['in_']}?", "Vertel kort over je bedrijf; binnen een paar dagen staat er een gratis testversie klaar."),
+         lambda c: ("Zonder risico beginnen.", "Je krijgt eerst een gratis testwebsite. Pas als je tevreden bent, gaan we verder.")]
+for ci, c in enumerate(CITIES):
+    vi = lambda arr: arr[ci % len(arr)]
     slug = f"website-laten-maken-{c['slug']}"; url = f"{BASE}/{slug}"
     title = f"Website laten maken {c['name']}: {c['tag']} | Skyline Digital"
     desc = f"Website laten maken {c['in_']}? Maatwerk websites vanaf €499 voor {c['who']}. Snel, vindbaar en eerst gratis een testwebsite."
     near = [CITY_BY[n] for n in c["near"]]
-    faqs = [
-      (f"Wat kost een website laten maken {c['in_']}?", f"Een maatwerk multipage website kost bij ons €499 eenmalig, een 3D cinematic website €749. SEO is optioneel voor €39 per maand. Die prijzen gelden voor ondernemers {c['in_']} net zo goed als in de rest van Nederland — bekijk de <a href=\"/pricing\" style=\"color:var(--gold-deep)\">prijzen</a>."),
-      ("Hoe lang duurt het?", "Een multipage website staat meestal binnen twee tot vier weken online, afhankelijk van hoe snel we teksten en beeld ontvangen. Een gratis testwebsite laten we je vaak al binnen een paar dagen zien."),
-    ] + c["faq"]
+    faqs = c["faq"]
     ld = {"@context":"https://schema.org","@graph":[
         crumbs_ld(url, [("Regio's", BASE+"/regio"), (f"Website laten maken {c['name']}", url)]),
         {"@type":"Service","@id":url+"#service","name":f"Website laten maken {c['in_']}","serviceType":"Webdesign en websiteontwikkeling","provider":ORG_REF,
@@ -395,9 +493,10 @@ for c in CITIES:
         <div class="frow-copy reveal reveal--right">
           <div class="gold-rule"></div>
           <p class="eyebrow">Webdesign {c['name']}</p>
-          <h2>Een website die past bij <span class="gold-text">{c['full']}.</span></h2>
+          <h2>{vi(V_INTRO)(c)}</h2>
           <p class="lead">{c['intro']}</p>
           <p>{c['intro2']}</p>
+          <p style="font-size:.95rem;color:var(--ink-dim)">{vi(V_PRICE)} · <a href="/pricing" style="color:var(--gold-deep)">alle prijzen</a></p>
           <a href="/aanvraag" class="btn btn-dark">Start je project</a>
         </div>
       </div>
@@ -420,33 +519,25 @@ for c in CITIES:
     <div class="wrap">
       <div class="section-head reveal">
         <div class="gold-rule"></div>
-        <p class="eyebrow">Voor wie</p>
-        <h2>Websites voor ondernemers <span class="gold-text">{c['in_']}</span></h2>
-        <p class="lead">We bouwen voor allerlei sectoren in {c['full']}, onder andere voor:</p>
+        <p class="eyebrow">Lokale markt</p>
+        <h2>Ondernemen <span class="gold-text">{c['in_']}</span></h2>
+        <p class="lead">{c['biz'][0]}</p>
       </div>
+      <p class="reveal" style="max-width:720px;color:var(--on-dark-dim)">{c['biz'][1]}</p>
+      <p style="margin:36px 0 18px;max-width:720px;color:var(--on-dark)">{vi(V_SECT)}</p>
       <ul class="checks" style="max-width:720px">{sectors}</ul>
-      <p style="margin-top:28px;max-width:720px;color:var(--on-dark-dim)">Klanten uit {c['places']} vinden je via Google — en via een site die op elke telefoon snel laadt.</p>
+      <p style="margin-top:28px;max-width:720px;color:var(--on-dark-dim)">{vi(V_PLACES)(c)}</p>
       <p style="margin-top:18px;max-width:720px;color:var(--on-dark-dim)"><strong style="color:var(--on-dark)">{c['case'][0]}.</strong> {c['case'][2]} <a href="{c['case'][1]}" style="color:var(--gold)">Bekijk het project →</a></p>
     </div>
   </section>
 
-  <section class="bg-white full">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="gold-rule"></div>
-        <p class="eyebrow">Wat je krijgt</p>
-        <h2>Maatwerk, snel en <span class="gold-text">vindbaar.</span></h2>
-        <p class="lead">Elke site die we {c['in_']} bouwen is maatwerk, mobiel-first en met de SEO-basis meteen goed gezet: een multipage website voor €499 of een 3D Cinematic website voor €749. Wat er precies in zit, lees je op <a href="/website-seo" style="color:var(--gold-deep)">website &amp; SEO</a> en bij de <a href="/pricing" style="color:var(--gold-deep)">prijzen</a>.</p>
-      </div>
-    </div>
-  </section>
 
   <section class="bg-white full">
     <div class="wrap">
       <div class="section-head reveal">
         <div class="gold-rule"></div>
         <p class="eyebrow">Veelgestelde vragen</p>
-        <h2>Website laten maken {c['in_']}: <span class="gold-text">goed om te weten</span></h2>
+        <h2>{vi(V_FAQH)(c)}</h2>
       </div>
       {faq_html(faqs)}
       <p style="margin-top:40px;text-align:center;color:var(--ink-dim)">Ook actief in {nearlinks} · <a href="/regio">alle regio's</a></p>
@@ -456,8 +547,8 @@ for c in CITIES:
   <section class="cta-band">
     <div class="inner reveal">
       <div class="gold-rule" style="margin-inline:auto"></div>
-      <h2>Eerst zien, dan beslissen.</h2>
-      <p class="lead">We bouwen gratis een testwebsite voor jouw bedrijf {c['in_']}. Bevalt het? Dan gaan we door. Zo niet, dan kost het je niets.</p>
+      <h2>{vi(V_CTA)(c)[0]}</h2>
+      <p class="lead">{vi(V_CTA)(c)[1]}</p>
       <div class="hero-actions hero-actions-center"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite aanvragen</a><a href="/contact" class="btn btn-ghost-light">Plan een gesprek</a></div>
     </div>
   </section>
