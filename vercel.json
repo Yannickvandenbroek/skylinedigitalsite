@@ -3,6 +3,39 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?:www\\.)?skylinedigital\\.es"
+        }
+      ],
+      "destination": "https://www.skylinedigital.nl/es",
+      "permanent": true
+    },
+    {
+      "source": "/:path((?!es(?:/|$)).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?:www\\.)?skylinedigital\\.es"
+        }
+      ],
+      "destination": "https://www.skylinedigital.nl/es/:path",
+      "permanent": true
+    },
+    {
+      "source": "/:path(es(?:/.*)?)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?:www\\.)?skylinedigital\\.es"
+        }
+      ],
+      "destination": "https://www.skylinedigital.nl/:path",
+      "permanent": true
+    },
+    {
       "source": "/kennisbank",
       "destination": "/blog",
       "permanent": true
