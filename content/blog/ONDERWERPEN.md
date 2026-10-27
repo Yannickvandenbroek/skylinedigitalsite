@@ -11,7 +11,6 @@ Beschikbare projectpagina's voor eigen ervaring: `/werk-dekgro` (tegelwerk), `/w
 
 Volgorde = planning (zie `content/CONTENTPLAN.md`): bovenste open onderwerp is de volgende week. Hoofdzoekwoorden zijn long-tail: 4 of meer woorden.
 
-- [ ] **Zichtbaar worden in ChatGPT en Google AI: wat werkt echt?** — zoekwoord: "zichtbaar worden in chatgpt" — invalshoek: wat Google zelf zegt over AI Overviews, wat ChatGPT-search nodig heeft (crawlbaar, OAI-SearchBot), merkvermeldingen en reviews; eerlijk over wat niet bewezen is — links: /website-seo, /blog/lokale-seo-tips, /pricing
 - [ ] **SEO zelf doen of uitbesteden? Kosten en wat je mag verwachten** — zoekwoord: "seo zelf doen of uitbesteden" — long-tail ook: "wat kost seo uitbesteden", "seo uitbesteden kosten" (10–100/mnd); wat je zelf kunt, wanneer uitbesteden loont, realistische termijnen, rode vlaggen; SEO €39 p/m — links: /website-seo, /pricing, /blog/lokale-seo-tips
 - [ ] **Bedrijfsvideo maken met AI: wat kan wel en wat niet?** — zoekwoord: "bedrijfsvideo maken met ai" — long-tail ook: "hoe kan ik ai video's maken", "ai video laten maken voor bedrijf"; wat AI goed doet (social clips, variaties), waar het misgaat (echte mensen, pand, vertrouwen), menselijke controle; AI-video €50, echte shoot €250 — links: /ai-content, /drone-video, /blog/bedrijfsvideo-laten-maken-kosten
 - [ ] **Hoe krijg je meer Google reviews (en wat mag niet)?** — zoekwoord: "hoe google reviews krijgen" — long-tail ook: "hoe google reviews verzamelen", "google reviews voor mijn bedrijf"; reviewlink delen, reageren, waarom kopen tegen de regels is (bron: Google-richtlijnen) — links: /blog/lokale-seo-tips, /website-seo, /contact
@@ -59,6 +58,7 @@ Deze onderwerpen worden branche- of dienstpagina's volgens `content/CONTENTPLAN.
 - [→ pagina] **Website onderhoud: updates, back-ups en beveiliging** — zoekwoord: "website onderhoud" — links: /website-seo, /pricing
 
 ## Gedaan
+- [x] 2026-10-27 → /blog/zichtbaar-worden-in-chatgpt-en-google-ai — Zichtbaar worden in ChatGPT en Google AI: wat werkt?
 - [x] 2026-10-26 → /blog/wat-kost-een-website-per-maand — Wat kost een website per maand of per jaar?
 - [x] 2026-10-26 → /blog/bedrijfsvideo-laten-maken-kosten — Bedrijfsvideo laten maken: wat kost het in 2026?
 - [x] 2026-10-26 → /blog/drone-video-huis-vastgoed — Drone video voor je huis of vastgoed: zo werkt het
