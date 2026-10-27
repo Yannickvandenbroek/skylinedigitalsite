@@ -103,6 +103,8 @@ Format zoals de huidige 10 plaatspagina's, elk met echte lokale inhoud. Hoofdzoe
 
 ## Planning (2 pagina's per week)
 
+**Update 27 oktober 2026:** de 8 plaatspagina's (Veghel, Schijndel, Boxtel, Sint-Michielsgestel, Zaltbommel, Drunen, Helmond, Veldhoven) staan al live, en alle plaatspagina's zijn unieker gemaakt (eigen titel met lokaal synoniem, aandachtspunten, project, vragen en foto; via `LOCAL` in `tools/gen_pages.py`). De weken van 15 dec t/m 26 jan zijn daardoor vrij voor andere pagina's uit dit plan.
+
 | Week | Pagina 1 | Pagina 2 |
 |---|---|---|
 | 3 nov | Nieuws: bedrijfsvideo van je eigen beelden (€120) | `/seo-den-bosch` |
