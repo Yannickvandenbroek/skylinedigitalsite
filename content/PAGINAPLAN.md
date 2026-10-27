@@ -49,7 +49,7 @@ URL: `/website-voor-<branche>`. Eén pagina per branche met website, SEO en vide
 
 | Pagina | Hoofdzoekwoord (4+) | Extra long-tails | Bewijs | Data |
 |---|---|---|---|---|
-| `/website-voor-installateurs` | website laten maken installatiebedrijf | installatiebedrijf website laten maken · website laten maken voor installateur | De Jonge, Elektropost | al **plek 2–3** |
+| `/website-voor-installateurs` ✅ live 27 okt | website laten maken installatiebedrijf | installatiebedrijf website laten maken · website laten maken voor installateur | 19 installateurs uit het CRM (naam + link) | al **plek 2–3** |
 | `/website-voor-aannemers` | aannemer website laten maken | website laten maken bouwbedrijf | Dekgro | 10–100/mnd |
 | `/website-voor-schilders` | schilder website laten maken | website laten maken schildersbedrijf | Lilli's | 10–100/mnd |
 | `/website-voor-coaches` | website laten maken voor coaches | website voor coaches en therapeuten · website laten maken voor therapeuten | Palmyra, BodyScan | 10–100/mnd |
@@ -109,7 +109,7 @@ Format zoals de huidige 10 plaatspagina's, elk met echte lokale inhoud. Hoofdzoe
 |---|---|---|
 | 3 nov | Nieuws: bedrijfsvideo van je eigen beelden (€120) | `/seo-den-bosch` |
 | 10 nov | `/bedrijfsfilm-laten-maken` | optimalisatie `/drone-video` |
-| 17 nov | `/google-review-link-maken` (tool) | `/website-voor-installateurs` |
+| 17 nov | `/google-review-link-maken` (tool) | ~~`/website-voor-installateurs`~~ (al live 27 okt) |
 | 24 nov | `/website-voor-aannemers` | `/website-voor-coaches` |
 | 1 dec | `/website-check` (tool) | `/website-voor-schilders` |
 | 8 dec | `/website-zonder-maandelijkse-kosten` | `/website-onderhoud` |

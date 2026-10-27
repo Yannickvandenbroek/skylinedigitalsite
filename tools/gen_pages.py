@@ -101,6 +101,27 @@ CITIES = [
       intro2="Vanuit Den Bosch zijn we in ruim een half uur in Veldhoven. We bouwen voor high-tech toeleveranciers, zakelijke dienstverleners, zorgpraktijken en winkels en horeca in het centrum.",
       sectors=["high-tech toeleveranciers", "zakelijke en technische dienstverlening", "zorg- en gezondheidspraktijken", "winkels en horeca in het centrum"],
       places="het centrum, Zeelst, Meerveldhoven, Oerle, Veldhoven-Dorp en bedrijvenpark De Run", near=["eindhoven","helmond","tilburg"], travel="Veldhoven ligt op ruim een half uur van ons kantoor via de A2."),
+ # --- buiten Brabant, waar al klanten zitten (CRM, 2026-10-27) ---
+ dict(slug="barneveld", name="Barneveld", full="Barneveld", in_="in Barneveld", region="Gelderland",
+      intro="Barneveld ligt midden in de Gelderse Vallei, aan de A1 en de A30, en is een groeiende gemeente met veel familiebedrijven in bouw, installatie en de agrarische sector. Op bedrijventerrein Harselaar groeit het MKB door. Een website laten maken in Barneveld betekent voor ons: een nuchtere, duidelijke site die laat zien wat je doet en waar je werkt.",
+      intro2="In Barneveld bouwden we al websites voor drie installatiebedrijven: GK Vloerverwarming, MSB Vloerverwarming en Installatiebedrijf H. Ploeg. We werken voor ondernemers in Barneveld, Voorthuizen, Kootwijkerbroek, Garderen en de rest van de gemeente.",
+      sectors=["installatie, vloerverwarming en loodgieters", "bouw en afbouw", "agrarische en pluimveebedrijven", "winkels en dienstverlening in het centrum"],
+      places="Barneveld, Voorthuizen, Kootwijkerbroek, Garderen, Stroe en Zwartebroek", near=["amersfoort","apeldoorn","nijmegen"], travel="Met ondernemers in de Gelderse Vallei werken we vooral op afstand: kennismaking via telefoon of video."),
+ dict(slug="amersfoort", name="Amersfoort", full="Amersfoort", in_="in Amersfoort", region="Utrecht",
+      intro="Amersfoort ligt bij knooppunt Hoevelaken, waar de A1 en de A28 samenkomen, en heeft een van de drukste stations van het land. Dat maakt de stad aantrekkelijk voor kantoren, ICT-bedrijven en zakelijke dienstverleners, op bedrijventerreinen als De Hoef en Calveen. Een website laten maken in Amersfoort betekent: opvallen in een stad met veel concurrentie en tegelijk de dorpen eromheen bereiken.",
+      intro2="Rond Amersfoort bouwden we websites voor installateurs in Nijkerk, Woudenberg, Scherpenzeel en Barneveld. We werken voor ondernemers in Amersfoort, Hoogland, Leusden, Soest en de rest van Eemland.",
+      sectors=["zakelijke dienstverlening en ICT", "bouw, installatie en techniek", "winkels en horeca in de binnenstad", "zorg- en coachingpraktijken"],
+      places="de binnenstad, Vathorst, Nieuwland, Kattenbroek, Schothorst, Hoogland en de bedrijventerreinen De Hoef en Calveen", near=["barneveld","apeldoorn","den-bosch"], travel="Met ondernemers in en rond Amersfoort werken we vooral op afstand: kennismaking via telefoon of video."),
+ dict(slug="apeldoorn", name="Apeldoorn", full="Apeldoorn", in_="in Apeldoorn", region="Gelderland",
+      intro="Apeldoorn is de grootste stad van de Veluwe. Naast grote werkgevers als de Belastingdienst en het Kadaster heeft de stad een breed MKB, met bedrijventerreinen als de Ecofactorij en Apeldoorn-Noord. Een website laten maken in Apeldoorn betekent voor ons een site die gevonden wordt in de stad én in de dorpen eromheen.",
+      intro2="Op de Veluwe bouwden we al websites voor G.J. Elektro en JM Installatie Service in Vaassen en voor Vlaskamp Installatietechniek in Heerde. We werken voor ondernemers in Apeldoorn, Ugchelen, Beekbergen, Loenen, Vaassen en Epe.",
+      sectors=["installatie- en elektrotechnische bedrijven", "zakelijke dienstverlening", "recreatie en horeca op de Veluwe", "zorg en praktijken"],
+      places="het centrum, Zevenhuizen, De Maten, Ugchelen, Beekbergen, Vaassen en Epe", near=["zwolle","barneveld","amersfoort"], travel="Met ondernemers op de Veluwe werken we vooral op afstand: kennismaking via telefoon of video."),
+ dict(slug="zwolle", name="Zwolle", full="Zwolle", in_="in Zwolle", region="Overijssel",
+      intro="Zwolle is de hoofdstad van Overijssel en het centrum van een grote regio, met ziekenhuis Isala, hogeschool Windesheim en een Hanzebinnenstad vol winkels. Op bedrijventerreinen als Hessenpoort en de Marslanden zitten logistiek, groothandel en techniek. Een website laten maken in Zwolle betekent: lokaal gevonden worden in een stad waar klanten uit de hele regio naartoe komen.",
+      intro2="In de regio bouwden we websites voor Woninginrichting van Breukelen in Zwolle, RSTK Rioolservice in Kampen en Vlaskamp Installatietechniek in Heerde. We werken voor ondernemers in Zwolle, Kampen, Hattem, Heerde en Dalfsen.",
+      sectors=["winkels en woninginrichting", "installatie, loodgieters en rioolservice", "logistiek en groothandel", "zorg en dienstverlening"],
+      places="de binnenstad, Stadshagen, Assendorp, Berkum, Kampen, Hattem en Heerde", near=["apeldoorn","barneveld","amersfoort"], travel="Met ondernemers in de regio Zwolle werken we vooral op afstand: kennismaking via telefoon of video."),
 ]
 CITY_BY = {c["slug"]: c for c in CITIES}
 
@@ -138,7 +159,7 @@ LOCAL = {
           ("Werken bij", "Veel Osse bedrijven zoeken personeel. Een goede vacaturepagina met beeld van de werkvloer helpt je opvallen."),
           ("Oss en omgeving", "We richten je vindbaarheid op Oss, Berghem, Lith en de rest van de regio.")],
    case=("Palmyra Coaching in Oss", "/werk-palmyra", "Voor Palmyra Coaching in Oss bouwden we een rustige website die vertrouwen uitstraalt en bezoekers naar een afspraak leidt."),
-   faq=[("Hebben jullie al klanten in Oss?", "Ja, onder andere Palmyra Coaching in Oss. Het project staat in ons portfolio."),
+   faq=[("Hebben jullie al klanten in Oss?", "Ja, onder andere Van Loosbroek Installatietechniek, De Jongh Projects en Palmyra Coaching. Hun sites staan hieronder en in ons portfolio."),
         ("Doen jullie ook SEO voor bedrijven in Oss?", "Ja. Bij elke website zetten we de basis-SEO goed. Daarna kun je SEO afnemen voor €39 per maand, met een maandelijkse rapportage.")]),
  "eindhoven": dict(tag="internetbureau vanaf €499", img="photo-studio-monitor.jpg", who="tech, design en MKB in Eindhoven en Brainport",
    syn=("Internetbureau voor Eindhovense ondernemers", "In Eindhoven zoeken veel bedrijven een internetbureau dat design en techniek allebei serieus neemt. Wij combineren maatwerk design met snelle, schone code en, als je wilt, een cinematische scroll-website die opvalt in de designstad."),
@@ -252,34 +273,66 @@ LOCAL = {
    case=("Onze eigen meertalige site", "/en", "Onze eigen website staat in vier talen met echte vertalingen. Zo'n opzet bouwen we ook voor internationale bedrijven in Veldhoven."),
    faq=[("Kunnen jullie een Engelse versie van mijn website maken?", "Ja. We bouwen meertalige websites met echte vertalingen en de juiste taalkoppelingen voor Google, zoals onze eigen site in vier talen."),
         ("Werken jullie ook voor bedrijven op De Run?", "Ja. We komen langs op De Run en in de rest van Veldhoven; vanuit Den Bosch is het ruim een half uur via de A2.")]),
+ "barneveld": dict(tag="websites voor vakbedrijven", img="photo-laptop-desk.jpg", who="installateurs, bouwers en familiebedrijven in Barneveld en de Gelderse Vallei",
+   syn=("Een website voor vakbedrijven in de Gelderse Vallei", "In Barneveld werken we vooral voor vakmensen: installateurs, vloerverwarmingsspecialisten en loodgieters. Zij willen een site die laat zien wat ze doen, waar ze werken en hoe je ze snel belt. Geen poespas, wel gevonden worden."),
+   focus=[("Werkgebied op de kaart", "Veel vakbedrijven uit Barneveld werken ver buiten de gemeente. We zetten je werkgebied duidelijk op de site en richten de vindbaarheid op de plaatsen waar je het meeste werk wilt."),
+          ("Bellen of offerte in één tik", "Op de telefoon staan je nummer en een offerteknop altijd binnen bereik. Zo wordt een bezoeker sneller een klant."),
+          ("Eigen projectfoto's", "Foto's van je eigen werk zeggen meer dan stockbeelden. We helpen je kiezen welke foto's het best werken.")],
+   case=("GK Vloerverwarming", "https://gkvloerverwarming.nl", "Voor GK Vloerverwarming uit Barneveld bouwden we een site over watergedragen en elektrische vloerverwarming, die meteen duidelijk maakt dat ze in heel Nederland werken."),
+   faq=[("Werken jullie voor bedrijven in Barneveld, terwijl jullie in Den Bosch zitten?", "Ja. We bouwden al websites voor drie installatiebedrijven in Barneveld. De kennismaking doen we via telefoon of video, en je ziet eerst gratis een testwebsite."),
+        ("Kan mijn website laten zien dat ik in heel Nederland werk?", "Ja. We zetten je werkgebied duidelijk op de site en kunnen extra pagina's maken voor de regio's waar je het meeste werk wilt.")]),
+ "amersfoort": dict(tag="webdesign vanaf €499", img="photo-phone-city.jpg", who="MKB, installateurs en dienstverleners in Amersfoort en Eemland",
+   syn=("Webdesign in Amersfoort en omgeving", "Wie in Amersfoort zoekt op webdesign of een websitebouwer, vindt veel bureaus. Wij onderscheiden ons met vaste prijzen vanaf €499, een gratis testwebsite vooraf en echte klanten in de regio, van Nijkerk tot Scherpenzeel."),
+   focus=[("Stad en dorpen", "Klanten zoeken op Amersfoort, maar ook op Hoogland, Leusden of Nijkerk. We nemen de plaatsen mee waar jouw klanten wonen."),
+          ("Zakelijk publiek", "Voor dienstverleners en ICT-bedrijven telt vertrouwen: duidelijke diensten, cases en een persoonlijk 'over ons'."),
+          ("Vakbedrijven", "Voor installateurs en bouwers werken projectfoto's, een duidelijk werkgebied en een snelle offerteknop het best.")],
+   case=("Elektropost in Woudenberg", "/werk-elektropost", "Voor installateur Elektropost uit Woudenberg bouwden we een frisse, persoonlijke site met zeven specialismen overzichtelijk op een rij."),
+   faq=[("Hebben jullie klanten in de regio Amersfoort?", "Ja. We bouwden websites voor onder andere De Jonge Elektrotechniek in Nijkerk, Elektropost in Woudenberg en Klok en van Ginkel Elektrotechniek in Scherpenzeel."),
+        ("Hoe gaat de samenwerking als jullie niet om de hoek zitten?", "We beginnen met een kennismaking via telefoon of video en laten je eerst gratis een testwebsite zien. Daarna gaat alles online, net zo snel als bij een bureau in de buurt.")]),
+ "apeldoorn": dict(tag="website bouwen vanaf €499", img="photo-flatlay-phone.jpg", who="installateurs, MKB en recreatiebedrijven in Apeldoorn en op de Veluwe",
+   syn=("Website bouwen in Apeldoorn en op de Veluwe", "Een website bouwen in Apeldoorn begint bij ons met een gratis testwebsite. Je ziet eerst hoe je site eruitziet; bevalt het, dan maken we hem af met snelle laadtijden en een goede basis voor Google."),
+   focus=[("Stad en dorpen", "We maken je vindbaar in Apeldoorn én in Ugchelen, Beekbergen, Loenen en de dorpen in de buurt."),
+          ("Vakmanschap tonen", "Voor installateurs en bouwers werken projectfoto's, certificeringen en een duidelijk werkgebied het best."),
+          ("Recreatie op de Veluwe", "Campings, B&B's en horeca verkopen sfeer: grote beelden, eventueel vanuit de lucht, en een duidelijke knop om te boeken.")],
+   case=("G.J. Elektro in Vaassen", "https://gjelektrotechniek.nl", "Voor G.J. Elektro uit Vaassen bouwden we een site voor huis- en bedrijfsinstallaties, zonnepanelen en domotica, met alle diensten overzichtelijk op een rij."),
+   faq=[("Hebben jullie klanten in de buurt van Apeldoorn?", "Ja. In Vaassen bouwden we websites voor G.J. Elektro en JM Installatie Service, en in Heerde voor Vlaskamp Installatietechniek."),
+        ("Kunnen jullie een website maken voor een camping of B&B op de Veluwe?", "Ja. Voor recreatie maken we sites met sfeerbeelden en een duidelijke knop om te reserveren. Een foto- of videoshoot op locatie kost €250, met drone €300.")]),
+ "zwolle": dict(tag="webdesigner vanaf €499", img="photo-edit-suite.jpg", who="winkels, installateurs en MKB in Zwolle, Kampen en omgeving",
+   syn=("Webdesigner voor Zwolle en de regio", "Zoek je een webdesigner in Zwolle, dan wil je iemand die je bedrijf snapt en snel schakelt. Bij ons krijg je één vast aanspreekpunt, vaste prijzen en eerst een gratis testwebsite, net als onze klanten in Zwolle, Kampen en Heerde."),
+   focus=[("Winkels met een verhaal", "Een zaak met een lange geschiedenis verdient een site die dat laat zien: wie je bent, wat je verkoopt en waarom klanten al jaren terugkomen."),
+          ("Dag en nacht bereikbaar", "Voor loodgieters en rioolservice draait alles om snel bellen. Je nummer staat altijd in beeld, ook op de telefoon."),
+          ("Regio Zwolle", "We maken je vindbaar in Zwolle én in Kampen, Hattem, Heerde en Dalfsen.")],
+   case=("Woninginrichting van Breukelen", "https://woninginrichtingvanbreukelen.nl", "Voor Woninginrichting van Breukelen in Zwolle, al ruim negentig jaar specialist in raambekleding, vloeren en slaapkamers, bouwden we een site die het assortiment overzichtelijk laat zien."),
+   faq=[("Hebben jullie klanten in de regio Zwolle?", "Ja, onder andere Woninginrichting van Breukelen in Zwolle, RSTK Rioolservice in Kampen en Vlaskamp Installatietechniek in Heerde."),
+        ("Hoe werken jullie met klanten buiten Brabant?", "Grotendeels online: kennismaking via telefoon of video, daarna een gratis testwebsite en de afronding op afstand.")]),
 }
 # "Ondernemen in <plaats>": lokale economie en wat dat betekent voor je website (twee alinea's), plus twee extra eigen vragen.
 BIZ = {
  "den-bosch": ("'s-Hertogenbosch is de provinciehoofdstad van Noord-Brabant en heeft een opvallend gemengde economie: overheid en zakelijke dienstverlening in het Paleiskwartier, winkels en horeca in de historische binnenstad rond de Sint-Jan, en bouw, logistiek en techniek op De Rietvelden, De Herven en De Brand. Daarnaast trekt de stad veel bezoekers, wat horeca en retail een groot publiek van buiten geeft.",
                "Voor je website betekent dat: wie in de binnenstad zit, concurreert om bezoekers die vooraf online zoeken waar ze gaan eten of winkelen. Wie op een bedrijventerrein zit, wordt vooral gevonden door andere bedrijven die zoeken op een specialisme. We stemmen je pagina's af op het publiek dat voor jou telt."),
- "rosmalen": ("Rosmalen hoort bij de gemeente 's-Hertogenbosch, maar voelt voor veel inwoners als een eigen dorp met een eigen centrum. Met de groei van De Groote Wielen zijn er veel jonge gezinnen bijgekomen, en op bedrijventerrein Kruisstraat en rond Hintham zitten bouw-, auto- en installatiebedrijven. Evenementenlocatie Autotron brengt daarnaast bezoekers van buiten.",
+ "rosmalen": ("Rosmalen hoort bij de gemeente 's-Hertogenbosch, maar voelt voor veel inwoners als een eigen dorp met een eigen centrum. Met de groei van De Groote Wielen zijn er veel jonge gezinnen bijgekomen, en op bedrijventerrein Kruisstraat en rond Hintham zitten bouw-, auto- en installatiebedrijven. Rond de Molenhoekpassage zitten winkels, praktijken en dienstverleners die vooral voor inwoners werken.",
               "Een website in Rosmalen bedient daarom vaak twee soorten klanten: inwoners die lokaal een vakman, praktijk of kapper zoeken, en bedrijven uit de hele regio. We maken duidelijk voor wie je er bent en zorgen dat je zowel op 'Rosmalen' als op 'Den Bosch' gevonden wordt."),
- "vught": ("Vught is een groene gemeente met villawijken, landgoederen en een centrum rond de Taalstraat met veel zelfstandige winkels, interieurzaken en horeca. Sinds 2021 hoort ook Helvoirt bij de gemeente, en recreatie rond De IJzeren Man en de nabije Loonse en Drunense Duinen trekt bezoekers uit de regio.",
+ "vught": ("Vught is een groene gemeente met villawijken, landgoederen en een centrum rond de Taalstraat met veel zelfstandige winkels, interieurzaken en horeca. Sinds 2021 hoort ook Helvoirt bij de gemeente. Daarnaast werken er veel zelfstandige adviseurs, coaches en zorgverleners vanuit huis of een kleine praktijk.",
            "In Vught telt de eerste indruk zwaar: klanten zijn kritisch en vergelijken. Rustige vormgeving, goede foto's en duidelijke informatie over je aanbod werken hier beter dan opvallende kleuren of acties."),
  "oss": ("Oss heeft een lange geschiedenis als industriestad, van vleeswaren en margarine tot farmacie. Die traditie zie je nog op bedrijventerreinen als Elzenburg, Moleneind en Vorstengrafdonk, waar productiebedrijven, toeleveranciers en logistieke bedrijven zitten. Tegelijk is Oss het centrum voor dorpen als Berghem, Lith en Ravenstein.",
          "Voor B2B-bedrijven in Oss is de website vaak het eerste wat een inkoper of nieuwe medewerker ziet. Dat vraagt om duidelijke specialismen, echte foto's van de productie en een makkelijke manier om contact op te nemen. Voor winkels en praktijken in het centrum draait het juist om lokale vindbaarheid en actuele openingstijden."),
  "eindhoven": ("Eindhoven is de vijfde stad van Nederland en het centrum van de Brainport-regio, met de TU/e, de High Tech Campus en een sterk netwerk van technologiebedrijven en toeleveranciers. Daarnaast kent de stad een grote creatieve sector rond Strijp-S en de Dutch Design Week, en een levendige binnenstad met horeca en retail.",
                "Bezoekers in Eindhoven zijn gewend aan goed ontworpen, snelle websites; een trage of verouderde site valt hier eerder op dan elders. Voor tech- en B2B-bedrijven komt daar vaak een internationaal publiek bij, waardoor een Engelse versie al snel nodig is."),
- "tilburg": ("Tilburg is de tweede stad van Brabant, met een sterke mix van onderwijs (Tilburg University en Fontys), logistiek langs de A58 en een groeiende creatieve sector in de Spoorzone en rond de Piushaven. Het textielverleden zie je nog terug in de stad, en evenementen als de Tilburgse kermis trekken jaarlijks veel bezoekers.",
+ "tilburg": ("Tilburg is de tweede stad van Brabant, met een sterke mix van onderwijs (Tilburg University en Fontys), logistiek langs de A58 en een groeiende creatieve sector in de Spoorzone en rond de Piushaven. In wijken als de Reeshof en in Berkel-Enschot werken veel lokale vakmensen, praktijken en winkels vooral voor hun eigen buurt.",
              "Dat geeft ondernemers in Tilburg een gevarieerd publiek: studenten en jonge gezinnen die vooral mobiel zoeken, en bedrijven in logistiek en dienstverlening die zakelijk inkopen. We kiezen per site welk publiek voorop staat en richten tekst, vormgeving en vindbaarheid daarop in."),
  "breda": ("Breda heeft een sterke binnenstad rond de Grote Markt met veel horeca, retail en evenementen. Daarnaast zitten er veel zakelijke dienstverleners, bouwbedrijven en logistieke bedrijven aan de A16 richting België. Rond de stad liggen kernen als Prinsenbeek, Teteringen, Bavel en Ulvenhout, elk met hun eigen ondernemers.",
            "Omdat Breda veel bezoekers trekt, zoeken mensen hier vaak vooraf online naar een restaurant, winkel of dienst. Je website moet dan in één oogopslag laten zien wat je biedt en hoe ze je bereiken. Voor zakelijke klanten telt juist betrouwbaarheid: duidelijke diensten, referenties en een snelle offerte-aanvraag."),
- "nijmegen": ("Nijmegen is een studenten- en zorgstad: de Radboud Universiteit, de HAN en het Radboudumc trekken veel jonge mensen en zorgprofessionals. Daarnaast heeft de stad een sterke horeca- en evenementencultuur, met de Waalkade en jaarlijks de Vierdaagse. Aan de noordkant van de Waal groeit Nijmegen-Noord met Lent.",
+ "nijmegen": ("Nijmegen is een studenten- en zorgstad: de Radboud Universiteit, de HAN en het Radboudumc trekken veel jonge mensen en zorgprofessionals. Daarnaast heeft de stad een sterke horeca- en evenementencultuur, met de Waalkade en de binnenstad als middelpunt. Aan de noordkant van de Waal groeit Nijmegen-Noord met Lent.",
               "Veel Nijmegenaren zoeken diensten via hun telefoon en social media. Een website die snel laadt, goed werkt op mobiel en gekoppeld is aan Instagram of een afsprakensysteem past daar het best bij. Voor zorgpraktijken hoort er heldere informatie bij over wat je doet en hoe iemand bij je terechtkan."),
- "waalwijk": ("Waalwijk was lange tijd het centrum van de Nederlandse schoen- en lederindustrie; het Nederlands Leder- en Schoenenmuseum herinnert daar nog aan. Tegenwoordig is het vooral een logistieke regio, met grote distributiecentra en transportbedrijven langs de A59. In het centrum en in Sprang-Capelle en Waspik zitten winkels, horeca en dienstverleners, en met de Efteling vlakbij komen er veel bezoekers door de regio.",
+ "waalwijk": ("Waalwijk was lange tijd het centrum van de Nederlandse schoen- en lederindustrie. Tegenwoordig is het vooral een logistieke regio, met grote distributiecentra en transportbedrijven langs de A59. In het centrum en in Sprang-Capelle en Waspik zitten winkels, horeca en dienstverleners.",
               "Voor logistieke bedrijven is de website het visitekaartje richting opdrachtgevers én sollicitanten. Voor winkels en horeca draait het om lokale vindbaarheid in De Langstraat. Wie in Waalwijk zoekt, gebruikt net zo vaak 'webdesign' of 'internetbureau' als 'website laten maken'; we zorgen dat je site op al die vragen een duidelijk antwoord geeft."),
- "uden": ("Uden is het grootste winkelcentrum van de gemeente Maashorst en heeft met ziekenhuis Bernhoven een belangrijke zorgfunctie. Op de bedrijventerreinen zitten bouw-, installatie- en productiebedrijven, en het buitengebied kent veel agrarische ondernemers. Natuurgebied De Maashorst trekt daarnaast recreanten uit de hele regio.",
+ "uden": ("Uden is het grootste winkelcentrum van de gemeente Maashorst en heeft met ziekenhuis Bernhoven een belangrijke zorgfunctie. Op de bedrijventerreinen zitten bouw-, installatie- en productiebedrijven, en het buitengebied kent veel agrarische ondernemers. In de dorpen eromheen, zoals Nistelrode en Heesch, zitten veel bouw- en klusbedrijven die in de hele regio werken.",
           "Voor winkels en horeca in Uden draait het om lokale vindbaarheid en een goed bijgehouden Google Bedrijfsprofiel. Bouw- en technische bedrijven willen vooral hun werkgebied en vakmanschap laten zien. Omdat klanten ook uit Veghel, Oss en Boekel komen, richten we je site op de hele regio en niet alleen op Uden."),
  "veghel": ("Veghel ligt aan de Zuid-Willemsvaart en de A50 en is uitgegroeid tot een van de belangrijkste werkgeverscentra van Noordoost-Brabant. Naast grote bedrijven zit er een dicht netwerk van toeleveranciers, transporteurs en technische dienstverleners. Sinds 2017 hoort Veghel bij de gemeente Meierijstad, samen met Schijndel en Sint-Oedenrode.",
             "Voor het MKB in Veghel is de concurrentie om personeel groot. Een website die laat zien hoe het is om bij jou te werken, met echte foto's of een korte video, helpt daarbij net zo veel als je dienstenpagina. Zakelijke klanten letten vooral op heldere specialismen en een snelle manier om contact op te nemen."),
  "schijndel": ("Schijndel is na Veghel de grootste kern van Meierijstad, met een compact centrum en veel lokale winkels. Het dorp heeft een sterk verenigingsleven en veel familiebedrijven in bouw, techniek en de agrarische sector. Wijbosch ligt er direct tegenaan, en in het buitengebied richting Sint-Oedenrode en Boxtel zitten veel kleinere ondernemers.",
                "Klanten in Schijndel kiezen vaak voor een bedrijf dat ze kennen of dat iemand aanraadt. Je website moet dat vertrouwen bevestigen: wie je bent, wat je hebt gemaakt en wat klanten zeggen. Grote beloftes werken hier minder goed dan echte foto's, reviews en een persoonlijke toon."),
- "boxtel": ("Boxtel is een knooppunt midden in Brabant: het station ligt op de lijnen richting Eindhoven, Tilburg en Den Bosch, en de A2 loopt vlak langs de gemeente. Het centrum rond kasteel Stapelen en de Dommel, en natuurgebieden als Kampina, trekken wandelaars en fietsers. Bedrijven vind je zowel in het centrum als op de bedrijventerreinen langs de A2.",
+ "boxtel": ("Boxtel is een knooppunt midden in Brabant: het station ligt op de lijnen richting Eindhoven, Tilburg en Den Bosch, en de A2 loopt vlak langs de gemeente. Rond de Dommel en natuurgebied Kampina zitten horeca- en recreatiebedrijven die veel bezoekers van buiten trekken. Bedrijven vind je zowel in het centrum als op de bedrijventerreinen langs de A2.",
             "Voor horeca, recreatie en winkels in Boxtel is een groot deel van de klanten bezoeker. Die zoeken op hun telefoon naar openingstijden, route en sfeer, vaak vlak voordat ze komen. Voor zakelijke dienstverleners is de centrale ligging juist een argument: vanuit Boxtel ben je snel in Den Bosch, Eindhoven en Tilburg."),
  "sint-michielsgestel": ("De gemeente Sint-Michielsgestel bestaat uit kernen met elk een eigen karakter: Sint-Michielsgestel aan de Dommel, Berlicum, Den Dungen, Gemonde en Middelrode. Er wonen veel gezinnen en werken veel zelfstandigen, en de nabijheid van Den Bosch maakt het een fijne plek voor dienstverleners die rustiger willen zitten. In het buitengebied liggen landgoederen en agrarische bedrijven.",
                          "Omdat de kernen klein zijn, is een goede reputatie hier alles. Een verzorgde website die duidelijk laat zien wie je bent, helpt om die reputatie online vast te houden. We zorgen dat je in alle kernen gevonden wordt, en niet alleen op de naam van de gemeente."),
@@ -287,10 +340,19 @@ BIZ = {
                 "Voor ondernemers in de Bommelerwaard is de regio het werkgebied, niet alleen de eigen plaats. We noemen daarom de dorpen waar je klanten vandaan komen, en zorgen dat je ook gevonden wordt door klanten aan de Brabantse kant van de Waal."),
  "drunen": ("Drunen is de grootste kern van de gemeente Heusden, waartoe ook Vlijmen, Nieuwkuijk, Elshout, Haarsteeg, Oudheusden en de vestingstad Heusden horen. Aan de zuidkant ligt Nationaal Park De Loonse en Drunense Duinen, en Drunen heeft een sterk MKB in bouw, techniek en dienstverlening.",
             "Omdat de gemeente uit veel kernen bestaat, zoeken klanten vaak op de naam van hun eigen dorp of op 'Heusden'. Een website die die namen natuurlijk noemt, wordt vaker gevonden. Voor recreatie en horeca rond de Duinen komen er bezoekers uit de hele regio bij, die vooral letten op sfeer en bereikbaarheid."),
- "helmond": ("Helmond heeft een rijke industriële geschiedenis in textiel en metaal en is nu een van de centra van de Nederlandse automotive-sector, met de Automotive Campus en veel technische toeleveranciers. Kasteel Helmond staat midden in het centrum, en de stad groeit met wijken als Brandevoort.",
+ "helmond": ("Helmond heeft een rijke industriële geschiedenis in textiel en metaal en is nu een van de centra van de Nederlandse automotive-sector, met de Automotive Campus en veel technische toeleveranciers. De stad groeit met wijken als Brandevoort en Dierdonk, waar installateurs, bouwers en praktijken veel werk hebben.",
              "Voor technische bedrijven in Helmond is de website vaak de plek waar opdrachtgevers en monteurs je als eerste tegenkomen. Duidelijke specialismen, certificeringen en echte projectfoto's maken het verschil. Voor winkels, horeca en zorg in de wijken telt vooral lokale vindbaarheid: wie in Brandevoort of Mierlo-Hout zoekt, wil een bedrijf in de buurt."),
  "veldhoven": ("Veldhoven ontstond uit een aantal dorpen en is uitgegroeid tot een belangrijke technologiegemeente. ASML heeft hier zijn hoofdkantoor, Máxima MC is een van de grote ziekenhuizen in de regio, en op De Run zitten veel high-tech toeleveranciers. De oude kernen Zeelst, Meerveldhoven, Oerle en Veldhoven-Dorp hebben nog steeds hun eigen karakter.",
                "Voor bedrijven in de high-tech keten is de website vooral een visitekaartje voor internationale opdrachtgevers en specialisten die een baan zoeken: Engels, duidelijke technische informatie en een professionele uitstraling zijn dan belangrijk. Voor zorgpraktijken, winkels en horeca telt juist lokale vindbaarheid in Veldhoven en de buurgemeenten."),
+# --- buiten Brabant ---
+ "barneveld": ("Barneveld hoort bij Regio Foodvalley en heeft van oudsher een sterke agrarische en pluimveesector. Daaromheen is een breed netwerk van vakbedrijven ontstaan: bouwers, installateurs, loodgieters en toeleveranciers, vaak familiebedrijven. Veel van die bedrijven werken ver buiten de gemeente.",
+               "Dat zie je terug bij onze klanten hier: GK Vloerverwarming werkt door heel Nederland, MSB Vloerverwarming in de regio van Barneveld tot Apeldoorn, en Installatiebedrijf H. Ploeg vooral voor woningen en bedrijven in en rond Barneveld. Voor je website betekent dat: kies bewust of je lokaal of landelijk gevonden wilt worden, en richt je pagina's daarop in."),
+ "amersfoort": ("Amersfoort is een forensen- en dienstenstad: door de ligging bij knooppunt Hoevelaken en het grote station zitten er veel kantoren, ICT-bedrijven en zakelijke dienstverleners. In de nieuwere wijken als Vathorst en Nieuwland wonen veel gezinnen, en in de dorpen rondom, van Nijkerk tot Woudenberg, zit een sterk MKB in bouw en installatie.",
+                "Voor je website betekent dat twee dingen. Zakelijke klanten vergelijken grondig, dus je site moet vertrouwen wekken. Particulieren in de nieuwbouwwijken zoeken juist snel een vakman in de buurt. Bij onze installateurs rond Amersfoort richten we de site daarom op de dorpen en wijken waar het werk vandaan komt."),
+ "apeldoorn": ("Naast grote werkgevers als de Belastingdienst en het Kadaster heeft Apeldoorn een breed MKB in bouw, installatie, zakelijke dienstverlening en zorg. Ten noorden van de stad, in Vaassen, Epe en Heerde, zitten veel vakbedrijven die in de hele regio werken. Op de Veluwe zelf draait veel om recreatie: campings, B&B's en horeca.",
+               "Voor installateurs en bouwers is de regio het werkgebied, niet alleen de eigen plaats; we noemen daarom de dorpen waar je klanten zitten. Voor recreatiebedrijven telt vooral de beleving: sfeerbeelden, informatie over de omgeving en een makkelijke manier om te boeken."),
+ "zwolle": ("Zwolle is het centrum van een regio van Kampen tot Dalfsen. Met Isala en Windesheim zijn zorg en onderwijs grote werkgevers, en de binnenstad trekt winkelend publiek uit de hele omgeving. Op Hessenpoort en de Marslanden zitten logistiek, groothandel en techniek.",
+            "Voor winkels in de binnenstad telt dat klanten vooraf online kijken wat je verkoopt. Voor loodgieters en installateurs telt vooral snelheid: bij een lekkage of verstopping bellen mensen het eerste bedrijf dat ze vinden. Daarom staat bij RSTK Rioolservice in Kampen '24/7' al in de paginatitel."),
 }
 L = 'style="color:var(--gold-deep)"'
 FAQ2 = {
@@ -328,11 +390,63 @@ FAQ2 = {
             ("Hoe laat ik mijn projecten goed zien op mijn website?", "Met een projectpagina per klus: een paar sterke foto's, een korte omschrijving en de plaats. Dat werkt voor klanten én voor Google.")],
  "helmond": [("Kunnen jullie een configurator of calculator bouwen?", "Ja. Net als de leasecalculator voor CarsLease bouwen we rekenhulpen en configurators; je krijgt vooraf een offerte op maat."),
              ("Werken jullie ook in de rest van de regio Eindhoven?", "Ja. Voor Eindhoven en Veldhoven hebben we eigen pagina's, en we bouwen voor ondernemers in de hele regio.")],
+ "barneveld": [("Werken jullie ook in Voorthuizen en Kootwijkerbroek?", "Ja. We bouwen voor ondernemers in de hele gemeente Barneveld, dus ook in Voorthuizen, Kootwijkerbroek, Garderen en Stroe."),
+               ("Wat kost een website voor een installatiebedrijf?", f"Een multipage website kost €499 eenmalig; SEO kan erbij voor €39 per maand. Lees meer op onze pagina <a href=\"/website-voor-installateurs\" {L}>website voor installateurs</a>.")],
+ "amersfoort": [("Werken jullie ook in Hoogland en Vathorst?", "Ja. We bouwen voor ondernemers in heel Amersfoort, ook in Hoogland en Vathorst, en in Leusden en Soest."),
+                ("Doen jullie ook SEO voor bedrijven in Amersfoort?", "Ja. Bij elke site zetten we de basis-SEO goed; daarna kan SEO voor €39 per maand, met maandelijkse rapportage.")],
+ "apeldoorn": [("Werken jullie ook in Epe en Vaassen?", "Ja. In Vaassen zitten al twee van onze klanten, en we werken in de hele regio Apeldoorn."),
+               ("Is Apeldoorn niet te ver weg voor jullie?", "Nee. De kennismaking doen we via telefoon of video en je ziet eerst gratis een testwebsite. Daarna gaat alles online.")],
+ "zwolle": [("Werken jullie ook in Kampen en Hattem?", "Ja. In Kampen zit al een van onze klanten, en we bouwen voor ondernemers in de hele regio Zwolle."),
+            ("Kan ik mijn website zelf bijhouden?", "Ja. We bouwen in een gebruiksvriendelijk CMS en leggen uit hoe je teksten en beelden zelf aanpast.")],
  "veldhoven": [("Kunnen jullie een werken-bij-pagina maken?", "Ja. We maken werken-bij-pagina's met beelden van je team en werkplek; een video-opname op locatie kost €250."),
                ("Werken jullie ook voor zorgpraktijken in Veldhoven?", "Ja. Voor praktijken bouwen we rustige, duidelijke sites met uitleg over behandelingen en een eenvoudige manier om een afspraak te maken.")],
 }
 for c in CITIES:
     c.update(LOCAL[c["slug"]]); c["biz"] = BIZ[c["slug"]]; c["faq"] = c["faq"] + FAQ2[c["slug"]]
+
+# Echte klanten (CRM, fase 'afgerond'); naam en plaats zoals op hun eigen site. Yannick gaf akkoord voor naam + link,
+# behalve Claassen Elektro: die nooit noemen. Velden: naam, link (eigen site of ons projectverhaal), plaats, wat ze doen, installateur?
+CLIENTS = {
+ "vlaspoel": ("Verkeersschool Vlaspoel", "https://verkeersschoolvlaspoel.nl", "Rosmalen", "rijlessen voor auto en motor", False),
+ "barten": ("Regio Autorijschool Peter Barten", "https://peterbartenrijschool.lovable.app", "Heesch", "rijlessen", False),
+ "gremmen": ("Gremmen Bouw & Timmerwerken", "https://gremmenbouw.nl", "Nistelrode", "verbouwingen en maatwerk timmerwerk", False),
+ "dejongh": ("De Jongh Projects", "https://dejonghprojects.nl", "Oss", "houtrotherstel en kozijnreparatie", False),
+ "vanloosbroek": ("Van Loosbroek Installatietechniek", "https://vanloosbroekinstallatietechniek.nl", "Oss", "airco, warmtepompen en cv-ketels", True),
+ "bato": ("Bato Ontstoppingen", "https://www.bato-ontstoppingen.nl", "Valkenswaard", "rioolontstopping en camera-inspectie", True),
+ "bodyscan": ("BodyScan Waalre", "/werk-bodyscan", "Waalre", "gezondheidsscans", False),
+ "vanbeveren": ("Van Beveren Dienstverlening", "https://vanbevereninstallaties.nl", "Breda", "klussen en installaties", True),
+ "bevmontage": ("Beveiligings-Montage", "https://beveiligings-montage.nl", "Sprundel", "inbraaksignalering en camerasystemen", True),
+ "ahrens": ("Ahrens Elektro", "https://ahrens-elektro.nl", "Druten", "elektra, zonnepanelen en laadpalen", True),
+ "gennissen": ("Gennissen Beveiliging", "https://gennissenbeveiliging.nl", "Alphen", "alarmsystemen en camerabewaking", True),
+ "gk": ("GK Vloerverwarming", "https://gkvloerverwarming.nl", "Barneveld", "vloerverwarming", True),
+ "msb": ("MSB Vloerverwarming", "https://msbvloerverwarming.nl", "Barneveld", "vloerverwarming", True),
+ "ploeg": ("Installatiebedrijf H. Ploeg", "https://installatiebedrijfploeg.nl", "Barneveld", "verwarming, sanitair en loodgieterswerk", True),
+ "klok": ("Klok en van Ginkel Elektrotechniek", "https://klokenvanginkel.nl", "Scherpenzeel", "elektrotechniek", True),
+ "michel": ("Michel Installatie", "https://loodgietermichel.nl", "Scherpenzeel", "loodgieterswerk en badkamers", True),
+ "dejonge": ("De Jonge Elektrotechniek", "/werk-dejonge", "Nijkerk", "elektra, data en beveiliging", True),
+ "elektropost": ("Elektropost", "/werk-elektropost", "Woudenberg", "elektrotechniek", True),
+ "laseur": ("Laseur Elektrotechniek", "https://www.laseur-elektrotechniek.nl", "Bunnik", "elektrotechniek en verduurzaming", True),
+ "gj": ("G.J. Elektro", "https://gjelektrotechniek.nl", "Vaassen", "elektrotechnische installaties", True),
+ "jm": ("JM Installatie Service", "https://jm-installatieservice.nl", "Vaassen", "sanitair, cv en ventilatie", True),
+ "vlaskamp": ("Vlaskamp Installatietechniek", "https://www.vlaskampinstallatietechniek.nl", "Heerde", "elektrotechniek", True),
+ "vanbreukelen": ("Woninginrichting van Breukelen", "https://woninginrichtingvanbreukelen.nl", "Zwolle", "raambekleding, vloeren en slaapkamers", False),
+ "rstk": ("RSTK Rioolservice", "https://rioolontstopperkampen.nl", "Kampen", "loodgieter en rioolservice", True),
+ "driehuizen": ("Loodgietersbedrijf D. Driehuizen", "https://loodgieterdriehuizen.nl", "Heemstede", "loodgieterswerk, cv en badkamers", True),
+}
+CITY_CLIENTS = {
+ "den-bosch": ["vlaspoel", "barten", "vanloosbroek", "gremmen", "dejongh"], "rosmalen": ["vlaspoel", "barten", "gremmen"],
+ "oss": ["vanloosbroek", "dejongh", "barten", "gremmen"], "uden": ["gremmen", "vanloosbroek", "barten", "dejongh"], "veghel": ["vanloosbroek", "gremmen"],
+ "eindhoven": ["bato", "bodyscan"], "veldhoven": ["bodyscan", "bato"], "helmond": ["bato", "bodyscan"],
+ "breda": ["vanbeveren", "bevmontage"], "nijmegen": ["ahrens", "gennissen"],
+ "barneveld": ["gk", "msb", "ploeg", "klok", "michel", "dejonge"], "amersfoort": ["dejonge", "elektropost", "klok", "michel", "laseur", "ploeg"],
+ "apeldoorn": ["gj", "jm", "vlaskamp"], "zwolle": ["vanbreukelen", "rstk", "vlaskamp"],
+}
+def client_link(k):
+    n, u = CLIENTS[k][:2]
+    ext = ' target="_blank" rel="noopener"' if u.startswith("http") else ""
+    return f'<a href="{u}"{ext} style="color:inherit;text-decoration:none">{n}</a>'
+def client_rows(keys):
+    return rows([(client_link(k), f"{CLIENTS[k][2]} · {CLIENTS[k][3]}") for k in keys])
 
 # Blogartikelen staan als losse bestanden in content/blog/<datum>-<slug>.html:
 # een commentaarblok met velden (title, slug, date, eyebrow, read, img, desc) en daaronder de HTML van het artikel.
@@ -455,9 +569,31 @@ V_PLACES = [lambda c: f"We werken ook voor klanten in {c['places']}.",
 V_FAQH = [lambda c: f"Website laten maken {c['in_']}: <span class=\"gold-text\">goed om te weten</span>",
           lambda c: f"Vragen uit <span class=\"gold-text\">{c['name']}</span>",
           lambda c: f"Wat ondernemers {c['in_']} <span class=\"gold-text\">ons vragen</span>"]
+V_CLH = [lambda c: "Klanten <span class=\"gold-text\">in de buurt</span>",
+         lambda c: "Zij gingen je <span class=\"gold-text\">voor</span>",
+         lambda c: f"Ons werk rond <span class=\"gold-text\">{c['name']}</span>"]
+def client_section(c, h):
+    keys = CITY_CLIENTS.get(c["slug"])
+    if not keys: return ""
+    inst = ('<p style="margin-top:32px;color:var(--ink-dim)">Ben je zelf installateur? Bekijk <a href="/website-voor-installateurs" style="color:var(--gold-deep)">wat we voor installatiebedrijven maken</a>.</p>'
+            if any(CLIENTS[k][4] for k in keys) else "")
+    return f'''
+  <section class="bg-cream full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Klanten uit de regio</p>
+        <h2>{h(c)}</h2>
+        <p class="lead">Websites die we bouwden voor ondernemers in en rond {c['name']}. Klik op een naam om de site of het project te bekijken.</p>
+      </div>
+      {client_rows(keys)}
+      {inst}
+    </div>
+  </section>
+'''
 V_CTA = [lambda c: ("Eerst zien, dan beslissen.", f"We bouwen gratis een testwebsite voor jouw bedrijf {c['in_']}. Bevalt het? Dan gaan we door. Zo niet, dan kost het je niets."),
          lambda c: ("Benieuwd hoe jouw site eruit kan zien?", "Vraag een gratis testwebsite aan. Je ziet het ontwerp voordat je iets betaalt."),
-         lambda c: (f"Klaar voor een nieuwe website {c['in_']}?", "Vertel kort over je bedrijf; binnen een paar dagen staat er een gratis testversie klaar."),
+         lambda c: (f"Klaar voor een nieuwe website {c['in_']}?", "Vertel kort over je bedrijf; je hoort binnen één werkdag van ons en krijgt eerst een gratis testversie."),
          lambda c: ("Zonder risico beginnen.", "Je krijgt eerst een gratis testwebsite. Pas als je tevreden bent, gaan we verder.")]
 for ci, c in enumerate(CITIES):
     vi = lambda arr: arr[ci % len(arr)]
@@ -530,8 +666,7 @@ for ci, c in enumerate(CITIES):
       <p style="margin-top:18px;max-width:720px;color:var(--on-dark-dim)"><strong style="color:var(--on-dark)">{c['case'][0]}.</strong> {c['case'][2]} <a href="{c['case'][1]}" style="color:var(--gold)">Bekijk het project →</a></p>
     </div>
   </section>
-
-
+{client_section(c, vi(V_CLH))}
   <section class="bg-white full">
     <div class="wrap">
       <div class="section-head reveal">
@@ -556,9 +691,147 @@ for ci, c in enumerate(CITIES):
 '''
     open(slug + ".html", "w").write(head(title, desc, url, "/assets/photo-laptop-desk.jpg", ld) + body + tail())
 
+# ---------- Branchepagina: website voor installateurs ----------
+# Opbouw volgens content/PAGINAPLAN.md (type 1); hoofdzoekwoord "website laten maken installatiebedrijf".
+INSTALLERS = ["dejonge", "elektropost", "vanloosbroek", "gk", "msb", "ploeg", "klok", "michel", "laseur", "gj", "jm", "vlaskamp",
+              "rstk", "driehuizen", "ahrens", "gennissen", "bato", "bevmontage", "vanbeveren"]
+url = BASE + "/website-voor-installateurs"
+title = "Website laten maken installatiebedrijf: vanaf €499 | Skyline Digital"
+desc = "Website laten maken voor je installatiebedrijf? Ruim 20 installateurs, elektriciens en loodgieters gingen je voor. Vanaf €499, eerst gratis een testwebsite."
+faqs = [
+ ("Wat kost een website voor een installatiebedrijf?", f"Een multipage website kost €499 eenmalig, een 3D Cinematic website €749. SEO kan erbij voor €39 per maand. Lees ook <a href=\"/blog/wat-kost-een-website-laten-maken\" {L}>wat een website laten maken kost</a>."),
+ ("Hoe lang duurt het voordat mijn website online staat?", "Gemiddeld 4 tot 8 weken, afhankelijk van de omvang en hoe snel we foto's en feedback ontvangen. Je ziet eerst gratis een testwebsite."),
+ ("Ik heb geen tijd om teksten te schrijven. Is dat een probleem?", "Nee. Met een paar gegevens over je diensten en werkgebied maken wij de teksten voor je testwebsite; jij past aan wat niet klopt."),
+ ("Word ik gevonden op 'elektricien' of 'loodgieter' plus mijn plaats?", f"Daar richten we de site op: je belangrijkste diensten en je werkgebied krijgen een eigen plek, en de technische basis-SEO staat goed. Een vaste positie in Google kan niemand beloven; met SEO voor €39 per maand werken we daar elke maand aan. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>."),
+ ("Werken jullie ook voor installateurs buiten Brabant?", "Ja. Onze klanten zitten van Heemstede en Bunnik tot Kampen, Heerde en Sprundel. De kennismaking doen we via telefoon of video."),
+ ("Kunnen jullie ook foto's of video van mijn projecten maken?", "Ja. Een foto- of videoshoot op locatie kost €250, met dronebeelden €300, inclusief montage en kleurcorrectie."),
+]
+ld = {"@context":"https://schema.org","@graph":[
+    crumbs_ld(url, [("Website & SEO", BASE+"/website-seo"), ("Website voor installateurs", url)]),
+    {"@type":"Service","@id":url+"#service","name":"Website laten maken voor installatiebedrijven","serviceType":"Webdesign voor installatiebedrijven","provider":ORG_REF,
+     "audience":{"@type":"BusinessAudience","audienceType":"Installatiebedrijven, elektriciens en loodgieters"},"areaServed":{"@type":"Country","name":"Nederland"},"url":url,
+     "offers":[{"@type":"Offer","name":"Multipage website","price":"499","priceCurrency":"EUR"},{"@type":"Offer","name":"3D Cinematic website","price":"749","priceCurrency":"EUR"},
+               {"@type":"Offer","name":"SEO","price":"39","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"39","priceCurrency":"EUR","unitText":"maand"}}]},
+    faq_ld(url, faqs),
+    {"@type":"WebPage","@id":url+"#webpage","url":url,"name":title,"description":desc,"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"about":ORG_REF,"breadcrumb":{"@id":url+"#breadcrumb"}}]}
+needs = [
+ ("Gevonden worden op dienst en plaats", "Klanten zoeken op 'elektricien Nijkerk' of 'loodgieter Heemstede', niet op je bedrijfsnaam. Je belangrijkste diensten en de plaatsen waar je werkt krijgen daarom een vaste plek op de site. De site van De Jonge Elektrotechniek heet niet voor niets 'Elektricien Nijkerk'."),
+ ("Direct kunnen bellen", "Bij een storing of lekkage bellen mensen het eerste bedrijf dat ze vinden. Je telefoonnummer staat daarom altijd in beeld, ook op de telefoon. RSTK Rioolservice in Kampen zet '24/7' zelfs in de paginatitel."),
+ ("Vertrouwen in één oogopslag", "Certificeringen, jaren ervaring en reviews maken het verschil. Beveiligings-Montage laat zien dat ze VCA-gecertificeerd zijn, Bato Ontstoppingen dat ze er al sinds 1996 zijn."),
+ ("Een duidelijk werkgebied", "Werk je in de regio of door heel Nederland? GK Vloerverwarming uit Barneveld installeert door het hele land, Van Loosbroek Installatietechniek werkt in heel Noord-Brabant. Dat staat op hun site meteen duidelijk."),
+ ("Een offerte zonder gedoe", "Een kort formulier of een directe knop naar WhatsApp maakt de drempel laag. Bezoekers hoeven niet eerst een lange vragenlijst in te vullen."),
+ ("Vakmensen werven", "Veel installatiebedrijven zoeken personeel. Een werken-bij-pagina met echte foto's of een korte video van de werkvloer helpt je opvallen."),
+]
+steps = [
+ ("Kennismaking", "Een kort gesprek via telefoon, video of op locatie: welke diensten je levert, waar je werkt en welke uitstraling bij je past."),
+ ("Gratis testwebsite", "We bouwen eerst een testversie met je logo, kleuren en diensten. Gratis en vrijblijvend."),
+ ("Aanpassen tot het klopt", "Je geeft feedback en wij passen aan, tot je er trots op bent."),
+ ("Live", "We regelen het domein en zetten de site live. Daarna kun je SEO of onderhoud erbij nemen."),
+]
+city_links = " · ".join(f'<a href="/website-laten-maken-{c["slug"]}" style="color:var(--gold-deep)">{c["name"]}</a>' for c in CITIES)
+body = HEADER + f'''
+  <section class="page-hero has-image">
+    <div class="page-hero-bg"><img src="/assets/photo-installateur.jpg" alt="Installateur aan het werk bij een meterkast" /></div>
+    <div class="page-hero-inner">
+      <p class="crumbs"><a href="/">Home</a> · <a href="/website-seo">Website &amp; SEO</a> · Installateurs</p>
+      <h1>Website laten maken voor je <span class="gold-text">installatiebedrijf.</span></h1>
+      <p class="lead">Voor elektriciens, loodgieters, cv- en airco-installateurs en vloerverwarmingsspecialisten. Ruim 20 installatiebedrijven gingen je voor, van Heemstede tot Kampen.</p>
+      <div class="hero-actions"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite</a><a href="#klanten" class="btn btn-ghost-light">Bekijk onze klanten</a></div>
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Kort antwoord</p>
+        <h2>Wat kost een website voor een <span class="gold-text">installatiebedrijf?</span></h2>
+        <p class="lead">Een complete website met meerdere pagina's kost bij ons €499 eenmalig: op maat, met je diensten, werkgebied en projecten, een duidelijke bel- en offerteknop en een SEO-vriendelijke opbouw. Wil je daarna hoger in Google komen, dan kan SEO erbij voor €39 per maand. Je ziet eerst gratis een testwebsite; pas als die bevalt, gaan we verder.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Wat de site moet doen</p>
+        <h2>Zes dingen die een installateurswebsite <span class="gold-text">goed moet doen</span></h2>
+        <p class="lead">Dit zien we bij elke installateur terugkomen, of je nu elektricien bent in Nijkerk of loodgieter in Heemstede.</p>
+      </div>
+      {rows(needs)}
+    </div>
+  </section>
+
+  <section class="bg-dark full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Wat we maken</p>
+        <h2>Alles voor je online zichtbaarheid, <span class="gold-text">vaste prijzen</span></h2>
+        <p class="lead">Je kiest wat je nodig hebt. De meeste installateurs beginnen met een website en nemen later SEO of beeld erbij.</p>
+      </div>
+      <ul class="checks" style="max-width:760px">
+        <li>Multipage website op maat: €499 eenmalig, of een 3D Cinematic website voor €749</li>
+        <li>SEO voor €39 per maand, met maandelijkse rapportage</li>
+        <li>Foto- en videoshoot van je projecten: €250, met dronebeelden €300</li>
+        <li>Social media beheer vanaf €79 per maand</li>
+        <li>Onderhoudsabonnement: je site veilig, snel en up-to-date</li>
+      </ul>
+      <p style="margin-top:28px;color:var(--on-dark-dim)">Alle prijzen en pakketten staan op onze <a href="/pricing" style="color:var(--gold)">prijzenpagina</a>.</p>
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Werkwijze</p>
+        <h2>Zo werkt het, <span class="gold-text">in vier stappen</span></h2>
+      </div>
+      {rows(steps)}
+    </div>
+  </section>
+
+  <section class="bg-cream full" id="klanten">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Klanten</p>
+        <h2>Installateurs die <span class="gold-text">je voorgingen</span></h2>
+        <p class="lead">Een greep uit de installatiebedrijven waarvoor we een website bouwden. Klik op een naam om de site live te bekijken. Bij De Jonge Elektrotechniek en Elektropost lees je hoe we het aanpakten.</p>
+      </div>
+      {client_rows(INSTALLERS)}
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Website voor installateurs: <span class="gold-text">goed om te weten</span></h2>
+      </div>
+      {faq_html(faqs)}
+      <p style="margin-top:40px;text-align:center;color:var(--ink-dim)">Ook per plaats: {city_links}</p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="inner reveal">
+      <div class="gold-rule" style="margin-inline:auto"></div>
+      <h2>Eerst zien hoe jouw site eruitziet?</h2>
+      <p class="lead">We bouwen gratis een testwebsite voor je installatiebedrijf. Bevalt hij, dan gaan we verder. Zo niet, dan kost het je niets.</p>
+      <div class="hero-actions hero-actions-center"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite aanvragen</a><a href="/contact" class="btn btn-ghost-light">Plan een gesprek</a></div>
+    </div>
+  </section>
+
+'''
+open("website-voor-installateurs.html", "w").write(head(title, desc, url, "/assets/photo-installateur.jpg", ld) + body + tail())
+
 # ---------- Regio-hub ----------
-url = BASE + "/regio"; title = "Website laten maken in Brabant en omgeving — regio's | Skyline Digital"
-desc = f"Skyline Digital bouwt websites, video en content voor ondernemers in Den Bosch, Eindhoven, Tilburg en nog {len(CITIES) - 3} plaatsen in Brabant en Gelderland. Bekijk je regio."
+url = BASE + "/regio"; title = "Website laten maken in Brabant, Gelderland en verder | Skyline Digital"
+desc = f"Skyline Digital bouwt websites, video en content voor ondernemers in Den Bosch, Eindhoven, Tilburg en nog {len(CITIES) - 3} plaatsen in Brabant, Gelderland, Utrecht en Overijssel. Bekijk je regio."
 ld = {"@context":"https://schema.org","@graph":[crumbs_ld(url,[("Regio's",url)]),
       {"@type":"ItemList","@id":url+"#list","itemListElement":[{"@type":"ListItem","position":i+1,"name":f"Website laten maken {c['name']}","url":f"{BASE}/website-laten-maken-{c['slug']}"} for i,c in enumerate(CITIES)]},
       {"@type":"WebPage","@id":url+"#webpage","url":url,"name":title,"description":desc,"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"breadcrumb":{"@id":url+"#breadcrumb"}}]}
@@ -578,7 +851,8 @@ body = HEADER + f'''
         <h2>Website laten maken <span class="gold-text">in jouw regio</span></h2>
       </div>
       {rows([(f'<a href="/website-laten-maken-{c["slug"]}" style="color:inherit;text-decoration:none">Website laten maken {c["name"]}</a>', c["intro"].split(". ")[0] + ".") for c in CITIES])}
-      <p style="margin-top:40px;color:var(--ink-dim)">Staat jouw plaats er niet bij? We werken door heel Nederland en op afstand — <a href="/contact">neem contact op</a>.</p>
+      <p style="margin-top:40px;color:var(--ink-dim)">Installateur? Bekijk ook onze pagina <a href="/website-voor-installateurs">website voor installateurs</a>.</p>
+      <p style="margin-top:12px;color:var(--ink-dim)">Staat jouw plaats er niet bij? We werken door heel Nederland en op afstand — <a href="/contact">neem contact op</a>.</p>
     </div>
   </section>
   <section class="cta-band">
@@ -709,7 +983,7 @@ for path in glob.glob("*.html") + glob.glob("blog/*.html"):
 # ---------- Sitemap ----------
 urls = [("/",1.0,"weekly"),("/website-seo",0.9,"monthly"),("/drone-video",0.9,"monthly"),("/social-media",0.9,"monthly"),("/ai-content",0.9,"monthly"),
         ("/pricing",0.8,"monthly"),("/portfolio",0.8,"monthly"),("/over-ons",0.7,"monthly"),("/contact",0.7,"yearly"),("/aanvraag",0.8,"yearly"),
-        ("/regio",0.7,"monthly"),("/blog",0.7,"weekly")]
+        ("/regio",0.7,"monthly"),("/blog",0.7,"weekly"),("/website-voor-installateurs",0.8,"monthly")]
 urls += [(f"/website-laten-maken-{c['slug']}",0.8,"monthly") for c in CITIES]
 urls += [(f"/blog/{a['slug']}",0.7,"monthly",a["date"]) for a in ARTICLES]
 W = ["dekgro","lillis","bodyscan","echtgrieks","carslease","lassie","dejonge","elektropost","palmyra"]
