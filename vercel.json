@@ -3,6 +3,31 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/content/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/i18n/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/.claude/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/es-site/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {
