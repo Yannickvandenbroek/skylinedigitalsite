@@ -75,7 +75,8 @@
   var done = false;
   function load() {
     if (done) return; done = true;
-    fetch("/api/instagram", { headers: { Accept: "application/json" } })
+    // op skylinedigital.es draait de API niet zelf: dan de .nl aanspreken
+    fetch((/skylinedigital\.es$/.test(location.hostname) ? "https://www.skylinedigital.nl" : "") + "/api/instagram", { headers: { Accept: "application/json" } })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) { if (d) secs.forEach(function (s) { render(s, d); }); })
       .catch(function () {});

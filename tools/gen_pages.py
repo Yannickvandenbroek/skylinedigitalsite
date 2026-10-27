@@ -428,7 +428,8 @@ urls += [(f"/blog/{a['slug']}",0.7,"monthly",a["date"]) for a in ARTICLES]
 W = ["dekgro","lillis","bodyscan","echtgrieks","carslease","lassie","dejonge","elektropost","palmyra"]
 urls += [(f"/werk-{w}",0.5,"yearly") for w in W]
 MAIN = ["","/over-ons","/website-seo","/drone-video","/social-media","/ai-content","/portfolio","/pricing","/contact","/aanvraag"]
-for l in ["en","it","es"]:
+# het Spaans staat op www.skylinedigital.es met een eigen sitemap (tools/gen_es.py)
+for l in ["en","it"]:
     urls += [(f"/{l}{m}", 0.8 if m == "" else 0.6, "monthly") for m in MAIN]
     urls += [(f"/{l}/werk-{w}", 0.4, "yearly") for w in W]
 urls += [("/privacybeleid",0.2,"yearly"),("/algemene-voorwaarden",0.2,"yearly"),("/cookiebeleid",0.2,"yearly")]

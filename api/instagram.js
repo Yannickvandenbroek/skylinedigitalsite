@@ -9,6 +9,7 @@ module.exports = async (req, res) => {
     if (!r.ok) return res.status(502).json({ error: "feed_" + r.status });
     const d = await r.json();
     res.setHeader("Cache-Control", "public, s-maxage=1800, stale-while-revalidate=86400");
+    res.setHeader("Access-Control-Allow-Origin", "https://www.skylinedigital.es");
     res.status(200).json({
       username: d.username,
       followers: d.followersCount,

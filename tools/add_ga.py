@@ -25,20 +25,21 @@ def bust(html):
     for a in ASSETS:
         if not os.path.exists(a): continue
         v = hashlib.md5(open(a, "rb").read()).hexdigest()[:8]
-        html = re.sub(r'((?:src|href)="/?)' + re.escape(a) + r'(?:\?v=[0-9a-f]+)?"', lambda m: f'{m.group(1)}{a}?v={v}"', html)
+        html = re.sub(r'((?:src|href)="(?:https://www\.skylinedigital\.nl)?/?)' + re.escape(a) + r'(?:\?v=[0-9a-f]+)?"', lambda m: f'{m.group(1)}{a}?v={v}"', html)
     return html
 
-def inject(html):
+def inject(html, external=False):
     html = re.sub(r"\s*" + re.escape(START) + r".*?" + re.escape(END), "", html, flags=re.S)
-    return re.sub(r'(<meta charset="utf-8"\s*/?>)', lambda m: m.group(1) + "\n  " + SNIPPET, html, count=1, flags=re.I)
+    snip = SNIPPET.replace('src="/consent.js"', 'src="https://www.skylinedigital.nl/consent.js"') if external else SNIPPET
+    return re.sub(r'(<meta charset="utf-8"\s*/?>)', lambda m: m.group(1) + "\n  " + snip, html, count=1, flags=re.I)
 
 if __name__ == "__main__":
     os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-    files = [f for f in glob.glob("*.html") + glob.glob("blog/*.html") + glob.glob("en/*.html") + glob.glob("it/*.html") + glob.glob("es/*.html")
+    files = [f for f in glob.glob("*.html") + glob.glob("blog/*.html") + glob.glob("en/*.html") + glob.glob("it/*.html") + glob.glob("es-site/*.html")
              if not os.path.basename(f).startswith("google")]
     n = 0
     for f in files:
-        s = open(f).read(); t = bust(inject(s))
+        s = open(f).read(); t = bust(inject(s, external=f.startswith("es-site/")))
         if GA_ID not in t: print("GEEN charset-meta in", f); continue
         if t != s: open(f, "w").write(t); n += 1
     print(f"Google-tag in {n} van {len(files)} pagina's gezet")

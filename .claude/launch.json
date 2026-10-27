@@ -4,8 +4,24 @@
     {
       "name": "skyline-digital",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-p", "3333", "."],
+      "runtimeArgs": [
+        "serve",
+        "-p",
+        "3333",
+        "."
+      ],
       "port": 3333
+    },
+    {
+      "name": "skyline-es",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "serve",
+        "-p",
+        "3334",
+        "es-site"
+      ],
+      "port": 3334
     }
   ]
 }
