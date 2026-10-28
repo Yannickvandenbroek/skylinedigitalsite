@@ -1,9 +1,12 @@
 {
   "rating": 5.0,
-  "count": 3,
+  "count": 6,
   "mapsUrl": "https://www.google.com/maps/place/Skylinedigital/data=!4m8!3m7!1s0x47c6ef97f99eea17:0xa8c25ff4693bb2b7!8m2!3d51.7166725!4d5.3342155!9m1!1b1!16s%2Fg%2F11z92n0t9p",
   "writeUrl": "https://www.google.com/maps/place/Skylinedigital/data=!4m8!3m7!1s0x47c6ef97f99eea17:0xa8c25ff4693bb2b7!8m2!3d51.7166725!4d5.3342155!9m1!1b1!16s%2Fg%2F11z92n0t9p",
   "reviews": [
+    { "author": "Cars Lease", "rating": 5, "text": "Door een snelle en fijne service kon ik snel aan de slag met mijn nieuwe website. Dus raad zeker dit bedrijf aan als je niet lang wilt wachten en daarnaast een betaalbare service wilt!" },
+    { "author": "Max Van den berg", "rating": 5, "text": "Prachtige website en video gemaakt voor onze villa in Dénia!" },
+    { "author": "Rody Stekelenburg", "rating": 5, "text": "Top bedrijf met duidelijke en snelle communicatie. Zeker een aanrader!" },
     { "author": "Bart Luking", "rating": 5, "text": "Website voor mijn installatiebedrijf top gemaakt 👌🏼" },
     { "author": "Sonya Marino", "rating": 5, "text": "Het is een super mooie website geworden! Daarbij fijn persoonlijk contact voor als er iets nodig is" },
     { "author": "Anthony Jot", "rating": 5, "text": "Zeer aan te bevelen, werkt efficiënt en hard, ben zeer tevreden over dit bedrijf 👌🏼👌🏼" }
