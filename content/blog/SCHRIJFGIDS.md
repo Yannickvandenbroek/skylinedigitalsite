@@ -65,6 +65,7 @@ desc: <120–155 tekens: belofte + zoekwoord, eindigt met punt>
 ```
 - Afbeeldingen: kies een passende `assets/photo-*.jpg`. Varieer: niet dezelfde als de twee vorige artikelen.
 - Interne links: 3–6 stuks naar dienstpagina's, `/pricing`, relevante `/werk-…`, een locatiepagina of een ander blogartikel. Gebruik alleen paden die bestaan, zonder `.html`.
+  - Elk artikel linkt naar minstens één plaatspagina (`/website-laten-maken-<plaats>`, liefst Den Bosch, Waalwijk, Oss of Uden: daar zitten de meeste vertoningen) of, als het onderwerp over installateurs gaat, naar `/website-voor-installateurs`. Gebruik een natuurlijke linktekst, niet steeds dezelfde.
 - Externe links: `rel="noopener"`, alleen naar betrouwbare bronnen.
 
 ## Werkwijze per week

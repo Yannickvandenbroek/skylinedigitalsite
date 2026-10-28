@@ -964,17 +964,20 @@ body = BLOG_HEADER + f'''
 open("blog.html","w").write(head(title, desc, url, "/assets/og-home.jpg", ld) + body + tail())
 
 # ---------- Footer op alle pagina's: Regio's + Blog ----------
-NEW_COL = '''        <div class="footer-col">
-          <h4>Regio's</h4>
-''' + "".join(f'          <a href="/website-laten-maken-{c["slug"]}">Website laten maken {c["name"]}</a>\n' for c in CITIES[:8]) + '''          <a href="/regio">Alle regio's</a>
-        </div>
-'''
+# Volgorde = plaatsen met de meeste vertoningen in Search Console (okt 2026), plus de installateurspagina.
+FOOTER_CITIES = ["den-bosch", "waalwijk", "oss", "uden", "nijmegen", "breda", "eindhoven", "tilburg"]
+NEW_COL = ('        <div class="footer-col"><h4>Regio\'s</h4>'
+           + "".join(f'<a href="/website-laten-maken-{k}">Website laten maken {CITY_BY[k]["name"]}</a>' for k in FOOTER_CITIES)
+           + '<a href="/website-voor-installateurs">Website voor installateurs</a><a href="/regio">Alle regio\'s</a></div>\n')
 for path in glob.glob("*.html") + glob.glob("blog/*.html"):
     if path.startswith("google"): continue
     s = open(path).read()
-    if "Website laten maken Den Bosch</a>" in s: continue
-    s = re.sub(r'        <div class="footer-col">\n          <h4>Over ons</h4>.*?</div>\n', NEW_COL, s, count=1, flags=re.S)
-    s = s.replace('          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', '          <a href="/blog">Blog</a>\n          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', 1)
+    if "<h4>Regio's</h4>" in s:
+        s = re.sub(r"        <div class=\"footer-col\">\s*<h4>Regio's</h4>.*?</div>\n", NEW_COL, s, count=1, flags=re.S)
+    else:
+        s = re.sub(r'        <div class="footer-col">\n          <h4>Over ons</h4>.*?</div>\n', NEW_COL, s, count=1, flags=re.S)
+    if '<a href="/blog">Blog</a>' not in s.split('<footer', 1)[-1]:
+        s = s.replace('          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', '          <a href="/blog">Blog</a>\n          <a href="/aanvraag" class="footer-gratis">★ Gratis testwebsite</a>', 1)
     # relatieve assets in footer/nav werken niet vanuit /blog/ — maak ze absoluut
     if path.startswith("blog/"):
         s = s.replace('src="assets/', 'src="/assets/')
