@@ -2,10 +2,19 @@
 
 Doel: overal exact dezelfde naam, hetzelfde adres en telefoonnummer (NAP). Google vergelijkt die gegevens; kleine verschillen kosten vertrouwen.
 
-## Eerst dit beslissen
+## Besloten (28 okt 2026)
 
-1. **Naam.** Je Google-bedrijfsprofiel heet "Skylinedigital", de site zegt "Skyline Digital". Kies er één en pas de andere aan. Advies: "Skyline Digital" (zoals de site, het logo en de KVK-handelsnaam, als die zo geregistreerd is; check dat even).
-2. **Openingstijden.** Het bedrijfsprofiel zegt "24 uur geopend". Voor een bureau oogt "ma–vr 09:00–18:00" geloofwaardiger; kies één variant en gebruik die overal.
+1. **Naam:** overal "Skyline Digital"; het Google-bedrijfsprofiel ("Skylinedigital") wordt hierop aangepast.
+2. **Openingstijden:** maandag t/m zaterdag 09:00–19:00, zondag gesloten; ook in het Google-profiel (stond op "24 uur geopend").
+
+## Stand van zaken (28 okt 2026)
+
+| Waar | Status |
+|---|---|
+| Google-bedrijfsprofiel | Naam → "Skyline Digital" (in behandeling, ~10 min), website → www, nieuwe lange beschrijving, openingstijden ma–za 09:00–19:00. Nog te doen: Instagram als socialmediaprofiel, extra categorieën (videoproductie, SEO). |
+| Bing Places | Account via Google, alle 10 profielen geïmporteerd en gesynchroniseerd (ook die van klanten). Skyline Digital geverifieerd, publicatie 7–12 dagen. Diensten staan op "Application/Mobile App/Software Development" (komt uit Google-categorie); laten staan of in Google aanpassen. |
+| Opendi | Formulier zonder account op https://service.opendi.nl/listings; Yannick vult zelf in (zie NAP + lange omschrijving). |
+| Telefoonboek, Cylex, Apple, Sortlist, Clutch | Account nodig; Yannick. |
 
 ## Gegevens om te plakken (NAP)
 
@@ -17,6 +26,7 @@ Doel: overal exact dezelfde naam, hetzelfde adres en telefoonnummer (NAP). Googl
 | E-mail | yannick@skylinedigital.nl |
 | Website | https://www.skylinedigital.nl |
 | KVK | 78391059 |
+| Openingstijden | ma–za 09:00–19:00, zo gesloten |
 | Categorie | Webdesignbureau (ook: internetbureau, videoproductie, SEO-bureau) |
 | Opgericht | vul in (jaar van de KVK-inschrijving) |
 
