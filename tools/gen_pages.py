@@ -129,7 +129,7 @@ CITY_BY = {c["slug"]: c for c in CITIES}
 # tag = titeltoevoeging met het synoniem dat daar gezocht wordt (Search Console / Keyword Planner), syn = eigen tussenkop + alinea,
 # focus = drie lokale aandachtspunten, case = passend project, faq = twee eigen vragen, img = eigen kopfoto.
 LOCAL = {
- "den-bosch": dict(tag="webdesign vanaf €499", img="blog-wat-kost-een-website.jpg", who="ondernemers in 's-Hertogenbosch, van de binnenstad tot De Herven",
+ "den-bosch": dict(tag="webdesign vanaf €375", img="blog-wat-kost-een-website.jpg", who="ondernemers in 's-Hertogenbosch, van de binnenstad tot De Herven",
    syn=("Webdesigner of websitebouwer in Den Bosch?", "Of je nu zoekt op webdesign, een websitebouwer of een internetbureau in Den Bosch: je wilt iemand die ontwerp, techniek en vindbaarheid in één keer goed doet. Bij ons krijg je één vast aanspreekpunt in je eigen stad, en de lokale SEO zetten we meteen bij de bouw goed."),
    focus=[("Bossche zoekwoorden", "Klanten zoeken op 'Den Bosch', ''s-Hertogenbosch' én op wijknamen. We verwerken die varianten natuurlijk in je pagina's, zonder ze erin te proppen."),
           ("Binnenstad of bedrijventerrein", "Een winkel in de binnenstad heeft andere wensen dan een installateur op De Herven: route en openingstijden tegenover werkgebied en offerte-aanvragen. Je site wordt daarop ingericht."),
@@ -153,15 +153,15 @@ LOCAL = {
    case=("Schildersbedrijf Lilli's", "/werk-lillis", "Voor schildersbedrijf Lilli's bouwden we een verzorgde site met het vakmanschap centraal: de uitstraling die past bij wonen en interieur in Vught."),
    faq=[("Bouwen jullie ook webshops in Vught?", "Ja, we bouwen ook webshops en koppelingen met bijvoorbeeld je CRM of agenda. De prijs hangt af van het aantal producten en koppelingen; je krijgt vooraf een offerte op maat."),
         ("Valt Helvoirt ook onder jullie werkgebied?", "Ja. Helvoirt hoort sinds 2021 bij de gemeente Vught en ligt, net als Vught zelf, dicht bij ons kantoor.")]),
- "oss": dict(tag="website bouwer vanaf €499", img="blog-cinematic-scroll-website.jpg", who="productiebedrijven, winkels en praktijken in Oss, Berghem en Lith",
-   syn=("Website bouwer in Oss, met SEO erbij", "Zoek je een website bouwer in Oss, dan wil je meestal meer dan een mooie site: je wilt dat hij aanvragen oplevert. Daarom zetten we de SEO bij de bouw meteen goed op, en kun je daarna kiezen voor SEO-onderhoud voor €39 per maand."),
+ "oss": dict(tag="website bouwer vanaf €375", img="blog-cinematic-scroll-website.jpg", who="productiebedrijven, winkels en praktijken in Oss, Berghem en Lith",
+   syn=("Website bouwer in Oss, met SEO erbij", "Zoek je een website bouwer in Oss, dan wil je meestal meer dan een mooie site: je wilt dat hij aanvragen oplevert. Daarom zetten we de SEO bij de bouw meteen goed op, en kun je daarna kiezen voor SEO-onderhoud voor €79 per maand."),
    focus=[("Specialismen per pagina", "Productiebedrijven en toeleveranciers willen precies uitleggen wat ze maken. Elke dienst krijgt een eigen pagina, zodat inkopers je vinden op wat je echt doet."),
           ("Werken bij", "Veel Osse bedrijven zoeken personeel. Een goede vacaturepagina met beeld van de werkvloer helpt je opvallen."),
           ("Oss en omgeving", "We richten je vindbaarheid op Oss, Berghem, Lith en de rest van de regio.")],
    case=("Palmyra Coaching in Oss", "/werk-palmyra", "Voor Palmyra Coaching in Oss bouwden we een rustige website die vertrouwen uitstraalt en bezoekers naar een afspraak leidt."),
    faq=[("Hebben jullie al klanten in Oss?", "Ja, onder andere Van Loosbroek Installatietechniek, De Jongh Projects en Palmyra Coaching. Hun sites staan hieronder en in ons portfolio."),
-        ("Doen jullie ook SEO voor bedrijven in Oss?", "Ja. Bij elke website zetten we de basis-SEO goed. Daarna kun je SEO afnemen voor €39 per maand, met een maandelijkse rapportage.")]),
- "eindhoven": dict(tag="internetbureau vanaf €499", img="photo-studio-monitor.jpg", who="tech, design en MKB in Eindhoven en Brainport",
+        ("Doen jullie ook SEO voor bedrijven in Oss?", "Ja. Bij elke website zetten we de basis-SEO goed. Daarna kun je SEO afnemen voor €79 per maand, met een maandelijkse rapportage.")]),
+ "eindhoven": dict(tag="internetbureau vanaf €375", img="photo-studio-monitor.jpg", who="tech, design en MKB in Eindhoven en Brainport",
    syn=("Internetbureau voor Eindhovense ondernemers", "In Eindhoven zoeken veel bedrijven een internetbureau dat design en techniek allebei serieus neemt. Wij combineren maatwerk design met snelle, schone code en, als je wilt, een cinematische scroll-website die opvalt in de designstad."),
    focus=[("Hoog designniveau", "In de stad van de Dutch Design Week valt een standaardtemplate op, en niet positief. Daarom ontwerpen we elke site op maat, met een 3D Cinematic-variant vanaf €749."),
           ("Internationaal publiek", "Werk je met internationale klanten of collega's? We bouwen meertalige websites, zoals onze eigen site in vier talen."),
@@ -169,7 +169,7 @@ LOCAL = {
    case=("CarsLease in Eindhoven", "/werk-carslease", "Voor CarsLease in Eindhoven bouwden we een leaseplatform met calculator, zodat bezoekers direct hun maandbedrag zien."),
    faq=[("Werken jullie ook voor bedrijven op Strijp-S of de High Tech Campus?", "Ja. We komen langs in heel Eindhoven; Strijp-S en de High Tech Campus zijn vanuit Den Bosch goed bereikbaar via de A2."),
         ("Kunnen jullie een meertalige website maken?", "Ja. Onze eigen site staat in het Nederlands, Engels, Italiaans en Spaans, met echte vertalingen en de juiste taalkoppelingen voor Google.")]),
- "tilburg": dict(tag="website bouwen vanaf €499", img="photo-studio-loft.jpg", who="logistiek, horeca en creatieve ondernemers in Tilburg",
+ "tilburg": dict(tag="website bouwen vanaf €375", img="photo-studio-loft.jpg", who="logistiek, horeca en creatieve ondernemers in Tilburg",
    syn=("Website bouwen in Tilburg: zo pakken we het aan", "Een website bouwen in Tilburg begint bij ons met een gratis testwebsite. Je ziet eerst hoe je nieuwe site eruitziet; bevalt het, dan bouwen we hem af, met snelle laadtijden en een goede basis voor Google."),
    focus=[("Jong publiek", "Met zoveel studenten en jonge gezinnen moet je site op de telefoon perfect werken. We bouwen mobiel-first."),
           ("Logistiek en B2B", "Voor logistieke bedrijven rond Tilburg draait het om vertrouwen, duidelijke diensten en een goede vacaturepagina."),
@@ -185,7 +185,7 @@ LOCAL = {
    case=("Keukenmontage Lassie", "/werk-lassie", "Voor Keukenmontage Lassie bouwden we een cinematische website met scroll-animatie: een voorbeeld van opvallen in een drukke markt."),
    faq=[("Is Breda niet te ver weg voor jullie?", "Nee. Breda ligt op drie kwartier van Den Bosch. De kennismaking doen we op locatie of via video, en de rest gaat net zo snel als bij een bureau om de hoek."),
         ("Kunnen jullie ook drone-opnames maken in Breda?", "Ja, een shoot met drone kost €300. We checken vooraf altijd of er gevlogen mag worden, bijvoorbeeld in verband met vliegbasis Gilze-Rijen.")]),
- "nijmegen": dict(tag="website maken vanaf €499", img="blog-lokale-seo.jpg", who="praktijken, horeca en MKB in Nijmegen en Lent",
+ "nijmegen": dict(tag="website maken vanaf €375", img="blog-lokale-seo.jpg", who="praktijken, horeca en MKB in Nijmegen en Lent",
    syn=("Webdesign in Nijmegen voor zorg, horeca en MKB", "Wie in Nijmegen een website laat maken, wil opvallen in een drukke online markt. We combineren een helder ontwerp met snelle techniek en lokale vindbaarheid, zodat je gevonden wordt door patiënten, studenten en bedrijven."),
    focus=[("Zorg en praktijken", "Cliënten willen snel weten wat je doet, hoe ze een afspraak maken en of je vergoed wordt. Dat zetten we bovenaan."),
           ("Studentenstad", "Veel bezoekers komen via de telefoon en Instagram. Daarom koppelen we je site aan je social media."),
@@ -193,7 +193,7 @@ LOCAL = {
    case=("BodyScan", "/werk-bodyscan", "Voor BodyScan bouwden we een website die rust uitstraalt en uitlegt hoe een behandeling werkt: het soort site dat ook bij Nijmeegse praktijken past."),
    faq=[("Werken jullie ook voor zorgpraktijken in Nijmegen?", "Ja. We bouwen websites voor praktijken en zorgondernemers, met duidelijke uitleg, afspraakknoppen en een rustige uitstraling."),
         ("Kan mijn website gekoppeld worden aan Instagram?", "Ja. We kunnen je laatste Instagram-posts automatisch op je site tonen, zoals we op onze eigen site doen.")]),
- "waalwijk": dict(tag="webdesigner vanaf €499", img="photo-wall-screen.jpg", who="logistiek, productie en winkels in Waalwijk en De Langstraat",
+ "waalwijk": dict(tag="webdesigner vanaf €375", img="photo-wall-screen.jpg", who="logistiek, productie en winkels in Waalwijk en De Langstraat",
    syn=("Webdesigner of internetbureau in Waalwijk?", "In Waalwijk wordt veel gezocht op webdesign, een webdesigner of een internetbureau. Bij ons krijg je het beste van beide: één vast aanspreekpunt zoals bij een zelfstandige webdesigner, en ontwerp, techniek, SEO en video onder één dak zoals bij een bureau."),
    focus=[("Logistiek en groothandel", "Bedrijven op Haven Zeven en Haven Acht verkopen vooral aan andere bedrijven. Heldere diensten, certificeringen en een snelle offerte-aanvraag maken het verschil."),
           ("Personeel werven", "In een logistieke regio is een goede vacaturepagina bijna net zo belangrijk als je dienstenpagina."),
@@ -201,15 +201,15 @@ LOCAL = {
    case=("Elektropost", "/werk-elektropost", "Voor installateur Elektropost bouwden we een frisse, persoonlijke site met de diensten duidelijk op een rij: een opzet die ook voor technische bedrijven in Waalwijk werkt."),
    faq=[("Bouwen jullie ook webshops in Waalwijk?", "Ja, ook webshops en koppelingen. De prijs hangt af van het aantal producten en koppelingen; je krijgt vooraf een offerte op maat."),
         ("Werken jullie ook in Kaatsheuvel en Sprang-Capelle?", "Ja. We bouwen voor ondernemers in heel De Langstraat; Kaatsheuvel en Sprang-Capelle liggen vlak bij Waalwijk.")]),
- "uden": dict(tag="webdesign vanaf €499", img="photo-cafe-shoot.jpg", who="winkels, zorgverleners en bouwbedrijven in Uden en Maashorst",
-   syn=("Webdesign en websitebouw in Uden", "Of je nu zoekt op webdesign, een websitebouwer of een internetbureau in Uden: je wilt een site die lokaal gevonden wordt en die past bij de kwaliteit die je levert. Daar bouwen we op, met een vaste prijs vanaf €499."),
+ "uden": dict(tag="webdesign vanaf €375", img="photo-cafe-shoot.jpg", who="winkels, zorgverleners en bouwbedrijven in Uden en Maashorst",
+   syn=("Webdesign en websitebouw in Uden", "Of je nu zoekt op webdesign, een websitebouwer of een internetbureau in Uden: je wilt een site die lokaal gevonden wordt en die past bij de kwaliteit die je levert. Daar bouwen we op, met een vaste prijs vanaf €375."),
    focus=[("Winkelstad", "Voor winkels en horeca in het centrum van Uden draait het om openingstijden, route en een Google Bedrijfsprofiel dat klopt."),
           ("Zorg rond Bernhoven", "Praktijken en zorgverleners willen rust en duidelijkheid: wat je doet, voor wie, en hoe iemand een afspraak maakt."),
           ("Maashorst en omgeving", "We richten je site op Uden, Volkel en Odiliapeel, en op Veghel en Oss in de buurt.")],
    case=("De Jonge Elektrotechniek", "/werk-dejonge", "Voor De Jonge Elektrotechniek bouwden we een krachtige site die gevonden wordt op de diensten die ze echt leveren: dezelfde aanpak gebruiken we voor bouw- en technische bedrijven in Uden."),
    faq=[("Werken jullie in de hele gemeente Maashorst?", "Ja. Uden en Landerd zijn in 2022 samengegaan tot Maashorst; we bouwen voor ondernemers in de hele gemeente."),
         ("Kunnen jullie een bestaande website verbeteren?", "Ja. We kijken eerst in een gratis adviesgesprek naar je huidige site en adviseren of verbeteren of opnieuw bouwen slimmer is.")]),
- "veghel": dict(tag="webdesign vanaf €499", img="blog-bedrijfsvideo-kosten.jpg", who="toeleveranciers, installateurs en winkels in Veghel en Meierijstad",
+ "veghel": dict(tag="webdesign vanaf €375", img="blog-bedrijfsvideo-kosten.jpg", who="toeleveranciers, installateurs en winkels in Veghel en Meierijstad",
    syn=("Webdesign in Veghel: zakelijk en lokaal", "Zoek je webdesign in Veghel, dan zit je in een regio met grote, professionele werkgevers. Je website moet daar zakelijk tegenop kunnen, en tegelijk lokaal goed gevonden worden. Dat combineren we in elke site die we bouwen."),
    focus=[("Toeleveranciers zichtbaar", "Bedrijven die leveren aan grote spelers in de regio willen hun kwaliteit en certificeringen laten zien. Een overzichtelijke dienstenpagina en echte projectfoto's helpen daarbij."),
           ("Werken bij in Meierijstad", "In een regio met grote werkgevers is goed personeel schaars. Een vacaturepagina met video van de werkvloer valt op."),
@@ -217,15 +217,15 @@ LOCAL = {
    case=("Elektropost", "/werk-elektropost", "Voor installateur Elektropost bouwden we een frisse site met de diensten duidelijk op een rij: een opzet die goed werkt voor technische bedrijven in Veghel."),
    faq=[("Werken jullie ook voor bedrijven op Doornhoek en De Dubbelen?", "Ja. We komen langs op jouw locatie; vanuit Den Bosch zijn we in twintig minuten in Veghel."),
         ("Kunnen jullie ook een vacaturevideo maken?", "Ja. We filmen op locatie voor €250 per shoot, met drone €300, inclusief montage. Die video gebruik je op je site en op social media.")]),
- "schijndel": dict(tag="website maken vanaf €499", img="blog-website-zzp.jpg", who="familiebedrijven, winkels en zzp'ers in Schijndel en Wijbosch",
+ "schijndel": dict(tag="website maken vanaf €375", img="blog-website-zzp.jpg", who="familiebedrijven, winkels en zzp'ers in Schijndel en Wijbosch",
    syn=("Website maken in Schijndel: persoonlijk en dichtbij", "In Schijndel draait veel om vertrouwen en aanbevelingen. Een website maken we daarom persoonlijk: we leren je bedrijf kennen, laten je eerst gratis een testwebsite zien en bouwen pas verder als het klopt."),
    focus=[("Mond-tot-mond online", "Wie je via via aangeraden krijgt, zoekt je daarna op. Reviews, foto's van je werk en een duidelijke contactknop maken die aanbeveling af."),
           ("Familiebedrijf in beeld", "Laat zien wie er achter het bedrijf zit. Een korte bedrijfsvideo of eigen foto's doen meer dan stockbeelden."),
           ("Meierijstad als werkgebied", "We maken je vindbaar in Schijndel, Wijbosch, Sint-Oedenrode en Veghel.")],
    case=("Keukenmontage Lassie", "/werk-lassie", "Voor Keukenmontage Lassie bouwden we een website die het vakmanschap laat zien: een aanpak die past bij veel familiebedrijven in Schijndel."),
    faq=[("Kunnen jullie mijn Google-reviews op mijn website zetten?", "Ja. We tonen je Google-reviews op je site, zoals we ook op onze eigen homepage doen."),
-        ("Werken jullie ook voor zzp'ers in Schijndel?", "Ja. Voor zzp'ers is een compacte website vaak genoeg; maatwerk begint bij €499. Lees ook ons artikel over <a href=\"/blog/website-laten-maken-zzp\" style=\"color:var(--gold-deep)\">een website laten maken als zzp'er</a>.")]),
- "boxtel": dict(tag="webdesign vanaf €499", img="blog-website-laten-maken-checklist.jpg", who="horeca, recreatie en MKB in Boxtel, Liempde en Esch",
+        ("Werken jullie ook voor zzp'ers in Schijndel?", "Ja. Voor zzp'ers is een compacte website vaak genoeg; maatwerk begint bij €375. Lees ook ons artikel over <a href=\"/blog/website-laten-maken-zzp\" style=\"color:var(--gold-deep)\">een website laten maken als zzp'er</a>.")]),
+ "boxtel": dict(tag="webdesign vanaf €375", img="blog-website-laten-maken-checklist.jpg", who="horeca, recreatie en MKB in Boxtel, Liempde en Esch",
    syn=("Webdesign in Boxtel voor ondernemers en recreatie", "Zoek je webdesign in Boxtel, dan heb je vaak twee doelgroepen: inwoners en bezoekers uit de regio. We bouwen een site die beide aanspreekt, met duidelijke informatie en sfeervolle beelden."),
    focus=[("Bezoekers uit de regio", "Voor horeca en recreatie rond de Dommel en Kampina komen klanten vaak van buiten Boxtel. Sfeerbeelden, openingstijden en reserveren staan dan bovenaan."),
           ("Bereikbaarheid als troef", "Zit je dicht bij het station of de A2? Zet het op je site: voor zakelijke klanten is dat een reden om voor je te kiezen."),
@@ -257,7 +257,7 @@ LOCAL = {
    case=("Dekgro", "/werk-dekgro", "Voor tegelzetbedrijf Dekgro bouwden we een site met het werk centraal: een opzet die goed werkt voor bouw- en klusbedrijven in Drunen."),
    faq=[("Werken jullie ook in Vlijmen en Nieuwkuijk?", "Ja. We bouwen voor ondernemers in de hele gemeente Heusden, dus ook in Vlijmen, Nieuwkuijk, Elshout, Haarsteeg en Heusden zelf."),
         ("Kunnen jullie een website maken met voor-en-na-foto's?", "Ja. Voor bouw- en klusbedrijven maken we projectpagina's met voor-en-na-foto's, zodat klanten direct zien wat je kunt.")]),
- "helmond": dict(tag="webdesign vanaf €499", img="photo-filming-workshop.jpg", who="techniek, automotive en MKB in Helmond",
+ "helmond": dict(tag="webdesign vanaf €375", img="photo-filming-workshop.jpg", who="techniek, automotive en MKB in Helmond",
    syn=("Webdesign in Helmond: techniek helder uitgelegd", "Zoek je webdesign in Helmond, dan heb je vaak een technisch verhaal te vertellen. Wij vertalen dat naar heldere pagina's, sterke beelden en een site die zowel inkopers als particulieren begrijpen."),
    focus=[("Techniek begrijpelijk", "Technische bedrijven doen vaak complexe dingen. Wij vertalen dat naar duidelijke pagina's per dienst, zodat bezoekers snappen wat je doet."),
           ("Werken bij", "In een technische regio is goed personeel schaars. Een vacaturepagina met beelden van de werkvloer helpt je opvallen."),
@@ -281,15 +281,15 @@ LOCAL = {
    case=("GK Vloerverwarming", "https://gkvloerverwarming.nl", "Voor GK Vloerverwarming uit Barneveld bouwden we een site over watergedragen en elektrische vloerverwarming, die meteen duidelijk maakt dat ze in heel Nederland werken."),
    faq=[("Werken jullie voor bedrijven in Barneveld, terwijl jullie in Den Bosch zitten?", "Ja. We bouwden al websites voor drie installatiebedrijven in Barneveld. De kennismaking doen we via telefoon of video, en je ziet eerst gratis een testwebsite."),
         ("Kan mijn website laten zien dat ik in heel Nederland werk?", "Ja. We zetten je werkgebied duidelijk op de site en kunnen extra pagina's maken voor de regio's waar je het meeste werk wilt.")]),
- "amersfoort": dict(tag="webdesign vanaf €499", img="photo-phone-city.jpg", who="MKB, installateurs en dienstverleners in Amersfoort en Eemland",
-   syn=("Webdesign in Amersfoort en omgeving", "Wie in Amersfoort zoekt op webdesign of een websitebouwer, vindt veel bureaus. Wij onderscheiden ons met vaste prijzen vanaf €499, een gratis testwebsite vooraf en echte klanten in de regio, van Nijkerk tot Scherpenzeel."),
+ "amersfoort": dict(tag="webdesign vanaf €375", img="photo-phone-city.jpg", who="MKB, installateurs en dienstverleners in Amersfoort en Eemland",
+   syn=("Webdesign in Amersfoort en omgeving", "Wie in Amersfoort zoekt op webdesign of een websitebouwer, vindt veel bureaus. Wij onderscheiden ons met vaste prijzen vanaf €375, een gratis testwebsite vooraf en echte klanten in de regio, van Nijkerk tot Scherpenzeel."),
    focus=[("Stad en dorpen", "Klanten zoeken op Amersfoort, maar ook op Hoogland, Leusden of Nijkerk. We nemen de plaatsen mee waar jouw klanten wonen."),
           ("Zakelijk publiek", "Voor dienstverleners en ICT-bedrijven telt vertrouwen: duidelijke diensten, cases en een persoonlijk 'over ons'."),
           ("Vakbedrijven", "Voor installateurs en bouwers werken projectfoto's, een duidelijk werkgebied en een snelle offerteknop het best.")],
    case=("Elektropost in Woudenberg", "/werk-elektropost", "Voor installateur Elektropost uit Woudenberg bouwden we een frisse, persoonlijke site met zeven specialismen overzichtelijk op een rij."),
    faq=[("Hebben jullie klanten in de regio Amersfoort?", "Ja. We bouwden websites voor onder andere De Jonge Elektrotechniek in Nijkerk, Elektropost in Woudenberg en Klok en van Ginkel Elektrotechniek in Scherpenzeel."),
         ("Hoe gaat de samenwerking als jullie niet om de hoek zitten?", "We beginnen met een kennismaking via telefoon of video en laten je eerst gratis een testwebsite zien. Daarna gaat alles online, net zo snel als bij een bureau in de buurt.")]),
- "apeldoorn": dict(tag="website bouwen vanaf €499", img="photo-flatlay-phone.jpg", who="installateurs, MKB en recreatiebedrijven in Apeldoorn en op de Veluwe",
+ "apeldoorn": dict(tag="website bouwen vanaf €375", img="photo-flatlay-phone.jpg", who="installateurs, MKB en recreatiebedrijven in Apeldoorn en op de Veluwe",
    syn=("Website bouwen in Apeldoorn en op de Veluwe", "Een website bouwen in Apeldoorn begint bij ons met een gratis testwebsite. Je ziet eerst hoe je site eruitziet; bevalt het, dan maken we hem af met snelle laadtijden en een goede basis voor Google."),
    focus=[("Stad en dorpen", "We maken je vindbaar in Apeldoorn én in Ugchelen, Beekbergen, Loenen en de dorpen in de buurt."),
           ("Vakmanschap tonen", "Voor installateurs en bouwers werken projectfoto's, certificeringen en een duidelijk werkgebied het best."),
@@ -297,7 +297,7 @@ LOCAL = {
    case=("G.J. Elektro in Vaassen", "https://gjelektrotechniek.nl", "Voor G.J. Elektro uit Vaassen bouwden we een site voor huis- en bedrijfsinstallaties, zonnepanelen en domotica, met alle diensten overzichtelijk op een rij."),
    faq=[("Hebben jullie klanten in de buurt van Apeldoorn?", "Ja. In Vaassen bouwden we websites voor G.J. Elektro en JM Installatie Service, en in Heerde voor Vlaskamp Installatietechniek."),
         ("Kunnen jullie een website maken voor een camping of B&B op de Veluwe?", "Ja. Voor recreatie maken we sites met sfeerbeelden en een duidelijke knop om te reserveren. Een foto- of videoshoot op locatie kost €250, met drone €300.")]),
- "zwolle": dict(tag="webdesigner vanaf €499", img="photo-edit-suite.jpg", who="winkels, installateurs en MKB in Zwolle, Kampen en omgeving",
+ "zwolle": dict(tag="webdesigner vanaf €375", img="photo-edit-suite.jpg", who="winkels, installateurs en MKB in Zwolle, Kampen en omgeving",
    syn=("Webdesigner voor Zwolle en de regio", "Zoek je een webdesigner in Zwolle, dan wil je iemand die je bedrijf snapt en snel schakelt. Bij ons krijg je één vast aanspreekpunt, vaste prijzen en eerst een gratis testwebsite, net als onze klanten in Zwolle, Kampen en Heerde."),
    focus=[("Winkels met een verhaal", "Een zaak met een lange geschiedenis verdient een site die dat laat zien: wie je bent, wat je verkoopt en waarom klanten al jaren terugkomen."),
           ("Dag en nacht bereikbaar", "Voor loodgieters en rioolservice draait alles om snel bellen. Je nummer staat altijd in beeld, ook op de telefoon."),
@@ -357,23 +357,23 @@ BIZ = {
 L = 'style="color:var(--gold-deep)"'
 FAQ2 = {
  "den-bosch": [("Kunnen jullie ook een webshop bouwen voor mijn winkel in de binnenstad?", "Ja. We bouwen ook webshops en koppelen die waar nodig aan je betaalsysteem. Je krijgt vooraf een offerte op maat."),
-               ("Doen jullie ook SEO voor bedrijven in Den Bosch?", f"Ja. Bij elke site zetten we de basis-SEO goed; daarna kan SEO voor €39 per maand, met maandelijkse rapportage. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>.")],
+               ("Doen jullie ook SEO voor bedrijven in Den Bosch?", f"Ja. Bij elke site zetten we de basis-SEO goed; daarna kan SEO voor €79 per maand, met maandelijkse rapportage. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>.")],
  "rosmalen": [("Moet ik op 'Rosmalen' of op 'Den Bosch' gevonden worden?", "Allebei. Klanten zoeken op beide namen; we nemen ze natuurlijk mee in je teksten en in je Google Bedrijfsprofiel."),
               ("Kunnen jullie mijn bestaande website verbeteren?", "Ja. In een gratis adviesgesprek kijken we naar je huidige site en adviseren we of verbeteren of opnieuw bouwen slimmer is.")],
  "vught": [("Kunnen jullie ook professionele foto's maken voor mijn winkel in Vught?", "Ja. Een foto- of videoshoot op locatie kost €250, met dronebeelden €300, inclusief montage en kleurcorrectie."),
            ("Is een webshop voor een kleine winkel de moeite waard?", "Dat hangt af van je producten en klanten. In een gratis gesprek kijken we of een webshop loont, of dat een site met je assortiment en een duidelijke contactknop genoeg is.")],
  "oss": [("Werken jullie ook in Ravenstein en Lith?", "Ja. We bouwen voor ondernemers in de hele gemeente Oss, inclusief Berghem, Lith en Ravenstein."),
          ("Kunnen jullie dronebeelden maken van ons bedrijfspand in Oss?", "Ja. Een shoot met drone kost €300. We checken vooraf of er op die plek gevlogen mag worden.")],
- "eindhoven": [("Bouwen jullie ook websites voor startups in Eindhoven?", "Ja. Een startup heeft vaak genoeg aan een compacte, snelle site die later meegroeit; maatwerk begint bij €499."),
+ "eindhoven": [("Bouwen jullie ook websites voor startups in Eindhoven?", "Ja. Een startup heeft vaak genoeg aan een compacte, snelle site die later meegroeit; maatwerk begint bij €375."),
                ("Kunnen jullie een cinematische scroll-website maken?", f"Ja. Een 3D Cinematic website kost €749 eenmalig. Lees meer in ons artikel over <a href=\"/blog/wat-is-een-cinematic-scroll-website\" {L}>cinematic scroll-websites</a>.")],
  "tilburg": [("Bouwen jullie ook webshops in Tilburg?", "Ja. De prijs hangt af van het aantal producten en koppelingen; je krijgt vooraf een offerte op maat."),
-             ("Werken jullie ook voor startende ondernemers in Tilburg?", "Ja. Voor een startende onderneming is een compacte site vaak genoeg; maatwerk begint bij €499 en is later uit te breiden.")],
+             ("Werken jullie ook voor startende ondernemers in Tilburg?", "Ja. Voor een startende onderneming is een compacte site vaak genoeg; maatwerk begint bij €375 en is later uit te breiden.")],
  "breda": [("Werken jullie ook in Prinsenbeek en Teteringen?", "Ja. We bouwen voor ondernemers in de hele gemeente Breda, ook in Prinsenbeek, Teteringen, Bavel en Ulvenhout."),
            ("Kunnen jullie mijn restaurant of winkel in Breda filmen?", "Ja. Een video- of fotoshoot op locatie kost €250, met drone €300, inclusief montage.")],
  "nijmegen": [("Kunnen jullie een online agenda of afsprakensysteem koppelen?", "Ja. We koppelen je website aan je agenda- of afsprakensysteem, zodat klanten direct een afspraak kunnen maken."),
               ("Werken jullie ook in Lent en Nijmegen-Noord?", "Ja. We bouwen voor ondernemers aan beide kanten van de Waal.")],
  "waalwijk": [("Kunnen jullie een vacaturepagina maken voor ons logistieke bedrijf?", "Ja. We maken vacaturepagina's met beelden van de werkvloer en een eenvoudig sollicitatieformulier; een video-opname op locatie kost €250."),
-              ("Doen jullie ook online marketing in Waalwijk?", "We doen SEO (€39 per maand) en social media beheer (vanaf €79 per maand). Daarmee werk je naast je website aan vindbaarheid en zichtbaarheid.")],
+              ("Doen jullie ook online marketing in Waalwijk?", "We doen SEO (€79 per maand) en social media beheer (vanaf €79 per maand). Daarmee werk je naast je website aan vindbaarheid en zichtbaarheid.")],
  "uden": [("Bouwen jullie ook webshops in Uden?", "Ja. Je krijgt vooraf een offerte op maat, afhankelijk van het aantal producten en koppelingen."),
           ("Kunnen jullie ook social media voor mijn bedrijf in Uden beheren?", "Ja. Social media beheer kost vanaf €79 per maand, met content in jouw huisstijl en een maandelijkse rapportage.")],
  "veghel": [("Werken jullie in heel Meierijstad?", "Ja. We bouwen voor ondernemers in Veghel, Schijndel, Sint-Oedenrode en de kerkdorpen; voor Schijndel hebben we ook een eigen pagina."),
@@ -391,9 +391,9 @@ FAQ2 = {
  "helmond": [("Kunnen jullie een configurator of calculator bouwen?", "Ja. Net als de leasecalculator voor CarsLease bouwen we rekenhulpen en configurators; je krijgt vooraf een offerte op maat."),
              ("Werken jullie ook in de rest van de regio Eindhoven?", "Ja. Voor Eindhoven en Veldhoven hebben we eigen pagina's, en we bouwen voor ondernemers in de hele regio.")],
  "barneveld": [("Werken jullie ook in Voorthuizen en Kootwijkerbroek?", "Ja. We bouwen voor ondernemers in de hele gemeente Barneveld, dus ook in Voorthuizen, Kootwijkerbroek, Garderen en Stroe."),
-               ("Wat kost een website voor een installatiebedrijf?", f"Een multipage website kost €499 eenmalig; SEO kan erbij voor €39 per maand. Lees meer op onze pagina <a href=\"/website-voor-installateurs\" {L}>website voor installateurs</a>.")],
+               ("Wat kost een website voor een installatiebedrijf?", f"Een Horizon website kost €375 eenmalig; SEO kan erbij voor €79 per maand. Lees meer op onze pagina <a href=\"/website-voor-installateurs\" {L}>website voor installateurs</a>.")],
  "amersfoort": [("Werken jullie ook in Hoogland en Vathorst?", "Ja. We bouwen voor ondernemers in heel Amersfoort, ook in Hoogland en Vathorst, en in Leusden en Soest."),
-                ("Doen jullie ook SEO voor bedrijven in Amersfoort?", "Ja. Bij elke site zetten we de basis-SEO goed; daarna kan SEO voor €39 per maand, met maandelijkse rapportage.")],
+                ("Doen jullie ook SEO voor bedrijven in Amersfoort?", "Ja. Bij elke site zetten we de basis-SEO goed; daarna kan SEO voor €79 per maand, met maandelijkse rapportage.")],
  "apeldoorn": [("Werken jullie ook in Epe en Vaassen?", "Ja. In Vaassen zitten al twee van onze klanten, en we werken in de hele regio Apeldoorn."),
                ("Is Apeldoorn niet te ver weg voor jullie?", "Nee. De kennismaking doen we via telefoon of video en je ziet eerst gratis een testwebsite. Daarna gaat alles online.")],
  "zwolle": [("Werken jullie ook in Kampen en Hattem?", "Ja. In Kampen zit al een van onze klanten, en we bouwen voor ondernemers in de hele regio Zwolle."),
@@ -556,11 +556,11 @@ V_INTRO = [lambda c: f"Een website die past bij <span class=\"gold-text\">{c['fu
            lambda c: f"Gebouwd voor ondernemers <span class=\"gold-text\">{c['in_']}.</span>",
            lambda c: f"Jouw bedrijf, <span class=\"gold-text\">goed online.</span>",
            lambda c: f"Van eerste schets <span class=\"gold-text\">tot livegang.</span>"]
-V_PRICE = ["Vaste prijzen: multipage website €499, 3D Cinematic website €749, SEO €39 per maand",
-           "Een multipage website kost €499, een 3D Cinematic website €749",
-           "Websites vanaf €499; SEO kan erbij voor €39 per maand",
-           "Geen uurtje-factuurtje: je weet vooraf wat je betaalt, vanaf €499",
-           "Maatwerk vanaf €499, cinematic vanaf €749, zonder verborgen kosten"]
+V_PRICE = ["Vaste prijzen: Horizon website €375, 3D Cinematic website €749, SEO €79 per maand",
+           "Een Horizon website kost €375, een 3D Cinematic website €749",
+           "Websites vanaf €375; SEO kan erbij voor €79 per maand",
+           "Geen uurtje-factuurtje: je weet vooraf wat je betaalt, vanaf €375",
+           "Maatwerk vanaf €375, cinematic vanaf €749, zonder verborgen kosten"]
 V_SECT = ["Voor wie we hier vooral bouwen:", "Sectoren waar we hier vaak voor werken:", "Typische opdrachtgevers in deze omgeving:"]
 V_PLACES = [lambda c: f"We werken ook voor klanten in {c['places']}.",
             lambda c: f"Ook vanuit {c['places']} komen aanvragen binnen.",
@@ -599,14 +599,14 @@ for ci, c in enumerate(CITIES):
     vi = lambda arr: arr[ci % len(arr)]
     slug = f"website-laten-maken-{c['slug']}"; url = f"{BASE}/{slug}"
     title = f"Website laten maken {c['name']}: {c['tag']} | Skyline Digital"
-    desc = f"Website laten maken {c['in_']}? Maatwerk websites vanaf €499 voor {c['who']}. Snel, vindbaar en eerst gratis een testwebsite."
+    desc = f"Website laten maken {c['in_']}? Maatwerk websites vanaf €375 voor {c['who']}. Snel, vindbaar en eerst gratis een testwebsite."
     near = [CITY_BY[n] for n in c["near"]]
     faqs = c["faq"]
     ld = {"@context":"https://schema.org","@graph":[
         crumbs_ld(url, [("Regio's", BASE+"/regio"), (f"Website laten maken {c['name']}", url)]),
         {"@type":"Service","@id":url+"#service","name":f"Website laten maken {c['in_']}","serviceType":"Webdesign en websiteontwikkeling","provider":ORG_REF,
          "areaServed":{"@type":"City","name":c["full"],"containedInPlace":{"@type":"AdministrativeArea","name":c["region"]}},"url":url,
-         "offers":[{"@type":"Offer","name":"Multipage website","price":"499","priceCurrency":"EUR"},{"@type":"Offer","name":"3D Cinematic website","price":"749","priceCurrency":"EUR"}]},
+         "offers":[{"@type":"Offer","name":"Horizon website","price":"375","priceCurrency":"EUR"},{"@type":"Offer","name":"3D Cinematic website","price":"749","priceCurrency":"EUR"}]},
         faq_ld(url, faqs),
         {"@type":"WebPage","@id":url+"#webpage","url":url,"name":title,"description":desc,"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"about":ORG_REF,"breadcrumb":{"@id":url+"#breadcrumb"}}]}
     sectors = "".join(f"<li>{s[0].upper()+s[1:]}</li>" for s in c["sectors"])
@@ -617,7 +617,7 @@ for ci, c in enumerate(CITIES):
     <div class="page-hero-inner">
       <p class="crumbs"><a href="/">Home</a> · <a href="/regio">Regio's</a> · {c['name']}</p>
       <h1>Website laten maken <span class="gold-text">{c['in_']}.</span></h1>
-      <p class="lead">Maatwerk websites vanaf €499 voor {c['who']}. {c['travel']}</p>
+      <p class="lead">Maatwerk websites vanaf €375 voor {c['who']}. {c['travel']}</p>
       <div class="hero-actions"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite</a><a href="/portfolio" class="btn btn-ghost-light">Bekijk ons werk</a></div>
     </div>
   </section>
@@ -696,13 +696,13 @@ for ci, c in enumerate(CITIES):
 INSTALLERS = ["dejonge", "elektropost", "vanloosbroek", "gk", "msb", "ploeg", "klok", "michel", "laseur", "gj", "jm", "vlaskamp",
               "rstk", "driehuizen", "ahrens", "gennissen", "bato", "bevmontage", "vanbeveren"]
 url = BASE + "/website-voor-installateurs"
-title = "Website laten maken installatiebedrijf: vanaf €499 | Skyline Digital"
-desc = "Website laten maken voor je installatiebedrijf? Ruim 20 installateurs, elektriciens en loodgieters gingen je voor. Vanaf €499, eerst gratis een testwebsite."
+title = "Website laten maken installatiebedrijf: vanaf €375 | Skyline Digital"
+desc = "Website laten maken voor je installatiebedrijf? Ruim 20 installateurs, elektriciens en loodgieters gingen je voor. Vanaf €375, eerst gratis een testwebsite."
 faqs = [
- ("Wat kost een website voor een installatiebedrijf?", f"Een multipage website kost €499 eenmalig, een 3D Cinematic website €749. SEO kan erbij voor €39 per maand. Lees ook <a href=\"/blog/wat-kost-een-website-laten-maken\" {L}>wat een website laten maken kost</a>."),
+ ("Wat kost een website voor een installatiebedrijf?", f"Een Horizon website kost €375 eenmalig, een 3D Cinematic website €749. SEO kan erbij voor €79 per maand. Lees ook <a href=\"/blog/wat-kost-een-website-laten-maken\" {L}>wat een website laten maken kost</a>."),
  ("Hoe lang duurt het voordat mijn website online staat?", "Gemiddeld 4 tot 8 weken, afhankelijk van de omvang en hoe snel we foto's en feedback ontvangen. Je ziet eerst gratis een testwebsite."),
  ("Ik heb geen tijd om teksten te schrijven. Is dat een probleem?", "Nee. Met een paar gegevens over je diensten en werkgebied maken wij de teksten voor je testwebsite; jij past aan wat niet klopt."),
- ("Word ik gevonden op 'elektricien' of 'loodgieter' plus mijn plaats?", f"Daar richten we de site op: je belangrijkste diensten en je werkgebied krijgen een eigen plek, en de technische basis-SEO staat goed. Een vaste positie in Google kan niemand beloven; met SEO voor €39 per maand werken we daar elke maand aan. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>."),
+ ("Word ik gevonden op 'elektricien' of 'loodgieter' plus mijn plaats?", f"Daar richten we de site op: je belangrijkste diensten en je werkgebied krijgen een eigen plek, en de technische basis-SEO staat goed. Een vaste positie in Google kan niemand beloven; met SEO voor €79 per maand werken we daar elke maand aan. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>."),
  ("Werken jullie ook voor installateurs buiten Brabant?", "Ja. Onze klanten zitten van Heemstede en Bunnik tot Kampen, Heerde en Sprundel. De kennismaking doen we via telefoon of video."),
  ("Kunnen jullie ook foto's of video van mijn projecten maken?", "Ja. Een foto- of videoshoot op locatie kost €250, met dronebeelden €300, inclusief montage en kleurcorrectie."),
 ]
@@ -710,7 +710,7 @@ ld = {"@context":"https://schema.org","@graph":[
     crumbs_ld(url, [("Website & SEO", BASE+"/website-seo"), ("Website voor installateurs", url)]),
     {"@type":"Service","@id":url+"#service","name":"Website laten maken voor installatiebedrijven","serviceType":"Webdesign voor installatiebedrijven","provider":ORG_REF,
      "audience":{"@type":"BusinessAudience","audienceType":"Installatiebedrijven, elektriciens en loodgieters"},"areaServed":{"@type":"Country","name":"Nederland"},"url":url,
-     "offers":[{"@type":"Offer","name":"Multipage website","price":"499","priceCurrency":"EUR"},{"@type":"Offer","name":"3D Cinematic website","price":"749","priceCurrency":"EUR"},
+     "offers":[{"@type":"Offer","name":"Horizon website","price":"375","priceCurrency":"EUR"},{"@type":"Offer","name":"3D Cinematic website","price":"749","priceCurrency":"EUR"},
                {"@type":"Offer","name":"SEO","price":"39","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"39","priceCurrency":"EUR","unitText":"maand"}}]},
     faq_ld(url, faqs),
     {"@type":"WebPage","@id":url+"#webpage","url":url,"name":title,"description":desc,"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"about":ORG_REF,"breadcrumb":{"@id":url+"#breadcrumb"}}]}
@@ -746,7 +746,7 @@ body = HEADER + f'''
         <div class="gold-rule"></div>
         <p class="eyebrow">Kort antwoord</p>
         <h2>Wat kost een website voor een <span class="gold-text">installatiebedrijf?</span></h2>
-        <p class="lead">Een complete website met meerdere pagina's kost bij ons €499 eenmalig: op maat, met je diensten, werkgebied en projecten, een duidelijke bel- en offerteknop en een SEO-vriendelijke opbouw. Wil je daarna hoger in Google komen, dan kan SEO erbij voor €39 per maand. Je ziet eerst gratis een testwebsite; pas als die bevalt, gaan we verder.</p>
+        <p class="lead">Een complete website met meerdere pagina's kost bij ons €375 eenmalig: op maat, met je diensten, werkgebied en projecten, een duidelijke bel- en offerteknop en een SEO-vriendelijke opbouw. Wil je daarna hoger in Google komen, dan kan SEO erbij voor €79 per maand. Je ziet eerst gratis een testwebsite; pas als die bevalt, gaan we verder.</p>
       </div>
     </div>
   </section>
@@ -772,8 +772,8 @@ body = HEADER + f'''
         <p class="lead">Je kiest wat je nodig hebt. De meeste installateurs beginnen met een website en nemen later SEO of beeld erbij.</p>
       </div>
       <ul class="checks" style="max-width:760px">
-        <li>Multipage website op maat: €499 eenmalig, of een 3D Cinematic website voor €749</li>
-        <li>SEO voor €39 per maand, met maandelijkse rapportage</li>
+        <li>Horizon website op maat: €375 eenmalig, of een 3D Cinematic website voor €749</li>
+        <li>SEO voor €79 per maand, met maandelijkse rapportage</li>
         <li>Foto- en videoshoot van je projecten: €250, met dronebeelden €300</li>
         <li>Social media beheer vanaf €79 per maand</li>
         <li>Onderhoudsabonnement: je site veilig, snel en up-to-date</li>
