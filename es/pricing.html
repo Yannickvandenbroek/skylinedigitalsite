@@ -177,7 +177,7 @@
 <div class="calc reveal">
 <div class="calc-rows">
 <div class="calc-row">
-<div class="calc-item"><h3>Vídeos</h3><p>€50 por vídeo</p></div>
+<div class="calc-item"><h3>Vídeos</h3><p>€95 por vídeo</p></div>
 <div class="stepper">
 <button aria-label="menos vídeos" class="step-btn" data-calc="video" data-dir="-1" type="button">−</button>
 <span class="step-val" id="calc-videos">0</span>
@@ -322,7 +322,7 @@
       const $ = id => document.getElementById(id);
       const euro = n => "€" + (Number.isInteger(n) ? n : (Math.round(n * 100) / 100));
       function update() {
-        const sub = videos * 50 + photos * 5;
+        const sub = videos * 95 + photos * 5;
         let rate = 0;
         if (sub >= 200) rate = 0.2; else if (sub >= 100) rate = 0.1;
         const disc = Math.round(sub * rate * 100) / 100;

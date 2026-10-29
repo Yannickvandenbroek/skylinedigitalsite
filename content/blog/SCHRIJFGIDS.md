@@ -22,7 +22,7 @@ De regels hieronder volgen uit Google's eigen richtlijnen (helpful content, E-E-
 ## Vaste feiten (exact zo gebruiken)
 - Multipage website **€499** eenmalig · 3D Cinematic website **€749** eenmalig · SEO **€39 per maand**
 - Video-/fotoshoot op locatie **€250**, met drone **€300** · Social media beheer **vanaf €79 per maand**
-- AI-content: **€50 per video**, **€5 per foto** (vanaf €100 10% korting, vanaf €200 20%, minimum €20)
+- AI-content: **€95 per video**, **€5 per foto** (vanaf €100 10% korting, vanaf €200 20%, minimum €20)
 - Gratis testwebsite: wij bouwen eerst een voorbeeld, de klant beslist daarna (`/aanvraag`)
 - Bureau in 's-Hertogenbosch (Bruistensingel 500), werkt in heel Nederland; villa-films in Spanje (Moraira, Jávea)
 - Oprichter: Yannick van den Broek
