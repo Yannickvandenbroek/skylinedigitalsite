@@ -67,7 +67,7 @@ ORG = {
  "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Diensten", "itemListElement": [
    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Horizon website", "url": BASE + "/website-seo"}, "price": "375", "priceCurrency": "EUR"},
    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "3D Cinematic website", "url": BASE + "/website-seo"}, "price": "749", "priceCurrency": "EUR"},
-   {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO-abonnement", "url": BASE + "/website-seo"}, "price": "79", "priceCurrency": "EUR"},
+   {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Radar SEO-abonnement", "url": BASE + "/website-seo"}, "price": "79", "priceCurrency": "EUR"},
    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Video- en droneshoot", "url": BASE + "/drone-video"}, "price": "250", "priceCurrency": "EUR"},
    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social media beheer", "url": BASE + "/social-media"}, "price": "79", "priceCurrency": "EUR"},
  ]},
