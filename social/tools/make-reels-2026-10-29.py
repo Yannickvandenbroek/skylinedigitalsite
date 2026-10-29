@@ -90,14 +90,14 @@ def maak(name, bron, hook_wit, hook_goud, sub, end, muziek=True):
     print("klaar:", uit, f"{duur(uit):.1f}s")
 
 maak("vanhees", os.path.join(SRC, "vanhees.mp4"),
-     "Deze bedrijfsvideo", "kostte €50.",
+     "Deze bedrijfsvideo", "kostte €95.",
      "Geen filmploeg, geen opnamedag. Eén foto van de chef was genoeg. Van Hees Cooking, catering in Brabant.",
-     ("Jouw bedrijf", "ook in beeld?", "AI-bedrijfsvideo vanaf €50. Echte shoot met drone vanaf €250. Je ziet eerst een voorbeeld.", "Link in bio  →"))
+     ("Jouw bedrijf", "ook in beeld?", "Bedrijfsvideo vanaf €95. Echte shoot met drone vanaf €250. Je ziet eerst een voorbeeld.", "Link in bio  →"))
 
 maak("detailing", os.path.join(SRC, "wa.mp4"),
      "Dit is geen", "BMW-reclame.",
      "Dit is een detailingbedrijf. Video gemaakt zonder camera, zonder opnamedag.",
-     ("Zo ziet jouw", "bedrijf eruit.", "AI-bedrijfsvideo vanaf €50. Echte shoot met drone vanaf €250. Je ziet eerst een voorbeeld.", "Link in bio  →"))
+     ("Zo ziet jouw", "bedrijf eruit.", "Bedrijfsvideo vanaf €95. Echte shoot met drone vanaf €250. Je ziet eerst een voorbeeld.", "Link in bio  →"))
 
 maak("pilar", os.path.join(SRC, "pilar.mp4"),
      "Zo boek je je villa vol", "vóór het seizoen begint.",
