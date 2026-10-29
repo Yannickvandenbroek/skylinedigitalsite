@@ -22,7 +22,7 @@ META = {
            "AI-video's vanaf €95 en AI-foto's vanaf €5 per stuk, altijd met menselijke eindcontrole. Meer content in minder tijd, in jouw stijl. Skyline Digital, Den Bosch.",
            "/assets/photo-edit-suite.jpg"),
  "pricing": ("Prijzen: website vanaf €375, video, social & AI | Skyline Digital",
-           "Transparante prijzen: Horizon website €375, 3D cinematic website €749, SEO €79 p/m, video-shoot €250, social media vanaf €79 p/m. Geen verborgen kosten.",
+           "Transparante prijzen: Horizon website €375, 3D cinematic website €749, SEO €79 p/m, video-shoot €250. Geen verborgen kosten.",
            "/assets/photo-handshake.jpg"),
  "portfolio": ("Portfolio — websites & cinematische villa-films | Skyline Digital",
            "Bekijk ons werk: maatwerk websites voor o.a. Dekgro, CarsLease en Lassie, en cinematische villa-films in Moraira en Jávea. Skyline Digital, Den Bosch.",
@@ -69,7 +69,7 @@ ORG = {
    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "3D Cinematic website", "url": BASE + "/website-seo"}, "price": "749", "priceCurrency": "EUR"},
    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Radar SEO-abonnement", "url": BASE + "/website-seo"}, "price": "79", "priceCurrency": "EUR"},
    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Video- en droneshoot", "url": BASE + "/drone-video"}, "price": "250", "priceCurrency": "EUR"},
-   {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social media beheer", "url": BASE + "/social-media"}, "price": "79", "priceCurrency": "EUR"},
+   {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Skyline + Radar abonnement", "url": BASE + "/website-seo"}, "price": "119", "priceCurrency": "EUR"},
  ]},
 }
 WEBSITE = {"@type": "WebSite", "@id": BASE + "/#website", "url": BASE + "/", "name": "Skyline Digital", "inLanguage": "nl-NL", "publisher": {"@id": BASE + "/#organization"}}
