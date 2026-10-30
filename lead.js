@@ -39,6 +39,11 @@
       uit.append("bestaand", waarde("s2-bestaand"));
       uit.append("url", waarde("s2-url"));
       uit.append("stijl", waarde("s2-stijl"));
+      // Stijlkaarten (gratis testwebsite): de sleutels (strak, warm, donker, speels) en een voorbeeldsite.
+      var stijlen = [];
+      document.querySelectorAll("#stijl-grid input:checked").forEach(function (i) { stijlen.push(i.value); });
+      uit.append("stijlen", stijlen.join(","));
+      uit.append("voorbeeld", waarde("s2-voorbeeld"));
       uit.append("beschrijving", waarde("s2-beschrijving"));
       uit.append("start", waarde("s2-start"));
       if (/testwebsite/i.test(diensten)) {

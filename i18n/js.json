@@ -43,7 +43,21 @@
   "'Geen bestanden gekozen'": "'No files chosen'",
   "} bestanden geselecteerd`": "} files selected`",
   ">Wat doet je bedrijf? <": ">What does your business do? <",
-  ">Beschrijf je project <": ">Describe your project <"
+  ">Beschrijf je project <": ">Describe your project <",
+  ">Welke stijl spreekt je aan? <span class=\"stijl-hint\">Kies er één of twee</span><": ">Which style appeals to you? <span class=\"stijl-hint\">Pick one or two</span><",
+  ">Jouw bedrijf<": ">Your business<",
+  "<strong>Strak en zakelijk</strong>": "<strong>Clean and professional</strong>",
+  "<span>Veel wit, duidelijke knoppen, alles overzichtelijk.</span>": "<span>Lots of white space, clear buttons, everything easy to scan.</span>",
+  "<strong>Warm en ambachtelijk</strong>": "<strong>Warm and crafted</strong>",
+  "<span>Zachte kleuren, sierlijke koppen, foto's van mensen en materiaal.</span>": "<span>Soft colours, elegant headings, photos of people and materials.</span>",
+  "<strong>Donker en krachtig</strong>": "<strong>Dark and bold</strong>",
+  "<span>Zwart met één felle kleur, grote koppen, veel beeld.</span>": "<span>Black with one bright colour, big headings, lots of imagery.</span>",
+  "<strong>Licht en speels</strong>": "<strong>Light and playful</strong>",
+  "<span>Ronde vormen, een vrolijke accentkleur, vriendelijke toon.</span>": "<span>Rounded shapes, a cheerful accent colour, a friendly tone.</span>",
+  ">Een website die je mooi vindt <span class=\"stijl-hint\">(optioneel)</span><": ">A website you like <span class=\"stijl-hint\">(optional)</span><",
+  "placeholder=\"Link of naam van een site, van wie dan ook\"": "placeholder=\"Link or name of any site you like\"",
+  "'We gaan ermee aan de slag! <span class=\"gold-text\">Top.</span>'": "'We are getting started! <span class=\"gold-text\">Great.</span>'",
+  "'Op basis van de stijl die je koos maken we drie ontwerpen voor je nieuwe website. Binnen 24 tot 48 uur staan ze in je mail, helemaal gratis en vrijblijvend.'": "'Based on the style you chose, we will create three designs for your new website. Within 24 to 48 hours they will be in your inbox, completely free and without obligation.'"
  },
  "it": {
   "'Hoi Yannick, ik zag de video \"'": "'Ciao Yannick, ho visto il video \"'",
@@ -89,7 +103,21 @@
   "'Geen bestanden gekozen'": "'Nessun file scelto'",
   "} bestanden geselecteerd`": "} file selezionati`",
   ">Wat doet je bedrijf? <": ">Di cosa si occupa la tua azienda? <",
-  ">Beschrijf je project <": ">Descrivi il tuo progetto <"
+  ">Beschrijf je project <": ">Descrivi il tuo progetto <",
+  ">Welke stijl spreekt je aan? <span class=\"stijl-hint\">Kies er één of twee</span><": ">Quale stile ti piace? <span class=\"stijl-hint\">Scegline uno o due</span><",
+  ">Jouw bedrijf<": ">La tua azienda<",
+  "<strong>Strak en zakelijk</strong>": "<strong>Pulito e professionale</strong>",
+  "<span>Veel wit, duidelijke knoppen, alles overzichtelijk.</span>": "<span>Tanto bianco, pulsanti chiari, tutto ordinato.</span>",
+  "<strong>Warm en ambachtelijk</strong>": "<strong>Caldo e artigianale</strong>",
+  "<span>Zachte kleuren, sierlijke koppen, foto's van mensen en materiaal.</span>": "<span>Colori morbidi, titoli eleganti, foto di persone e materiali.</span>",
+  "<strong>Donker en krachtig</strong>": "<strong>Scuro e deciso</strong>",
+  "<span>Zwart met één felle kleur, grote koppen, veel beeld.</span>": "<span>Nero con un colore acceso, titoli grandi, tante immagini.</span>",
+  "<strong>Licht en speels</strong>": "<strong>Leggero e giocoso</strong>",
+  "<span>Ronde vormen, een vrolijke accentkleur, vriendelijke toon.</span>": "<span>Forme arrotondate, un colore allegro, un tono amichevole.</span>",
+  ">Een website die je mooi vindt <span class=\"stijl-hint\">(optioneel)</span><": ">Un sito che ti piace <span class=\"stijl-hint\">(facoltativo)</span><",
+  "placeholder=\"Link of naam van een site, van wie dan ook\"": "placeholder=\"Link o nome di un sito, di chiunque\"",
+  "'We gaan ermee aan de slag! <span class=\"gold-text\">Top.</span>'": "'Ci mettiamo al lavoro! <span class=\"gold-text\">Ottimo.</span>'",
+  "'Op basis van de stijl die je koos maken we drie ontwerpen voor je nieuwe website. Binnen 24 tot 48 uur staan ze in je mail, helemaal gratis en vrijblijvend.'": "'In base allo stile che hai scelto creiamo tre proposte per il tuo nuovo sito. Entro 24-48 ore le trovi nella tua email, gratis e senza impegno.'"
  },
  "es": {
   "'Hoi Yannick, ik zag de video \"'": "'Hola Yannick, vi el vídeo \"'",
@@ -135,6 +163,20 @@
   "'Geen bestanden gekozen'": "'Ningún archivo seleccionado'",
   "} bestanden geselecteerd`": "} archivos seleccionados`",
   ">Wat doet je bedrijf? <": ">¿A qué se dedica tu empresa? <",
-  ">Beschrijf je project <": ">Describe tu proyecto <"
+  ">Beschrijf je project <": ">Describe tu proyecto <",
+  ">Welke stijl spreekt je aan? <span class=\"stijl-hint\">Kies er één of twee</span><": ">¿Qué estilo te gusta? <span class=\"stijl-hint\">Elige uno o dos</span><",
+  ">Jouw bedrijf<": ">Tu empresa<",
+  "<strong>Strak en zakelijk</strong>": "<strong>Limpio y profesional</strong>",
+  "<span>Veel wit, duidelijke knoppen, alles overzichtelijk.</span>": "<span>Mucho blanco, botones claros, todo ordenado.</span>",
+  "<strong>Warm en ambachtelijk</strong>": "<strong>Cálido y artesanal</strong>",
+  "<span>Zachte kleuren, sierlijke koppen, foto's van mensen en materiaal.</span>": "<span>Colores suaves, títulos elegantes, fotos de personas y materiales.</span>",
+  "<strong>Donker en krachtig</strong>": "<strong>Oscuro y potente</strong>",
+  "<span>Zwart met één felle kleur, grote koppen, veel beeld.</span>": "<span>Negro con un color vivo, títulos grandes, muchas imágenes.</span>",
+  "<strong>Licht en speels</strong>": "<strong>Ligero y divertido</strong>",
+  "<span>Ronde vormen, een vrolijke accentkleur, vriendelijke toon.</span>": "<span>Formas redondeadas, un color alegre, un tono cercano.</span>",
+  ">Een website die je mooi vindt <span class=\"stijl-hint\">(optioneel)</span><": ">Una web que te guste <span class=\"stijl-hint\">(opcional)</span><",
+  "placeholder=\"Link of naam van een site, van wie dan ook\"": "placeholder=\"Enlace o nombre de una web, de quien sea\"",
+  "'We gaan ermee aan de slag! <span class=\"gold-text\">Top.</span>'": "'¡Nos ponemos manos a la obra! <span class=\"gold-text\">Genial.</span>'",
+  "'Op basis van de stijl die je koos maken we drie ontwerpen voor je nieuwe website. Binnen 24 tot 48 uur staan ze in je mail, helemaal gratis en vrijblijvend.'": "'Según el estilo que elegiste, crearemos tres diseños para tu nueva web. En 24 a 48 horas los tendrás en tu correo, gratis y sin compromiso.'"
  }
 }

@@ -17,9 +17,12 @@ SNIPPET = f'''{START}
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
   <script src="/consent.js" defer></script>
+  <script src="/lead.js" defer></script>
   {END}'''
 
-ASSETS = ["styles.css", "pages.css", "awards.css", "scroll-cinematic.js", "consent.js", "films.js", "instagram.js"]
+# lead.js zit in hetzelfde blok (stuurt elk Formspree-formulier ook naar het CRM); los toevoegen
+# verdween bij het opnieuw zetten van dit blok, zo blijft hij staan.
+ASSETS = ["styles.css", "pages.css", "awards.css", "scroll-cinematic.js", "consent.js", "lead.js", "films.js", "instagram.js"]
 def bust(html):
     # Zet ?v=<hash van de inhoud> achter gedeelde css/js, zodat browsers na een wijziging direct de nieuwe versie laden.
     for a in ASSETS:
@@ -30,7 +33,7 @@ def bust(html):
 
 def inject(html, external=False):
     html = re.sub(r"\s*" + re.escape(START) + r".*?" + re.escape(END), "", html, flags=re.S)
-    snip = SNIPPET.replace('src="/consent.js"', 'src="https://www.skylinedigital.nl/consent.js"') if external else SNIPPET
+    snip = SNIPPET.replace('src="/consent.js"', 'src="https://www.skylinedigital.nl/consent.js"').replace('src="/lead.js"', 'src="https://www.skylinedigital.nl/lead.js"') if external else SNIPPET
     return re.sub(r'(<meta charset="utf-8"\s*/?>)', lambda m: m.group(1) + "\n  " + snip, html, count=1, flags=re.I)
 
 if __name__ == "__main__":
