@@ -39,10 +39,12 @@
       uit.append("bestaand", waarde("s2-bestaand"));
       uit.append("url", waarde("s2-url"));
       uit.append("stijl", waarde("s2-stijl"));
-      // Stijlkaarten (gratis testwebsite): de sleutels (strak, warm, donker, speels) en een voorbeeldsite.
+      // Echte voorbeeldsites (stijlkeuze.js): welke sites en wat eraan, plus de stijlgroepen (strak, warm, donker, speels).
+      var refs = window.skyStijlkeuzeWaarde ? window.skyStijlkeuzeWaarde() : [];
       var stijlen = [];
-      document.querySelectorAll("#stijl-grid input:checked").forEach(function (i) { stijlen.push(i.value); });
+      refs.forEach(function (r) { if (stijlen.indexOf(r.stijl) < 0) stijlen.push(r.stijl); });
       uit.append("stijlen", stijlen.join(","));
+      uit.append("referenties", JSON.stringify(refs));
       uit.append("voorbeeld", waarde("s2-voorbeeld"));
       uit.append("beschrijving", waarde("s2-beschrijving"));
       uit.append("start", waarde("s2-start"));

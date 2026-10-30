@@ -14,7 +14,7 @@
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-39LM88JLSL"></script>
   <script src="https://www.skylinedigital.nl/consent.js?v=ccd44a40" defer></script>
-  <script src="https://www.skylinedigital.nl/lead.js?v=3913bef0" defer></script>
+  <script src="https://www.skylinedigital.nl/lead.js?v=25a286f4" defer></script>
   <!-- /Google tag -->
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Pide tu web de prueba gratis | Skyline Digital</title>
@@ -322,6 +322,7 @@
 </div>
 </div>
 </footer>
+<script src="https://www.skylinedigital.nl/stijlkeuze.js?v=6cf8dc59"></script>
 <script src="https://www.skylinedigital.nl/scroll-cinematic.js?v=98332b0f"></script>
 <script>
   (function () {
@@ -382,33 +383,8 @@
             <input type="url" id="s2-url" placeholder="https://tuweb.es" />
           </div>
           <div class="field">
-            <label>¿Qué estilo te gusta? <span class="stijl-hint">Elige uno o dos</span></label>
-            <div class="stijl-grid" id="stijl-grid">
-              <label class="stijl-card" data-stijl="strak">
-                <input type="checkbox" value="strak" />
-                <div class="stijl-mock stijl-mock--strak"><i class="m-nav"></i><b class="m-kop">Tu empresa</b><i class="m-regel"></i><i class="m-regel m-kort"></i><i class="m-knop"></i><i class="m-beeld"></i></div>
-                <strong>Limpio y profesional</strong>
-                <span>Mucho blanco, botones claros, todo ordenado.</span>
-              </label>
-              <label class="stijl-card" data-stijl="warm">
-                <input type="checkbox" value="warm" />
-                <div class="stijl-mock stijl-mock--warm"><i class="m-nav"></i><b class="m-kop">Tu empresa</b><i class="m-regel"></i><i class="m-regel m-kort"></i><i class="m-knop"></i><i class="m-beeld"></i></div>
-                <strong>Cálido y artesanal</strong>
-                <span>Colores suaves, títulos elegantes, fotos de personas y materiales.</span>
-              </label>
-              <label class="stijl-card" data-stijl="donker">
-                <input type="checkbox" value="donker" />
-                <div class="stijl-mock stijl-mock--donker"><i class="m-nav"></i><b class="m-kop">Tu empresa</b><i class="m-regel"></i><i class="m-regel m-kort"></i><i class="m-knop"></i><i class="m-beeld"></i></div>
-                <strong>Oscuro y potente</strong>
-                <span>Negro con un color vivo, títulos grandes, muchas imágenes.</span>
-              </label>
-              <label class="stijl-card" data-stijl="speels">
-                <input type="checkbox" value="speels" />
-                <div class="stijl-mock stijl-mock--speels"><i class="m-nav"></i><b class="m-kop">Tu empresa</b><i class="m-regel"></i><i class="m-regel m-kort"></i><i class="m-knop"></i><i class="m-beeld"></i></div>
-                <strong>Ligero y divertido</strong>
-                <span>Formas redondeadas, un color alegre, un tono cercano.</span>
-              </label>
-            </div>
+            <label>¿Qué webs te gustan? <span class="stijl-hint">Marca lo que te guste</span></label>
+            <div class="stijl-grid-ref" id="stijl-grid"></div>
             <input type="hidden" id="s2-stijl" value="" />
           </div>
           <div class="field">
@@ -462,15 +438,8 @@
 
       wrap.innerHTML = html;
 
-      // Stijlkaarten: hoogstens twee aan; de keuze gaat als tekst naar het verborgen veld.
-      const stijlKaarten = [...wrap.querySelectorAll('.stijl-card input')];
-      stijlKaarten.forEach(inp => inp.addEventListener('change', () => {
-        const aan = stijlKaarten.filter(x => x.checked);
-        if (aan.length > 2) { inp.checked = false; }
-        stijlKaarten.forEach(x => x.closest('.stijl-card').classList.toggle('selected', x.checked));
-        const hidden = document.getElementById('s2-stijl');
-        if (hidden) hidden.value = stijlKaarten.filter(x => x.checked).map(x => x.closest('.stijl-card').querySelector('strong').textContent).join(', ');
-      }));
+      // Echte voorbeeldsites (stijlkeuze.js): de bezoeker vinkt aan wat hem aanspreekt.
+      if (window.skyStijlkeuze) window.skyStijlkeuze(document.getElementById('stijl-grid'));
 
       // wire url toggle after render
       const sel2 = document.getElementById('s2-bestaand');
@@ -945,45 +914,7 @@
   .upload-zone.has-file { border-color: rgba(197,156,78,.55); background: rgba(197,156,78,.06); }
   .upload-zone.has-file .upload-name { color: var(--gold-deep, #c59c4e); }
   
-  /* Stijlkeuze (gratis testwebsite): vier mini-voorbeelden, één of twee aanvinken. */
-  .stijl-hint { font-weight: 400; color: rgba(255,255,255,.45); font-size: .78rem; margin-left: 6px; }
-  .stijl-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 8px; }
-  @media (max-width: 560px) { .stijl-grid { grid-template-columns: 1fr; } }
-  .stijl-card, .stijl-card * { text-transform: none; letter-spacing: normal; }
-  .stijl-card { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 10px; border: 1px solid rgba(255,255,255,.1); border-radius: 14px; background: rgba(255,255,255,.03); cursor: pointer; transition: border-color .2s, background .2s; }
-  .stijl-card:hover { border-color: rgba(197,156,78,.35); }
-  .stijl-card.selected { border-color: #d4a23f; background: rgba(212,162,63,.08); box-shadow: 0 0 0 1px #d4a23f inset; }
-  .stijl-card input { position: absolute; opacity: 0; pointer-events: none; }
-  .stijl-card strong { display: block; font-size: .95rem; font-weight: 600; color: #fff; margin-top: 8px; }
-  .stijl-card > span { display: block; font-size: .8rem; font-weight: 400; color: rgba(255,255,255,.55); line-height: 1.45; }
-  .stijl-mock { position: relative; aspect-ratio: 16/10; border-radius: 9px; overflow: hidden; padding: 9% 8%; display: flex; flex-direction: column; gap: 6%; }
-  .stijl-mock i, .stijl-mock b { display: block; }
-  .stijl-mock .m-nav { height: 5%; width: 100%; border-radius: 3px; opacity: .25; }
-  .stijl-mock .m-kop { width: 55%; font-size: clamp(.8rem, 2.4vw, 1.1rem); line-height: 1.05; }
-  .stijl-mock .m-regel { height: 4%; width: 50%; border-radius: 3px; opacity: .35; }
-  .stijl-mock .m-kort { width: 34%; }
-  .stijl-mock .m-knop { height: 11%; width: 26%; margin-top: 2%; }
-  .stijl-mock .m-beeld { position: absolute; right: 7%; top: 24%; bottom: 14%; width: 36%; }
-  .stijl-mock--strak { background: #fff; }
-  .stijl-mock--strak .m-nav, .stijl-mock--strak .m-regel { background: #1d2433; }
-  .stijl-mock--strak .m-kop { color: #111827; font-family: Inter, system-ui, sans-serif; font-weight: 700; letter-spacing: -.02em; }
-  .stijl-mock--strak .m-knop { background: #2563eb; border-radius: 6px; }
-  .stijl-mock--strak .m-beeld { background: linear-gradient(135deg, #e5e9f0, #cbd5e1); border-radius: 8px; }
-  .stijl-mock--warm { background: #f3ebdf; }
-  .stijl-mock--warm .m-nav, .stijl-mock--warm .m-regel { background: #5b4636; }
-  .stijl-mock--warm .m-kop { color: #3d2b1f; font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400; }
-  .stijl-mock--warm .m-knop { background: #b8643c; border-radius: 2px; }
-  .stijl-mock--warm .m-beeld { background: linear-gradient(160deg, #d8b48a, #8a5a3b); border-radius: 120px 120px 6px 6px; }
-  .stijl-mock--donker { background: #0c0c0e; }
-  .stijl-mock--donker .m-nav, .stijl-mock--donker .m-regel { background: #fff; }
-  .stijl-mock--donker .m-kop { color: #fff; font-family: 'Arial Narrow', Impact, sans-serif; font-weight: 800; text-transform: uppercase !important; font-stretch: condensed; letter-spacing: .01em; }
-  .stijl-mock--donker .m-knop { background: #ff5a1f; border-radius: 0; }
-  .stijl-mock--donker .m-beeld { background: linear-gradient(180deg, #3a3a40, #16161a); }
-  .stijl-mock--speels { background: #fff8e8; }
-  .stijl-mock--speels .m-nav, .stijl-mock--speels .m-regel { background: #3b2a6b; }
-  .stijl-mock--speels .m-kop { color: #2c1f57; font-family: 'Trebuchet MS', 'Segoe UI', sans-serif; font-weight: 800; }
-  .stijl-mock--speels .m-knop { background: #6c4cf5; border-radius: 999px; }
-  .stijl-mock--speels .m-beeld { background: #ffd23f; border-radius: 42% 58% 55% 45% / 50% 42% 58% 50%; }
+  .stijl-hint { font-weight: 400; color: rgba(255,255,255,.45); font-size: .78rem; margin-left: 6px; text-transform: none; letter-spacing: normal; }
 </style>
 </body>
 </html>

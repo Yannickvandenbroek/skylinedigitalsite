@@ -57,7 +57,8 @@
   ">Een website die je mooi vindt <span class=\"stijl-hint\">(optioneel)</span><": ">A website you like <span class=\"stijl-hint\">(optional)</span><",
   "placeholder=\"Link of naam van een site, van wie dan ook\"": "placeholder=\"Link or name of any site you like\"",
   "'We gaan ermee aan de slag! <span class=\"gold-text\">Top.</span>'": "'We are getting started! <span class=\"gold-text\">Great.</span>'",
-  "'Op basis van de stijl die je koos maken we drie ontwerpen voor je nieuwe website. Binnen 24 tot 48 uur staan ze in je mail, helemaal gratis en vrijblijvend.'": "'Based on the style you chose, we will create three designs for your new website. Within 24 to 48 hours they will be in your inbox, completely free and without obligation.'"
+  "'Op basis van de stijl die je koos maken we drie ontwerpen voor je nieuwe website. Binnen 24 tot 48 uur staan ze in je mail, helemaal gratis en vrijblijvend.'": "'Based on the style you chose, we will create three designs for your new website. Within 24 to 48 hours they will be in your inbox, completely free and without obligation.'",
+  ">Welke websites spreken je aan? <span class=\"stijl-hint\">Vink aan wat je mooi vindt</span><": ">Which websites appeal to you? <span class=\"stijl-hint\">Tick what you like</span><"
  },
  "it": {
   "'Hoi Yannick, ik zag de video \"'": "'Ciao Yannick, ho visto il video \"'",
@@ -117,7 +118,8 @@
   ">Een website die je mooi vindt <span class=\"stijl-hint\">(optioneel)</span><": ">Un sito che ti piace <span class=\"stijl-hint\">(facoltativo)</span><",
   "placeholder=\"Link of naam van een site, van wie dan ook\"": "placeholder=\"Link o nome di un sito, di chiunque\"",
   "'We gaan ermee aan de slag! <span class=\"gold-text\">Top.</span>'": "'Ci mettiamo al lavoro! <span class=\"gold-text\">Ottimo.</span>'",
-  "'Op basis van de stijl die je koos maken we drie ontwerpen voor je nieuwe website. Binnen 24 tot 48 uur staan ze in je mail, helemaal gratis en vrijblijvend.'": "'In base allo stile che hai scelto creiamo tre proposte per il tuo nuovo sito. Entro 24-48 ore le trovi nella tua email, gratis e senza impegno.'"
+  "'Op basis van de stijl die je koos maken we drie ontwerpen voor je nieuwe website. Binnen 24 tot 48 uur staan ze in je mail, helemaal gratis en vrijblijvend.'": "'In base allo stile che hai scelto creiamo tre proposte per il tuo nuovo sito. Entro 24-48 ore le trovi nella tua email, gratis e senza impegno.'",
+  ">Welke websites spreken je aan? <span class=\"stijl-hint\">Vink aan wat je mooi vindt</span><": ">Quali siti ti piacciono? <span class=\"stijl-hint\">Spunta ciò che ti piace</span><"
  },
  "es": {
   "'Hoi Yannick, ik zag de video \"'": "'Hola Yannick, vi el vídeo \"'",
@@ -177,6 +179,7 @@
   ">Een website die je mooi vindt <span class=\"stijl-hint\">(optioneel)</span><": ">Una web que te guste <span class=\"stijl-hint\">(opcional)</span><",
   "placeholder=\"Link of naam van een site, van wie dan ook\"": "placeholder=\"Enlace o nombre de una web, de quien sea\"",
   "'We gaan ermee aan de slag! <span class=\"gold-text\">Top.</span>'": "'¡Nos ponemos manos a la obra! <span class=\"gold-text\">Genial.</span>'",
-  "'Op basis van de stijl die je koos maken we drie ontwerpen voor je nieuwe website. Binnen 24 tot 48 uur staan ze in je mail, helemaal gratis en vrijblijvend.'": "'Según el estilo que elegiste, crearemos tres diseños para tu nueva web. En 24 a 48 horas los tendrás en tu correo, gratis y sin compromiso.'"
+  "'Op basis van de stijl die je koos maken we drie ontwerpen voor je nieuwe website. Binnen 24 tot 48 uur staan ze in je mail, helemaal gratis en vrijblijvend.'": "'Según el estilo que elegiste, crearemos tres diseños para tu nueva web. En 24 a 48 horas los tendrás en tu correo, gratis y sin compromiso.'",
+  ">Welke websites spreken je aan? <span class=\"stijl-hint\">Vink aan wat je mooi vindt</span><": ">¿Qué webs te gustan? <span class=\"stijl-hint\">Marca lo que te guste</span><"
  }
 }

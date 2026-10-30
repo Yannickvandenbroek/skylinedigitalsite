@@ -22,7 +22,7 @@ SNIPPET = f'''{START}
 
 # lead.js zit in hetzelfde blok (stuurt elk Formspree-formulier ook naar het CRM); los toevoegen
 # verdween bij het opnieuw zetten van dit blok, zo blijft hij staan.
-ASSETS = ["styles.css", "pages.css", "awards.css", "scroll-cinematic.js", "consent.js", "lead.js", "voorbeelden.js", "films.js", "instagram.js"]
+ASSETS = ["styles.css", "pages.css", "awards.css", "scroll-cinematic.js", "consent.js", "lead.js", "voorbeelden.js", "stijlkeuze.js", "films.js", "instagram.js"]
 def bust(html):
     # Zet ?v=<hash van de inhoud> achter gedeelde css/js, zodat browsers na een wijziging direct de nieuwe versie laden.
     for a in ASSETS:
