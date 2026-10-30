@@ -48,7 +48,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..900&amp;family=Inter:wght@400..700&amp;display=swap" rel="stylesheet"/>
 <link href="/styles.css?v=9ba108e4" rel="stylesheet"/>
-<link href="/pages.css?v=e97fe78d" rel="stylesheet"/>
+<link href="/pages.css?v=7857daf6" rel="stylesheet"/>
 <link href="/awards.css?v=11effff4" rel="stylesheet"/>
 <link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="/assets/favicon.svg" rel="apple-touch-icon"/>
@@ -91,43 +91,47 @@
 <p class="eyebrow">Websites &amp; SEO</p>
 <h2>Choose what <span class="gold-text">fits</span></h2>
 <p class="lead">Pay once or per month: your choice. Hosting and maintenance are included in the subscription.</p>
+<div aria-label="One-off or per month" class="prijs-toggle" role="group">
+<button aria-pressed="true" data-mode="eenmalig" type="button">One-off</button>
+<button aria-pressed="false" data-mode="maand" type="button">Per month</button>
+</div>
 </div>
 <div class="price-grid">
 <div class="price reveal">
 <span class="price-name">Horizon</span>
-<div class="price-amt">€375<small> one-off · or €29/mo</small></div>
+<div class="price-amt"><span data-eenmalig="">€375<small> one-off</small></span><span data-maand="" hidden="">€29<small> / month</small></span></div>
 <p class="price-desc">Your custom website, ready to win customers.</p>
 <ul>
 <li>Multiple custom pages</li>
 <li>Mobile and lightning fast</li>
 <li>Form straight into your inbox</li>
-<li>Or €29 per month: hosting and maintenance included, minimum 12 months</li>
+<li><span data-eenmalig="">Or €29 per month: hosting and maintenance included, minimum 12 months</span><span data-maand="" hidden="">Hosting and maintenance included, minimum 12 months, then cancel monthly; or €375 one-off</span></li>
 </ul>
 <a class="btn btn-dark" href="/en/aanvraag">Get started</a>
 </div>
 <div class="price featured reveal">
 <span class="price-name">Skyline</span>
-<div class="price-amt">€575<small> one-off · or €49/mo</small></div>
+<div class="price-amt"><span data-eenmalig="">€575<small> one-off</small></span><span data-maand="" hidden="">€49<small> / month</small></span></div>
 <p class="price-desc">Horizon plus basic SEO: findable from day one.</p>
 <ul>
 <li>Everything in Horizon</li>
 <li>Technical SEO and Google Business Profile</li>
 <li>Six location pages for your region</li>
 <li>Search Console connected</li>
-<li>Or €49 per month: hosting and maintenance included, minimum 12 months</li>
+<li><span data-eenmalig="">Or €49 per month: hosting and maintenance included, minimum 12 months</span><span data-maand="" hidden="">Hosting and maintenance included, minimum 12 months, then cancel monthly; or €575 one-off</span></li>
 </ul>
 <a class="btn btn-gold" href="/en/aanvraag">Get started</a>
 </div>
 <div class="price reveal">
 <span class="price-name">Panorama</span>
-<div class="price-amt">€749<small> one-off · or €69/mo</small></div>
+<div class="price-amt"><span data-eenmalig="">€749<small> one-off</small></span><span data-maand="" hidden="">€69<small> / month</small></span></div>
 <p class="price-desc">3D cinematic website: an award-winning scroll experience, like this site.</p>
 <ul>
 <li>Everything in Skyline</li>
 <li>Cinematic scroll &amp; animations</li>
 <li>Premium custom design</li>
 <li>Visuals included</li>
-<li>Or €69 per month: hosting and maintenance included, minimum 12 months</li>
+<li><span data-eenmalig="">Or €69 per month: hosting and maintenance included, minimum 12 months</span><span data-maand="" hidden="">Hosting and maintenance included, minimum 12 months, then cancel monthly; or €749 one-off</span></li>
 </ul>
 <a class="btn btn-dark" href="/en/contact">Book a call</a>
 </div>
@@ -366,6 +370,21 @@
         });
       });
       update();
+    })();
+  </script>
+<script>
+    // Eenmalig / per maand: één schakelaar boven de websitepakketten.
+    (function () {
+      var knoppen = document.querySelectorAll('.prijs-toggle button');
+      function zet(mode) {
+        knoppen.forEach(function (k) { k.setAttribute('aria-pressed', k.dataset.mode === mode ? 'true' : 'false'); });
+        document.querySelectorAll('[data-eenmalig]').forEach(function (el) { el.hidden = mode !== 'eenmalig'; });
+        document.querySelectorAll('[data-maand]').forEach(function (el) { el.hidden = mode !== 'maand'; });
+        try { localStorage.setItem('sky_prijs_mode', mode); } catch (e) {}
+      }
+      knoppen.forEach(function (k) { k.addEventListener('click', function () { zet(k.dataset.mode); }); });
+      var bewaard = null; try { bewaard = localStorage.getItem('sky_prijs_mode'); } catch (e) {}
+      if (bewaard === 'maand') zet('maand');
     })();
   </script>
 </body>

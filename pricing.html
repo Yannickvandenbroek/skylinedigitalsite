@@ -42,7 +42,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..900&family=Inter:wght@400..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css?v=9ba108e4" />
-  <link rel="stylesheet" href="pages.css?v=e97fe78d" />
+  <link rel="stylesheet" href="pages.css?v=7857daf6" />
   <link rel="stylesheet" href="awards.css?v=11effff4" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/favicon.svg" />
@@ -87,43 +87,47 @@
         <p class="eyebrow">Websites &amp; SEO</p>
         <h2>Kies wat bij je <span class="gold-text">past</span></h2>
         <p class="lead">Eenmalig betalen of per maand: jij kiest. Hosting en onderhoud zitten bij het abonnement in.</p>
+        <div class="prijs-toggle" role="group" aria-label="Eenmalig of per maand">
+          <button type="button" data-mode="eenmalig" aria-pressed="true">Eenmalig</button>
+          <button type="button" data-mode="maand" aria-pressed="false">Per maand</button>
+        </div>
       </div>
       <div class="price-grid">
         <div class="price reveal">
           <span class="price-name">Horizon</span>
-          <div class="price-amt">€375<small> eenmalig · of €29/mnd</small></div>
+          <div class="price-amt"><span data-eenmalig>€375<small> eenmalig</small></span><span data-maand hidden>€29<small> / maand</small></span></div>
           <p class="price-desc">Je website op maat, klaar om klanten te winnen.</p>
           <ul>
             <li>Meerdere pagina's op maat</li>
             <li>Mobiel en razendsnel</li>
             <li>Formulier rechtstreeks in je mail</li>
-            <li>Of €29 per maand: hosting en onderhoud inbegrepen, minimaal 12 maanden</li>
+            <li><span data-eenmalig>Of €29 per maand: hosting en onderhoud inbegrepen, minimaal 12 maanden</span><span data-maand hidden>Hosting en onderhoud inbegrepen, minimaal 12 maanden, daarna per maand opzegbaar; of €375 eenmalig</span></li>
           </ul>
           <a href="/aanvraag" class="btn btn-dark">Aanvraag doen</a>
         </div>
         <div class="price featured reveal">
           <span class="price-name">Skyline</span>
-          <div class="price-amt">€575<small> eenmalig · of €49/mnd</small></div>
+          <div class="price-amt"><span data-eenmalig>€575<small> eenmalig</small></span><span data-maand hidden>€49<small> / maand</small></span></div>
           <p class="price-desc">Horizon plus basis-SEO: vanaf dag één vindbaar.</p>
           <ul>
             <li>Alles van Horizon</li>
             <li>Technische SEO en Google Bedrijfsprofiel</li>
             <li>Zes locatiepagina's voor je regio</li>
             <li>Search Console gekoppeld</li>
-            <li>Of €49 per maand: hosting en onderhoud inbegrepen, minimaal 12 maanden</li>
+            <li><span data-eenmalig>Of €49 per maand: hosting en onderhoud inbegrepen, minimaal 12 maanden</span><span data-maand hidden>Hosting en onderhoud inbegrepen, minimaal 12 maanden, daarna per maand opzegbaar; of €575 eenmalig</span></li>
           </ul>
           <a href="/aanvraag" class="btn btn-gold">Aanvraag doen</a>
         </div>
         <div class="price reveal">
           <span class="price-name">Panorama</span>
-          <div class="price-amt">€749<small> eenmalig · of €69/mnd</small></div>
+          <div class="price-amt"><span data-eenmalig>€749<small> eenmalig</small></span><span data-maand hidden>€69<small> / maand</small></span></div>
           <p class="price-desc">3D cinematic website: een award-winning scroll-ervaring, zoals deze site.</p>
           <ul>
             <li>Alles van Skyline</li>
             <li>Cinematic scroll &amp; animaties</li>
             <li>Premium maatwerk design</li>
             <li>Inclusief beeldmateriaal</li>
-            <li>Of €69 per maand: hosting en onderhoud inbegrepen, minimaal 12 maanden</li>
+            <li><span data-eenmalig>Of €69 per maand: hosting en onderhoud inbegrepen, minimaal 12 maanden</span><span data-maand hidden>Hosting en onderhoud inbegrepen, minimaal 12 maanden, daarna per maand opzegbaar; of €749 eenmalig</span></li>
           </ul>
           <a href="/contact" class="btn btn-dark">Plan een gesprek</a>
         </div>
@@ -369,6 +373,22 @@
         });
       });
       update();
+    })();
+  </script>
+
+  <script>
+    // Eenmalig / per maand: één schakelaar boven de websitepakketten.
+    (function () {
+      var knoppen = document.querySelectorAll('.prijs-toggle button');
+      function zet(mode) {
+        knoppen.forEach(function (k) { k.setAttribute('aria-pressed', k.dataset.mode === mode ? 'true' : 'false'); });
+        document.querySelectorAll('[data-eenmalig]').forEach(function (el) { el.hidden = mode !== 'eenmalig'; });
+        document.querySelectorAll('[data-maand]').forEach(function (el) { el.hidden = mode !== 'maand'; });
+        try { localStorage.setItem('sky_prijs_mode', mode); } catch (e) {}
+      }
+      knoppen.forEach(function (k) { k.addEventListener('click', function () { zet(k.dataset.mode); }); });
+      var bewaard = null; try { bewaard = localStorage.getItem('sky_prijs_mode'); } catch (e) {}
+      if (bewaard === 'maand') zet('maand');
     })();
   </script>
 </body>

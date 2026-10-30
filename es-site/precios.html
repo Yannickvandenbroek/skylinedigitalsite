@@ -48,7 +48,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..900&amp;family=Inter:wght@400..700&amp;display=swap" rel="stylesheet"/>
 <link href="https://www.skylinedigital.nl/styles.css?v=9ba108e4" rel="stylesheet"/>
-<link href="https://www.skylinedigital.nl/pages.css?v=e97fe78d" rel="stylesheet"/>
+<link href="https://www.skylinedigital.nl/pages.css?v=7857daf6" rel="stylesheet"/>
 <link href="https://www.skylinedigital.nl/awards.css?v=11effff4" rel="stylesheet"/>
 <link href="https://www.skylinedigital.nl/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="https://www.skylinedigital.nl/assets/favicon.svg" rel="apple-touch-icon"/>
@@ -91,43 +91,47 @@
 <p class="eyebrow">Webs &amp; SEO</p>
 <h2>Elige lo que te <span class="gold-text">encaja</span></h2>
 <p class="lead">Pago único o mensual: tú eliges. El hosting y el mantenimiento van incluidos en la suscripción.</p>
+<div aria-label="Pago único o al mes" class="prijs-toggle" role="group">
+<button aria-pressed="true" data-mode="eenmalig" type="button">Pago único</button>
+<button aria-pressed="false" data-mode="maand" type="button">Al mes</button>
+</div>
 </div>
 <div class="price-grid">
 <div class="price reveal">
 <span class="price-name">Horizon</span>
-<div class="price-amt">€375<small> pago único · o €29/mes</small></div>
+<div class="price-amt"><span data-eenmalig="">€375<small> pago único</small></span><span data-maand="" hidden="">€29<small> / mes</small></span></div>
 <p class="price-desc">Tu web a medida, lista para ganar clientes.</p>
 <ul>
 <li>Varias páginas a medida</li>
 <li>Móvil y rapidísima</li>
 <li>Formulario directo a tu correo</li>
-<li>O €29 al mes: hosting y mantenimiento incluidos, mínimo 12 meses</li>
+<li><span data-eenmalig="">O €29 al mes: hosting y mantenimiento incluidos, mínimo 12 meses</span><span data-maand="" hidden="">Hosting y mantenimiento incluidos, mínimo 12 meses, luego cancelable mes a mes; o €375 pago único</span></li>
 </ul>
 <a class="btn btn-dark" href="/solicitud">Solicitar</a>
 </div>
 <div class="price featured reveal">
 <span class="price-name">Skyline</span>
-<div class="price-amt">€575<small> pago único · o €49/mes</small></div>
+<div class="price-amt"><span data-eenmalig="">€575<small> pago único</small></span><span data-maand="" hidden="">€49<small> / mes</small></span></div>
 <p class="price-desc">Horizon más SEO básico: visible desde el primer día.</p>
 <ul>
 <li>Todo lo de Horizon</li>
 <li>SEO técnico y Perfil de Empresa en Google</li>
 <li>Seis páginas de localidad para tu zona</li>
 <li>Search Console conectado</li>
-<li>O €49 al mes: hosting y mantenimiento incluidos, mínimo 12 meses</li>
+<li><span data-eenmalig="">O €49 al mes: hosting y mantenimiento incluidos, mínimo 12 meses</span><span data-maand="" hidden="">Hosting y mantenimiento incluidos, mínimo 12 meses, luego cancelable mes a mes; o €575 pago único</span></li>
 </ul>
 <a class="btn btn-gold" href="/solicitud">Solicitar</a>
 </div>
 <div class="price reveal">
 <span class="price-name">Panorama</span>
-<div class="price-amt">€749<small> pago único · o €69/mes</small></div>
+<div class="price-amt"><span data-eenmalig="">€749<small> pago único</small></span><span data-maand="" hidden="">€69<small> / mes</small></span></div>
 <p class="price-desc">Web 3D cinematic: una experiencia de scroll premiada, como esta web.</p>
 <ul>
 <li>Todo lo de Skyline</li>
 <li>Scroll cinematográfico &amp; animaciones</li>
 <li>Diseño premium a medida</li>
 <li>Material visual incluido</li>
-<li>O €69 al mes: hosting y mantenimiento incluidos, mínimo 12 meses</li>
+<li><span data-eenmalig="">O €69 al mes: hosting y mantenimiento incluidos, mínimo 12 meses</span><span data-maand="" hidden="">Hosting y mantenimiento incluidos, mínimo 12 meses, luego cancelable mes a mes; o €749 pago único</span></li>
 </ul>
 <a class="btn btn-dark" href="/contacto">Agenda una llamada</a>
 </div>
@@ -366,6 +370,21 @@
         });
       });
       update();
+    })();
+  </script>
+<script>
+    // Eenmalig / per maand: één schakelaar boven de websitepakketten.
+    (function () {
+      var knoppen = document.querySelectorAll('.prijs-toggle button');
+      function zet(mode) {
+        knoppen.forEach(function (k) { k.setAttribute('aria-pressed', k.dataset.mode === mode ? 'true' : 'false'); });
+        document.querySelectorAll('[data-eenmalig]').forEach(function (el) { el.hidden = mode !== 'eenmalig'; });
+        document.querySelectorAll('[data-maand]').forEach(function (el) { el.hidden = mode !== 'maand'; });
+        try { localStorage.setItem('sky_prijs_mode', mode); } catch (e) {}
+      }
+      knoppen.forEach(function (k) { k.addEventListener('click', function () { zet(k.dataset.mode); }); });
+      var bewaard = null; try { bewaard = localStorage.getItem('sky_prijs_mode'); } catch (e) {}
+      if (bewaard === 'maand') zet('maand');
     })();
   </script>
 </body>

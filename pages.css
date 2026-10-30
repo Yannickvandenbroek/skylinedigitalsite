@@ -578,3 +578,8 @@ section.over, section.diensten, section.portfolio, section.reviews {
   .case-hero { padding-top: 90px; }
 }
 
+
+/* Eenmalig / per maand */
+.prijs-toggle { display: inline-flex; margin-top: 22px; padding: 4px; border-radius: 999px; background: rgba(0,0,0,.06); gap: 4px; }
+.prijs-toggle button { border: 0; background: transparent; padding: 10px 20px; border-radius: 999px; font: inherit; font-weight: 600; color: var(--ink-dim); cursor: pointer; transition: background .25s, color .25s; }
+.prijs-toggle button[aria-pressed="true"] { background: var(--ink, #0b0b0c); color: #fff; }
