@@ -12,8 +12,8 @@ META = {
  "website-seo": ("Website laten maken & SEO — vanaf €375 | Skyline Digital",
            "Maatwerk website laten maken vanaf €375, razendsnel en SEO-vriendelijk gebouwd. SEO-abonnement vanaf €79 per maand. Bureau in Den Bosch, actief in heel Nederland.",
            "/assets/photo-laptop-desk.jpg"),
- "drone-video": ("Drone & bedrijfsvideo laten maken in Den Bosch | Skyline Digital",
-           "Cinematische bedrijfsfilms, villa-films en drone-opnames vanaf €250 per shoot. Gecertificeerde dronepiloot, professionele montage. Skyline Digital, 's-Hertogenbosch.",
+ "drone-video": ("Drone video laten maken: €300 met montage | Skyline Digital",
+           "Drone video laten maken in Den Bosch en heel Nederland: video-shoot met drone €300, zonder drone €250, inclusief montage. Regels, aanpak en voorbeelden.",
            "/assets/photo-drone-villa.jpg"),
  "social-media": ("Social media beheer & content vanaf €79 p/m | Skyline Digital",
            "Social media beheer, contentcreatie en reels vanaf €79 per maand. Strategie, productie en publicatie in jouw huisstijl. Skyline Digital, Den Bosch.",
@@ -114,7 +114,7 @@ for path in sorted(glob.glob("*.html")):
         m = re.search(r'<meta name="description" content="([^"]*)"', s); desc = m.group(1) if m else ""
     if title is None:
         m = re.search(r'<title>(.*?)</title>', s); title = m.group(1)
-    t_esc = html.escape(title, quote=True); d_esc = html.escape(html.unescape(desc), quote=True)
+    t_esc = html.escape(html.unescape(html.unescape(title)), quote=True); d_esc = html.escape(html.unescape(desc), quote=True)  # titel uit de pagina is al ge-escaped: eerst terugzetten, anders groeit &amp; bij elke run
     # strip bestaande head-SEO en zet een consistente blok terug
     s = re.sub(r'\s*<title>.*?</title>', '', s, count=1, flags=re.S)
     s = re.sub(r'\s*<meta name="description"[^>]*>', '', s)
