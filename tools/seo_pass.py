@@ -1,5 +1,5 @@
 import re, glob, html, json, os
-os.chdir("/Users/yannickvandenbroek/Documents/Skylinedigital/own site/skyline-digital")
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))  # werkt op de Mac én in de cloud
 BASE = "https://www.skylinedigital.nl"
 
 META = {
@@ -70,8 +70,13 @@ ORG = {
  "founder": {"@type": "Person", "name": "Yannick van den Broek"},
  "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Diensten", "itemListElement": [
    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Horizon website", "url": BASE + "/website-seo"}, "price": "375", "priceCurrency": "EUR"},
-   {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "3D Cinematic website", "url": BASE + "/website-seo"}, "price": "749", "priceCurrency": "EUR"},
+   {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Skyline website met basis-SEO", "url": BASE + "/website-seo"}, "price": "575", "priceCurrency": "EUR"},
+   {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Panorama 3D cinematic website", "url": BASE + "/website-seo"}, "price": "749", "priceCurrency": "EUR"},
    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Radar SEO-abonnement", "url": BASE + "/website-seo"}, "price": "79", "priceCurrency": "EUR"},
+   {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Aurora content-abonnement", "url": BASE + "/ai-content"}, "price": "149", "priceCurrency": "EUR"},
+   {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Horizon website als abonnement", "url": BASE + "/website-seo"}, "price": "29", "priceCurrency": "EUR"},
+   {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Skyline website als abonnement", "url": BASE + "/website-seo"}, "price": "49", "priceCurrency": "EUR"},
+   {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Panorama website als abonnement", "url": BASE + "/website-seo"}, "price": "69", "priceCurrency": "EUR"},
    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Video- en droneshoot", "url": BASE + "/drone-video"}, "price": "250", "priceCurrency": "EUR"},
    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Skyline + Radar abonnement", "url": BASE + "/website-seo"}, "price": "119", "priceCurrency": "EUR"},
  ]},

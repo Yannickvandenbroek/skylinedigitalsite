@@ -1,6 +1,6 @@
 import re, json, os, hashlib, sys
 from bs4 import BeautifulSoup, NavigableString, Comment
-os.chdir("/Users/yannickvandenbroek/Documents/Skylinedigital/own site/skyline-digital")
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))  # werkt op de Mac én in de cloud
 BASE = "https://www.skylinedigital.nl"
 PAGES = ["index","over-ons","website-seo","drone-video","social-media","ai-content","portfolio","pricing","contact","aanvraag","video","werk-dekgro","werk-lillis","werk-bodyscan","werk-echtgrieks","werk-carslease","werk-lassie","werk-dejonge","werk-elektropost","werk-palmyra"]
 LANGS = [l for l in sys.argv[1:]] or ["en","it","es"]

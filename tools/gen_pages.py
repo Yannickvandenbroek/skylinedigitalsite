@@ -1,5 +1,5 @@
 import re, json, html, os, glob
-os.chdir("/Users/yannickvandenbroek/Documents/Skylinedigital/own site/skyline-digital")
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))  # werkt op de Mac én in de cloud
 BASE = "https://www.skylinedigital.nl"
 TODAY = "2026-10-06"
 src = open("website-seo.html").read()
