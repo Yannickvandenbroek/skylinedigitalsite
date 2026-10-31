@@ -63,7 +63,7 @@ URL: `/<dienst>`. Vaste opbouw: wat het is → voor wie → wat je krijgt + prij
 
 | Pagina | Hoofdzoekwoord (4+) | Extra long-tails | Data / nodig |
 |---|---|---|---|
-| `/seo-den-bosch` | seo bureau den bosch | seo specialist den bosch · zoekmachine optimalisatie den bosch · wat is een goed seo-bureau in den bosch | al **plek 9,5–12** |
+| `/seo-den-bosch` ✅ live 31 okt | seo bureau den bosch | seo specialist den bosch · zoekmachine optimalisatie den bosch · wat is een goed seo-bureau in den bosch | al **plek 9,5–12** |
 | `/bedrijfsfilm-laten-maken` | bedrijfsfilm laten maken den bosch | professionele bedrijfsfilm laten maken · bedrijfsfilm maken met drone · bedrijfsvideo laten maken met eigen beelden | hoofdterm 100–1K/mnd; nieuwe dienst van €120 hierop |
 | `/website-onderhoud` | kosten onderhoud website per jaar | wat kost website onderhoud per maand · website onderhoud en beheer · hoe duur is een website onderhouden | **nodig: prijs en inhoud abonnement** |
 | `/webshop-laten-maken` | webshop laten maken den bosch | wat kost een webshop laten maken · website met webshop laten maken · webshop laten maken per maand betalen | **nodig: platform en vanaf-prijs** |

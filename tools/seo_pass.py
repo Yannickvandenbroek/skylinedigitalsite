@@ -40,6 +40,9 @@ META = {
  "werk-lillis": ("Website voor Lilli's Schilderwerken — case | Skyline Digital", None, "/assets/work-lillis.jpg"),
  "werk-bodyscan": ("Website voor BodyScan Waalre — case | Skyline Digital", None, "/assets/work-bodyscan.jpg"),
  "werk-echtgrieks": ("Website voor Echt Grieks — case | Skyline Digital", None, "/assets/work-echtgrieks.jpg"),
+ "seo-den-bosch": ("SEO bureau Den Bosch: lokaal gevonden worden | Skyline Digital",
+           "SEO-bureau in Den Bosch voor lokale ondernemers: technische SEO, Google Bedrijfsprofiel en elke maand nieuwe pagina's. Radar-abonnement €79 per maand.",
+           "/assets/photo-studio-monitor.jpg"),
  "video": ("Cinematische villa-film — gratis voorbeeld | Skyline Digital", None, "/assets/og-home.jpg"),
 }
 SERVICE = {
@@ -47,10 +50,11 @@ SERVICE = {
  "drone-video": ("Drone & bedrijfsvideo", "Cinematische bedrijfsfilms, villa-films en drone-opnames"),
  "social-media": ("Social media beheer & content", "Strategie, contentcreatie en beheer van social media"),
  "ai-content": ("AI content", "AI-gegenereerde video's en foto's met menselijke eindcontrole"),
+ "seo-den-bosch": ("SEO Den Bosch", "Lokale zoekmachineoptimalisatie voor ondernemers in 's-Hertogenbosch en omgeving"),
 }
 BREAD = {
  "over-ons": "Over ons", "website-seo": "Website & SEO", "drone-video": "Drone & Video", "social-media": "Social Media",
- "ai-content": "AI Content", "pricing": "Pricing", "portfolio": "Portfolio", "contact": "Contact", "aanvraag": "Aanvraag",
+ "ai-content": "AI Content", "seo-den-bosch": "SEO Den Bosch", "pricing": "Pricing", "portfolio": "Portfolio", "contact": "Contact", "aanvraag": "Aanvraag",
  "privacybeleid": "Privacybeleid", "algemene-voorwaarden": "Algemene voorwaarden", "cookiebeleid": "Cookiebeleid",
 }
 ORG = {
