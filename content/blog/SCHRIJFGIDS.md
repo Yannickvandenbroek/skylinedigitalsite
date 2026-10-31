@@ -20,7 +20,9 @@ De regels hieronder volgen uit Google's eigen richtlijnen (helpful content, E-E-
 - **Zoekwoord natuurlijk.** Het hoofdzoekwoord staat in de titel (liefst vooraan), in de eerste alinea en in één tussenkop. Verder schrijf je gewoon natuurlijke zinnen met synoniemen, zonder herhaling om de herhaling.
 
 ## Vaste feiten (exact zo gebruiken)
-- Horizon website **€375** eenmalig · 3D Cinematic website **€749** eenmalig · SEO **€79 per maand**
+- Websitepakketten (eenmalig of per maand, minimaal 12 maanden, hosting en onderhoud inbegrepen): **Horizon €375** of €29 per maand · **Skyline €575** (met basis-SEO) of €49 per maand · **Panorama €749** (3D cinematic) of €69 per maand
+- SEO-abonnement **Radar €79 per maand** · bundel Skyline + Radar **€119 per maand** · **Aurora €149 per maand** (2 bedrijfsvideo's + 8 foto's)
+- Villa-video **€149** · bedrijfsvideo van je eigen foto's **€95**
 - Video-/fotoshoot op locatie **€250**, met drone **€300** · Social media beheer **vanaf €79 per maand**
 - AI-content: **€95 per video**, **€5 per foto** (vanaf €100 10% korting, vanaf €200 20%, minimum €20)
 - Gratis testwebsite: wij bouwen eerst een voorbeeld, de klant beslist daarna (`/aanvraag`)
