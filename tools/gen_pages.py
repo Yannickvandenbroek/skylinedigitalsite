@@ -357,7 +357,7 @@ BIZ = {
 L = 'style="color:var(--gold-deep)"'
 FAQ2 = {
  "den-bosch": [("Kunnen jullie ook een webshop bouwen voor mijn winkel in de binnenstad?", "Ja. We bouwen ook webshops en koppelen die waar nodig aan je betaalsysteem. Je krijgt vooraf een offerte op maat."),
-               ("Doen jullie ook SEO voor bedrijven in Den Bosch?", f"Ja. Bij elke site zetten we de basis-SEO goed; daarna kan SEO voor €79 per maand, met maandelijkse rapportage. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>.")],
+               ("Doen jullie ook SEO voor bedrijven in Den Bosch?", f"Ja. Bij elke site zetten we de basis-SEO goed; daarna kan SEO voor €79 per maand, met maandelijkse rapportage. Alles over onze aanpak lees je op <a href=\"/seo-den-bosch\" {L}>SEO in Den Bosch</a>. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>.")],
  "rosmalen": [("Moet ik op 'Rosmalen' of op 'Den Bosch' gevonden worden?", "Allebei. Klanten zoeken op beide namen; we nemen ze natuurlijk mee in je teksten en in je Google Bedrijfsprofiel."),
               ("Kunnen jullie mijn bestaande website verbeteren?", "Ja. In een gratis adviesgesprek kijken we naar je huidige site en adviseren we of verbeteren of opnieuw bouwen slimmer is.")],
  "vught": [("Kunnen jullie ook professionele foto's maken voor mijn winkel in Vught?", "Ja. Een foto- of videoshoot op locatie kost €250, met dronebeelden €300, inclusief montage en kleurcorrectie."),
