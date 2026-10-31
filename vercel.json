@@ -3,6 +3,111 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/es",
+      "destination": "https://www.skylinedigital.es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/aanvraag",
+      "destination": "https://www.skylinedigital.es/solicitud",
+      "permanent": true
+    },
+    {
+      "source": "/es/ai-content",
+      "destination": "https://www.skylinedigital.es/contenido-ia",
+      "permanent": true
+    },
+    {
+      "source": "/es/contact",
+      "destination": "https://www.skylinedigital.es/contacto",
+      "permanent": true
+    },
+    {
+      "source": "/es/drone-video",
+      "destination": "https://www.skylinedigital.es/video-y-drones",
+      "permanent": true
+    },
+    {
+      "source": "/es/over-ons",
+      "destination": "https://www.skylinedigital.es/sobre-nosotros",
+      "permanent": true
+    },
+    {
+      "source": "/es/portfolio",
+      "destination": "https://www.skylinedigital.es/portafolio",
+      "permanent": true
+    },
+    {
+      "source": "/es/pricing",
+      "destination": "https://www.skylinedigital.es/precios",
+      "permanent": true
+    },
+    {
+      "source": "/es/social-media",
+      "destination": "https://www.skylinedigital.es/redes-sociales",
+      "permanent": true
+    },
+    {
+      "source": "/es/video",
+      "destination": "https://www.skylinedigital.es/video",
+      "permanent": true
+    },
+    {
+      "source": "/es/website-seo",
+      "destination": "https://www.skylinedigital.es/diseno-web-y-seo",
+      "permanent": true
+    },
+    {
+      "source": "/es/werk-bodyscan",
+      "destination": "https://www.skylinedigital.es/proyecto-bodyscan",
+      "permanent": true
+    },
+    {
+      "source": "/es/werk-carslease",
+      "destination": "https://www.skylinedigital.es/proyecto-carslease",
+      "permanent": true
+    },
+    {
+      "source": "/es/werk-dejonge",
+      "destination": "https://www.skylinedigital.es/proyecto-dejonge",
+      "permanent": true
+    },
+    {
+      "source": "/es/werk-dekgro",
+      "destination": "https://www.skylinedigital.es/proyecto-dekgro",
+      "permanent": true
+    },
+    {
+      "source": "/es/werk-echtgrieks",
+      "destination": "https://www.skylinedigital.es/proyecto-echtgrieks",
+      "permanent": true
+    },
+    {
+      "source": "/es/werk-elektropost",
+      "destination": "https://www.skylinedigital.es/proyecto-elektropost",
+      "permanent": true
+    },
+    {
+      "source": "/es/werk-lassie",
+      "destination": "https://www.skylinedigital.es/proyecto-lassie",
+      "permanent": true
+    },
+    {
+      "source": "/es/werk-lillis",
+      "destination": "https://www.skylinedigital.es/proyecto-lillis",
+      "permanent": true
+    },
+    {
+      "source": "/es/werk-palmyra",
+      "destination": "https://www.skylinedigital.es/proyecto-palmyra",
+      "permanent": true
+    },
+    {
+      "source": "/es/:path*",
+      "destination": "https://www.skylinedigital.es/",
+      "permanent": true
+    },
+    {
       "source": "/content/:path*",
       "destination": "/",
       "permanent": true
