@@ -31,10 +31,10 @@ Doel: overal exact dezelfde naam, hetzelfde adres en telefoonnummer (NAP). Googl
 | Opgericht | vul in (jaar van de KVK-inschrijving) |
 
 **Korte omschrijving (max. 150 tekens):**
-Creatief digitaal bureau in Den Bosch: maatwerk websites vanaf €499, SEO, bedrijfs- en dronevideo en social media. Eerst gratis een testwebsite.
+Creatief digitaal bureau in Den Bosch: maatwerk websites vanaf €375, SEO, bedrijfs- en dronevideo en social media. Eerst gratis een testwebsite.
 
 **Lange omschrijving:**
-Skyline Digital is een creatief digitaal bureau uit 's-Hertogenbosch. We bouwen maatwerk websites die snel laden en gevonden worden, vanaf €499, en maken cinematische bedrijfsfilms en drone-opnames. Daarnaast verzorgen we SEO en social media. Elk websiteproject begint met een gratis testwebsite: je ziet eerst het ontwerp en beslist daarna. We werken voor ondernemers in Den Bosch en de rest van Brabant, en op afstand in heel Nederland. Opdrachtgevers zijn onder andere installatiebedrijven, rijscholen, bouwbedrijven en praktijken.
+Skyline Digital is een creatief digitaal bureau uit 's-Hertogenbosch. We bouwen maatwerk websites die snel laden en gevonden worden, vanaf €375, en maken cinematische bedrijfsfilms en drone-opnames. Daarnaast verzorgen we SEO en social media. Elk websiteproject begint met een gratis testwebsite: je ziet eerst het ontwerp en beslist daarna. We werken voor ondernemers in Den Bosch en de rest van Brabant, en op afstand in heel Nederland. Opdrachtgevers zijn onder andere installatiebedrijven, rijscholen, bouwbedrijven en praktijken.
 
 ## Bedrijvengidsen (gratis, in volgorde van nut)
 
