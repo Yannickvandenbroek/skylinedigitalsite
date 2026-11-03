@@ -11,7 +11,6 @@ Beschikbare projectpagina's voor eigen ervaring: `/werk-dekgro` (tegelwerk), `/w
 
 Volgorde = planning (zie `content/CONTENTPLAN.md`): bovenste open onderwerp is de volgende week. Hoofdzoekwoorden zijn long-tail: 4 of meer woorden.
 
-- [ ] **Bedrijfsvideo maken met AI: wat kan wel en wat niet?** — zoekwoord: "bedrijfsvideo maken met ai" — long-tail ook: "hoe kan ik ai video's maken", "ai video laten maken voor bedrijf"; wat AI goed doet (social clips, variaties), waar het misgaat (echte mensen, pand, vertrouwen), menselijke controle; AI-video €95, echte shoot €250 — links: /ai-content, /drone-video, /blog/bedrijfsvideo-laten-maken-kosten
 - [ ] **Hoe krijg je meer Google reviews (en wat mag niet)?** — zoekwoord: "hoe google reviews krijgen" — long-tail ook: "hoe google reviews verzamelen", "google reviews voor mijn bedrijf"; reviewlink delen, reageren, waarom kopen tegen de regels is (bron: Google-richtlijnen) — links: /blog/lokale-seo-tips, /website-seo, /contact
 - [ ] **Google Bedrijfsprofiel aanmaken, ook zonder vast adres** — zoekwoord: "hoe google bedrijfsprofiel aanmaken" — long-tail ook: "google bedrijfsprofiel zonder adres", "wat kost een bedrijfsprofiel google"; aanmaken, verifiëren, servicegebied, categorieën, foto's, posts — links: /blog/lokale-seo-tips, /website-seo, /contact
 - [ ] **Goedkoop een website laten maken: waar zit het verschil?** — zoekwoord: "website laten maken goedkoop" — long-tail ook: "hoe duur website laten maken" (zoekvolume hoofdterm 100–1K/mnd); waar goedkoop prima is en waar het je later geld kost; €375 maatwerk — links: /pricing, /blog/wat-kost-een-website-laten-maken, /aanvraag
@@ -57,6 +56,7 @@ Deze onderwerpen worden branche- of dienstpagina's volgens `content/CONTENTPLAN.
 - [→ pagina] **Website onderhoud: updates, back-ups en beveiliging** — zoekwoord: "website onderhoud" — links: /website-seo, /pricing
 
 ## Gedaan
+- [x] 2026-11-03 → /blog/bedrijfsvideo-maken-met-ai — Bedrijfsvideo maken met AI: wat kan wel en wat niet?
 - [x] 2026-11-02 → /blog/seo-zelf-doen-of-uitbesteden — SEO zelf doen of uitbesteden? Kosten en verwachtingen
 - [x] 2026-10-27 → /blog/zichtbaar-worden-in-chatgpt-en-google-ai — Zichtbaar worden in ChatGPT en Google AI: wat werkt?
 - [x] 2026-10-26 → /blog/wat-kost-een-website-per-maand — Wat kost een website per maand of per jaar?
