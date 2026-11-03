@@ -19,7 +19,7 @@ META = {
            "Social media beheer, contentcreatie en reels vanaf €79 per maand. Strategie, productie en publicatie in jouw huisstijl. Skyline Digital, Den Bosch.",
            "/assets/photo-flatlay-phone.jpg"),
  "ai-content": ("AI content laten maken: video's & foto's | Skyline Digital",
-           "AI-video's vanaf €95 en AI-foto's vanaf €5 per stuk, altijd met menselijke eindcontrole. Meer content in minder tijd, in jouw stijl. Skyline Digital, Den Bosch.",
+           "AI-video's vanaf €119 en AI-foto's vanaf €5 per stuk, altijd met menselijke eindcontrole. Meer content in minder tijd, in jouw stijl. Skyline Digital, Den Bosch.",
            "/assets/photo-edit-suite.jpg"),
  "pricing": ("Prijzen: website vanaf €375, video, social & AI | Skyline Digital",
            "Transparante prijzen: Horizon website €375, 3D cinematic website €749, SEO €79 p/m, video-shoot €250. Geen verborgen kosten.",
