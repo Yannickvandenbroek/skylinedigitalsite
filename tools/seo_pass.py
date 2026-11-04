@@ -43,6 +43,9 @@ META = {
  "seo-den-bosch": ("SEO bureau Den Bosch: lokaal gevonden worden | Skyline Digital",
            "SEO-bureau in Den Bosch voor lokale ondernemers: technische SEO, Google Bedrijfsprofiel en elke maand nieuwe pagina's. Radar-abonnement €79 per maand.",
            "/assets/photo-studio-monitor.jpg"),
+ "bedrijfsfilm-laten-maken": ("Bedrijfsfilm laten maken in Den Bosch | Skyline Digital",
+           "Bedrijfsfilm laten maken in Den Bosch: shoot op locatie €250, met drone €300, inclusief montage. Of een bedrijfsvideo van je eigen foto's voor €119.",
+           "/assets/photo-filming-workshop.jpg"),
  "video": ("Cinematische villa-film — gratis voorbeeld | Skyline Digital", None, "/assets/og-home.jpg"),
 }
 SERVICE = {
@@ -51,10 +54,11 @@ SERVICE = {
  "social-media": ("Social media beheer & content", "Strategie, contentcreatie en beheer van social media"),
  "ai-content": ("AI content", "AI-gegenereerde video's en foto's met menselijke eindcontrole"),
  "seo-den-bosch": ("SEO Den Bosch", "Lokale zoekmachineoptimalisatie voor ondernemers in 's-Hertogenbosch en omgeving"),
+ "bedrijfsfilm-laten-maken": ("Bedrijfsfilm laten maken", "Bedrijfsfilms op locatie, met of zonder drone, inclusief montage en kleurcorrectie"),
 }
 BREAD = {
  "over-ons": "Over ons", "website-seo": "Website & SEO", "drone-video": "Drone & Video", "social-media": "Social Media",
- "ai-content": "AI Content", "seo-den-bosch": "SEO Den Bosch", "pricing": "Pricing", "portfolio": "Portfolio", "contact": "Contact", "aanvraag": "Aanvraag",
+ "ai-content": "AI Content", "seo-den-bosch": "SEO Den Bosch", "bedrijfsfilm-laten-maken": "Bedrijfsfilm", "pricing": "Pricing", "portfolio": "Portfolio", "contact": "Contact", "aanvraag": "Aanvraag",
  "privacybeleid": "Privacybeleid", "algemene-voorwaarden": "Algemene voorwaarden", "cookiebeleid": "Cookiebeleid",
 }
 ORG = {
