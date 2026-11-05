@@ -50,7 +50,7 @@ URL: `/website-voor-<branche>`. Eén pagina per branche met website, SEO en vide
 | Pagina | Hoofdzoekwoord (4+) | Extra long-tails | Bewijs | Data |
 |---|---|---|---|---|
 | `/website-voor-installateurs` ✅ live 27 okt | website laten maken installatiebedrijf | installatiebedrijf website laten maken · website laten maken voor installateur | 19 installateurs uit het CRM (naam + link) | al **plek 2–3** |
-| `/website-voor-aannemers` | aannemer website laten maken | website laten maken bouwbedrijf | Dekgro | 10–100/mnd |
+| `/website-voor-aannemers` ✅ live 5 nov | aannemer website laten maken | website laten maken bouwbedrijf | Dekgro | 10–100/mnd |
 | `/website-voor-schilders` | schilder website laten maken | website laten maken schildersbedrijf | Lilli's | 10–100/mnd |
 | `/website-voor-coaches` | website laten maken voor coaches | website voor coaches en therapeuten · website laten maken voor therapeuten | Palmyra, BodyScan | 10–100/mnd |
 | `/website-voor-autobedrijven` | website laten maken voor autobedrijf | website laten maken autobedrijf | CarsLease | 10–100/mnd |

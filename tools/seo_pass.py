@@ -46,6 +46,9 @@ META = {
  "bedrijfsfilm-laten-maken": ("Bedrijfsfilm laten maken in Den Bosch | Skyline Digital",
            "Bedrijfsfilm laten maken in Den Bosch: shoot op locatie €250, met drone €300, inclusief montage. Of een bedrijfsvideo van je eigen foto's voor €119.",
            "/assets/photo-filming-workshop.jpg"),
+ "website-voor-aannemers": ("Aannemer website laten maken: vanaf €375 | Skyline Digital",
+           "Aannemer website laten maken? Je projecten, werkgebied en offerteknop goed in beeld, voor bouw- en verbouwbedrijven. Vanaf €375, eerst gratis een testwebsite.",
+           "/assets/photo-handshake.jpg"),
  "video": ("Cinematische villa-film — gratis voorbeeld | Skyline Digital", None, "/assets/og-home.jpg"),
 }
 SERVICE = {

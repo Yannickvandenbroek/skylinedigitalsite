@@ -829,6 +829,145 @@ body = HEADER + f'''
 '''
 open("website-voor-installateurs.html", "w").write(head(title, desc, url, "/assets/photo-installateur.jpg", ld) + body + tail())
 
+# ---------- Branchepagina: website voor aannemers ----------
+# Opbouw volgens content/PAGINAPLAN.md (type 1), gelijk aan de installateurspagina; hoofdzoekwoord "aannemer website laten maken".
+url = BASE + "/website-voor-aannemers"
+title = "Aannemer website laten maken: vanaf €375 | Skyline Digital"
+desc = "Aannemer website laten maken? Je projecten, werkgebied en offerteknop goed in beeld, voor bouw- en verbouwbedrijven. Vanaf €375, eerst gratis een testwebsite."
+faqs = [
+ ("Wat kost een website voor een aannemer?", f"Een Horizon website kost €375 eenmalig, een 3D Cinematic website €749. SEO kan erbij voor €79 per maand. Lees ook <a href=\"/blog/wat-kost-een-website-laten-maken\" {L}>wat een website laten maken kost</a>."),
+ ("Hoe lang duurt het voordat mijn website online staat?", "Gemiddeld 4 tot 8 weken, afhankelijk van de omvang en hoe snel we foto's en feedback ontvangen. Je ziet eerst gratis een testwebsite."),
+ ("Ik heb weinig goede foto's van mijn projecten. Kan ik toch beginnen?", "Ja. We starten met de foto's die je hebt en vullen de projectpagina's later aan. Wil je meteen sterk beeld, dan maken we een foto- of videoshoot op locatie."),
+ ("Kunnen jullie mijn projecten filmen, ook met een drone?", f"Ja. Een foto- of videoshoot op locatie kost €250, met dronebeelden €300, inclusief montage en kleurcorrectie. Lees ook wat er komt kijken bij <a href=\"/blog/drone-video-laten-maken-kosten-en-regels\" {L}>een drone video laten maken</a>."),
+ ("Word ik gevonden op 'aannemer' plus mijn plaats?", f"Daar richten we de site op: je diensten en je werkgebied krijgen een eigen plek, en de technische basis-SEO staat goed. Een vaste positie in Google kan niemand beloven; met SEO voor €79 per maand werken we daar elke maand aan. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>."),
+ ("Werken jullie ook voor bouwbedrijven buiten Den Bosch?", "Ja. Onze klanten in bouw en klussen zitten onder meer in Nistelrode, Oss, Breda en Veendam. De kennismaking doen we op locatie, via telefoon of video."),
+]
+ld = {"@context":"https://schema.org","@graph":[
+    crumbs_ld(url, [("Website & SEO", BASE+"/website-seo"), ("Website voor aannemers", url)]),
+    faq_ld(url, faqs),
+    {"@type":"WebPage","@id":url+"#webpage","url":url,"name":title,"description":desc,"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"about":ORG_REF,"breadcrumb":{"@id":url+"#breadcrumb"}}]}
+needs = [
+ ("Je werk laten zien", "Een opdrachtgever wil zien wat je eerder hebt gebouwd. Een projectgalerij met echte foto's zegt meer dan elke belofte. Voor Tegeltechniek Dekgro, specialist in tegelwerk van 400 m² tot 5.000 m², bouwden we de site daarom rond een uitgebreide projectgalerij."),
+ ("Gevonden worden op dienst en plaats", "Mensen zoeken op 'aannemer' of 'verbouwing' plus hun woonplaats, niet op je bedrijfsnaam. Je diensten, zoals verbouw, aanbouw, renovatie of timmerwerk, en de plaatsen waar je werkt krijgen daarom een vaste plek op de site."),
+ ("Laten zien hoe je werkt", "Een verbouwing is een grote beslissing. Leg uit hoe een traject verloopt, van eerste bezoek tot oplevering. Bij Keukenmontage Lassie zien bezoekers het hele montageproces terwijl ze scrollen."),
+ ("Particulier én zakelijk overtuigen", "Een particulier wil een betrouwbare vakman in de buurt, een zakelijke opdrachtgever wil zien dat je grote projecten aankunt. Een goede site spreekt allebei aan, met aparte ingangen als je voor beide werkt."),
+ ("Vertrouwen in één oogopslag", "Laat zien wie er achter het bedrijf zit, hoe lang je al bezig bent en welke keurmerken of garanties je hebt. Reviews van eerdere klanten helpen daarbij."),
+ ("Een offerte zonder gedoe", "Een kort formulier of een directe knop naar WhatsApp maakt de drempel laag. Bij Lassie staan het offerteformulier en de contactgegevens altijd binnen handbereik."),
+]
+steps = [
+ ("Kennismaking", "Een kort gesprek via telefoon, video of op locatie: welk werk je doet, voor wie en in welke regio, en welke uitstraling bij je past."),
+ ("Gratis testwebsite", "We bouwen eerst een testversie met je logo, kleuren, diensten en een paar projecten. Gratis en vrijblijvend."),
+ ("Aanpassen tot het klopt", "Je geeft feedback en wij passen aan, tot je er trots op bent."),
+ ("Live", "We regelen het domein en zetten de site live. Daarna kun je SEO of een shoot van je projecten erbij nemen."),
+]
+builders = rows([
+ ('<a href="/werk-dekgro" style="color:inherit;text-decoration:none">Tegeltechniek Dekgro</a>', "tegelwerk van 400 m² tot 5.000 m² · website met projectgalerij en lokale vindbaarheid"),
+ ('<a href="/werk-lassie" style="color:inherit;text-decoration:none">Keukenmontage Lassie</a>', "Veendam · keukenmontage en klussen · website met scroll-animatie"),
+ (client_link("gremmen"), f"{CLIENTS['gremmen'][2]} · {CLIENTS['gremmen'][3]}"),
+ (client_link("dejongh"), f"{CLIENTS['dejongh'][2]} · {CLIENTS['dejongh'][3]}"),
+ (client_link("vanbeveren"), f"{CLIENTS['vanbeveren'][2]} · {CLIENTS['vanbeveren'][3]}"),
+])
+city_links = " · ".join(f'<a href="/website-laten-maken-{c["slug"]}" style="color:var(--gold-deep)">{c["name"]}</a>' for c in CITIES)
+body = HEADER + f'''
+  <section class="page-hero has-image">
+    <div class="page-hero-bg"><img src="/assets/photo-handshake.jpg" alt="Handdruk aan tafel bij een projectvoorstel" /></div>
+    <div class="page-hero-inner">
+      <p class="crumbs"><a href="/">Home</a> · <a href="/website-seo">Website &amp; SEO</a> · Aannemers</p>
+      <h1>Website laten maken voor je <span class="gold-text">aannemersbedrijf.</span></h1>
+      <p class="lead">Voor aannemers, bouw- en verbouwbedrijven, timmerlieden en tegelzetters. Je projecten in beeld, je werkgebied duidelijk en een offerte aanvragen in een paar klikken.</p>
+      <div class="hero-actions"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite</a><a href="#klanten" class="btn btn-ghost-light">Bekijk onze klanten</a></div>
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Kort antwoord</p>
+        <h2>Wat kost een website voor een <span class="gold-text">aannemer?</span></h2>
+        <p class="lead">Een complete website met meerdere pagina's kost bij ons €375 eenmalig: op maat, met je diensten, werkgebied en projecten, een duidelijke bel- en offerteknop en een SEO-vriendelijke opbouw. Wil je daarna hoger in Google komen, dan kan SEO erbij voor €79 per maand. Je ziet eerst gratis een testwebsite; pas als die bevalt, gaan we verder.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Wat de site moet doen</p>
+        <h2>Zes dingen die een aannemerswebsite <span class="gold-text">goed moet doen</span></h2>
+        <p class="lead">Dit zien we terugkomen bij bouw- en klusbedrijven, of je nu tegels zet, keukens monteert of complete verbouwingen doet.</p>
+      </div>
+      {rows(needs)}
+    </div>
+  </section>
+
+  <section class="bg-dark full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Wat we maken</p>
+        <h2>Alles voor je online zichtbaarheid, <span class="gold-text">vaste prijzen</span></h2>
+        <p class="lead">Je kiest wat je nodig hebt. Veel bouwbedrijven beginnen met een website en nemen later SEO of beeld van hun projecten erbij.</p>
+      </div>
+      <ul class="checks" style="max-width:760px">
+        <li>Horizon website op maat: €375 eenmalig, of een 3D Cinematic website voor €749</li>
+        <li>SEO voor €79 per maand, met maandelijkse rapportage</li>
+        <li>Foto- en videoshoot van je projecten: €250, met dronebeelden €300</li>
+        <li>Social media beheer vanaf €79 per maand</li>
+      </ul>
+      <p style="margin-top:28px;color:var(--on-dark-dim)">Alle prijzen en pakketten staan op onze <a href="/pricing" style="color:var(--gold)">prijzenpagina</a>. Meer over filmen op de bouwplaats lees je bij <a href="/bedrijfsfilm-laten-maken" style="color:var(--gold)">bedrijfsfilm laten maken</a>.</p>
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Werkwijze</p>
+        <h2>Zo werkt het, <span class="gold-text">in vier stappen</span></h2>
+      </div>
+      {rows(steps)}
+    </div>
+  </section>
+
+  <section class="bg-cream full" id="klanten">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Klanten</p>
+        <h2>Bouw- en klusbedrijven die <span class="gold-text">je voorgingen</span></h2>
+        <p class="lead">Een greep uit de bouw- en klusbedrijven waarvoor we een website bouwden. Bij Dekgro en Lassie lees je hoe we het aanpakten; klik op de andere namen om hun site live te bekijken.</p>
+      </div>
+      {builders}
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Website voor aannemers: <span class="gold-text">goed om te weten</span></h2>
+      </div>
+      {faq_html(faqs)}
+      <p style="margin-top:40px;text-align:center;color:var(--ink-dim)">Andere branche: <a href="/website-voor-installateurs" style="color:var(--gold-deep)">website voor installateurs</a></p>
+      <p style="margin-top:12px;text-align:center;color:var(--ink-dim)">Ook per plaats: {city_links}</p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="inner reveal">
+      <div class="gold-rule" style="margin-inline:auto"></div>
+      <h2>Eerst zien hoe jouw site eruitziet?</h2>
+      <p class="lead">We bouwen gratis een testwebsite voor je aannemersbedrijf. Bevalt hij, dan gaan we verder. Zo niet, dan kost het je niets.</p>
+      <div class="hero-actions hero-actions-center"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite aanvragen</a><a href="/contact" class="btn btn-ghost-light">Plan een gesprek</a></div>
+    </div>
+  </section>
+
+'''
+open("website-voor-aannemers.html", "w").write(head(title, desc, url, "/assets/photo-handshake.jpg", ld) + body + tail())
+
 # ---------- Regio-hub ----------
 url = BASE + "/regio"; title = "Website laten maken in Brabant, Gelderland en verder | Skyline Digital"
 desc = f"Skyline Digital bouwt websites, video en content voor ondernemers in Den Bosch, Eindhoven, Tilburg en nog {len(CITIES) - 3} plaatsen in Brabant, Gelderland, Utrecht en Overijssel. Bekijk je regio."
@@ -986,7 +1125,7 @@ for path in glob.glob("*.html") + glob.glob("blog/*.html"):
 # ---------- Sitemap ----------
 urls = [("/",1.0,"weekly"),("/website-seo",0.9,"monthly"),("/drone-video",0.9,"monthly"),("/social-media",0.9,"monthly"),("/ai-content",0.9,"monthly"),
         ("/pricing",0.8,"monthly"),("/portfolio",0.8,"monthly"),("/over-ons",0.7,"monthly"),("/contact",0.7,"yearly"),("/aanvraag",0.8,"yearly"),
-        ("/regio",0.7,"monthly"),("/blog",0.7,"weekly"),("/website-voor-installateurs",0.8,"monthly"),("/seo-den-bosch",0.8,"monthly","2026-10-31"),("/bedrijfsfilm-laten-maken",0.8,"monthly","2026-11-04")]
+        ("/regio",0.7,"monthly"),("/blog",0.7,"weekly"),("/website-voor-installateurs",0.8,"monthly"),("/website-voor-aannemers",0.8,"monthly","2026-11-05"),("/seo-den-bosch",0.8,"monthly","2026-10-31"),("/bedrijfsfilm-laten-maken",0.8,"monthly","2026-11-04")]
 urls += [(f"/website-laten-maken-{c['slug']}",0.8,"monthly") for c in CITIES]
 urls += [(f"/blog/{a['slug']}",0.7,"monthly",a["date"]) for a in ARTICLES]
 W = ["dekgro","lillis","bodyscan","echtgrieks","carslease","lassie","dejonge","elektropost","palmyra"]
