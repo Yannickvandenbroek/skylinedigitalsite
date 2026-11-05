@@ -1123,7 +1123,7 @@ for path in glob.glob("*.html") + glob.glob("blog/*.html"):
     open(path, "w").write(s)
 
 # ---------- Sitemap ----------
-urls = [("/",1.0,"weekly"),("/website-seo",0.9,"monthly"),("/drone-video",0.9,"monthly"),("/social-media",0.9,"monthly"),("/ai-content",0.9,"monthly"),
+urls = [("/",1.0,"weekly"),("/website-seo",0.9,"monthly"),("/drone-video",0.9,"monthly"),("/social-media",0.9,"monthly"),("/ai-content",0.9,"monthly"),("/bedrijfsvideo",0.9,"monthly"),
         ("/pricing",0.8,"monthly"),("/portfolio",0.8,"monthly"),("/over-ons",0.7,"monthly"),("/contact",0.7,"yearly"),("/aanvraag",0.8,"yearly"),
         ("/regio",0.7,"monthly"),("/blog",0.7,"weekly"),("/website-voor-installateurs",0.8,"monthly"),("/website-voor-aannemers",0.8,"monthly","2026-11-05"),("/seo-den-bosch",0.8,"monthly","2026-10-31"),("/bedrijfsfilm-laten-maken",0.8,"monthly","2026-11-04")]
 urls += [(f"/website-laten-maken-{c['slug']}",0.8,"monthly") for c in CITIES]
