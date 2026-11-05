@@ -139,18 +139,6 @@
             <div class="scard-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
           </label>
 
-          <label class="scard" for="s-drone">
-            <input type="checkbox" id="s-drone" name="dienst" value="Drone & Video" />
-            <div class="scard-inner">
-              <div class="scard-ico">
-                <svg viewBox="0 0 24 24"><path d="M12 3c3 3 4 6 4 9a4 4 0 0 1-8 0c0-3 1-6 4-9Z"/><path d="M5 14c-1 4 2 7 7 7s8-3 7-7"/></svg>
-              </div>
-              <h3>Drone &amp; Video</h3>
-              <p>Cinematische bedrijfsfilms en dronebeelden die jouw merk groots in beeld brengen.</p>
-            </div>
-            <div class="scard-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
-          </label>
-
           <label class="scard" for="s-social">
             <input type="checkbox" id="s-social" name="dienst" value="Social Media" />
             <div class="scard-inner">
@@ -164,13 +152,13 @@
           </label>
 
           <label class="scard" for="s-ai">
-            <input type="checkbox" id="s-ai" name="dienst" value="AI Content" />
+            <input type="checkbox" id="s-ai" name="dienst" value="AI bedrijfsvideo €119" />
             <div class="scard-inner">
               <div class="scard-ico">
-                <svg viewBox="0 0 24 24"><path d="m12 3 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10S2 17.5 2 12Z"/><path d="m10 8 6 4-6 4V8Z" fill="currentColor" stroke="none"/></svg>
               </div>
-              <h3>AI Content</h3>
-              <p>Beeld, video en tekst met AI — sneller en schaalbaar.</p>
+              <h3>AI bedrijfsvideo</h3>
+              <p>Cinematische bedrijfsvideo van je eigen foto's, met AI. Eerst gratis een preview, daarna €119.</p>
             </div>
             <div class="scard-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
           </label>
@@ -285,6 +273,33 @@
       </div>
 
     </div><!-- /wiz-wrap -->
+  </section>
+
+  <!-- Voorbeelden van gratis testwebsites (Yannick, 5-11-2026): echte voorstellen die we maakten. -->
+  <section class="vb-sectie" id="voorbeelden">
+    <div class="vb-wrap">
+      <div class="vb-head reveal">
+        <div class="gold-rule" style="margin-inline:auto"></div>
+        <p class="eyebrow">Zo ziet een gratis testwebsite eruit</p>
+        <h2>Gemaakt voor ondernemers <span class="gold-text">zoals jij</span></h2>
+        <p class="vb-intro">Drie testwebsites die we recent maakten voor personal trainers. Geen template: elke site is op maat, met de foto's en de stijl van de ondernemer. Klik en bekijk ze live.</p>
+      </div>
+      <div class="vb-grid">
+        <a class="vb-item reveal" href="https://voorstel.skylinedigital.nl/smart-personal-training/live/smart.html" target="_blank" rel="noopener">
+          <img src="assets/voorbeeld-smart-personal-training--smart.jpg" alt="Testwebsite voor Smart Personal Training" loading="lazy" />
+          <div class="vb-cap"><span>Personal trainer</span>Smart Personal Training</div>
+        </a>
+        <a class="vb-item reveal" href="https://voorstel.skylinedigital.nl/laura-scheepens-personal-training/live/baan.html" target="_blank" rel="noopener">
+          <img src="assets/voorbeeld-laura-scheepens-personal-training--baan.jpg" alt="Testwebsite voor Laura Scheepens Personal Training" loading="lazy" />
+          <div class="vb-cap"><span>Personal trainer</span>Laura Scheepens</div>
+        </a>
+        <a class="vb-item reveal" href="https://voorstel.skylinedigital.nl/eindhoven-personal-training/live/krijt.html" target="_blank" rel="noopener">
+          <img src="assets/voorbeeld-eindhoven-personal-training--krijt.jpg" alt="Testwebsite voor Eindhoven Personal Training" loading="lazy" />
+          <div class="vb-cap"><span>Personal trainer</span>Eindhoven Personal Training</div>
+        </a>
+      </div>
+      <div class="vb-cta"><a href="#wiz-1" class="btn btn-gold">Ook zo'n testwebsite? Gratis aanvragen</a></div>
+    </div>
   </section>
 
     <footer class="footer">
@@ -721,7 +736,7 @@
   /* Service cards */
   .scard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 14px;
     margin-bottom: 28px;
   }
@@ -830,7 +845,24 @@
   .wiz-fields select option { background: #12131a; color: #fff; }
   .req { color: var(--gold-deep, #c59c4e); }
   .wiz-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  @media (max-width: 520px) { .wiz-row { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { .wiz-row { grid-template-columns: 1fr; } .scard-grid { grid-template-columns: 1fr; } }
+
+  /* Voorbeelden onder de wizard */
+  .vb-sectie { background: #0b0c10; padding: 90px 20px 100px; border-top: 1px solid rgba(255,255,255,.06); }
+  .vb-wrap { max-width: 1100px; margin: 0 auto; }
+  .vb-head { text-align: center; margin-bottom: 44px; }
+  .vb-head .eyebrow { text-align: center; justify-content: center; }
+  .vb-head h2 { color: #fff; font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.05; margin-top: 12px; }
+  .vb-intro { color: rgba(244,241,233,.65); max-width: 640px; margin: 16px auto 0; font-size: 1.02rem; line-height: 1.6; }
+  .vb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .vb-item { display: block; position: relative; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,.1); background: #000; aspect-ratio: 4/3; box-shadow: 0 30px 70px rgba(0,0,0,.5); transition: transform .3s, border-color .3s; }
+  .vb-item:hover { transform: translateY(-6px); border-color: rgba(197,156,78,.5); }
+  .vb-item img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform 1s cubic-bezier(.2,.8,.2,1); }
+  .vb-item:hover img { transform: scale(1.05); }
+  .vb-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 20px 16px; color: #fff; font-family: 'Inter Tight', sans-serif; font-weight: 600; background: linear-gradient(180deg, transparent, rgba(0,0,0,.85)); }
+  .vb-cap span { display: block; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-hi, #e8c96b); margin-bottom: 3px; }
+  .vb-cta { text-align: center; margin-top: 40px; }
+  @media (max-width: 860px) { .vb-grid { grid-template-columns: 1fr; } .vb-sectie { padding: 70px 20px 80px; } }
 
   /* Actions */
   .wiz-actions { display: flex; justify-content: flex-end; margin-top: 28px; }
