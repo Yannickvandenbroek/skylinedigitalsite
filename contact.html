@@ -633,6 +633,8 @@
       try {
         const res = await fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { Accept: 'application/json' } });
         if (res.ok) {
+          // Conversie voor GA4 / Google Ads (5-11-2026).
+          if (window.gtag) gtag('event', 'generate_lead', { event_category: 'contact' });
           showStep(4);
           document.querySelector('.cw-progress').style.display = 'none';
         } else { throw new Error(); }

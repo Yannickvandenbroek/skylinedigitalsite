@@ -523,6 +523,8 @@
         const data = new FormData(form);
         const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
         if (res.ok) {
+          // Conversie voor GA4 / Google Ads (5-11-2026): elke verzonden aanvraag telt als lead.
+          if (window.gtag) gtag('event', 'generate_lead', { event_category: 'aanvraag', dienst: document.getElementById('f-dienst').value });
           if (document.getElementById('f-dienst').value.split(', ').includes('Gratis testwebsite')) {
             const bk = document.querySelector('#wiz-4 h2');
             const bt = document.querySelector('#wiz-4 .wiz-sub');
