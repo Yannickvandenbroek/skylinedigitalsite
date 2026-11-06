@@ -78,7 +78,7 @@ Tools trekken bezoekers en links, en zijn een natuurlijk eerste contact met loka
 
 | Tool | Hoofdzoekwoord (4+) | Extra long-tails | Hoe |
 |---|---|---|---|
-| `/google-review-link-maken` | google review link maken | hoe google review link krijgen · google review link generator · link voor google review | Gebruiker plakt zijn Place ID (via de gratis Place ID Finder van Google) → wij maken de directe reviewlink + QR-code. Volledig in de browser, geen kosten, geen API. |
+| `/google-review-link-maken` ✅ live 6 nov | google review link maken | hoe google review link krijgen · google review link generator · link voor google review | Gebruiker plakt zijn Place ID (via de gratis Place ID Finder van Google) → wij maken de directe reviewlink + QR-code. Volledig in de browser, geen kosten, geen API. |
 | `/website-check` | gratis seo check website | website snelheid testen gratis · website snelheid testen google · check meta title and description | Gebruiker vult URL in → serverless functie checkt titel, meta-omschrijving, H1, https, mobiel, plus de snelheidsscore via de gratis PageSpeed Insights API van Google. **Nodig: gratis API-sleutel in je Google Cloud-project.** Uitkomst + knop "gratis advies". |
 | `/website-kosten-berekenen` | wat kost een website laten maken | — | Rekenhulp zoals de AI-calculator op de prijzenpagina: pagina's, cinematic, SEO, video → indicatie. Vooral voor conversie. |
 

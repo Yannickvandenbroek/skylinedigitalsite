@@ -49,6 +49,9 @@ META = {
  "website-voor-aannemers": ("Aannemer website laten maken: vanaf €375 | Skyline Digital",
            "Aannemer website laten maken? Je projecten, werkgebied en offerteknop goed in beeld, voor bouw- en verbouwbedrijven. Vanaf €375, eerst gratis een testwebsite.",
            "/assets/photo-handshake.jpg"),
+ "google-review-link-maken": ("Google review link maken: gratis met QR-code | Skyline Digital",
+           "Google review link maken? Plak je Place ID en krijg gratis een directe reviewlink en QR-code, in je eigen browser en zonder account.",
+           "/assets/photo-phone-city.jpg"),
  "video": ("Cinematische villa-film — gratis voorbeeld | Skyline Digital", None, "/assets/og-home.jpg"),
 }
 SERVICE = {
@@ -61,7 +64,7 @@ SERVICE = {
 }
 BREAD = {
  "over-ons": "Over ons", "website-seo": "Website & SEO", "drone-video": "Drone & Video", "social-media": "Social Media",
- "ai-content": "AI Content", "seo-den-bosch": "SEO Den Bosch", "bedrijfsfilm-laten-maken": "Bedrijfsfilm", "pricing": "Pricing", "portfolio": "Portfolio", "contact": "Contact", "aanvraag": "Aanvraag",
+ "ai-content": "AI Content", "seo-den-bosch": "SEO Den Bosch", "bedrijfsfilm-laten-maken": "Bedrijfsfilm", "google-review-link-maken": "Google review link maken", "pricing": "Pricing", "portfolio": "Portfolio", "contact": "Contact", "aanvraag": "Aanvraag",
  "privacybeleid": "Privacybeleid", "algemene-voorwaarden": "Algemene voorwaarden", "cookiebeleid": "Cookiebeleid",
 }
 ORG = {
@@ -111,7 +114,7 @@ def h1_text(s):
 
 for path in sorted(glob.glob("*.html")):
     slug = path[:-5]
-    if slug.startswith("google"): continue
+    if re.fullmatch(r"google[0-9a-f]+", slug): continue  # alleen het Search Console-verificatiebestand
     s = open(path).read()
     orig = s
     s = clean_links(s)
