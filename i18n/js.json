@@ -1,5 +1,6 @@
 {
  "en": {
+  ">Beschrijf je project <span class=\"stijl-hint\">(optioneel)</span><": ">Describe your project <span class=\"stijl-hint\">(optional)</span><",
   "'Hoi Yannick, ik zag de video \"'": "'Hi Yannick, I saw the video \"'",
   "'\" op je site. Ik wil graag een gratis voorbeeldvideo van mijn villa.'": "'\" on your website. I would like a free sample video of my villa.'",
   "'Bekijk video: '": "'Watch video: '",
@@ -61,6 +62,7 @@
   ">Welke websites spreken je aan? <span class=\"stijl-hint\">Vink aan wat je mooi vindt</span><": ">Which websites appeal to you? <span class=\"stijl-hint\">Tick what you like</span><"
  },
  "it": {
+  ">Beschrijf je project <span class=\"stijl-hint\">(optioneel)</span><": ">Descrivi il tuo progetto <span class=\"stijl-hint\">(facoltativo)</span><",
   "'Hoi Yannick, ik zag de video \"'": "'Ciao Yannick, ho visto il video \"'",
   "'\" op je site. Ik wil graag een gratis voorbeeldvideo van mijn villa.'": "'\" sul tuo sito. Vorrei un video di prova gratuito della mia villa.'",
   "'Bekijk video: '": "'Guarda il video: '",
@@ -122,6 +124,7 @@
   ">Welke websites spreken je aan? <span class=\"stijl-hint\">Vink aan wat je mooi vindt</span><": ">Quali siti ti piacciono? <span class=\"stijl-hint\">Spunta ciò che ti piace</span><"
  },
  "es": {
+  ">Beschrijf je project <span class=\"stijl-hint\">(optioneel)</span><": ">Describe tu proyecto <span class=\"stijl-hint\">(opcional)</span><",
   "'Hoi Yannick, ik zag de video \"'": "'Hola Yannick, vi el vídeo \"'",
   "'\" op je site. Ik wil graag een gratis voorbeeldvideo van mijn villa.'": "'\" en tu web. Me gustaría un vídeo de muestra gratis de mi villa.'",
   "'Bekijk video: '": "'Ver vídeo: '",

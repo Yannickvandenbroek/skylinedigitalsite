@@ -225,9 +225,15 @@
 
             <!-- Upload sectie — alleen zichtbaar bij Gratis testwebsite -->
             <div id="upload-section" hidden>
-              <div class="upload-divider"><span>Materiaal voor je testwebsite</span></div>
+              <div class="upload-divider"><span>Logo en foto's · optioneel</span></div>
+              <div class="upload-intro">
+                <span class="upload-badge">Helemaal optioneel</span>
+                <p class="upload-intro-title">Wil je de website zelf een richting op sturen?</p>
+                <p class="upload-intro-text">Stuur dan je logo en een paar foto's mee, bijvoorbeeld van je werk, je team of je pand. Dan bouwen we je testwebsite meteen met jouw eigen beeld en kleuren.</p>
+                <p class="upload-intro-text">Niets bij de hand? Geen enkel probleem. Sla dit gewoon over: wij kiezen passend beeld en gebruiken wat er op je huidige website staat.</p>
+              </div>
               <div class="field">
-                <label for="f-logo">Logo <span class="upload-hint">PNG, SVG of PDF · max 10 MB</span></label>
+                <label for="f-logo">Logo <span class="upload-hint">optioneel · PNG, SVG of PDF · max 10 MB</span></label>
                 <div class="upload-zone" id="logo-zone">
                   <input type="file" id="f-logo" name="Logo" accept="image/*,.pdf,.svg" />
                   <div class="upload-zone-inner">
@@ -238,7 +244,7 @@
                 </div>
               </div>
               <div class="field">
-                <label for="f-fotos">Foto's <span class="upload-hint">Meerdere bestanden mogelijk · JPG, PNG · max 25 MB</span></label>
+                <label for="f-fotos">Foto's <span class="upload-hint">optioneel · meerdere bestanden mogelijk · JPG, PNG · max 25 MB</span></label>
                 <div class="upload-zone" id="fotos-zone">
                   <input type="file" id="f-fotos" name="Fotos" accept="image/*" multiple />
                   <div class="upload-zone-inner">
@@ -248,6 +254,7 @@
                   </div>
                 </div>
               </div>
+              <p class="upload-skip">Geen logo of foto's? Je kunt je aanvraag gewoon versturen.</p>
             </div>
           </div>
 
@@ -460,7 +467,7 @@
 
       html += `
         <div class="field">
-          <label>Beschrijf je project <span class="req">*</span></label>
+          <label>Beschrijf je project <span class="stijl-hint">(optioneel)</span></label>
           <textarea id="s2-beschrijving" rows="4" placeholder="Wat wil je bereiken? Doelgroep, deadline, specifieke wensen…"></textarea>
         </div>
         <div class="field">
@@ -490,8 +497,7 @@
 
     // ── Step 2 → 3 ──
     document.getElementById('btn-next-2').addEventListener('click', () => {
-      const desc = document.getElementById('s2-beschrijving');
-      if (!desc || !desc.value.trim()) { document.getElementById('err-2').hidden = false; return; }
+      // Projectbeschrijving is optioneel (Yannick, 6-11-2026): stap 2 heeft geen verplicht veld meer.
       document.getElementById('err-2').hidden = true;
 
       // collect step 2 values into hidden fields
@@ -939,6 +945,29 @@
     font-family: 'Inter Tight', sans-serif; font-size: .68rem; font-weight: 700;
     letter-spacing: .1em; text-transform: uppercase;
     color: var(--gold-deep, #c59c4e); white-space: nowrap;
+  }
+  .upload-intro {
+    margin: 0 0 22px; padding: 18px 20px; border-radius: 14px;
+    background: rgba(197,156,78,.06); border: 1px solid rgba(197,156,78,.22);
+  }
+  .upload-badge {
+    display: inline-block; margin-bottom: 10px; padding: 4px 10px; border-radius: 999px;
+    font-family: 'Inter Tight', sans-serif; font-size: .66rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    color: #12131a; background: var(--gold-deep, #c59c4e);
+  }
+  .upload-intro-title {
+    margin: 0 0 6px; font-family: 'Inter Tight', sans-serif; font-weight: 700;
+    font-size: 1rem; color: #fff;
+  }
+  .upload-intro-text {
+    margin: 0 0 6px; font-family: 'Inter', sans-serif; font-size: .86rem; line-height: 1.55;
+    color: rgba(255,255,255,.62);
+  }
+  .upload-intro-text:last-child { margin-bottom: 0; }
+  .upload-skip {
+    margin: 4px 0 0; text-align: center; font-family: 'Inter', sans-serif;
+    font-size: .82rem; color: rgba(255,255,255,.5);
   }
   .upload-hint {
     font-size: .73rem; color: rgba(255,255,255,.3);
