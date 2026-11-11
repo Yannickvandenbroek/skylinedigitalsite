@@ -12,7 +12,6 @@ Beschikbare projectpagina's voor eigen ervaring: `/werk-dekgro` (tegelwerk), `/w
 Volgorde = planning (zie `content/CONTENTPLAN.md`): bovenste open onderwerp is de volgende week. Hoofdzoekwoorden zijn long-tail: 4 of meer woorden.
 
 - [ ] **Wat kost een webshop laten maken?** — zoekwoord: "wat kost een webshop laten maken" — long-tail ook: "webshop laten maken per maand betalen", "webshop laten maken kosten" (10–100/mnd); platform, betaalmodule, producten, onderhoud; alleen prijzen van Skyline als die op de site staan — links: /website-seo, /pricing, /blog/wat-kost-een-website-per-maand
-- [ ] **WordPress of maatwerk: wat kost een WordPress-website laten maken?** — zoekwoord: "wat kost een wordpress website laten maken" — long-tail ook: "maatwerk wordpress website laten maken", "wordpress website laten maken prijs" (hoofdterm 100–1K/mnd); eerlijk vergelijken — links: /website-seo, /blog/website-laten-maken-waar-op-letten, /pricing
 - [ ] **Website laten maken door AI of door een bureau?** — zoekwoord: "website laten maken door ai" — long-tail ook: "website laten maken met ai" (10–100/mnd); wat AI-websitebouwers wel en niet kunnen, eigendom, snelheid, maatwerk — links: /website-seo, /ai-content, /pricing
 - [ ] **Hoe lang mogen Instagram Reels zijn? Formaat, lengte en safe zone** — zoekwoord: "hoe lang mogen instagram reels zijn" — long-tail ook: "instagram reels safe zone", "hoe maak je instagram reels"; officiële specificaties (bron: Instagram/Meta), tips voor bedrijven — links: /social-media, /drone-video, /blog/bedrijfsvideo-laten-maken-kosten
 - [ ] **Wat kost social media uitbesteden?** — zoekwoord: "wat kost social media uitbesteden" — long-tail ook: "social media uitbesteden prijzen" (10–100/mnd), "social media beheer uitbesteden"; wat je krijgt per budget; vanaf €79 p/m — links: /social-media, /pricing
@@ -53,6 +52,7 @@ Deze onderwerpen worden branche- of dienstpagina's volgens `content/CONTENTPLAN.
 - [→ pagina] **Website onderhoud: updates, back-ups en beveiliging** — zoekwoord: "website onderhoud" — links: /website-seo, /pricing
 
 ## Gedaan
+- [x] 2026-11-11 → /blog/wat-kost-een-wordpress-website-laten-maken — Wat kost een WordPress website laten maken? Of maatwerk?
 - [x] 2026-11-10 → /blog/website-laten-maken-goedkoop — Website laten maken goedkoop: waar zit het verschil?
 - [x] 2026-11-09 → /blog/google-bedrijfsprofiel-aanmaken — Google Bedrijfsprofiel aanmaken, ook zonder vast adres
 - [x] 2026-11-03 → /blog/hoe-google-reviews-krijgen — Hoe Google reviews krijgen: zo vraag je ze (en wat niet mag)
