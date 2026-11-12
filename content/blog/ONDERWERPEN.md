@@ -42,7 +42,7 @@ Volgorde = planning (zie `content/CONTENTPLAN.md`): bovenste open onderwerp is d
 
 ## Wordt een eigen pagina (niet als blog schrijven)
 Deze onderwerpen worden branche- of dienstpagina's volgens `content/CONTENTPLAN.md`. Schrijf er geen blog over; link er later wel naartoe.
-- [→ pagina] **Website laten maken voor coaches en therapeuten** — zoekwoord: "website laten maken voor coaches" — invalshoek: rust en vertrouwen uitstralen, afspraak plannen, werkwijze in stappen; case Palmyra Coaching — links: /werk-palmyra, /website-seo, /pricing
+- [→ pagina ✅ live 12 nov /website-voor-coaches] **Website laten maken voor coaches en therapeuten** — zoekwoord: "website laten maken voor coaches" — invalshoek: rust en vertrouwen uitstralen, afspraak plannen, werkwijze in stappen; case Palmyra Coaching — links: /werk-palmyra, /website-seo, /pricing
 - [→ pagina] **Website voor aannemers en bouwbedrijven: wat moet erop?** — zoekwoord: "website voor aannemers" — invalshoek: projectgalerij, werkgebied, offerteaanvraag, vertrouwen; case Dekgro — links: /werk-dekgro, /website-seo, /website-laten-maken-den-bosch
 - [→ pagina] **Website voor elektriciens en installateurs** — zoekwoord: "website installateur" — invalshoek: specialismen per pagina, werkgebied, storingsnummer zichtbaar; cases De Jonge en Elektropost — links: /werk-dejonge, /werk-elektropost, /website-seo
 - [→ pagina] **Website voor schilders en afbouwbedrijven** — zoekwoord: "website schildersbedrijf" — invalshoek: binnen/buiten/behang als aparte diensten, voor-en-na-foto's; case Lilli's — links: /werk-lillis, /website-seo

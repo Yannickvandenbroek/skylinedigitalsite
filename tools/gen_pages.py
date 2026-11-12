@@ -970,6 +970,145 @@ body = HEADER + f'''
 '''
 open("website-voor-aannemers.html", "w").write(head(title, desc, url, "/assets/photo-handshake.jpg", ld) + body + tail())
 
+# ---------- Branchepagina: website voor coaches ----------
+# Opbouw volgens content/PAGINAPLAN.md (type 1), gelijk aan de installateurs- en aannemerspagina; hoofdzoekwoord "website laten maken voor coaches".
+url = BASE + "/website-voor-coaches"
+title = "Website laten maken voor coaches: vanaf €299 | Skyline Digital"
+desc = "Website laten maken voor coaches en therapeuten? Rust, vertrouwen en een makkelijke eerste afspraak. Vanaf €299, eerst gratis een testwebsite."
+faqs = [
+ ("Wat kost een website voor een coach?", f"Een Horizon website kost €299 eenmalig of €29 per maand (hosting en onderhoud inbegrepen, minimaal 12 maanden). Een 3D Cinematic website kost €749. SEO kan erbij voor €79 per maand. Lees ook <a href=\"/blog/wat-kost-een-website-laten-maken\" {L}>wat een website laten maken kost</a>."),
+ ("Hoe lang duurt het voordat mijn website online staat?", "Gemiddeld 4 tot 8 weken, afhankelijk van de omvang en hoe snel we foto's en feedback ontvangen. Je ziet eerst gratis een testwebsite."),
+ ("Ik begin net als coach. Is een website dan al zinvol?", f"Ja, juist dan: mensen zoeken je op voordat ze contact opnemen. Met een Horizon website voor €29 per maand hoef je niet in één keer te betalen. Lees ook onze tips over <a href=\"/blog/website-laten-maken-zzp\" {L}>een website laten maken als zzp'er</a>."),
+ ("Hoe nemen bezoekers contact met me op?", "Zoals jij dat wilt: met een knop om te bellen, een knop naar WhatsApp of een kort formulier dat rechtstreeks in je mail komt. Bij Palmyra Coaching staan telefoon en WhatsApp direct in beeld."),
+ ("Heb ik professionele foto's van mezelf nodig?", f"Niet om te beginnen. We starten met de foto's die je hebt. Wil je beeld dat rust en vertrouwen uitstraalt, dan maken we een foto- of videoshoot op locatie voor €250. Lees ook wat er komt kijken bij <a href=\"/blog/bedrijfsvideo-laten-maken-kosten\" {L}>een bedrijfsvideo laten maken</a>."),
+ ("Word ik gevonden op 'coach' plus mijn plaats?", f"Daar richten we de site op: je specialisaties en de plaats waar je praktijk zit krijgen een eigen plek, en de technische basis-SEO staat goed. Een vaste positie in Google kan niemand beloven; met SEO voor €79 per maand werken we daar elke maand aan. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>."),
+]
+ld = {"@context":"https://schema.org","@graph":[
+    crumbs_ld(url, [("Website & SEO", BASE+"/website-seo"), ("Website voor coaches", url)]),
+    faq_ld(url, faqs),
+    {"@type":"WebPage","@id":url+"#webpage","url":url,"name":title,"description":desc,"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"about":ORG_REF,"breadcrumb":{"@id":url+"#breadcrumb"}}]}
+needs = [
+ ("Rust en vertrouwen uitstralen", "Wie een coach of therapeut zoekt, zit vaak ergens mee. De eerste indruk moet daarom kalm en warm zijn, niet druk. Voor Palmyra Coaching in Oss kozen we sfeervolle beeldtaal die rust uitstraalt; bij BodyScan Waalre zorgt een kalm kleurgebruik voor hetzelfde gevoel."),
+ ("Laten zien hoe een traject verloopt", "Mensen willen weten wat ze kunnen verwachten voordat ze bellen. Leg je aanpak uit in een paar duidelijke stappen. Op de site van Palmyra vertelt een 'In balans'-sectie de aanpak in drie stappen, die zich opstapelen terwijl je scrolt."),
+ ("Je specialisaties overzichtelijk", "Coach je op beweging, voeding, werk of relaties? Zet elke specialisatie apart en helder op een rij. Dan herkent een bezoeker zich sneller, en kan Google je ook op die onderwerpen vinden. Palmyra bundelt alle specialisaties op één overzichtelijke plek."),
+ ("Een behandeling begrijpelijk uitleggen", "Werk je met een methode die niet iedereen kent, leg die dan in gewone taal uit. BodyScan Waalre werkt met Vitalfeld Technologie; de site legt rustig uit wat dat is, zodat bezoekers met vertrouwen een afspraak maken."),
+ ("Laten zien wie je bent", "Bij coaching kiest iemand eerst de persoon en dan pas de dienst. Een eerlijke over-mij-pagina, echte foto's en klantverhalen helpen daarbij. Op de site van Palmyra staan klantverhalen en een FAQ met de vragen die nieuwe cliënten stellen."),
+ ("Een eerste afspraak zonder drempel", "Maak de stap naar een kennismaking zo klein mogelijk: een knop om te bellen, WhatsApp of een kort formulier. BodyScan heeft een duidelijke knop om direct een afspraak te maken, Palmyra laat bezoekers bellen of appen."),
+]
+steps = [
+ ("Kennismaking", "Een kort gesprek via telefoon, video of op locatie: wat je doet, voor wie en welke uitstraling bij je praktijk past."),
+ ("Gratis testwebsite", "We bouwen eerst een testversie met je logo, kleuren, specialisaties en werkwijze. Gratis en vrijblijvend."),
+ ("Aanpassen tot het klopt", "Je geeft feedback en wij passen aan, tot de site voelt zoals jouw praktijk."),
+ ("Live", "We regelen het domein en zetten de site live. Daarna kun je SEO of content voor je socials erbij nemen."),
+]
+coaches = rows([
+ ('<a href="/werk-palmyra" style="color:inherit;text-decoration:none">Palmyra Coaching</a>', "Oss · persoonlijke begeleiding in beweging, voeding en balans · rustige website met de aanpak in drie stappen"),
+ ('<a href="/werk-bodyscan" style="color:inherit;text-decoration:none">BodyScan Waalre</a>', "Waalre · gezondheidsscans met Vitalfeld Technologie · kalme website met een directe afspraakknop"),
+ ('<a href="https://voorstel.skylinedigital.nl/smart-personal-training/live/smart.html" rel="noopener" style="color:inherit;text-decoration:none">Smart Personal Training</a>', "personal trainer · gratis testwebsite"),
+ ('<a href="https://voorstel.skylinedigital.nl/eindhoven-personal-training/live/krijt.html" rel="noopener" style="color:inherit;text-decoration:none">Eindhoven Personal Training</a>', "personal trainer · gratis testwebsite"),
+])
+city_links = " · ".join(f'<a href="/website-laten-maken-{c["slug"]}" style="color:var(--gold-deep)">{c["name"]}</a>' for c in CITIES)
+body = HEADER + f'''
+  <section class="page-hero has-image">
+    <div class="page-hero-bg"><img src="/assets/photo-cafe-desk.jpg" alt="Koffie en een notitieboek op tafel bij het raam" /></div>
+    <div class="page-hero-inner">
+      <p class="crumbs"><a href="/">Home</a> · <a href="/website-seo">Website &amp; SEO</a> · Coaches</p>
+      <h1>Website laten maken voor <span class="gold-text">coaches en therapeuten.</span></h1>
+      <p class="lead">Voor coaches, therapeuten, personal trainers en praktijken voor gezondheid en welzijn. Een site die rust uitstraalt, uitlegt hoe je werkt en de eerste afspraak makkelijk maakt.</p>
+      <div class="hero-actions"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite</a><a href="#klanten" class="btn btn-ghost-light">Bekijk voorbeelden</a></div>
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Kort antwoord</p>
+        <h2>Wat kost een website voor een <span class="gold-text">coach?</span></h2>
+        <p class="lead">Een complete website met meerdere pagina's kost bij ons €299 eenmalig, of €29 per maand met hosting en onderhoud erbij. Je krijgt een site op maat, met je specialisaties, je werkwijze, wie je bent en een duidelijke knop voor een kennismaking. Wil je daarna hoger in Google komen, dan kan SEO erbij voor €79 per maand. Je ziet eerst gratis een testwebsite; pas als die bevalt, gaan we verder.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Wat de site moet doen</p>
+        <h2>Zes dingen die een website voor coaches <span class="gold-text">goed moet doen</span></h2>
+        <p class="lead">Dit zien we terugkomen bij coaches en praktijken, of je nu mensen begeleidt in balans en beweging of gezondheidsscans doet.</p>
+      </div>
+      {rows(needs)}
+    </div>
+  </section>
+
+  <section class="bg-dark full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Wat we maken</p>
+        <h2>Alles voor je online zichtbaarheid, <span class="gold-text">vaste prijzen</span></h2>
+        <p class="lead">Je kiest wat je nodig hebt. Veel coaches beginnen met een website en nemen later SEO of content voor hun socials erbij.</p>
+      </div>
+      <ul class="checks" style="max-width:760px">
+        <li>Horizon website op maat: €299 eenmalig of €29 per maand, of een 3D Cinematic website voor €749</li>
+        <li>SEO voor €79 per maand, met maandelijkse rapportage</li>
+        <li>Aurora: elke maand 2 bedrijfsvideo's en 8 foto's voor je socials, €149 per maand</li>
+        <li>Foto- en videoshoot op locatie: €250</li>
+        <li>Social media beheer vanaf €79 per maand</li>
+      </ul>
+      <p style="margin-top:28px;color:var(--on-dark-dim)">Alle prijzen en pakketten staan op onze <a href="/pricing" style="color:var(--gold)">prijzenpagina</a>. Meer over vindbaarheid lees je bij <a href="/website-seo" style="color:var(--gold)">website &amp; SEO</a>.</p>
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Werkwijze</p>
+        <h2>Zo werkt het, <span class="gold-text">in vier stappen</span></h2>
+      </div>
+      {rows(steps)}
+    </div>
+  </section>
+
+  <section class="bg-cream full" id="klanten">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Voorbeelden</p>
+        <h2>Coaches en praktijken die <span class="gold-text">je voorgingen</span></h2>
+        <p class="lead">Bij Palmyra Coaching en BodyScan Waalre lees je hoe we het aanpakten. Voor twee personal trainers maakten we onlangs een gratis testwebsite; klik op de naam om die te bekijken.</p>
+      </div>
+      {coaches}
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Website voor coaches: <span class="gold-text">goed om te weten</span></h2>
+      </div>
+      {faq_html(faqs)}
+      <p style="margin-top:40px;text-align:center;color:var(--ink-dim)">Andere branches: <a href="/website-voor-installateurs" style="color:var(--gold-deep)">website voor installateurs</a> · <a href="/website-voor-aannemers" style="color:var(--gold-deep)">website voor aannemers</a></p>
+      <p style="margin-top:12px;text-align:center;color:var(--ink-dim)">Ook per plaats: {city_links}</p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="inner reveal">
+      <div class="gold-rule" style="margin-inline:auto"></div>
+      <h2>Eerst zien hoe jouw site eruitziet?</h2>
+      <p class="lead">We bouwen gratis een testwebsite voor je praktijk. Bevalt hij, dan gaan we verder. Zo niet, dan kost het je niets.</p>
+      <div class="hero-actions hero-actions-center"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite aanvragen</a><a href="/contact" class="btn btn-ghost-light">Plan een gesprek</a></div>
+    </div>
+  </section>
+
+'''
+open("website-voor-coaches.html", "w").write(head(title, desc, url, "/assets/photo-cafe-desk.jpg", ld) + body + tail())
+
 # ---------- Regio-hub ----------
 url = BASE + "/regio"; title = "Website laten maken in Brabant, Gelderland en verder | Skyline Digital"
 desc = f"Skyline Digital bouwt websites, video en content voor ondernemers in Den Bosch, Eindhoven, Tilburg en nog {len(CITIES) - 3} plaatsen in Brabant, Gelderland, Utrecht en Overijssel. Bekijk je regio."
@@ -1127,7 +1266,7 @@ for path in glob.glob("*.html") + glob.glob("blog/*.html"):
 # ---------- Sitemap ----------
 urls = [("/",1.0,"weekly"),("/website-seo",0.9,"monthly"),("/drone-video",0.9,"monthly"),("/social-media",0.9,"monthly"),("/ai-content",0.9,"monthly"),("/bedrijfsvideo",0.9,"monthly"),
         ("/pricing",0.8,"monthly"),("/portfolio",0.8,"monthly"),("/over-ons",0.7,"monthly"),("/contact",0.7,"yearly"),("/aanvraag",0.8,"yearly"),
-        ("/regio",0.7,"monthly"),("/blog",0.7,"weekly"),("/website-voor-installateurs",0.8,"monthly"),("/website-voor-aannemers",0.8,"monthly","2026-11-05"),("/seo-den-bosch",0.8,"monthly","2026-10-31"),("/bedrijfsfilm-laten-maken",0.8,"monthly","2026-11-04"),("/google-review-link-maken",0.7,"monthly","2026-11-06")]
+        ("/regio",0.7,"monthly"),("/blog",0.7,"weekly"),("/website-voor-installateurs",0.8,"monthly"),("/website-voor-aannemers",0.8,"monthly","2026-11-05"),("/website-voor-coaches",0.8,"monthly","2026-11-12"),("/seo-den-bosch",0.8,"monthly","2026-10-31"),("/bedrijfsfilm-laten-maken",0.8,"monthly","2026-11-04"),("/google-review-link-maken",0.7,"monthly","2026-11-06")]
 urls += [(f"/website-laten-maken-{c['slug']}",0.8,"monthly") for c in CITIES]
 urls += [(f"/blog/{a['slug']}",0.7,"monthly",a["date"]) for a in ARTICLES]
 W = ["dekgro","lillis","bodyscan","echtgrieks","carslease","lassie","dejonge","elektropost","palmyra"]
