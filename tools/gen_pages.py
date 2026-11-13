@@ -1109,6 +1109,142 @@ body = HEADER + f'''
 '''
 open("website-voor-coaches.html", "w").write(head(title, desc, url, "/assets/photo-cafe-desk.jpg", ld) + body + tail())
 
+# ---------- Branchepagina: website voor schilders ----------
+# Opbouw volgens content/PAGINAPLAN.md (type 1), gelijk aan de installateurs-, aannemers- en coachespagina; hoofdzoekwoord "schilder website laten maken".
+url = BASE + "/website-voor-schilders"
+title = "Schilder website laten maken: vanaf €299 | Skyline Digital"
+desc = "Schilder website laten maken? Binnenwerk, buitenwerk en behang helder in beeld, met foto's van je eigen werk. Vanaf €299, eerst gratis een testwebsite."
+faqs = [
+ ("Wat kost een website voor een schildersbedrijf?", f"Een Horizon website kost €299 eenmalig of €29 per maand (hosting en onderhoud inbegrepen, minimaal 12 maanden). Een Skyline website met basis-SEO kost €575, een 3D Cinematic website €749. SEO kan erbij voor €79 per maand. Lees ook <a href=\"/blog/wat-kost-een-website-laten-maken\" {L}>wat een website laten maken kost</a>."),
+ ("Hoe lang duurt het voordat mijn website online staat?", "Gemiddeld 4 tot 8 weken, afhankelijk van de omvang en hoe snel we foto's en feedback ontvangen. Je ziet eerst gratis een testwebsite."),
+ ("Ik heb nog geen goede foto's van mijn werk. Wat nu?", "We beginnen met de foto's die je hebt, ook die van je telefoon. Wil je je werk mooier in beeld, dan maken we een foto- en videoshoot op locatie voor €250, of €300 met drone, handig voor gevels en dakgoten die je vanaf de grond slecht ziet."),
+ ("Kan ik zelf nieuwe projecten op mijn website zetten?", "Ja. Je past teksten en foto's daarna zelf aan, dus na elke klus kun je een nieuw project met foto's toevoegen."),
+ ("Ik werk als zzp-schilder vanuit huis. Is een website dan zinvol?", f"Ja. Klanten zoeken je op voordat ze bellen, ook als je via via bent aanbevolen. Met een Horizon website voor €29 per maand hoef je niet in één keer te betalen. Lees ook onze tips over <a href=\"/blog/website-laten-maken-zzp\" {L}>een website laten maken als zzp'er</a> en hoe je <a href=\"/blog/google-bedrijfsprofiel-aanmaken\" {L}>een Google Bedrijfsprofiel aanmaakt zonder vast adres</a>."),
+ ("Word ik gevonden op 'schilder' plus mijn plaats?", f"Daar richten we de site op: elke dienst en je werkgebied krijgen een eigen plek, en de technische basis-SEO staat goed. Een vaste positie in Google kan niemand beloven; met SEO voor €79 per maand werken we daar elke maand aan. Lees ook onze <a href=\"/blog/lokale-seo-tips\" {L}>tips voor lokale SEO</a>."),
+]
+ld = {"@context":"https://schema.org","@graph":[
+    crumbs_ld(url, [("Website & SEO", BASE+"/website-seo"), ("Website voor schilders", url)]),
+    faq_ld(url, faqs),
+    {"@type":"WebPage","@id":url+"#webpage","url":url,"name":title,"description":desc,"inLanguage":"nl-NL","isPartOf":{"@id":BASE+"/#website"},"about":ORG_REF,"breadcrumb":{"@id":url+"#breadcrumb"}}]}
+needs = [
+ ("Binnenwerk, buitenwerk en behang apart", "Wie de kozijnen wil laten schilderen, zoekt iets anders dan wie nieuw behang wil. Geef elke dienst een eigen plek met eigen uitleg. Dan zien bezoekers meteen dat je doet wat ze zoeken, en kan Google je op elke dienst vinden. Voor Lilli's Schilderwerken maakten we zo'n helder dienstenoverzicht met binnenwerk, buitenwerk en behang."),
+ ("Je eigen werk laten zien", "Bij een schilder kijken klanten eerst naar het resultaat. Zet echte foto's van je eigen klussen op de site, het liefst van vóór en na. Dat zegt meer dan elke tekst, en stockfoto's van een lachende schilder overtuigen niemand."),
+ ("Vertrouwen wekken voordat je binnenstapt", "Je komt bij mensen thuis, soms dagenlang. Daarom willen ze weten wie er komt. Laat zien wie je bent en hoe je werkt. Bij Lilli's kozen we een sfeervolle, verzorgde uitstraling met het vakmanschap centraal, zodat de site vertrouwen wekt voordat er iemand belt."),
+ ("Snel een offerte aanvragen", "Wie een schilder zoekt, wil weten wat het kost en wanneer je kunt. Maak de stap klein: een knop om te bellen, WhatsApp of een kort formulier waarin mensen de klus beschrijven en foto's meesturen. Lilli's heeft een contactformulier en duidelijke knoppen om direct contact op te nemen."),
+ ("Duidelijk waar je werkt", "De meeste klanten zoeken op 'schilder' plus hun plaats. Noem de plaatsen waar je werkt op je site en zet je bedrijf in Google Maps met een Google Bedrijfsprofiel. Dat kan ook als je vanuit huis werkt zonder winkel of kantoor."),
+ ("Reviews van tevreden klanten", f"Een paar goede reviews van echte klanten geven vaak de doorslag. Vraag erom na elke klus. Met onze gratis tool maak je een <a href=\"/google-review-link-maken\" {L}>directe Google review link</a> en QR-code; lees ook <a href=\"/blog/hoe-google-reviews-krijgen\" {L}>hoe je aan meer Google-reviews komt</a>."),
+]
+steps = [
+ ("Kennismaking", "Een kort gesprek via telefoon, video of op locatie: welke klussen je doet, waar je werkt en welke uitstraling bij je bedrijf past."),
+ ("Gratis testwebsite", "We bouwen eerst een testversie met je logo, kleuren, diensten en foto's van je werk. Gratis en vrijblijvend."),
+ ("Aanpassen tot het klopt", "Je geeft feedback en wij passen aan, tot de site voelt als jouw schildersbedrijf."),
+ ("Live en vindbaar", "We regelen het domein en zetten de site live. Daarna kun je SEO erbij nemen om beter gevonden te worden op 'schilder' plus je plaats."),
+]
+schilders = rows([
+ ('<a href="/werk-lillis" style="color:inherit;text-decoration:none">Lilli\'s Schilderwerken</a>', "schildersbedrijf · binnenwerk, buitenwerk en behang · stijlvolle website met een helder dienstenoverzicht, contactformulier en directe knoppen"),
+])
+city_links = " · ".join(f'<a href="/website-laten-maken-{c["slug"]}" style="color:var(--gold-deep)">{c["name"]}</a>' for c in CITIES)
+body = HEADER + f'''
+  <section class="page-hero has-image">
+    <div class="page-hero-bg"><img src="/assets/work-lillis.jpg" alt="Website van Lilli's Schilderwerken, gemaakt door Skyline Digital" /></div>
+    <div class="page-hero-inner">
+      <p class="crumbs"><a href="/">Home</a> · <a href="/website-seo">Website &amp; SEO</a> · Schilders</p>
+      <h1>Schilder website <span class="gold-text">laten maken.</span></h1>
+      <p class="lead">Voor schilders, schildersbedrijven en afbouwbedrijven. Een site die je werk laat zien, je diensten helder uitlegt en een offerteaanvraag makkelijk maakt.</p>
+      <div class="hero-actions"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite</a><a href="#klanten" class="btn btn-ghost-light">Bekijk voorbeeld</a></div>
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Kort antwoord</p>
+        <h2>Wat kost een website voor een <span class="gold-text">schilder?</span></h2>
+        <p class="lead">Een complete website met meerdere pagina's kost bij ons €299 eenmalig, of €29 per maand met hosting en onderhoud erbij. Je krijgt een site op maat, met je diensten, foto's van je werk, je werkgebied en een duidelijke knop voor een offerte. Wil je daarna hoger in Google komen, dan kan SEO erbij voor €79 per maand. Je ziet eerst gratis een testwebsite; pas als die bevalt, gaan we verder.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Wat de site moet doen</p>
+        <h2>Zes dingen die een website voor schilders <span class="gold-text">goed moet doen</span></h2>
+        <p class="lead">Of je nu alleen werkt of met een paar man: dit zijn de punten waarop bezoekers beslissen of ze jou bellen of de volgende schilder.</p>
+      </div>
+      {rows(needs)}
+    </div>
+  </section>
+
+  <section class="bg-dark full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Wat we maken</p>
+        <h2>Alles voor je online zichtbaarheid, <span class="gold-text">vaste prijzen</span></h2>
+        <p class="lead">Je kiest wat je nodig hebt. Veel schilders beginnen met een website en nemen later SEO of een fotoshoot van hun werk erbij.</p>
+      </div>
+      <ul class="checks" style="max-width:760px">
+        <li>Horizon website op maat: €299 eenmalig of €29 per maand</li>
+        <li>Skyline website met basis-SEO: €575 eenmalig of €49 per maand, of een 3D Cinematic website voor €749</li>
+        <li>SEO voor €79 per maand, met maandelijkse rapportage</li>
+        <li>Foto- en videoshoot op locatie: €250, met drone €300</li>
+        <li>Social media beheer vanaf €79 per maand</li>
+      </ul>
+      <p style="margin-top:28px;color:var(--on-dark-dim)">Alle prijzen en pakketten staan op onze <a href="/pricing" style="color:var(--gold)">prijzenpagina</a>. Meer over vindbaarheid lees je bij <a href="/website-seo" style="color:var(--gold)">website &amp; SEO</a>, meer over beeld bij <a href="/drone-video" style="color:var(--gold)">drone &amp; video</a>.</p>
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Werkwijze</p>
+        <h2>Zo werkt het, <span class="gold-text">in vier stappen</span></h2>
+      </div>
+      {rows(steps)}
+    </div>
+  </section>
+
+  <section class="bg-cream full" id="klanten">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Voorbeeld</p>
+        <h2>Een schildersbedrijf dat <span class="gold-text">je voorging</span></h2>
+        <p class="lead">Bij Lilli's Schilderwerken lees je hoe we het aanpakten. Meer websites, van installateurs tot coaches, staan in ons <a href="/portfolio" style="color:var(--gold-deep)">portfolio</a>.</p>
+      </div>
+      {schilders}
+    </div>
+  </section>
+
+  <section class="bg-white full">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Website voor schilders: <span class="gold-text">goed om te weten</span></h2>
+      </div>
+      {faq_html(faqs)}
+      <p style="margin-top:40px;text-align:center;color:var(--ink-dim)">Andere branches: <a href="/website-voor-installateurs" style="color:var(--gold-deep)">website voor installateurs</a> · <a href="/website-voor-aannemers" style="color:var(--gold-deep)">website voor aannemers</a> · <a href="/website-voor-coaches" style="color:var(--gold-deep)">website voor coaches</a></p>
+      <p style="margin-top:12px;text-align:center;color:var(--ink-dim)">Ook per plaats: {city_links}</p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="inner reveal">
+      <div class="gold-rule" style="margin-inline:auto"></div>
+      <h2>Eerst zien hoe jouw site eruitziet?</h2>
+      <p class="lead">We bouwen gratis een testwebsite voor je schildersbedrijf. Bevalt hij, dan gaan we verder. Zo niet, dan kost het je niets.</p>
+      <div class="hero-actions hero-actions-center"><a href="/aanvraag" class="btn btn-gold">Gratis testwebsite aanvragen</a><a href="/contact" class="btn btn-ghost-light">Plan een gesprek</a></div>
+    </div>
+  </section>
+
+'''
+open("website-voor-schilders.html", "w").write(head(title, desc, url, "/assets/work-lillis.jpg", ld) + body + tail())
+
 # ---------- Regio-hub ----------
 url = BASE + "/regio"; title = "Website laten maken in Brabant, Gelderland en verder | Skyline Digital"
 desc = f"Skyline Digital bouwt websites, video en content voor ondernemers in Den Bosch, Eindhoven, Tilburg en nog {len(CITIES) - 3} plaatsen in Brabant, Gelderland, Utrecht en Overijssel. Bekijk je regio."
@@ -1266,7 +1402,7 @@ for path in glob.glob("*.html") + glob.glob("blog/*.html"):
 # ---------- Sitemap ----------
 urls = [("/",1.0,"weekly"),("/website-seo",0.9,"monthly"),("/drone-video",0.9,"monthly"),("/social-media",0.9,"monthly"),("/ai-content",0.9,"monthly"),("/bedrijfsvideo",0.9,"monthly"),
         ("/pricing",0.8,"monthly"),("/portfolio",0.8,"monthly"),("/over-ons",0.7,"monthly"),("/contact",0.7,"yearly"),("/aanvraag",0.8,"yearly"),
-        ("/regio",0.7,"monthly"),("/blog",0.7,"weekly"),("/website-voor-installateurs",0.8,"monthly"),("/website-voor-aannemers",0.8,"monthly","2026-11-05"),("/website-voor-coaches",0.8,"monthly","2026-11-12"),("/seo-den-bosch",0.8,"monthly","2026-10-31"),("/bedrijfsfilm-laten-maken",0.8,"monthly","2026-11-04"),("/google-review-link-maken",0.7,"monthly","2026-11-06")]
+        ("/regio",0.7,"monthly"),("/blog",0.7,"weekly"),("/website-voor-installateurs",0.8,"monthly"),("/website-voor-aannemers",0.8,"monthly","2026-11-05"),("/website-voor-coaches",0.8,"monthly","2026-11-12"),("/website-voor-schilders",0.8,"monthly","2026-11-13"),("/seo-den-bosch",0.8,"monthly","2026-10-31"),("/bedrijfsfilm-laten-maken",0.8,"monthly","2026-11-04"),("/google-review-link-maken",0.7,"monthly","2026-11-06")]
 urls += [(f"/website-laten-maken-{c['slug']}",0.8,"monthly") for c in CITIES]
 urls += [(f"/blog/{a['slug']}",0.7,"monthly",a["date"]) for a in ARTICLES]
 W = ["dekgro","lillis","bodyscan","echtgrieks","carslease","lassie","dejonge","elektropost","palmyra"]
