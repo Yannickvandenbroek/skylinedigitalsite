@@ -425,12 +425,32 @@ document.addEventListener("DOMContentLoaded", () => {
     parallax();
   }
 
-  // Marquee versnelt mee met de scrollsnelheid
+  // Marquee: schuift rustig door en versnelt even mee als je scrolt, daarna soepel terug naar de rustsnelheid.
+  // Eerst veranderde dit de animation-duration van de CSS-animatie; dan herberekent de browser de positie
+  // en springt de band heen en weer ("flippen", vooral op telefoons). Nu verschuift JS hem zelf, frame voor frame.
   const track = document.querySelector(".marquee-track");
   if (track && !reduceMotion) {
-    let lastY = scrollY, vel = 0;
-    window.addEventListener("scroll", () => { vel = Math.min(4, Math.abs(scrollY - lastY) / 40); lastY = scrollY; }, { passive: true });
-    (function spin(){ vel *= .92; track.style.animationDuration = (36 / (1 + vel * 2)).toFixed(1) + "s"; requestAnimationFrame(spin); })();
+    track.style.animation = "none";
+    const half = () => track.scrollWidth / 2;            // twee gelijke groepen: na één groep naadloos terug
+    const RUST = () => half() / 36;                      // zelfde rustsnelheid als voorheen: één groep per 36 s
+    let pos = 0, boost = 0, lastY = scrollY, lastT = performance.now(), pauze = false;
+    const marquee = track.parentElement;
+    marquee.addEventListener("mouseenter", () => { pauze = true; });
+    marquee.addEventListener("mouseleave", () => { pauze = false; });
+    window.addEventListener("scroll", () => {
+      // Scrollafstand sinds de vorige gebeurtenis, begrensd zodat een flinke veeg op mobiel niet doorschiet.
+      boost = Math.min(boost + Math.abs(scrollY - lastY) * 0.6, 900);
+      lastY = scrollY;
+    }, { passive: true });
+    (function stap(t) {
+      const dt = Math.min(0.05, (t - lastT) / 1000); lastT = t;
+      boost *= Math.pow(0.04, dt);                       // in ongeveer een seconde terug naar rust
+      if (!pauze) {
+        const h = half();
+        if (h > 0) { pos = (pos + (RUST() + boost) * dt) % h; track.style.transform = `translate3d(${-pos.toFixed(1)}px,0,0)`; }
+      }
+      requestAnimationFrame(stap);
+    })(lastT);
   }
 
   // Taalkeuze in de header: elke taal heeft eigen vertaalde pagina's (/en/, /it/, /es/).
