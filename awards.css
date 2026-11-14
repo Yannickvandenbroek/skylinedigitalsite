@@ -386,16 +386,20 @@ div.row .row-arrow { opacity: .55; }
 .hs-cta { display: flex; justify-content: center; padding: 90px 0; }
 @media (max-width: 940px) {
   .home-services { padding-left: 22px; padding-right: 22px; }
-  .hs-stage { position: relative; top: auto; min-height: 0; margin-bottom: 20px; }
-  .hs-card { padding: 22px; border-radius: 32px; }
-  .hs-top { gap: 18px; }
-  .hs-num { font-size: 64px; }
-  .hs-top h3 { font-size: 24px; }
-  .hs-desc { font-size: 16px; }
-  .hs-images { grid-template-columns: 1fr; grid-template-rows: none; height: auto; }
-  .hs-images > div { grid-template-rows: none; grid-template-columns: 1fr 1fr; height: auto; }
-  .hs-images img { border-radius: 20px; aspect-ratio: 4 / 3; height: auto; }
-  .hs-images > img { aspect-ratio: 16 / 10; }
+  /* Ook op mobiel stapelen: elke kaart plakt net onder het menu (75px), de volgende schuift eroverheen,
+     telkens 10px lager zodat de rand van de vorige zichtbaar blijft. De kaart is compact genoeg om ook
+     op een klein scherm (iPhone SE, 667px) in zijn geheel onder het menu te passen. */
+  .hs-stage { position: sticky; top: 84px; min-height: 0; margin-bottom: 28px; }
+  .hs-stage:nth-child(2) { top: 94px; } .hs-stage:nth-child(3) { top: 104px; } .hs-stage:nth-child(4) { top: 114px; }
+  .hs-stage:last-child { margin-bottom: 0; }
+  .hs-card { padding: 20px; border-radius: 32px; box-shadow: 0 -18px 40px rgba(0,0,0,.45); }
+  .hs-top { gap: 16px; margin-bottom: 12px; }
+  .hs-num { font-size: 56px; }
+  .hs-top h3 { font-size: 21px; }
+  .hs-desc { font-size: 15px; line-height: 1.5; margin-bottom: 16px; }
+  .hs-images { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); grid-template-rows: minmax(0, 1fr); gap: 10px; height: clamp(150px, 28vh, 240px); }
+  .hs-images > div { gap: 10px; }
+  .hs-images img { border-radius: 18px; }
   .hs-cta { padding: 50px 0 70px; }
 }
 
