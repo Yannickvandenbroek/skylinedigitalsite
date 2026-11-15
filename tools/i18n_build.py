@@ -2,7 +2,7 @@ import re, json, os, hashlib, sys
 from bs4 import BeautifulSoup, NavigableString, Comment
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))  # werkt op de Mac én in de cloud
 BASE = "https://www.skylinedigital.nl"
-PAGES = ["index","over-ons","website-seo","drone-video","social-media","ai-content","portfolio","pricing","contact","aanvraag","video","werk-dekgro","werk-lillis","werk-bodyscan","werk-echtgrieks","werk-carslease","werk-lassie","werk-dejonge","werk-elektropost","werk-palmyra"]
+PAGES = ["index","over-ons","website-seo","drone-video","social-media","ai-content","portfolio","pricing","contact","aanvraag","video","werk-dekgro","werk-lillis","werk-bodyscan","werk-echtgrieks","werk-carslease","werk-lassie","werk-dejonge","werk-elektropost","werk-palmyra","werk-schooninzet"]
 LANGS = [l for l in sys.argv[1:]] or ["en","it","es"]
 LOCALE = {"en":"en-GB","it":"it-IT","es":"es-ES","nl":"nl-NL","xx":"xx-XX"}
 INLINE = {"span","a","strong","em","b","i","br","small","svg","img","sup","sub","code","u","mark","abbr","time"}
