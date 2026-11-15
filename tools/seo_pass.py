@@ -138,7 +138,7 @@ for path in sorted(glob.glob("*.html")):
     s = re.sub(r'\s*<meta (?:property|name)="(?:og:|twitter:)[^"]*"[^>]*>', '', s)
     s = re.sub(r'\s*<meta name="robots"[^>]*>', '', s)
     s = re.sub(r'\s*<script type="application/ld\+json">.*?</script>', '', s, flags=re.S)
-    robots = "noindex,follow" if slug == "video" else "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    robots = "noindex,nofollow" if slug == "aanleveren" else "noindex,follow" if slug == "video" else "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
     head = f'''
   <title>{t_esc}</title>
   <meta name="description" content="{d_esc}" />

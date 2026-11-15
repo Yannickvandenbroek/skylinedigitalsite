@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onderwerpen en projecten aanleveren | Skyline Digital</title>
+  <meta name="description" content="Persoonlijke pagina voor SEO-klanten van Skyline Digital: lever onderwerpen en projectfoto's aan voor je website." />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600..900&family=Inter:wght@400..700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root { --bg:#07080b; --kaart:#101218; --rand:#22252e; --tekst:#ece9e2; --zacht:#9a978f; --goud:#d9b25a; --fout:#e0796b; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--tekst); font:16px/1.55 Inter, system-ui, sans-serif; }
+    main { max-width:640px; margin:0 auto; padding:40px 16px 80px; }
+    .logo { font:800 15px 'Inter Tight', sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--goud); text-decoration:none; }
+    h1 { font:800 clamp(28px,6vw,40px)/1.1 'Inter Tight', sans-serif; margin:28px 0 12px; letter-spacing:-.01em; }
+    .lead { color:var(--zacht); margin:0 0 28px; }
+    .lead b { color:var(--tekst); font-weight:600; }
+    .keuze { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
+    .keuze button { background:var(--kaart); border:1px solid var(--rand); color:var(--tekst); border-radius:14px; padding:16px 14px; text-align:left; font:inherit; cursor:pointer; }
+    .keuze button b { display:block; font:700 16px 'Inter Tight', sans-serif; margin-bottom:2px; }
+    .keuze button span { color:var(--zacht); font-size:13px; }
+    .keuze button[aria-pressed="true"] { border-color:var(--goud); box-shadow:0 0 0 1px var(--goud) inset; }
+    form { background:var(--kaart); border:1px solid var(--rand); border-radius:18px; padding:22px 18px; }
+    label { display:block; font-weight:600; font-size:14px; margin:0 0 6px; }
+    .hint { color:var(--zacht); font-size:13px; font-weight:400; }
+    input[type=text], textarea { width:100%; background:#0b0d12; border:1px solid var(--rand); border-radius:10px; color:var(--tekst); font:inherit; padding:12px; margin-bottom:16px; }
+    input[type=text]:focus, textarea:focus { outline:none; border-color:var(--goud); }
+    textarea { min-height:110px; resize:vertical; }
+    .rij { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .fotos { border:1px dashed var(--rand); border-radius:12px; padding:16px; text-align:center; margin-bottom:16px; cursor:pointer; color:var(--zacht); font-size:14px; }
+    .fotos:hover { border-color:var(--goud); }
+    .voorbeeld { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:10px; }
+    .voorbeeld img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:8px; }
+    .knop { width:100%; background:var(--goud); color:#14110a; border:0; border-radius:12px; padding:15px; font:800 16px 'Inter Tight', sans-serif; cursor:pointer; }
+    .knop[disabled] { opacity:.6; cursor:wait; }
+    .melding { margin:14px 0 0; font-size:14px; }
+    .melding.fout { color:var(--fout); }
+    .klaar { text-align:center; padding:28px 10px; }
+    .klaar h2 { font:800 24px 'Inter Tight', sans-serif; margin:0 0 8px; }
+    .klaar p { color:var(--zacht); margin:0 0 18px; }
+    .verborgen { display:none !important; }
+    .hp { position:absolute; left:-9999px; }
+    footer { color:var(--zacht); font-size:13px; margin-top:28px; text-align:center; }
+    footer a { color:var(--zacht); }
+    @media (max-width:480px) { .rij { grid-template-columns:1fr; gap:0; } }
+  </style>
+</head>
+<body>
+<main>
+  <a class="logo" href="/">Skyline Digital</a>
+  <h1 id="kop">Wat wil je deze maand op je website?</h1>
+  <p class="lead" id="lead">Zet hier een onderwerp of een project neer. Wij maken er een blog of projectpagina van.</p>
+
+  <div id="fout-link" class="verborgen">
+    <p class="lead">Deze link werkt niet (meer). Vraag Yannick om een nieuwe: <a style="color:var(--goud)" href="https://wa.me/31686850289">WhatsApp</a>.</p>
+  </div>
+
+  <div id="blok">
+    <div class="keuze" role="group" aria-label="Wat lever je aan?">
+      <button type="button" data-soort="project" aria-pressed="true"><b>Project met foto's</b><span>Een klus die je gedaan hebt, met plaats</span></button>
+      <button type="button" data-soort="blog" aria-pressed="false"><b>Blogonderwerp</b><span>Een vraag of onderwerp</span></button>
+    </div>
+
+    <form id="formulier" novalidate>
+      <input class="hp" type="text" name="website_url_check" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <div data-voor="project">
+        <div class="rij">
+          <div><label for="klus">Wat heb je gedaan?</label><input type="text" id="klus" name="klus" maxlength="120" placeholder="bijv. dakkapel geplaatst" /></div>
+          <div><label for="plaats">In welke plaats?</label><input type="text" id="plaats" name="plaats" maxlength="80" placeholder="bijv. Vught" /></div>
+        </div>
+        <label>Foto's <span class="hint">(max 8, liefst voor en na)</span></label>
+        <div class="fotos" id="fotoknop">Tik om foto's te kiezen<input type="file" id="fotos" accept="image/*" multiple class="verborgen" /><div class="voorbeeld" id="voorbeeld"></div></div>
+      </div>
+      <div data-voor="blog" class="verborgen">
+        <label for="onderwerp">Onderwerp of vraag</label>
+        <input type="text" id="onderwerp" name="onderwerp" maxlength="200" placeholder="bijv. Wat kost een nieuwe dakgoot?" />
+      </div>
+      <label for="toelichting">Wat moeten we weten? <span class="hint">(mag kort, in je eigen woorden)</span></label>
+      <textarea id="toelichting" name="toelichting" maxlength="3000" placeholder="Wat was de vraag van de klant, wat heb je gedaan, wat maakte het lastig of bijzonder?"></textarea>
+      <button class="knop" id="verstuur" type="submit">Versturen</button>
+      <p class="melding" id="melding" role="status"></p>
+    </form>
+
+    <div id="klaar" class="klaar verborgen">
+      <h2>Ontvangen, dank je!</h2>
+      <p>We nemen het mee in de stukken van deze maand.</p>
+      <button class="knop" id="nog" type="button">Nog iets aanleveren</button>
+    </div>
+  </div>
+  <footer>Skyline Digital · <a href="/privacybeleid">Privacy</a> · foto's gebruiken we alleen op jouw eigen website</footer>
+</main>
+<script>
+(function () {
+  var API = 'https://qccuhmznrlgobfccxiro.supabase.co/functions/v1/seo-aanleveren';
+  var token = new URLSearchParams(location.search).get('t') || '';
+  var soort = 'project', bestanden = [];
+  var $ = function (id) { return document.getElementById(id); };
+
+  function linkKapot() { $('blok').classList.add('verborgen'); $('fout-link').classList.remove('verborgen'); $('lead').classList.add('verborgen'); }
+  if (!/^[0-9a-f]{16,64}$/.test(token)) { linkKapot(); return; }
+  fetch(API + '?t=' + token).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (d) {
+    if (d.bedrijf) $('kop').textContent = 'Wat wil ' + d.bedrijf + ' deze maand op de website?';
+    var b = d.blogs || 0, pg = d.paginas || 0;
+    var n = b + (b === 1 ? ' blog' : ' blogs') + ' en ' + pg + (pg === 1 ? ' locatie- of projectpagina' : ' locatie- of projectpagina’s');
+    $('lead').innerHTML = 'Deze maand schrijven we <b>' + n + '</b>. Zet hier onderwerpen of projecten neer; die gaan voor. Stuur je niets, dan kiezen wij zelf.';
+  }).catch(linkKapot);
+
+  document.querySelectorAll('.keuze button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      soort = b.dataset.soort;
+      document.querySelectorAll('.keuze button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      document.querySelectorAll('[data-voor]').forEach(function (el) { el.classList.toggle('verborgen', el.dataset.voor !== soort); });
+    });
+  });
+
+  $('fotoknop').addEventListener('click', function (e) { if (e.target.id !== 'fotos') $('fotos').click(); });
+  $('fotos').addEventListener('change', function () {
+    bestanden = bestanden.concat([].slice.call(this.files)).slice(0, 8);
+    $('voorbeeld').innerHTML = '';
+    bestanden.forEach(function (f) { var i = document.createElement('img'); i.alt = ''; i.src = URL.createObjectURL(f); $('voorbeeld').appendChild(i); });
+    this.value = '';
+  });
+
+  // Telefoonfoto's verkleinen naar max 2000px (sneller versturen); lukt dat niet, dan het origineel.
+  function verklein(f) {
+    return new Promise(function (ok) {
+      if (!/^image\/(jpeg|png|webp)$/.test(f.type)) return ok(f);
+      var img = new Image();
+      img.onload = function () {
+        var s = Math.min(1, 2000 / Math.max(img.width, img.height));
+        var c = document.createElement('canvas'); c.width = Math.round(img.width * s); c.height = Math.round(img.height * s);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        c.toBlob(function (b) { ok(b ? new File([b], f.name.replace(/\.\w+$/, '') + '.jpg', { type: 'image/jpeg' }) : f); }, 'image/jpeg', 0.85);
+      };
+      img.onerror = function () { ok(f); };
+      img.src = URL.createObjectURL(f);
+    });
+  }
+
+  $('formulier').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var m = $('melding'); m.className = 'melding'; m.textContent = '';
+    if (soort === 'project' && (!$('klus').value.trim() || !$('plaats').value.trim())) { m.className = 'melding fout'; m.textContent = 'Vul in wat je gedaan hebt en in welke plaats.'; return; }
+    if (soort === 'blog' && $('onderwerp').value.trim().length < 3) { m.className = 'melding fout'; m.textContent = 'Vul een onderwerp in.'; return; }
+    var knop = $('verstuur'); knop.disabled = true; knop.textContent = 'Bezig met versturen…';
+    Promise.all(soort === 'project' ? bestanden.map(verklein) : []).then(function (fotos) {
+      var fd = new FormData($('formulier'));
+      fd.append('t', token); fd.append('soort', soort);
+      fotos.forEach(function (f) { fd.append('fotos', f); });
+      return fetch(API, { method: 'POST', body: fd }).then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || 'Versturen lukte niet'); }); });
+    }).then(function () {
+      $('formulier').classList.add('verborgen'); $('klaar').classList.remove('verborgen');
+    }).catch(function (err) {
+      m.className = 'melding fout'; m.textContent = (err && err.message) || 'Versturen lukte niet; probeer het nog eens.';
+    }).then(function () { knop.disabled = false; knop.textContent = 'Versturen'; });
+  });
+
+  $('nog').addEventListener('click', function () {
+    $('formulier').reset(); bestanden = []; $('voorbeeld').innerHTML = '';
+    $('klaar').classList.add('verborgen'); $('formulier').classList.remove('verborgen');
+  });
+})();
+</script>
+</body>
+</html>
