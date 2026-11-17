@@ -1399,6 +1399,25 @@ for path in glob.glob("*.html") + glob.glob("blog/*.html"):
         s = s.replace('src="assets/', 'src="/assets/')
     open(path, "w").write(s)
 
+# ---------- Home: drie artikelen + alle plaatsen (interne links naar wat bijna scoort) ----------
+# Keuze = artikelen die volgens Search Console en DataForSEO (nov 2026) het dichtst bij pagina 1 staan.
+HOME_BLOGS = ["wat-kost-een-website-laten-maken", "website-laten-maken-zzp", "drone-video-laten-maken-kosten-en-regels"]
+_by = {a["slug"]: a for a in ARTICLES}
+HOME_BLOCK = ('  <!-- BLOG -->\n  <section class="bg-white full home-blog" id="kennis">\n    <div class="wrap">\n'
+    '      <div class="section-head reveal"><div class="gold-rule"></div><p class="eyebrow">Blog</p>'
+    '<h2>Eerlijke antwoorden, <span class="gold-text">echte prijzen</span></h2></div>\n'
+    '      <div class="blog-grid">' + "".join(blog_card(_by[k]) for k in HOME_BLOGS if k in _by) + '</div>\n'
+    '      <p class="home-blog-more reveal"><a href="/blog" class="btn btn-dark">Alle artikelen</a></p>\n'
+    '      <p class="home-regio reveal"><strong>Website laten maken in:</strong> '
+    + " · ".join(f'<a href="/website-laten-maken-{c["slug"]}">{c["name"]}</a>' for c in CITIES) + '</p>\n'
+    '    </div>\n  </section>\n  <!-- /BLOG -->\n\n')
+s_home = open("index.html").read()
+if "<!-- BLOG -->" in s_home:
+    s_home = re.sub(r"  <!-- BLOG -->.*?<!-- /BLOG -->\n\n", lambda m: HOME_BLOCK, s_home, count=1, flags=re.S)
+else:
+    s_home = s_home.replace('  <section class="cta-band">', HOME_BLOCK + '  <section class="cta-band">', 1)
+open("index.html", "w").write(s_home)
+
 # ---------- Sitemap ----------
 urls = [("/",1.0,"weekly"),("/website-seo",0.9,"monthly"),("/drone-video",0.9,"monthly","2026-11-15"),("/social-media",0.9,"monthly"),("/ai-content",0.9,"monthly"),("/bedrijfsvideo",0.9,"monthly","2026-11-15"),
         ("/pricing",0.8,"monthly"),("/portfolio",0.8,"monthly"),("/over-ons",0.7,"monthly"),("/contact",0.7,"yearly"),("/aanvraag",0.8,"yearly"),

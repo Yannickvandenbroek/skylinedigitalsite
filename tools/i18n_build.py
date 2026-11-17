@@ -131,6 +131,7 @@ for lang in LANGS:
         localize_links(soup, lang)
         # de blog is alleen Nederlandstalig: niet in het hoofdmenu van vertaalde pagina's (wel in de footer)
         for a in soup.select('#nav-links a[href="/blog"]'): a.decompose()
+        for sec in soup.select('section.home-blog'): sec.decompose()
         soup.html["lang"] = lang
         can = soup.find("link", rel="canonical")
         if can: can["href"] = url_of(lang, slug)

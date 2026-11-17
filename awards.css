@@ -562,3 +562,10 @@ div.row .row-arrow { opacity: .55; }
   .ig-cap { font-size: .95rem; }
   .ig-view span, .ig-foot .ig-view { display: none; }
 }
+
+/* Home: blogblok + plaatsen */
+.home-blog .section-head { margin-bottom: clamp(36px, 4vw, 56px); }
+.home-blog-more { margin-top: clamp(36px, 4vw, 56px); }
+.home-regio { margin-top: clamp(28px, 3vw, 40px); padding-top: clamp(24px, 3vw, 36px); border-top: 1px solid rgba(20,18,12,.1); color: var(--ink-dim); line-height: 2; font-size: .95rem; }
+.home-regio a { color: var(--ink); text-decoration: none; border-bottom: 1px solid rgba(20,18,12,.2); }
+.home-regio a:hover { border-color: var(--gold); }

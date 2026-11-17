@@ -127,6 +127,15 @@ Format zoals de huidige 10 plaatspagina's, elk met echte lokale inhoud. Hoofdzoe
 
 Totaal ±33 pagina's in 17 weken, naast de 18 blogs.
 
+## Bijsturing 17 november 2026 (dataplan `content/SEO-PLAN-2026-11.md`)
+
+Zoekvolumes uit DataForSEO laten zien dat branchepagina's weinig zoekverkeer opleveren (0 tot 20 per maand) en dat het volume in plaatsen, prijs en gratis hulpmiddelen zit. Daarom, **vóór** de rest van de planning hierboven:
+
+1. **Hulpmiddel `/website-check` eerst** (website check 4.400, seo check 1.600, website snelheid testen 390 per maand). Wacht op de PageSpeed-sleutel van Yannick; tot die er is overslaan.
+2. **`/gratis-testwebsite`** naar voren: "gratis website" 390 per maand.
+3. **Nieuwe plaatspagina's, hoogstens 2 per maand, in deze volgorde** (zoekopdrachten per maand "website laten maken" + "webdesign", moeilijkheid): Deurne (170+40, 1) · Veenendaal (210+50, 0) · Tiel (90+30, 0) · Roosendaal (110+30, 0) · Kaatsheuvel (70+40, 0) · Oosterhout (50+70, 0) · Ede (110+50, 0) · Arnhem (110+140, 9) · Venlo (90+90, 0) · Utrecht (480+170, 4) · Almere (210+110, 0) · Rotterdam als proef (720+110, 1 tot 6). Geen plaatsen onder de 30 zoekopdrachten per maand. Elke pagina heeft echte lokale inhoud en gebruikt in de titel het synoniem met het meeste volume ("webdesign" in Arnhem, Venlo en Oosterhout).
+4. **Branchepagina's: hoogstens 1 per maand**, op volgorde van het bewijs dat er is.
+
 ## Wat ik van Yannick nodig heb
 1. **Onderhoudsabonnement:** prijs per maand en wat zit erin? (8 dec)
 2. **Webshops:** bouw je ze, op welk platform, vanaf welke prijs? (15 dec)
