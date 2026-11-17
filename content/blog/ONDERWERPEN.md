@@ -11,7 +11,6 @@ Beschikbare projectpagina's voor eigen ervaring: `/werk-dekgro` (tegelwerk), `/w
 
 Volgorde = planning (zie `content/CONTENTPLAN.md`): bovenste open onderwerp is de volgende week. Hoofdzoekwoorden zijn long-tail: 4 of meer woorden.
 
-- [ ] **Wat kost social media uitbesteden?** — zoekwoord: "wat kost social media uitbesteden" — long-tail ook: "social media uitbesteden prijzen" (10–100/mnd), "social media beheer uitbesteden"; wat je krijgt per budget; vanaf €79 p/m — links: /social-media, /pricing
 - [ ] **Hoe werkt Google Search Console? Instellen en koppelen** — zoekwoord: "hoe werkt google search console" — long-tail ook: "google search console instellen", "google search console koppelen"; eigen ervaring met instellen, sitemap, indexering aanvragen — links: /website-seo, /blog/lokale-seo-tips
 - [ ] **Hoe schrijf je goede SEO-teksten (ook met AI)?** — zoekwoord: "hoe schrijf je goede seo teksten" — long-tail ook: "seo teksten schrijven met ai", "seo teksten laten schrijven"; zoekintentie, structuur, direct antwoord, geen keyword stuffing (bron: Google) — links: /website-seo, /blog/lokale-seo-tips
 - [ ] **Wat kost een domeinnaam per jaar, en met e-mail?** — zoekwoord: "wat kost een domeinnaam per jaar" — long-tail ook: "wat kost een domeinnaam met email", "domeinnaam kopen zonder hosting"; kiezen, registreren, op eigen naam, e-mail erbij — links: /blog/wat-kost-een-website-per-maand, /website-seo
@@ -50,6 +49,7 @@ Deze onderwerpen worden branche- of dienstpagina's volgens `content/CONTENTPLAN.
 - [→ pagina] **Website onderhoud: updates, back-ups en beveiliging** — zoekwoord: "website onderhoud" — links: /website-seo, /pricing
 
 ## Gedaan
+- [x] 2026-11-17 → /blog/wat-kost-social-media-uitbesteden — Wat kost social media uitbesteden? Wat je krijgt per prijs
 - [x] 2026-11-17 → /blog/hoe-lang-mogen-instagram-reels-zijn — Hoe lang mogen Instagram Reels zijn? Formaat en safe zone
 - [x] 2026-11-16 → /blog/website-laten-maken-door-ai — Website laten maken door AI of door een bureau?
 - [x] 2026-11-11 → /blog/wat-kost-een-wordpress-website-laten-maken — Wat kost een WordPress website laten maken? Of maatwerk?
