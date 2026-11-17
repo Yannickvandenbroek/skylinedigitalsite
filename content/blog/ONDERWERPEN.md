@@ -11,7 +11,6 @@ Beschikbare projectpagina's voor eigen ervaring: `/werk-dekgro` (tegelwerk), `/w
 
 Volgorde = planning (zie `content/CONTENTPLAN.md`): bovenste open onderwerp is de volgende week. Hoofdzoekwoorden zijn long-tail: 4 of meer woorden.
 
-- [ ] **Hoe lang mogen Instagram Reels zijn? Formaat, lengte en safe zone** — zoekwoord: "hoe lang mogen instagram reels zijn" — long-tail ook: "instagram reels safe zone", "hoe maak je instagram reels"; officiële specificaties (bron: Instagram/Meta), tips voor bedrijven — links: /social-media, /drone-video, /blog/bedrijfsvideo-laten-maken-kosten
 - [ ] **Wat kost social media uitbesteden?** — zoekwoord: "wat kost social media uitbesteden" — long-tail ook: "social media uitbesteden prijzen" (10–100/mnd), "social media beheer uitbesteden"; wat je krijgt per budget; vanaf €79 p/m — links: /social-media, /pricing
 - [ ] **Hoe werkt Google Search Console? Instellen en koppelen** — zoekwoord: "hoe werkt google search console" — long-tail ook: "google search console instellen", "google search console koppelen"; eigen ervaring met instellen, sitemap, indexering aanvragen — links: /website-seo, /blog/lokale-seo-tips
 - [ ] **Hoe schrijf je goede SEO-teksten (ook met AI)?** — zoekwoord: "hoe schrijf je goede seo teksten" — long-tail ook: "seo teksten schrijven met ai", "seo teksten laten schrijven"; zoekintentie, structuur, direct antwoord, geen keyword stuffing (bron: Google) — links: /website-seo, /blog/lokale-seo-tips
@@ -51,6 +50,7 @@ Deze onderwerpen worden branche- of dienstpagina's volgens `content/CONTENTPLAN.
 - [→ pagina] **Website onderhoud: updates, back-ups en beveiliging** — zoekwoord: "website onderhoud" — links: /website-seo, /pricing
 
 ## Gedaan
+- [x] 2026-11-17 → /blog/hoe-lang-mogen-instagram-reels-zijn — Hoe lang mogen Instagram Reels zijn? Formaat en safe zone
 - [x] 2026-11-16 → /blog/website-laten-maken-door-ai — Website laten maken door AI of door een bureau?
 - [x] 2026-11-11 → /blog/wat-kost-een-wordpress-website-laten-maken — Wat kost een WordPress website laten maken? Of maatwerk?
 - [x] 2026-11-10 → /blog/website-laten-maken-goedkoop — Website laten maken goedkoop: waar zit het verschil?
