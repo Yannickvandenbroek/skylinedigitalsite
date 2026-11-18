@@ -164,7 +164,7 @@ Extra uit het onderzoek naar "gratis": op "gratis testwebsite", "gratis website 
 
 ## Verbeterlijst (één per week, bovenste eerst)
 
-- [ ] `/blog/website-laten-maken-zzp` — "website laten maken zzp" (260 tot 390/mnd, plek 15): voorbeeld uit het portfolio, vergelijking eenmalig of per maand, link vanaf `/pricing` en `/website-seo`.
+- [x] `/blog/website-laten-maken-zzp` — "website laten maken zzp" (260 tot 390/mnd, plek 15): voorbeeld uit het portfolio, vergelijking eenmalig of per maand, link vanaf `/pricing` en `/website-seo`. ✅ verbeterd 2026-11-18 (prijstabel met alle pakketten, tabel eenmalig/per maand, drie portfoliovoorbeelden, FAQ per maand, link naar /pricing en /portfolio). Open: links vanaf `/pricing` en `/website-seo` naar dit artikel (routine past andere pagina's niet met de hand aan).
 - [ ] `/drone-video` — "drone video laten maken" (340/mnd, blog staat op plek 13 tot 16): blok "wat kost het" met prijzen en link naar de blog; de blog linkt bovenaan terug met "drone video laten maken".
 - [ ] `/google-review-link-maken` — "google review qr code" (140/mnd, plek 8): eigen tussenkop en uitleg over de QR-code.
 - [ ] `/blog/google-bedrijfsprofiel-aanmaken` — "google bedrijfsprofiel aanmaken" (590/mnd, plek 34): stappen controleren tegen de helppagina van Google, schermvolgorde, veelgestelde vragen.
