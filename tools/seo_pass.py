@@ -58,6 +58,9 @@ META = {
  "google-review-link-maken": ("Google review link maken: gratis met QR-code | Skyline Digital",
            "Google review link maken? Plak je Place ID en krijg gratis een directe reviewlink en QR-code, in je eigen browser en zonder account.",
            "/assets/photo-phone-city.jpg"),
+ "gratis-testwebsite": ("Gratis website laten maken: eerst een testwebsite | Skyline Digital",
+           "Gratis website laten maken? Wij bouwen eerst gratis een werkende testwebsite. Bevalt hij: vanaf €299 of €29 per maand. Zo niet, dan betaal je niets.",
+           "/assets/photo-wireframes.jpg"),
  "video": ("Cinematische villa-film — gratis voorbeeld | Skyline Digital", None, "/assets/og-home.jpg"),
 }
 SERVICE = {
@@ -70,7 +73,7 @@ SERVICE = {
 }
 BREAD = {
  "over-ons": "Over ons", "website-seo": "Website & SEO", "drone-video": "Drone & Video", "social-media": "Social Media",
- "ai-content": "AI Content", "seo-den-bosch": "SEO Den Bosch", "bedrijfsfilm-laten-maken": "Bedrijfsfilm", "google-review-link-maken": "Google review link maken", "pricing": "Pricing", "portfolio": "Portfolio", "contact": "Contact", "aanvraag": "Aanvraag",
+ "ai-content": "AI Content", "seo-den-bosch": "SEO Den Bosch", "bedrijfsfilm-laten-maken": "Bedrijfsfilm", "google-review-link-maken": "Google review link maken", "gratis-testwebsite": "Gratis testwebsite", "pricing": "Pricing", "portfolio": "Portfolio", "contact": "Contact", "aanvraag": "Aanvraag",
  "privacybeleid": "Privacybeleid", "algemene-voorwaarden": "Algemene voorwaarden", "cookiebeleid": "Cookiebeleid",
 }
 ORG = {

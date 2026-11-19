@@ -68,7 +68,7 @@ URL: `/<dienst>`. Vaste opbouw: wat het is → voor wie → wat je krijgt + prij
 | `/website-onderhoud` | kosten onderhoud website per jaar | wat kost website onderhoud per maand · website onderhoud en beheer · hoe duur is een website onderhouden | **nodig: prijs en inhoud abonnement** |
 | `/webshop-laten-maken` | webshop laten maken den bosch | wat kost een webshop laten maken · website met webshop laten maken · webshop laten maken per maand betalen | **nodig: platform en vanaf-prijs** |
 | `/website-zonder-maandelijkse-kosten` | website laten maken zonder maandelijkse kosten | — | past bij eenmalig €499; uitleg over hosting en domein |
-| `/gratis-testwebsite` | gratis website laten maken | eerst gratis voorbeeld van je website | eerlijk: gratis vóórbeeld, geen gratis website |
+| `/gratis-testwebsite` ✅ live 19 nov | gratis website laten maken | eerst gratis voorbeeld van je website | eerlijk: gratis vóórbeeld, geen gratis website |
 | `/3d-scroll-website` | 3d cinematic website laten maken | scroll animatie website laten maken | productpagina voor €749; weinig volume, wel showcase |
 | later: `/landingspagina-laten-maken`, `/webapplicatie-laten-maken` | landingspagina laten maken breda · webapplicatie laten maken den bosch | — | **alleen als je het aanbiedt** |
 | Optimalisatie `/drone-video` | dronevideo laten maken in den bosch | drone video laten maken prijs · wat kost een drone film | al plek 4,7–17,5; geen nieuwe pagina |
