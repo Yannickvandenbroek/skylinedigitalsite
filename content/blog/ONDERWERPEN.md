@@ -12,7 +12,6 @@ Beschikbare projectpagina's voor eigen ervaring: `/werk-dekgro` (tegelwerk), `/w
 Volgorde = planning (zie `content/CONTENTPLAN.md`): bovenste open onderwerp is de volgende week. Hoofdzoekwoorden zijn long-tail: 4 of meer woorden.
 
 <!-- Bovenaan: onderwerpen uit het dataplan van 17 nov 2026 (content/SEO-PLAN-2026-11.md); zoekvolumes per maand uit DataForSEO, Google Nederland. -->
-- [ ] **Professionele website laten maken: zo herken je kwaliteit** — zoekwoord: "professionele website laten maken" (390/mnd, moeilijkheid 3; "professioneel website laten maken" 880) — invalshoek: snelheid, ontwerp op maat, eigendom, vindbaarheid; voorbeelden uit het portfolio — links: /portfolio, /website-seo, /blog/website-laten-maken-waar-op-letten
 - [ ] **Gratis website maken of laten maken?** — zoekwoord: "gratis website maken" (2.900/mnd; "gratis website" 390) — invalshoek: wat gratis bouwers echt kosten (domein, reclame, tijd), en het eerlijke alternatief: eerst een gratis testwebsite zien — links: /aanvraag, /blog/website-laten-maken-goedkoop, /pricing
 - [ ] **SEO uitbesteden: wat kost het en wat krijg je ervoor?** — zoekwoord: "seo uitbesteden" (480/mnd) — invalshoek: wat een bureau maandelijks doet, wat redelijk is om te verwachten, onze prijs — links: /seo-den-bosch, /blog/seo-zelf-doen-of-uitbesteden, /pricing. Niet dubbel met "zelf doen of uitbesteden": dit gaat over prijs en inhoud.
 - [ ] **Google reviews verwijderen: wat kan wel en wat niet?** — zoekwoord: "google reviews verwijderen" (480/mnd) — invalshoek: melden volgens het beleid van Google (officiële bron), reageren, nieuwe reviews verzamelen — links: /blog/hoe-google-reviews-krijgen, /google-review-link-maken
@@ -58,6 +57,7 @@ Deze onderwerpen worden branche- of dienstpagina's volgens `content/CONTENTPLAN.
 - [→ pagina] **Website onderhoud: updates, back-ups en beveiliging** — zoekwoord: "website onderhoud" — links: /website-seo, /pricing
 
 ## Gedaan
+- [x] 2026-11-24 → /blog/professionele-website-laten-maken — Professionele website laten maken: zo herken je kwaliteit
 - [x] 2026-11-23 → /blog/betaalbare-website-laten-maken — Betaalbare website laten maken: wat krijg je voor je geld?
 - [x] 2026-11-17 → /blog/wat-kost-social-media-uitbesteden — Wat kost social media uitbesteden? Wat je krijgt per prijs
 - [x] 2026-11-17 → /blog/hoe-lang-mogen-instagram-reels-zijn — Hoe lang mogen Instagram Reels zijn? Formaat en safe zone
