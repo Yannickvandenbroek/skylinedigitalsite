@@ -165,8 +165,8 @@ Extra uit het onderzoek naar "gratis": op "gratis testwebsite", "gratis website 
 ## Verbeterlijst (één per week, bovenste eerst)
 
 - [x] `/blog/website-laten-maken-zzp` — "website laten maken zzp" (260 tot 390/mnd, plek 15): voorbeeld uit het portfolio, vergelijking eenmalig of per maand, link vanaf `/pricing` en `/website-seo`. ✅ verbeterd 2026-11-18 (prijstabel met alle pakketten, tabel eenmalig/per maand, drie portfoliovoorbeelden, FAQ per maand, link naar /pricing en /portfolio). Open: links vanaf `/pricing` en `/website-seo` naar dit artikel (routine past andere pagina's niet met de hand aan).
-- [ ] `/drone-video` — "drone video laten maken" (340/mnd, blog staat op plek 13 tot 16): blok "wat kost het" met prijzen en link naar de blog; de blog linkt bovenaan terug met "drone video laten maken".
-- [ ] `/google-review-link-maken` — "google review qr code" (140/mnd, plek 8): eigen tussenkop en uitleg over de QR-code.
+- [x] `/drone-video` — "drone video laten maken" (340/mnd, blog staat op plek 13 tot 16): blok "wat kost het" met prijzen en link naar de blog; de blog linkt bovenaan terug met "drone video laten maken". ✅ al gedaan in de commit van 2026-11-15 (prijsblok met link naar de blog, blog linkt bovenaan terug); gecontroleerd 2026-11-26.
+- [x] `/google-review-link-maken` — "google review qr code" (140/mnd, plek 8): eigen tussenkop en uitleg over de QR-code. ✅ verbeterd 2026-11-26 (tussenkop "Google review QR-code maken": wat het is, twee manieren (Bedrijfsprofiel volgens Google-help en de tool), testen en waar je hem gebruikt; FAQ over downloaden uit het Bedrijfsprofiel).
 - [ ] `/blog/google-bedrijfsprofiel-aanmaken` — "google bedrijfsprofiel aanmaken" (590/mnd, plek 34): stappen controleren tegen de helppagina van Google, schermvolgorde, veelgestelde vragen.
 - [ ] `/blog/website-laten-maken-goedkoop` — "goedkope website laten maken" (320/mnd, plek 18): tabel met wat je bij welke prijs krijgt.
 - [ ] `/blog/wat-kost-een-wordpress-website-laten-maken` — "wordpress website laten maken" (880 tot 1.600/mnd, plek 24): eerlijk vergelijk WordPress en maatwerk, wanneer WordPress de betere keuze is.
